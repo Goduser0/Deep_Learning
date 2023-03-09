@@ -41,16 +41,16 @@ lr = 0.0002
 batch_size = 128
 hidden_size = 256
 input_size = 100
-num_epochs = 50
+num_epochs = 10
 
 # 定义数据加载器
-transforms = transforms.Compose([
+transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.5], std=[0.5]),
 ])
     
-train_dataset = MNIST(root='./data', train=True, download=True, transform=transforms)
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+train_dataset = MNIST(root='./data', train=True, download=True, transform=transform)
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, drop_last=True)
 
 # 初始化生成器和判别器
 generator = Generator(input_size, hidden_size, 784).to(device)
@@ -64,8 +64,8 @@ d_optimizer = optim.Adam(discriminator.parameters(), lr=lr)
 
 # train
 for epoch in range(num_epochs):
-    for i, (real_image, _) in enumerate(train_loader):
-        real_images = real_image.view(-1, 784).to(device)
+    for i, (real_images, _) in enumerate(train_loader):
+        real_images = real_images.view(-1, 784).to(device)
         real_labels = torch.ones(batch_size, 1).to(device)
         fake_labels = torch.zeros(batch_size, 1).to(device)
         
@@ -93,7 +93,7 @@ for epoch in range(num_epochs):
         z = torch.randn(batch_size, input_size).to(device)
         fake_images = generator(z)
         fake_outputs = discriminator(fake_images)
-        g_loss = loss(fake_outputs, fake_labels)
+        g_loss = loss(fake_outputs, real_labels)
         g_loss.backward()
         g_optimizer.step()
         
