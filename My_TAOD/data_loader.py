@@ -1,13 +1,12 @@
 import torch
 import torchvision
-from torch.utils.data import Dataset, DataLoader, random_split
+from torch.utils import data
 from PIL import Image
 import numpy as np
 import os
 import pandas as pd
-import torchvision.transforms as transforms
-from d2l import torch as d2l
-import matplotlib.pyplot as plt
+import torchvision.transforms as T
+
 
 def bmp_to_ndarray(file_path):
     """将BMP文件转为ndarray"""
@@ -16,7 +15,7 @@ def bmp_to_ndarray(file_path):
     return img_array
 
 
-class My_Dateset(Dataset):
+class NEU_CLS(data.Dataset):
     def __init__(self, root_dir, transform=None, target_transform=None):
         self.root_dir = root_dir
         self.transform = transform
@@ -60,10 +59,15 @@ class My_Dateset(Dataset):
                 continue
         return pd.DataFrame(sample_list, columns=['Image_Content', 'Image_Class', 'Image_Filename', 'Image_Path', 'Image_ClassID'])
 
-trans = torchvision.transforms.ToTensor()
+
+trans = T.ToTensor()
 # iamge_size[1, 200, 200]
-My_NEUCLS = My_Dateset('./My_Datasets/NEU-CLS', transform=trans)
+My_NEUCLS = NEU_CLS('./My_Datasets/NEU_CLS', transform=trans)
 # My_NEUCLS.samples.to_csv('My_NEUCLS.csv')
+
+def get_loader(image_dir, attr):
+    pass
+
 
 from ResNet import net
 
@@ -73,10 +77,10 @@ num_epochs = 100
 
 train_size = int(0.7*len(My_NEUCLS))
 test_size = len(My_NEUCLS) - train_size
-nue_train, nue_test = random_split(My_NEUCLS, [train_size, test_size])
+nue_train, nue_test = data.random_split(My_NEUCLS, [train_size, test_size])
 
-train_iter = DataLoader(nue_train, batch_size, shuffle=True)
-test_iter = DataLoader(nue_test, batch_size, shuffle=False)
+train_iter = data.DataLoader(nue_train, batch_size, shuffle=True)
+test_iter = data.DataLoader(nue_test, batch_size, shuffle=False)
 
 from train import train
 
