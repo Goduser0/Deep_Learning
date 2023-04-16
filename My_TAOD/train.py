@@ -114,8 +114,8 @@ def trainer(net, train_iter, test_iter, num_epochs, lr, device):
                 metric.add(loss*X.shape[0], cal_correct(y_hat, y),X.shape[0])
             timer.stop()
             
-            train_loss = metric[0] / metric[2]
-            train_acc = metric[1] / metric[2]
+        train_loss = metric[0] / metric[2]
+        train_acc = metric[1] / metric[2]
         test_acc = evaluate_accuracy(net, test_iter)
         print(f'loss{train_loss:.3f}, train acc{train_acc:.3f}, '
             f'test acc {test_acc:.3f}')
