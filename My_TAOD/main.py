@@ -24,6 +24,8 @@ def main(config):
     if not os.path.exists(config.result_dir):
         os.makedirs(config.result_dir)
 
+    train_iter_loader = None
+    test_iter_loader = None
     # Data loader           
     if config.dataset in ['NEU_CLS']:
         train_iter_loader, test_iter_loader = get_loader(config.batch_size, config.dataset, config.mode, config.num_workers, config.tt_rate)
