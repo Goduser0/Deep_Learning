@@ -8,15 +8,25 @@ import pandas as pd
 import torchvision.transforms as T
 
 
-def bmp_to_ndarray(file_path):
+def bmp2ndarray(file_path):
     """将BMP文件转为ndarray"""
     img = Image.open(file_path).convert('L')
     img_array = np.array(img)
     return img_array
 
+def jpeg2jpg(path_in, path_out):
+    img = Image.open(path_in)
+    img.save(path_out, "JPG", optimize=True, progressive=True)
+    
+def bmp2jpg(path_in, path_out):
+    img = Image.open(path_in)
+    img.save(path_out, "JPG", optimize=True, progressive=True)
+
 
 class NEU_CLS(data.Dataset):
-    def __init__(self, root_dir, transform=None, target_transform=None):
+    """Dataset class for NEU_CLS"""
+    
+    def __init__(self, root_dir='./My_Datasets/Classification/NEU-CLS', transform=None, target_transform=None):
         self.root_dir = root_dir
         self.transform = transform
         self.target_transform = target_transform
@@ -49,7 +59,7 @@ class NEU_CLS(data.Dataset):
                 # image_path
                 img_path = os.path.join(self.root_dir, filename)
                 # image(ndarray)
-                img = bmp_to_ndarray(img_path)
+                img = bmp2ndarray(img_path)
                 # image_class
                 img_class = filename_list[0][:2]
                 img_classID = filename_list[0][3:]
@@ -60,28 +70,32 @@ class NEU_CLS(data.Dataset):
         return pd.DataFrame(sample_list, columns=['Image_Content', 'Image_Class', 'Image_Filename', 'Image_Path', 'Image_ClassID'])
 
 
-trans = T.ToTensor()
-# iamge_size[1, 200, 200]
-My_NEUCLS = NEU_CLS('./My_Datasets/Classification/NEU-CLS', transform=trans)
-# My_NEUCLS.samples.to_csv('My_NEUCLS.csv')
-
-def get_loader(image_dir, attr):
-    pass
-
-
-from ResNet import net
-
-batch_size = 128
-lr = 0.05
-num_epochs = 100
-
-train_size = int(0.7*len(My_NEUCLS))
-test_size = len(My_NEUCLS) - train_size
-nue_train, nue_test = data.random_split(My_NEUCLS, [train_size, test_size])
-
-train_iter = data.DataLoader(nue_train, batch_size, shuffle=True)
-test_iter = data.DataLoader(nue_test, batch_size, shuffle=False)
-
-from train import train
-
-train(net, train_iter, test_iter, num_epochs, lr, torch.device('cuda:1'))
+def get_loader(batch_size, dataset, mode, num_workers, tt_rate):
+    
+    trans = []
+    trans.append(T.ToTensor())
+    trans = T.Compose(trans)
+    
+    if dataset == 'NEU_CLS':
+        dataset = NEU_CLS(transform=trans)
+        
+        train_size = int(tt_rate*len(dataset))
+        test_size = len(dataset) - train_size
+        dataset_train, dataset_test = data.random_split(dataset, [train_size, test_size]) # type: ignore
+        
+        
+    train_iter_loader = data.DataLoader(
+        dataset=dataset_train, # type: ignore
+        batch_size=batch_size,
+        shuffle=True,
+        num_workers=num_workers,
+        )
+    
+    test_iter_loader = data.DataLoader(
+        dataset=dataset_test, # type: ignore
+        batch_size=batch_size,
+        shuffle=False,
+        num_workers=num_workers,
+        )
+    
+    return train_iter_loader, test_iter_loader

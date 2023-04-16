@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import time
 from tqdm import tqdm
 
-class Accumulator:
+class Accumulator(object):
     """累加器"""
     def __init__(self, n):
         # 创建len=n的list
@@ -28,7 +28,7 @@ class Accumulator:
     def __getitem__(self, idx):
         return self.data[idx]
 
-class Timer():
+class Timer(object):
     """计时器"""
     def __init__(self):
         self.times=[]
@@ -82,13 +82,14 @@ def evaluate_accuracy(net, data_iter, device=None):
             y = y.to(device)
             metric.add(cal_correct(net(X), y), size(y))
     return metric[0] / metric[1]
-    
-def train(net, train_iter, test_iter, num_epochs, lr, device):
+
+def trainer(net, train_iter, test_iter, num_epochs, lr, device):
     def init_weights(m):
         if type(m) == torch.nn.Linear or type(m) == torch.nn.Conv2d:
             torch.nn.init.xavier_uniform_(m.weight)
     net.apply(init_weights)
     
+    device = torch.device(device)
     print('training on', device)
     net.to(device)
     
@@ -96,7 +97,7 @@ def train(net, train_iter, test_iter, num_epochs, lr, device):
     loss_fuction = torch.nn.CrossEntropyLoss()
     
     timer = Timer()
-    for epoch in tqdm(range(num_epochs)):
+    for epoch in range(num_epochs):
         metric = Accumulator(3)
         net.train()
         
@@ -116,7 +117,7 @@ def train(net, train_iter, test_iter, num_epochs, lr, device):
             train_loss = metric[0] / metric[2]
             train_acc = metric[1] / metric[2]
         test_acc = evaluate_accuracy(net, test_iter)
-    print(f'loss{train_loss:.3f}, train acc{train_acc:.3f}, '
-        f'test acc {test_acc:.3f}')
-    print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec'
-        f'on {str(device)}')
+        print(f'loss{train_loss:.3f}, train acc{train_acc:.3f}, '
+            f'test acc {test_acc:.3f}')
+        print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec'
+            f'on {str(device)}')

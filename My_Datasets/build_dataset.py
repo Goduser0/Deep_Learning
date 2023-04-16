@@ -105,8 +105,8 @@ def build_elpv_dataset():
     
     infomations = read_csv(labels_path, names=["0"])
     for i in tqdm(range(len(infomations))):
-        info = infomations.iloc[i, 0].split()
-        img_path = os.path.join(root, info[0])
+        info = infomations.iloc[i, 0].split() # type: ignore
+        img_path = os.path.join(root, info[0]) # type: ignore
         target = info[-1]
         if target == labels[0]:
             # copy to mono

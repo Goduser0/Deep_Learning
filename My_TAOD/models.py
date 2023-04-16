@@ -52,7 +52,7 @@ b3 = nn.Sequential(*resnet_block(64, 128, 2))
 b4 = nn.Sequential(*resnet_block(128, 256, 2))
 b5 = nn.Sequential(*resnet_block(256, 512, 2))
 
-net = nn.Sequential(
+Resnet18 = nn.Sequential(
     b1, b2, b3, b4, b5,
     nn.AdaptiveAvgPool2d((1, 1)),
     nn.Flatten(),
