@@ -62,7 +62,7 @@ class NEU_CLS(data.Dataset):
 
 trans = T.ToTensor()
 # iamge_size[1, 200, 200]
-My_NEUCLS = NEU_CLS('./My_Datasets/NEU_CLS', transform=trans)
+My_NEUCLS = NEU_CLS('./My_Datasets/Classification/NEU-CLS', transform=trans)
 # My_NEUCLS.samples.to_csv('My_NEUCLS.csv')
 
 def get_loader(image_dir, attr):

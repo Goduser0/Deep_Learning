@@ -9,6 +9,7 @@ import torchvision.transforms as transforms
 from d2l import torch as d2l
 import matplotlib.pyplot as plt
 import time
+from tqdm import tqdm
 
 class Accumulator:
     """累加器"""
@@ -95,7 +96,7 @@ def train(net, train_iter, test_iter, num_epochs, lr, device):
     loss_fuction = torch.nn.CrossEntropyLoss()
     
     timer = Timer()
-    for epoch in range(num_epochs):
+    for epoch in tqdm(range(num_epochs)):
         metric = Accumulator(3)
         net.train()
         
@@ -115,7 +116,7 @@ def train(net, train_iter, test_iter, num_epochs, lr, device):
             train_loss = metric[0] / metric[2]
             train_acc = metric[1] / metric[2]
         test_acc = evaluate_accuracy(net, test_iter)
-        print(f'loss{train_loss:.3f}, train acc{train_acc:.3f}, '
-            f'test acc {test_acc:.3f}')
-        print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec'
-            f'on {str(device)}')
+    print(f'loss{train_loss:.3f}, train acc{train_acc:.3f}, '
+        f'test acc {test_acc:.3f}')
+    print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec'
+        f'on {str(device)}')
