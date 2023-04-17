@@ -23,6 +23,7 @@ def bmp2jpg(path_in, path_out):
     img.save(path_out, "JPG", optimize=True, progressive=True)
 
 
+# DATASET CLASS: NEU_CLS
 class NEU_CLS(data.Dataset):
     """Dataset class for NEU_CLS"""
     
@@ -69,7 +70,11 @@ class NEU_CLS(data.Dataset):
                 continue
         return pd.DataFrame(sample_list, columns=['Image_Content', 'Image_Class', 'Image_Filename', 'Image_Path', 'Image_ClassID'])
 
+# DATASET: add other dataset
 
+
+
+# FUNCTION: get_loader
 def get_loader(batch_size, dataset, mode, num_workers, tt_rate):
     
     trans = []

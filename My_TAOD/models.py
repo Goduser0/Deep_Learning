@@ -59,10 +59,5 @@ Resnet18 = nn.Sequential(
     nn.Linear(512, 6),
 )
 
-# X = torch.rand(size=(1, 1, 200, 200))
-# for layer in net:
-#     X = layer(X)
-#     print(f'{layer.__class__.__name__} out: \t {X.shape}')
-
-
-        
+# Add other Nets
+      

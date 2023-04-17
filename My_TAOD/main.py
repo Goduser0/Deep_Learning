@@ -4,6 +4,7 @@ from torch.backends import cudnn
 from data_loader import get_loader
 from train import trainer
 from models import Resnet18
+from logger import logger
 
 # torch.backends.cudnn:提供对Nvidia cuDNN的支持，可加速深度学习模型在GPU上的计算速度
 
@@ -33,6 +34,7 @@ def main(config):
     if config.mode == 'train':
         if config.dataset in ['NEU_CLS']:
             trainer(Resnet18, train_iter_loader, test_iter_loader, config.epochs, config.lr, config.device)
+    
         
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -59,9 +61,11 @@ if __name__ == '__main__':
     parser.add_argument('--sample_dir', type=str, default='./My_TAOD/samples')
     parser.add_argument('--result_dir', type=str, default='./My_TAOD/results')
     
+    # Logger
+    parser.add_argument('--log', type=bool, default=True)
+    
     config = parser.parse_args()
     print(config)
     
     main(config)
-    
-    
+    logger(config)
