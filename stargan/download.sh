@@ -1,4 +1,4 @@
-FILE=$1
+FILE="celeba"
 
 if [ $FILE == "celeba" ]; then
 
