@@ -10,11 +10,11 @@ input_shape = (1, 28, 28)
 
 # 加载数据
 transform = transforms.Compose([transforms.ToTensor()])
-trainset = torchvision.datasets.MNIST(root='./data', train=True, download=True, transform=transform)
-trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True)
+trainset = torchvision.datasets.MNIST(root='./My_Datasets/study', train=True, download=True, transform=transform)
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True)  # type: ignore
 
-testset = torchvision.datasets.MNIST(root='./data', train=False, download=True, transform=transform)
-testloader = torch.utils.data.DataLoader(testset, batch_size=128, shuffle=False)
+testset = torchvision.datasets.MNIST(root='./My_Datasets/study', train=False, download=True, transform=transform)
+testloader = torch.utils.data.DataLoader(testset, batch_size=128, shuffle=False) # type: ignore
 
 # 定义编码器
 class Encoder(nn.Module):
