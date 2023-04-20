@@ -25,9 +25,12 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 
 # 训练模型
-def train(model, train_loader, criterion, optimizer):
+def train(model, train_loader, criterion, optimizer, device=torch.device('cuda:0')):
+    model.to(device)
     model.train()
     for inputs, labels in train_loader:
+        inputs = inputs.to(device)
+        labels = labels.to(device)
         optimizer.zero_grad()
         outputs = model(inputs)
         loss = criterion(outputs, labels)
@@ -35,12 +38,15 @@ def train(model, train_loader, criterion, optimizer):
         optimizer.step()
 
 # 测试模型
-def test(model, test_loader, criterion):
+def test(model, test_loader, criterion, device=torch.device('cuda:0')):
+    model.to(device)
     model.eval()
     with torch.no_grad():
         total_loss = 0.0
         total_corrects = 0
         for inputs, labels in test_loader:
+            inputs = inputs.to(device)
+            labels = labels.to(device)
             outputs = model(inputs)
             loss = criterion(outputs, labels)
             _, preds = torch.max(outputs, 1)
