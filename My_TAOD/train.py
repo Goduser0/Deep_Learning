@@ -117,7 +117,8 @@ def trainer(net, train_iter, test_iter, num_epochs, lr, device):
         train_loss = metric[0] / metric[2]
         train_acc = metric[1] / metric[2]
         test_acc = evaluate_accuracy(net, test_iter)
+        print(f'epoch{epoch+1}:')
         print(f'loss{train_loss:.3f}, train acc{train_acc:.3f}, '
             f'test acc {test_acc:.3f}')
-        print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec'
+        print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec '
             f'on {str(device)}')

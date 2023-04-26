@@ -88,6 +88,8 @@ def get_loader(batch_size, dataset, mode, num_workers, tt_rate):
         test_size = len(dataset) - train_size
         dataset_train, dataset_test = data.random_split(dataset, [train_size, test_size]) # type: ignore
         
+    elif dataset == '':
+        pass
         
     train_iter_loader = data.DataLoader(
         dataset=dataset_train, # type: ignore
@@ -102,5 +104,5 @@ def get_loader(batch_size, dataset, mode, num_workers, tt_rate):
         shuffle=False,
         num_workers=num_workers,
         )
-    
+
     return train_iter_loader, test_iter_loader

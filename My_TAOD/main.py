@@ -46,11 +46,11 @@ if __name__ == '__main__':
     parser.add_argument('--dataset', type=str, default='NEU_CLS', choices=['NEU_CLS'], help="Choose datasets")
     parser.add_argument('--batch_size', type=int, default=16, help='Mini-batch size')
     parser.add_argument('--lr', type=float, default=0.0001, help='Learning rate for training')
-    parser.add_argument('--epochs', type=int, default=50, help="Training epochs")
+    parser.add_argument('--epochs', type=int, default=10, help="Training epochs")
     parser.add_argument('--tt_rate', type=float, default=0.7, help="Ratio of training set")
     
     # Others Configuration
-    parser.add_argument('--device', type=str, default='cuda:0')
+    parser.add_argument('--device', type=str, default='cuda:1')
     parser.add_argument('--num_workers', type=int, default=1)
     parser.add_argument('--mode', type=str, default='train', choices=['train', 'test'])
     parser.add_argument('--use_tensorboard', type=str2bool, default=True)

@@ -78,8 +78,8 @@ class Solver(object):
             self.G = Generator(self.g_conv_dim, self.c_dim+self.c2_dim+2, self.g_repeat_num)   # 2 for mask vector.
             self.D = Discriminator(self.image_size, self.d_conv_dim, self.c_dim+self.c2_dim, self.d_repeat_num)
 
-        self.g_optimizer = torch.optim.Adam(self.G.parameters(), self.g_lr, [self.beta1, self.beta2])
-        self.d_optimizer = torch.optim.Adam(self.D.parameters(), self.d_lr, [self.beta1, self.beta2])
+        self.g_optimizer = torch.optim.Adam(self.G.parameters(), self.g_lr, [self.beta1, self.beta2]) # type: ignore
+        self.d_optimizer = torch.optim.Adam(self.D.parameters(), self.d_lr, [self.beta1, self.beta2]) # type: ignore
         self.print_network(self.G, 'G')
         self.print_network(self.D, 'D')
             
@@ -151,7 +151,7 @@ class Solver(object):
         # Get hair color indices.
         if dataset == 'CelebA':
             hair_color_indices = []
-            for i, attr_name in enumerate(selected_attrs):
+            for i, attr_name in enumerate(selected_attrs): # type: ignore
                 if attr_name in ['Black_Hair', 'Blond_Hair', 'Brown_Hair', 'Gray_Hair']:
                     hair_color_indices.append(i)
 
@@ -159,9 +159,9 @@ class Solver(object):
         for i in range(c_dim):
             if dataset == 'CelebA':
                 c_trg = c_org.clone()
-                if i in hair_color_indices:  # Set one hair color to 1 and the rest to 0.
+                if i in hair_color_indices:  # Set one hair color to 1 and the rest to 0. # type: ignore
                     c_trg[:, i] = 1
-                    for j in hair_color_indices:
+                    for j in hair_color_indices: # type: ignore
                         if j != i:
                             c_trg[:, j] = 0
                 else:
