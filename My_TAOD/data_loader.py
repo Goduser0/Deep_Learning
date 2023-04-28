@@ -1,5 +1,6 @@
 import torch
 import torchvision
+import random
 from torch.utils import data
 from PIL import Image
 import numpy as np
@@ -70,12 +71,57 @@ class NEU_CLS(data.Dataset):
                 continue
         return pd.DataFrame(sample_list, columns=['Image_Content', 'Image_Class', 'Image_Filename', 'Image_Path', 'Image_ClassID'])
 
+# DATASET: elpv
+class elpv(data.Dataset):
+    """Dataset class for elpv"""
+    
+    def __init__(self, root_dir='./My_Datasets/Classification/elpv-dataset-master', transform=None, target_transform=None):
+        self.root_dir = root_dir
+        self.transform = transform
+        self.target_transform = target_transform
+        
+        self.label_path = root_dir+'/labels.csv'
+        self.labels = ["mono", "poly"]
+        self.informations = pd.read_csv(self.label_path)
+        self.samples = self.load_samples()
+        
+    def len(self):
+        return len(self.samples)
+    
+    def __getitem__(self, idx):
+        img = self.samples.loc[idx, 'Image_Content']
+        prob = self.samples.loc[idx, 'probs']
+        type = self.samples.loc[idx, 'types']
+        if self.transform:
+            img = self.transform(img)
+        return img, prob, type
+        
+    def load_samples(self):
+        data = np.genfromtxt(self.label_path, dtype=['|S19', '<f8', '|S4'], names=['path', 'probability', 'type'])
+        image_fnames = np.char.decode(data['path'])
+        probs = data['probability']
+        types = np.char.decode(data['type'])
+        
+        def load_cell_image(fname):
+            with Image.open(fname) as image:
+                return np.asarray(image)
+        
+        dir = os.path.dirname(self.label_path)
+        images = np.array([load_cell_image(os.path.join(dir, fn)) for fn in image_fnames])
+
+        
+        sample_list = zip(images, probs, types, image_fnames)
+        return pd.DataFrame(sample_list, columns=['Image_Content', 'probs', 'types', 'filename'])
+
+# DATASET:DeepPCB
+
+# DATASET:PKUPCB
+
 # DATASET: add other dataset
 
 
-
 # FUNCTION: get_loader
-def get_loader(batch_size, dataset, mode, num_workers, tt_rate):
+def get_loader(batch_size, dataset, mode, num_workers, tt_rate=0.5):
     
     trans = []
     trans.append(T.ToTensor())
