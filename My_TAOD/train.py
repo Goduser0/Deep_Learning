@@ -10,6 +10,7 @@ from d2l import torch as d2l
 import matplotlib.pyplot as plt
 import time
 from tqdm import tqdm
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
 class Accumulator(object):
     """累加器"""
@@ -83,6 +84,9 @@ def evaluate_accuracy(net, data_iter, device=None):
             metric.add(cal_correct(net(X), y), size(y))
     return metric[0] / metric[1]
 
+###########################################################################################################
+# FUNCTION: trainer()
+###########################################################################################################
 def trainer(net, train_iter, test_iter, num_epochs, lr, device):
     def init_weights(m):
         if type(m) == torch.nn.Linear or type(m) == torch.nn.Conv2d:

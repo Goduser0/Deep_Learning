@@ -1,7 +1,7 @@
 import os
 import argparse
 from torch.backends import cudnn
-from data_loader import get_loader
+from dataset_loader import get_loader
 from train import trainer
 from models import Resnet18
 from logger import logger
@@ -28,11 +28,12 @@ def main(config):
     train_iter_loader = None
     test_iter_loader = None
     # Data loader           
-    if config.dataset in ['NEU_CLS']:
-        train_iter_loader, test_iter_loader = get_loader(config.batch_size, config.dataset, config.mode, config.num_workers, config.tt_rate)
-
+    if config.dataset_class in ['NEU_CLS', 'elpv']:
+        train_iter_loader = get_loader(config.dataset_class, config.dataset_train_dir, config.train_batch_size, config.num_workers, shuffle=True)
+        test_iter_loader = get_loader(config.dataset_class, config.dataset_test_dir, config.test_batch_size, config.num_workers, shuffle=False)
+        
     if config.mode == 'train':
-        if config.dataset in ['NEU_CLS']:
+        if config.dataset_class in ['NEU_CLS', 'elpv']:
             trainer(Resnet18, train_iter_loader, test_iter_loader, config.epochs, config.lr, config.device)
     
         
@@ -43,11 +44,13 @@ if __name__ == '__main__':
     parser.add_argument('--net', type=str, default='Resnet18', choices=['Resnet18'])
     
     # Training Configuration
-    parser.add_argument('--dataset', type=str, default='NEU_CLS', choices=['NEU_CLS'], help="Choose datasets")
-    parser.add_argument('--batch_size', type=int, default=16, help='Mini-batch size')
+    parser.add_argument('--dataset_class', type=str, default='NEU_CLS', choices=['NEU_CLS', 'elpv'], help="Choose datasets")
+    parser.add_argument('--dataset_train_dir', default='/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/elpv/30-shot/train.csv', type=str)
+    parser.add_argument('--dataset_test_dir', default='/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/elpv/30-shot/test.csv', type=str)
+    parser.add_argument('--train_batch_size', type=int, default=16, help='Mini-batch size')
+    parser.add_argument('--test_batch_size', type=int, default=16, help='Mini-batch size')
     parser.add_argument('--lr', type=float, default=0.0001, help='Learning rate for training')
-    parser.add_argument('--epochs', type=int, default=10, help="Training epochs")
-    parser.add_argument('--tt_rate', type=float, default=0.7, help="Ratio of training set")
+    parser.add_argument('--epochs', type=int, default=20, help="Training epochs")
     
     # Others Configuration
     parser.add_argument('--device', type=str, default='cuda:1')

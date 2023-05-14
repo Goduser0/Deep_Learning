@@ -1,0 +1,1 @@
+Namespace(net='Resnet18', dataset='NEU_CLS', batch_size=16, lr=0.0001, epochs=5, tt_rate=0.7, device='cuda:1', num_workers=1, mode='train', use_tensorboard=True, log_dir='./My_TAOD/logs', model_save_dir='./My_TAOD/models', sample_dir='./My_TAOD/samples', result_dir='./My_TAOD/results', log=True)

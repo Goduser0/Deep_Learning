@@ -1,0 +1,5 @@
+,Image_Label,probs,types,Image_Path
+451,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0452.png
+1318,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1319.png
+1301,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1302.png
+1242,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1243.png
