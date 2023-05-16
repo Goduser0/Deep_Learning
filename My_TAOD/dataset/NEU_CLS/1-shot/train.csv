@@ -1,7 +1,7 @@
 ,Image_Label,Image_Class,Image_Path
-1292,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_264.bmp
-303,1,PS,./My_Datasets/Classification/NEU-CLS/PS_252.bmp
-81,2,In,./My_Datasets/Classification/NEU-CLS/In_290.bmp
-1285,3,RS,./My_Datasets/Classification/NEU-CLS/RS_137.bmp
-463,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_117.bmp
-1097,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_86.bmp
+865,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_100.bmp
+1411,1,PS,./My_Datasets/Classification/NEU-CLS/PS_74.bmp
+1687,2,In,./My_Datasets/Classification/NEU-CLS/In_259.bmp
+294,3,RS,./My_Datasets/Classification/NEU-CLS/RS_61.bmp
+1474,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_160.bmp
+374,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_169.bmp

@@ -1,6 +1,5 @@
 ,Image_Label,Image_Class,Image_Path
 0,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_113.bmp
-3,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_252.bmp
 6,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_169.bmp
 12,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_119.bmp
 16,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_104.bmp
@@ -8,7 +7,7 @@
 45,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_249.bmp
 50,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_235.bmp
 51,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_7.bmp
-54,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_85.bmp
+60,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_3.bmp
 61,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_180.bmp
 68,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_57.bmp
 70,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_68.bmp
@@ -22,6 +21,7 @@
 126,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_60.bmp
 127,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_122.bmp
 130,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_86.bmp
+142,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_106.bmp
 145,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_63.bmp
 153,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_277.bmp
 157,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_234.bmp
@@ -69,7 +69,6 @@
 408,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_129.bmp
 412,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_261.bmp
 420,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_47.bmp
-421,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_203.bmp
 424,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_266.bmp
 429,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_202.bmp
 431,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_222.bmp
@@ -80,7 +79,6 @@
 481,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_55.bmp
 483,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_178.bmp
 491,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_158.bmp
-495,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_282.bmp
 515,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_193.bmp
 519,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_111.bmp
 522,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_112.bmp
@@ -90,10 +88,10 @@
 540,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_262.bmp
 541,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_258.bmp
 544,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_80.bmp
+549,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_238.bmp
 569,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_98.bmp
 593,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_279.bmp
 597,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_241.bmp
-598,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_103.bmp
 602,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_84.bmp
 604,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_13.bmp
 611,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_71.bmp
@@ -115,7 +113,6 @@
 705,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_133.bmp
 706,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_161.bmp
 708,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_78.bmp
-711,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_12.bmp
 714,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_290.bmp
 717,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_216.bmp
 718,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_187.bmp
@@ -147,6 +144,7 @@
 865,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_100.bmp
 870,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_297.bmp
 873,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_67.bmp
+874,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_155.bmp
 877,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_16.bmp
 878,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_284.bmp
 884,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_59.bmp
@@ -162,7 +160,6 @@
 960,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_230.bmp
 977,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_206.bmp
 980,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_70.bmp
-981,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_168.bmp
 986,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_224.bmp
 991,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_88.bmp
 995,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_197.bmp
@@ -171,7 +168,6 @@
 1017,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_108.bmp
 1026,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_14.bmp
 1032,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_144.bmp
-1035,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_256.bmp
 1039,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_200.bmp
 1041,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_299.bmp
 1047,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_83.bmp
@@ -186,21 +182,21 @@
 1101,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_243.bmp
 1105,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_276.bmp
 1113,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_170.bmp
-1116,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_231.bmp
 1119,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_191.bmp
+1123,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_293.bmp
 1131,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_28.bmp
 1136,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_220.bmp
 1141,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_291.bmp
 1144,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_186.bmp
 1145,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_40.bmp
 1148,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_274.bmp
-1152,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_246.bmp
 1153,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_117.bmp
 1162,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_136.bmp
 1172,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_217.bmp
 1185,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_195.bmp
 1186,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_75.bmp
 1203,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_64.bmp
+1204,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_209.bmp
 1209,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_236.bmp
 1226,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_128.bmp
 1230,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_89.bmp
@@ -228,6 +224,7 @@
 1366,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_37.bmp
 1374,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_265.bmp
 1382,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_242.bmp
+1384,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_179.bmp
 1390,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_46.bmp
 1399,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_255.bmp
 1401,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_137.bmp
@@ -240,6 +237,7 @@
 1449,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_139.bmp
 1454,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_164.bmp
 1457,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_25.bmp
+1466,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_165.bmp
 1481,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_38.bmp
 1496,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_69.bmp
 1508,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_92.bmp
@@ -278,10 +276,12 @@
 1677,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_292.bmp
 1680,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_1.bmp
 1685,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_296.bmp
+1700,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_211.bmp
 1707,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_79.bmp
 1709,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_24.bmp
 1710,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_140.bmp
 1712,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_31.bmp
+1733,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_208.bmp
 1735,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_273.bmp
 1752,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_23.bmp
 1765,0,Cr,./My_Datasets/Classification/NEU-CLS/Cr_77.bmp
@@ -313,18 +313,16 @@
 139,1,PS,./My_Datasets/Classification/NEU-CLS/PS_174.bmp
 140,1,PS,./My_Datasets/Classification/NEU-CLS/PS_112.bmp
 161,1,PS,./My_Datasets/Classification/NEU-CLS/PS_269.bmp
-168,1,PS,./My_Datasets/Classification/NEU-CLS/PS_46.bmp
+190,1,PS,./My_Datasets/Classification/NEU-CLS/PS_160.bmp
 214,1,PS,./My_Datasets/Classification/NEU-CLS/PS_12.bmp
 216,1,PS,./My_Datasets/Classification/NEU-CLS/PS_110.bmp
 230,1,PS,./My_Datasets/Classification/NEU-CLS/PS_34.bmp
 236,1,PS,./My_Datasets/Classification/NEU-CLS/PS_167.bmp
 245,1,PS,./My_Datasets/Classification/NEU-CLS/PS_33.bmp
 255,1,PS,./My_Datasets/Classification/NEU-CLS/PS_271.bmp
-258,1,PS,./My_Datasets/Classification/NEU-CLS/PS_115.bmp
 259,1,PS,./My_Datasets/Classification/NEU-CLS/PS_287.bmp
-261,1,PS,./My_Datasets/Classification/NEU-CLS/PS_28.bmp
+265,1,PS,./My_Datasets/Classification/NEU-CLS/PS_68.bmp
 267,1,PS,./My_Datasets/Classification/NEU-CLS/PS_1.bmp
-280,1,PS,./My_Datasets/Classification/NEU-CLS/PS_193.bmp
 295,1,PS,./My_Datasets/Classification/NEU-CLS/PS_14.bmp
 303,1,PS,./My_Datasets/Classification/NEU-CLS/PS_252.bmp
 309,1,PS,./My_Datasets/Classification/NEU-CLS/PS_117.bmp
@@ -344,11 +342,11 @@
 414,1,PS,./My_Datasets/Classification/NEU-CLS/PS_176.bmp
 417,1,PS,./My_Datasets/Classification/NEU-CLS/PS_90.bmp
 419,1,PS,./My_Datasets/Classification/NEU-CLS/PS_261.bmp
+428,1,PS,./My_Datasets/Classification/NEU-CLS/PS_24.bmp
 435,1,PS,./My_Datasets/Classification/NEU-CLS/PS_67.bmp
 436,1,PS,./My_Datasets/Classification/NEU-CLS/PS_60.bmp
 439,1,PS,./My_Datasets/Classification/NEU-CLS/PS_214.bmp
 442,1,PS,./My_Datasets/Classification/NEU-CLS/PS_180.bmp
-444,1,PS,./My_Datasets/Classification/NEU-CLS/PS_61.bmp
 461,1,PS,./My_Datasets/Classification/NEU-CLS/PS_270.bmp
 466,1,PS,./My_Datasets/Classification/NEU-CLS/PS_142.bmp
 479,1,PS,./My_Datasets/Classification/NEU-CLS/PS_101.bmp
@@ -359,6 +357,7 @@
 518,1,PS,./My_Datasets/Classification/NEU-CLS/PS_45.bmp
 539,1,PS,./My_Datasets/Classification/NEU-CLS/PS_205.bmp
 547,1,PS,./My_Datasets/Classification/NEU-CLS/PS_50.bmp
+550,1,PS,./My_Datasets/Classification/NEU-CLS/PS_266.bmp
 552,1,PS,./My_Datasets/Classification/NEU-CLS/PS_102.bmp
 557,1,PS,./My_Datasets/Classification/NEU-CLS/PS_89.bmp
 559,1,PS,./My_Datasets/Classification/NEU-CLS/PS_185.bmp
@@ -374,6 +373,7 @@
 612,1,PS,./My_Datasets/Classification/NEU-CLS/PS_86.bmp
 614,1,PS,./My_Datasets/Classification/NEU-CLS/PS_196.bmp
 616,1,PS,./My_Datasets/Classification/NEU-CLS/PS_123.bmp
+619,1,PS,./My_Datasets/Classification/NEU-CLS/PS_288.bmp
 620,1,PS,./My_Datasets/Classification/NEU-CLS/PS_226.bmp
 623,1,PS,./My_Datasets/Classification/NEU-CLS/PS_159.bmp
 626,1,PS,./My_Datasets/Classification/NEU-CLS/PS_179.bmp
@@ -383,17 +383,16 @@
 646,1,PS,./My_Datasets/Classification/NEU-CLS/PS_293.bmp
 653,1,PS,./My_Datasets/Classification/NEU-CLS/PS_69.bmp
 662,1,PS,./My_Datasets/Classification/NEU-CLS/PS_282.bmp
-667,1,PS,./My_Datasets/Classification/NEU-CLS/PS_37.bmp
 682,1,PS,./My_Datasets/Classification/NEU-CLS/PS_265.bmp
 686,1,PS,./My_Datasets/Classification/NEU-CLS/PS_77.bmp
 687,1,PS,./My_Datasets/Classification/NEU-CLS/PS_236.bmp
 696,1,PS,./My_Datasets/Classification/NEU-CLS/PS_39.bmp
 702,1,PS,./My_Datasets/Classification/NEU-CLS/PS_80.bmp
 710,1,PS,./My_Datasets/Classification/NEU-CLS/PS_83.bmp
-716,1,PS,./My_Datasets/Classification/NEU-CLS/PS_195.bmp
 720,1,PS,./My_Datasets/Classification/NEU-CLS/PS_106.bmp
 726,1,PS,./My_Datasets/Classification/NEU-CLS/PS_146.bmp
 729,1,PS,./My_Datasets/Classification/NEU-CLS/PS_54.bmp
+731,1,PS,./My_Datasets/Classification/NEU-CLS/PS_175.bmp
 741,1,PS,./My_Datasets/Classification/NEU-CLS/PS_279.bmp
 749,1,PS,./My_Datasets/Classification/NEU-CLS/PS_191.bmp
 750,1,PS,./My_Datasets/Classification/NEU-CLS/PS_158.bmp
@@ -409,6 +408,7 @@
 795,1,PS,./My_Datasets/Classification/NEU-CLS/PS_153.bmp
 796,1,PS,./My_Datasets/Classification/NEU-CLS/PS_139.bmp
 799,1,PS,./My_Datasets/Classification/NEU-CLS/PS_227.bmp
+806,1,PS,./My_Datasets/Classification/NEU-CLS/PS_73.bmp
 807,1,PS,./My_Datasets/Classification/NEU-CLS/PS_78.bmp
 816,1,PS,./My_Datasets/Classification/NEU-CLS/PS_134.bmp
 826,1,PS,./My_Datasets/Classification/NEU-CLS/PS_255.bmp
@@ -422,7 +422,6 @@
 861,1,PS,./My_Datasets/Classification/NEU-CLS/PS_186.bmp
 866,1,PS,./My_Datasets/Classification/NEU-CLS/PS_155.bmp
 867,1,PS,./My_Datasets/Classification/NEU-CLS/PS_197.bmp
-893,1,PS,./My_Datasets/Classification/NEU-CLS/PS_20.bmp
 895,1,PS,./My_Datasets/Classification/NEU-CLS/PS_108.bmp
 899,1,PS,./My_Datasets/Classification/NEU-CLS/PS_207.bmp
 901,1,PS,./My_Datasets/Classification/NEU-CLS/PS_222.bmp
@@ -460,6 +459,7 @@
 1109,1,PS,./My_Datasets/Classification/NEU-CLS/PS_103.bmp
 1111,1,PS,./My_Datasets/Classification/NEU-CLS/PS_36.bmp
 1117,1,PS,./My_Datasets/Classification/NEU-CLS/PS_55.bmp
+1120,1,PS,./My_Datasets/Classification/NEU-CLS/PS_4.bmp
 1125,1,PS,./My_Datasets/Classification/NEU-CLS/PS_111.bmp
 1126,1,PS,./My_Datasets/Classification/NEU-CLS/PS_53.bmp
 1138,1,PS,./My_Datasets/Classification/NEU-CLS/PS_18.bmp
@@ -477,7 +477,6 @@
 1197,1,PS,./My_Datasets/Classification/NEU-CLS/PS_246.bmp
 1213,1,PS,./My_Datasets/Classification/NEU-CLS/PS_6.bmp
 1215,1,PS,./My_Datasets/Classification/NEU-CLS/PS_133.bmp
-1219,1,PS,./My_Datasets/Classification/NEU-CLS/PS_38.bmp
 1223,1,PS,./My_Datasets/Classification/NEU-CLS/PS_184.bmp
 1228,1,PS,./My_Datasets/Classification/NEU-CLS/PS_66.bmp
 1236,1,PS,./My_Datasets/Classification/NEU-CLS/PS_95.bmp
@@ -488,6 +487,7 @@
 1256,1,PS,./My_Datasets/Classification/NEU-CLS/PS_237.bmp
 1282,1,PS,./My_Datasets/Classification/NEU-CLS/PS_91.bmp
 1286,1,PS,./My_Datasets/Classification/NEU-CLS/PS_19.bmp
+1298,1,PS,./My_Datasets/Classification/NEU-CLS/PS_235.bmp
 1300,1,PS,./My_Datasets/Classification/NEU-CLS/PS_2.bmp
 1303,1,PS,./My_Datasets/Classification/NEU-CLS/PS_118.bmp
 1311,1,PS,./My_Datasets/Classification/NEU-CLS/PS_100.bmp
@@ -499,6 +499,7 @@
 1333,1,PS,./My_Datasets/Classification/NEU-CLS/PS_294.bmp
 1341,1,PS,./My_Datasets/Classification/NEU-CLS/PS_22.bmp
 1346,1,PS,./My_Datasets/Classification/NEU-CLS/PS_9.bmp
+1350,1,PS,./My_Datasets/Classification/NEU-CLS/PS_148.bmp
 1356,1,PS,./My_Datasets/Classification/NEU-CLS/PS_213.bmp
 1358,1,PS,./My_Datasets/Classification/NEU-CLS/PS_178.bmp
 1372,1,PS,./My_Datasets/Classification/NEU-CLS/PS_284.bmp
@@ -510,7 +511,6 @@
 1404,1,PS,./My_Datasets/Classification/NEU-CLS/PS_200.bmp
 1410,1,PS,./My_Datasets/Classification/NEU-CLS/PS_94.bmp
 1411,1,PS,./My_Datasets/Classification/NEU-CLS/PS_74.bmp
-1416,1,PS,./My_Datasets/Classification/NEU-CLS/PS_62.bmp
 1417,1,PS,./My_Datasets/Classification/NEU-CLS/PS_232.bmp
 1420,1,PS,./My_Datasets/Classification/NEU-CLS/PS_140.bmp
 1427,1,PS,./My_Datasets/Classification/NEU-CLS/PS_26.bmp
@@ -591,10 +591,8 @@
 37,2,In,./My_Datasets/Classification/NEU-CLS/In_274.bmp
 40,2,In,./My_Datasets/Classification/NEU-CLS/In_200.bmp
 49,2,In,./My_Datasets/Classification/NEU-CLS/In_78.bmp
-52,2,In,./My_Datasets/Classification/NEU-CLS/In_235.bmp
 55,2,In,./My_Datasets/Classification/NEU-CLS/In_103.bmp
 64,2,In,./My_Datasets/Classification/NEU-CLS/In_262.bmp
-67,2,In,./My_Datasets/Classification/NEU-CLS/In_298.bmp
 77,2,In,./My_Datasets/Classification/NEU-CLS/In_214.bmp
 78,2,In,./My_Datasets/Classification/NEU-CLS/In_80.bmp
 81,2,In,./My_Datasets/Classification/NEU-CLS/In_290.bmp
@@ -632,6 +630,7 @@
 276,2,In,./My_Datasets/Classification/NEU-CLS/In_47.bmp
 279,2,In,./My_Datasets/Classification/NEU-CLS/In_238.bmp
 281,2,In,./My_Datasets/Classification/NEU-CLS/In_284.bmp
+282,2,In,./My_Datasets/Classification/NEU-CLS/In_271.bmp
 283,2,In,./My_Datasets/Classification/NEU-CLS/In_15.bmp
 287,2,In,./My_Datasets/Classification/NEU-CLS/In_127.bmp
 290,2,In,./My_Datasets/Classification/NEU-CLS/In_219.bmp
@@ -650,10 +649,8 @@
 357,2,In,./My_Datasets/Classification/NEU-CLS/In_43.bmp
 373,2,In,./My_Datasets/Classification/NEU-CLS/In_268.bmp
 384,2,In,./My_Datasets/Classification/NEU-CLS/In_31.bmp
-391,2,In,./My_Datasets/Classification/NEU-CLS/In_17.bmp
 394,2,In,./My_Datasets/Classification/NEU-CLS/In_141.bmp
 395,2,In,./My_Datasets/Classification/NEU-CLS/In_41.bmp
-407,2,In,./My_Datasets/Classification/NEU-CLS/In_244.bmp
 432,2,In,./My_Datasets/Classification/NEU-CLS/In_125.bmp
 443,2,In,./My_Datasets/Classification/NEU-CLS/In_282.bmp
 452,2,In,./My_Datasets/Classification/NEU-CLS/In_252.bmp
@@ -664,16 +661,18 @@
 480,2,In,./My_Datasets/Classification/NEU-CLS/In_263.bmp
 484,2,In,./My_Datasets/Classification/NEU-CLS/In_13.bmp
 497,2,In,./My_Datasets/Classification/NEU-CLS/In_138.bmp
-502,2,In,./My_Datasets/Classification/NEU-CLS/In_73.bmp
 506,2,In,./My_Datasets/Classification/NEU-CLS/In_153.bmp
 512,2,In,./My_Datasets/Classification/NEU-CLS/In_233.bmp
 516,2,In,./My_Datasets/Classification/NEU-CLS/In_162.bmp
 534,2,In,./My_Datasets/Classification/NEU-CLS/In_218.bmp
+535,2,In,./My_Datasets/Classification/NEU-CLS/In_157.bmp
+537,2,In,./My_Datasets/Classification/NEU-CLS/In_265.bmp
 545,2,In,./My_Datasets/Classification/NEU-CLS/In_255.bmp
 548,2,In,./My_Datasets/Classification/NEU-CLS/In_236.bmp
 551,2,In,./My_Datasets/Classification/NEU-CLS/In_113.bmp
 558,2,In,./My_Datasets/Classification/NEU-CLS/In_217.bmp
 561,2,In,./My_Datasets/Classification/NEU-CLS/In_21.bmp
+563,2,In,./My_Datasets/Classification/NEU-CLS/In_275.bmp
 564,2,In,./My_Datasets/Classification/NEU-CLS/In_191.bmp
 567,2,In,./My_Datasets/Classification/NEU-CLS/In_8.bmp
 579,2,In,./My_Datasets/Classification/NEU-CLS/In_194.bmp
@@ -688,7 +687,6 @@
 628,2,In,./My_Datasets/Classification/NEU-CLS/In_24.bmp
 630,2,In,./My_Datasets/Classification/NEU-CLS/In_81.bmp
 643,2,In,./My_Datasets/Classification/NEU-CLS/In_87.bmp
-669,2,In,./My_Datasets/Classification/NEU-CLS/In_114.bmp
 671,2,In,./My_Datasets/Classification/NEU-CLS/In_20.bmp
 681,2,In,./My_Datasets/Classification/NEU-CLS/In_291.bmp
 689,2,In,./My_Datasets/Classification/NEU-CLS/In_161.bmp
@@ -696,11 +694,9 @@
 697,2,In,./My_Datasets/Classification/NEU-CLS/In_60.bmp
 704,2,In,./My_Datasets/Classification/NEU-CLS/In_281.bmp
 724,2,In,./My_Datasets/Classification/NEU-CLS/In_182.bmp
-735,2,In,./My_Datasets/Classification/NEU-CLS/In_204.bmp
 736,2,In,./My_Datasets/Classification/NEU-CLS/In_68.bmp
 739,2,In,./My_Datasets/Classification/NEU-CLS/In_266.bmp
 742,2,In,./My_Datasets/Classification/NEU-CLS/In_44.bmp
-756,2,In,./My_Datasets/Classification/NEU-CLS/In_243.bmp
 758,2,In,./My_Datasets/Classification/NEU-CLS/In_130.bmp
 762,2,In,./My_Datasets/Classification/NEU-CLS/In_85.bmp
 770,2,In,./My_Datasets/Classification/NEU-CLS/In_123.bmp
@@ -714,7 +710,6 @@
 827,2,In,./My_Datasets/Classification/NEU-CLS/In_180.bmp
 835,2,In,./My_Datasets/Classification/NEU-CLS/In_115.bmp
 836,2,In,./My_Datasets/Classification/NEU-CLS/In_42.bmp
-841,2,In,./My_Datasets/Classification/NEU-CLS/In_216.bmp
 842,2,In,./My_Datasets/Classification/NEU-CLS/In_223.bmp
 851,2,In,./My_Datasets/Classification/NEU-CLS/In_64.bmp
 854,2,In,./My_Datasets/Classification/NEU-CLS/In_94.bmp
@@ -732,6 +727,7 @@
 910,2,In,./My_Datasets/Classification/NEU-CLS/In_63.bmp
 930,2,In,./My_Datasets/Classification/NEU-CLS/In_96.bmp
 931,2,In,./My_Datasets/Classification/NEU-CLS/In_287.bmp
+940,2,In,./My_Datasets/Classification/NEU-CLS/In_247.bmp
 941,2,In,./My_Datasets/Classification/NEU-CLS/In_163.bmp
 942,2,In,./My_Datasets/Classification/NEU-CLS/In_201.bmp
 947,2,In,./My_Datasets/Classification/NEU-CLS/In_278.bmp
@@ -747,6 +743,7 @@
 1018,2,In,./My_Datasets/Classification/NEU-CLS/In_136.bmp
 1020,2,In,./My_Datasets/Classification/NEU-CLS/In_89.bmp
 1022,2,In,./My_Datasets/Classification/NEU-CLS/In_245.bmp
+1023,2,In,./My_Datasets/Classification/NEU-CLS/In_294.bmp
 1029,2,In,./My_Datasets/Classification/NEU-CLS/In_299.bmp
 1054,2,In,./My_Datasets/Classification/NEU-CLS/In_52.bmp
 1059,2,In,./My_Datasets/Classification/NEU-CLS/In_254.bmp
@@ -802,6 +799,7 @@
 1407,2,In,./My_Datasets/Classification/NEU-CLS/In_195.bmp
 1409,2,In,./My_Datasets/Classification/NEU-CLS/In_167.bmp
 1413,2,In,./My_Datasets/Classification/NEU-CLS/In_70.bmp
+1414,2,In,./My_Datasets/Classification/NEU-CLS/In_110.bmp
 1431,2,In,./My_Datasets/Classification/NEU-CLS/In_231.bmp
 1432,2,In,./My_Datasets/Classification/NEU-CLS/In_220.bmp
 1434,2,In,./My_Datasets/Classification/NEU-CLS/In_289.bmp
@@ -809,7 +807,6 @@
 1445,2,In,./My_Datasets/Classification/NEU-CLS/In_99.bmp
 1446,2,In,./My_Datasets/Classification/NEU-CLS/In_239.bmp
 1453,2,In,./My_Datasets/Classification/NEU-CLS/In_134.bmp
-1461,2,In,./My_Datasets/Classification/NEU-CLS/In_112.bmp
 1464,2,In,./My_Datasets/Classification/NEU-CLS/In_118.bmp
 1468,2,In,./My_Datasets/Classification/NEU-CLS/In_45.bmp
 1472,2,In,./My_Datasets/Classification/NEU-CLS/In_51.bmp
@@ -828,6 +825,7 @@
 1548,2,In,./My_Datasets/Classification/NEU-CLS/In_208.bmp
 1549,2,In,./My_Datasets/Classification/NEU-CLS/In_174.bmp
 1550,2,In,./My_Datasets/Classification/NEU-CLS/In_280.bmp
+1554,2,In,./My_Datasets/Classification/NEU-CLS/In_147.bmp
 1556,2,In,./My_Datasets/Classification/NEU-CLS/In_184.bmp
 1557,2,In,./My_Datasets/Classification/NEU-CLS/In_143.bmp
 1559,2,In,./My_Datasets/Classification/NEU-CLS/In_90.bmp
@@ -835,10 +833,12 @@
 1579,2,In,./My_Datasets/Classification/NEU-CLS/In_126.bmp
 1588,2,In,./My_Datasets/Classification/NEU-CLS/In_11.bmp
 1591,2,In,./My_Datasets/Classification/NEU-CLS/In_155.bmp
+1602,2,In,./My_Datasets/Classification/NEU-CLS/In_267.bmp
 1608,2,In,./My_Datasets/Classification/NEU-CLS/In_107.bmp
 1616,2,In,./My_Datasets/Classification/NEU-CLS/In_205.bmp
 1620,2,In,./My_Datasets/Classification/NEU-CLS/In_199.bmp
 1628,2,In,./My_Datasets/Classification/NEU-CLS/In_117.bmp
+1630,2,In,./My_Datasets/Classification/NEU-CLS/In_146.bmp
 1632,2,In,./My_Datasets/Classification/NEU-CLS/In_119.bmp
 1635,2,In,./My_Datasets/Classification/NEU-CLS/In_249.bmp
 1639,2,In,./My_Datasets/Classification/NEU-CLS/In_159.bmp
@@ -870,7 +870,6 @@
 1781,2,In,./My_Datasets/Classification/NEU-CLS/In_230.bmp
 1787,2,In,./My_Datasets/Classification/NEU-CLS/In_35.bmp
 8,3,RS,./My_Datasets/Classification/NEU-CLS/RS_174.bmp
-18,3,RS,./My_Datasets/Classification/NEU-CLS/RS_199.bmp
 19,3,RS,./My_Datasets/Classification/NEU-CLS/RS_33.bmp
 20,3,RS,./My_Datasets/Classification/NEU-CLS/RS_181.bmp
 21,3,RS,./My_Datasets/Classification/NEU-CLS/RS_107.bmp
@@ -908,6 +907,7 @@
 191,3,RS,./My_Datasets/Classification/NEU-CLS/RS_117.bmp
 192,3,RS,./My_Datasets/Classification/NEU-CLS/RS_134.bmp
 199,3,RS,./My_Datasets/Classification/NEU-CLS/RS_198.bmp
+200,3,RS,./My_Datasets/Classification/NEU-CLS/RS_88.bmp
 205,3,RS,./My_Datasets/Classification/NEU-CLS/RS_148.bmp
 206,3,RS,./My_Datasets/Classification/NEU-CLS/RS_78.bmp
 208,3,RS,./My_Datasets/Classification/NEU-CLS/RS_239.bmp
@@ -919,7 +919,6 @@
 275,3,RS,./My_Datasets/Classification/NEU-CLS/RS_62.bmp
 278,3,RS,./My_Datasets/Classification/NEU-CLS/RS_139.bmp
 284,3,RS,./My_Datasets/Classification/NEU-CLS/RS_155.bmp
-285,3,RS,./My_Datasets/Classification/NEU-CLS/RS_252.bmp
 293,3,RS,./My_Datasets/Classification/NEU-CLS/RS_13.bmp
 294,3,RS,./My_Datasets/Classification/NEU-CLS/RS_61.bmp
 297,3,RS,./My_Datasets/Classification/NEU-CLS/RS_228.bmp
@@ -933,8 +932,8 @@
 341,3,RS,./My_Datasets/Classification/NEU-CLS/RS_95.bmp
 344,3,RS,./My_Datasets/Classification/NEU-CLS/RS_272.bmp
 354,3,RS,./My_Datasets/Classification/NEU-CLS/RS_82.bmp
-361,3,RS,./My_Datasets/Classification/NEU-CLS/RS_65.bmp
 368,3,RS,./My_Datasets/Classification/NEU-CLS/RS_292.bmp
+379,3,RS,./My_Datasets/Classification/NEU-CLS/RS_51.bmp
 380,3,RS,./My_Datasets/Classification/NEU-CLS/RS_46.bmp
 385,3,RS,./My_Datasets/Classification/NEU-CLS/RS_227.bmp
 387,3,RS,./My_Datasets/Classification/NEU-CLS/RS_219.bmp
@@ -982,7 +981,6 @@
 591,3,RS,./My_Datasets/Classification/NEU-CLS/RS_133.bmp
 592,3,RS,./My_Datasets/Classification/NEU-CLS/RS_176.bmp
 613,3,RS,./My_Datasets/Classification/NEU-CLS/RS_185.bmp
-615,3,RS,./My_Datasets/Classification/NEU-CLS/RS_109.bmp
 621,3,RS,./My_Datasets/Classification/NEU-CLS/RS_266.bmp
 632,3,RS,./My_Datasets/Classification/NEU-CLS/RS_202.bmp
 637,3,RS,./My_Datasets/Classification/NEU-CLS/RS_209.bmp
@@ -1002,7 +1000,6 @@
 701,3,RS,./My_Datasets/Classification/NEU-CLS/RS_197.bmp
 707,3,RS,./My_Datasets/Classification/NEU-CLS/RS_108.bmp
 713,3,RS,./My_Datasets/Classification/NEU-CLS/RS_195.bmp
-715,3,RS,./My_Datasets/Classification/NEU-CLS/RS_89.bmp
 723,3,RS,./My_Datasets/Classification/NEU-CLS/RS_144.bmp
 727,3,RS,./My_Datasets/Classification/NEU-CLS/RS_242.bmp
 733,3,RS,./My_Datasets/Classification/NEU-CLS/RS_262.bmp
@@ -1013,6 +1010,7 @@
 755,3,RS,./My_Datasets/Classification/NEU-CLS/RS_6.bmp
 760,3,RS,./My_Datasets/Classification/NEU-CLS/RS_208.bmp
 766,3,RS,./My_Datasets/Classification/NEU-CLS/RS_246.bmp
+769,3,RS,./My_Datasets/Classification/NEU-CLS/RS_50.bmp
 776,3,RS,./My_Datasets/Classification/NEU-CLS/RS_201.bmp
 790,3,RS,./My_Datasets/Classification/NEU-CLS/RS_235.bmp
 791,3,RS,./My_Datasets/Classification/NEU-CLS/RS_120.bmp
@@ -1038,11 +1036,10 @@
 958,3,RS,./My_Datasets/Classification/NEU-CLS/RS_77.bmp
 966,3,RS,./My_Datasets/Classification/NEU-CLS/RS_4.bmp
 973,3,RS,./My_Datasets/Classification/NEU-CLS/RS_271.bmp
+989,3,RS,./My_Datasets/Classification/NEU-CLS/RS_41.bmp
 990,3,RS,./My_Datasets/Classification/NEU-CLS/RS_9.bmp
-992,3,RS,./My_Datasets/Classification/NEU-CLS/RS_143.bmp
 996,3,RS,./My_Datasets/Classification/NEU-CLS/RS_74.bmp
 1013,3,RS,./My_Datasets/Classification/NEU-CLS/RS_285.bmp
-1015,3,RS,./My_Datasets/Classification/NEU-CLS/RS_217.bmp
 1033,3,RS,./My_Datasets/Classification/NEU-CLS/RS_264.bmp
 1037,3,RS,./My_Datasets/Classification/NEU-CLS/RS_20.bmp
 1040,3,RS,./My_Datasets/Classification/NEU-CLS/RS_261.bmp
@@ -1058,7 +1055,6 @@
 1106,3,RS,./My_Datasets/Classification/NEU-CLS/RS_111.bmp
 1122,3,RS,./My_Datasets/Classification/NEU-CLS/RS_87.bmp
 1132,3,RS,./My_Datasets/Classification/NEU-CLS/RS_298.bmp
-1134,3,RS,./My_Datasets/Classification/NEU-CLS/RS_162.bmp
 1137,3,RS,./My_Datasets/Classification/NEU-CLS/RS_11.bmp
 1161,3,RS,./My_Datasets/Classification/NEU-CLS/RS_284.bmp
 1166,3,RS,./My_Datasets/Classification/NEU-CLS/RS_233.bmp
@@ -1068,6 +1064,7 @@
 1181,3,RS,./My_Datasets/Classification/NEU-CLS/RS_295.bmp
 1182,3,RS,./My_Datasets/Classification/NEU-CLS/RS_103.bmp
 1191,3,RS,./My_Datasets/Classification/NEU-CLS/RS_158.bmp
+1194,3,RS,./My_Datasets/Classification/NEU-CLS/RS_249.bmp
 1199,3,RS,./My_Datasets/Classification/NEU-CLS/RS_110.bmp
 1202,3,RS,./My_Datasets/Classification/NEU-CLS/RS_165.bmp
 1214,3,RS,./My_Datasets/Classification/NEU-CLS/RS_140.bmp
@@ -1102,6 +1099,7 @@
 1365,3,RS,./My_Datasets/Classification/NEU-CLS/RS_204.bmp
 1373,3,RS,./My_Datasets/Classification/NEU-CLS/RS_275.bmp
 1376,3,RS,./My_Datasets/Classification/NEU-CLS/RS_101.bmp
+1377,3,RS,./My_Datasets/Classification/NEU-CLS/RS_282.bmp
 1385,3,RS,./My_Datasets/Classification/NEU-CLS/RS_189.bmp
 1398,3,RS,./My_Datasets/Classification/NEU-CLS/RS_248.bmp
 1415,3,RS,./My_Datasets/Classification/NEU-CLS/RS_59.bmp
@@ -1124,18 +1122,20 @@
 1498,3,RS,./My_Datasets/Classification/NEU-CLS/RS_138.bmp
 1501,3,RS,./My_Datasets/Classification/NEU-CLS/RS_5.bmp
 1504,3,RS,./My_Datasets/Classification/NEU-CLS/RS_3.bmp
-1512,3,RS,./My_Datasets/Classification/NEU-CLS/RS_25.bmp
 1516,3,RS,./My_Datasets/Classification/NEU-CLS/RS_81.bmp
 1521,3,RS,./My_Datasets/Classification/NEU-CLS/RS_53.bmp
+1529,3,RS,./My_Datasets/Classification/NEU-CLS/RS_277.bmp
 1533,3,RS,./My_Datasets/Classification/NEU-CLS/RS_241.bmp
 1535,3,RS,./My_Datasets/Classification/NEU-CLS/RS_121.bmp
 1542,3,RS,./My_Datasets/Classification/NEU-CLS/RS_212.bmp
 1547,3,RS,./My_Datasets/Classification/NEU-CLS/RS_96.bmp
+1552,3,RS,./My_Datasets/Classification/NEU-CLS/RS_91.bmp
 1566,3,RS,./My_Datasets/Classification/NEU-CLS/RS_43.bmp
 1571,3,RS,./My_Datasets/Classification/NEU-CLS/RS_112.bmp
 1575,3,RS,./My_Datasets/Classification/NEU-CLS/RS_84.bmp
 1584,3,RS,./My_Datasets/Classification/NEU-CLS/RS_132.bmp
 1587,3,RS,./My_Datasets/Classification/NEU-CLS/RS_21.bmp
+1593,3,RS,./My_Datasets/Classification/NEU-CLS/RS_291.bmp
 1610,3,RS,./My_Datasets/Classification/NEU-CLS/RS_115.bmp
 1611,3,RS,./My_Datasets/Classification/NEU-CLS/RS_167.bmp
 1614,3,RS,./My_Datasets/Classification/NEU-CLS/RS_211.bmp
@@ -1181,6 +1181,7 @@
 107,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_189.bmp
 112,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_114.bmp
 113,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_294.bmp
+120,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_86.bmp
 122,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_198.bmp
 131,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_252.bmp
 132,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_49.bmp
@@ -1192,6 +1193,7 @@
 163,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_168.bmp
 174,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_46.bmp
 176,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_233.bmp
+183,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_28.bmp
 196,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_200.bmp
 197,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_150.bmp
 198,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_56.bmp
@@ -1199,9 +1201,9 @@
 213,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_279.bmp
 226,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_166.bmp
 232,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_37.bmp
-256,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_21.bmp
 264,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_135.bmp
 268,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_39.bmp
+271,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_280.bmp
 273,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_68.bmp
 292,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_103.bmp
 299,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_253.bmp
@@ -1215,11 +1217,10 @@
 340,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_6.bmp
 347,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_295.bmp
 349,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_197.bmp
-353,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_296.bmp
+359,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_129.bmp
 364,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_245.bmp
 370,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_205.bmp
 381,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_34.bmp
-393,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_35.bmp
 398,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_124.bmp
 403,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_214.bmp
 409,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_78.bmp
@@ -1238,7 +1239,6 @@
 459,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_128.bmp
 460,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_193.bmp
 463,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_117.bmp
-468,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_213.bmp
 470,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_85.bmp
 471,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_4.bmp
 473,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_137.bmp
@@ -1328,6 +1328,7 @@
 993,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_44.bmp
 1001,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_136.bmp
 1002,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_262.bmp
+1004,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_261.bmp
 1007,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_73.bmp
 1010,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_226.bmp
 1014,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_173.bmp
@@ -1339,7 +1340,6 @@
 1049,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_192.bmp
 1051,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_204.bmp
 1053,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_185.bmp
-1070,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_83.bmp
 1079,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_31.bmp
 1081,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_170.bmp
 1083,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_53.bmp
@@ -1354,8 +1354,6 @@
 1159,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_92.bmp
 1164,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_116.bmp
 1165,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_248.bmp
-1167,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_140.bmp
-1170,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_12.bmp
 1177,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_300.bmp
 1178,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_291.bmp
 1187,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_172.bmp
@@ -1363,6 +1361,7 @@
 1193,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_57.bmp
 1198,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_271.bmp
 1201,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_211.bmp
+1207,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_246.bmp
 1210,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_132.bmp
 1211,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_230.bmp
 1220,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_282.bmp
@@ -1370,6 +1369,8 @@
 1227,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_209.bmp
 1240,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_127.bmp
 1268,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_219.bmp
+1280,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_152.bmp
+1284,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_169.bmp
 1288,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_177.bmp
 1296,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_256.bmp
 1297,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_258.bmp
@@ -1377,7 +1378,6 @@
 1314,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_110.bmp
 1336,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_126.bmp
 1337,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_107.bmp
-1349,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_182.bmp
 1351,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_244.bmp
 1352,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_190.bmp
 1363,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_99.bmp
@@ -1393,7 +1393,6 @@
 1419,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_265.bmp
 1421,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_285.bmp
 1423,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_151.bmp
-1426,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_109.bmp
 1429,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_134.bmp
 1436,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_120.bmp
 1442,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_215.bmp
@@ -1416,6 +1415,7 @@
 1540,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_106.bmp
 1568,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_70.bmp
 1572,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_221.bmp
+1573,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_208.bmp
 1625,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_273.bmp
 1626,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_260.bmp
 1633,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_155.bmp
@@ -1458,13 +1458,11 @@
 53,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_276.bmp
 56,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_186.bmp
 76,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_111.bmp
-82,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_102.bmp
 86,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_265.bmp
 95,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_140.bmp
 97,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_109.bmp
 108,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_217.bmp
 111,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_220.bmp
-121,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_295.bmp
 123,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_6.bmp
 133,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_237.bmp
 135,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_199.bmp
@@ -1488,11 +1486,10 @@
 240,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_273.bmp
 246,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_290.bmp
 250,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_68.bmp
-253,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_90.bmp
 266,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_246.bmp
 270,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_49.bmp
 277,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_231.bmp
-288,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_60.bmp
+289,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_274.bmp
 298,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_58.bmp
 304,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_205.bmp
 311,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_42.bmp
@@ -1504,6 +1501,7 @@
 352,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_165.bmp
 355,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_12.bmp
 363,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_108.bmp
+365,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_164.bmp
 367,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_296.bmp
 369,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_152.bmp
 371,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_212.bmp
@@ -1516,6 +1514,7 @@
 400,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_287.bmp
 401,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_118.bmp
 402,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_19.bmp
+404,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_28.bmp
 405,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_153.bmp
 411,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_141.bmp
 423,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_89.bmp
@@ -1525,6 +1524,7 @@
 465,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_283.bmp
 478,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_93.bmp
 482,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_80.bmp
+486,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_292.bmp
 508,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_243.bmp
 514,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_76.bmp
 523,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_213.bmp
@@ -1535,9 +1535,9 @@
 553,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_257.bmp
 565,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_44.bmp
 568,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_71.bmp
-575,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_79.bmp
 583,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_36.bmp
 601,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_139.bmp
+606,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_59.bmp
 624,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_201.bmp
 634,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_278.bmp
 640,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_261.bmp
@@ -1566,6 +1566,7 @@
 798,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_66.bmp
 801,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_51.bmp
 804,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_37.bmp
+819,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_87.bmp
 823,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_50.bmp
 824,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_226.bmp
 834,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_207.bmp
@@ -1575,6 +1576,7 @@
 859,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_182.bmp
 879,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_47.bmp
 882,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_14.bmp
+887,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_240.bmp
 889,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_94.bmp
 898,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_188.bmp
 902,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_272.bmp
@@ -1602,6 +1604,7 @@
 1036,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_103.bmp
 1043,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_192.bmp
 1046,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_69.bmp
+1048,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_193.bmp
 1052,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_32.bmp
 1055,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_137.bmp
 1056,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_33.bmp
@@ -1615,7 +1618,6 @@
 1087,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_85.bmp
 1088,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_67.bmp
 1091,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_34.bmp
-1093,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_236.bmp
 1096,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_81.bmp
 1097,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_86.bmp
 1102,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_161.bmp
@@ -1650,13 +1652,14 @@
 1294,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_123.bmp
 1304,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_31.bmp
 1306,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_286.bmp
-1307,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_40.bmp
 1316,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_197.bmp
 1320,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_275.bmp
 1325,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_174.bmp
+1327,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_211.bmp
 1340,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_104.bmp
 1342,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_112.bmp
 1343,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_55.bmp
+1345,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_266.bmp
 1347,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_260.bmp
 1353,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_225.bmp
 1354,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_82.bmp
@@ -1676,7 +1679,6 @@
 1456,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_256.bmp
 1467,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_277.bmp
 1473,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_45.bmp
-1478,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_298.bmp
 1486,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_96.bmp
 1490,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_48.bmp
 1491,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_232.bmp
@@ -1689,12 +1691,10 @@
 1541,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_281.bmp
 1560,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_39.bmp
 1561,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_56.bmp
-1574,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_252.bmp
 1580,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_126.bmp
 1586,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_200.bmp
 1589,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_61.bmp
 1596,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_195.bmp
-1597,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_297.bmp
 1598,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_196.bmp
 1601,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_176.bmp
 1605,5,Pa,./My_Datasets/Classification/NEU-CLS/Pa_242.bmp

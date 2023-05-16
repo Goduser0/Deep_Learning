@@ -28,12 +28,12 @@ def main(config):
     train_iter_loader = None
     test_iter_loader = None
     # Data loader           
-    if config.dataset_class in ['NEU_CLS', 'elpv']:
+    if config.dataset_class in dataset_list:
         train_iter_loader = get_loader(config.dataset_class, config.dataset_train_dir, config.train_batch_size, config.num_workers, shuffle=True)
         test_iter_loader = get_loader(config.dataset_class, config.dataset_test_dir, config.test_batch_size, config.num_workers, shuffle=False)
         
     if config.mode == 'train':
-        if config.dataset_class in ['NEU_CLS', 'elpv']:
+        if config.dataset_class in dataset_list:
             trainer(Resnet18, train_iter_loader, test_iter_loader, config.epochs, config.lr, config.device)
     
         
@@ -44,13 +44,14 @@ if __name__ == '__main__':
     parser.add_argument('--net', type=str, default='Resnet18', choices=['Resnet18'])
     
     # Training Configuration
-    parser.add_argument('--dataset_class', type=str, default='NEU_CLS', choices=['NEU_CLS', 'elpv'], help="Choose datasets")
-    parser.add_argument('--dataset_train_dir', default='/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/elpv/30-shot/train.csv', type=str)
-    parser.add_argument('--dataset_test_dir', default='/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/elpv/30-shot/test.csv', type=str)
-    parser.add_argument('--train_batch_size', type=int, default=16, help='Mini-batch size')
-    parser.add_argument('--test_batch_size', type=int, default=16, help='Mini-batch size')
+    dataset_list = ['NEU_CLS', 'elpv']
+    parser.add_argument('--dataset_class', type=str, default='NEU_CLS', choices=dataset_list, help="Choose datasets")
+    parser.add_argument('--dataset_train_dir', default='/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/210-shot/train.csv', type=str)
+    parser.add_argument('--dataset_test_dir', default='/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/210-shot/test.csv', type=str)
+    parser.add_argument('--train_batch_size', type=int, default=64, help='Mini-batch size of train')
+    parser.add_argument('--test_batch_size', type=int, default=64, help='Mini-batch size of test')
     parser.add_argument('--lr', type=float, default=0.0001, help='Learning rate for training')
-    parser.add_argument('--epochs', type=int, default=20, help="Training epochs")
+    parser.add_argument('--epochs', type=int, default=100, help="Training epochs")
     
     # Others Configuration
     parser.add_argument('--device', type=str, default='cuda:1')

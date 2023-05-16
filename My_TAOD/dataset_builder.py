@@ -140,7 +140,7 @@ def build_dataset(dataset):
         dataset_origin = NEU_CLS()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [1, 5, 10, 30]
+        dataset_train_size_list = [1, 5, 10, 30, int(300*0.7)]
         
     elif dataset == 'elpv':
         dataset_origin = elpv()
@@ -153,11 +153,11 @@ def build_dataset(dataset):
     
     dir_dataset = target_dir+'/'+dataset
     if not os.path.exists(dir_dataset):
-        os.makedirs(dir_dataset, exist_ok=False)
+        os.makedirs(dir_dataset, exist_ok=True)
     
     for dataset_train_size in dataset_train_size_list:
         dir_class = dir_dataset + f'/{dataset_train_size}-shot'
-        os.makedirs(dir_class, exist_ok=False)
+        os.makedirs(dir_class, exist_ok=True)
         df_train = pd.DataFrame()
         df_test = pd.DataFrame()
         for label in label_list:
