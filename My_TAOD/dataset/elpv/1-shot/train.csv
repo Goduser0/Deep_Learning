@@ -1,5 +1,5 @@
 ,Image_Label,probs,types,Image_Path
-436,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0437.png
-1795,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1796.png
-1919,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1920.png
-201,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0202.png
+1617,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1618.png
+1184,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1185.png
+894,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0895.png
+1392,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1393.png

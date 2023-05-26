@@ -15,7 +15,6 @@
 16,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0017.png
 17,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0018.png
 18,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0019.png
-19,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0020.png
 20,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0021.png
 21,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0022.png
 22,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0023.png
@@ -46,7 +45,6 @@
 47,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0048.png
 48,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0049.png
 49,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0050.png
-50,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0051.png
 51,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0052.png
 52,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0053.png
 53,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0054.png
@@ -100,7 +98,6 @@
 222,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0223.png
 227,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0228.png
 228,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0229.png
-230,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0231.png
 231,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0232.png
 232,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0233.png
 240,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0241.png
@@ -201,8 +198,10 @@
 392,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0393.png
 393,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0394.png
 394,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0395.png
+395,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0396.png
 397,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0398.png
 398,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0399.png
+399,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0400.png
 400,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0401.png
 401,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0402.png
 402,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0403.png
@@ -225,6 +224,7 @@
 421,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0422.png
 423,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0424.png
 425,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0426.png
+426,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0427.png
 427,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0428.png
 428,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0429.png
 429,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0430.png
@@ -343,6 +343,7 @@
 614,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0615.png
 615,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0616.png
 616,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0617.png
+617,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0618.png
 619,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0620.png
 625,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0626.png
 630,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0631.png
@@ -369,7 +370,6 @@
 670,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0671.png
 671,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0672.png
 672,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0673.png
-673,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0674.png
 674,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0675.png
 679,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0680.png
 681,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0682.png
@@ -536,7 +536,6 @@
 1172,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1173.png
 1173,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1174.png
 1174,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1175.png
-1181,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1182.png
 1219,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1220.png
 1220,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1221.png
 1222,3,1.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1223.png
@@ -706,6 +705,7 @@
 2541,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2542.png
 2543,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2544.png
 2545,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2546.png
+2546,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2547.png
 2547,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2548.png
 2553,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2554.png
 2598,3,1.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2599.png
@@ -777,7 +777,6 @@
 139,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0140.png
 141,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0142.png
 143,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0144.png
-144,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0145.png
 150,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0151.png
 151,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0152.png
 152,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0153.png
@@ -846,7 +845,6 @@
 355,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0356.png
 356,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0357.png
 357,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0358.png
-358,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0359.png
 359,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0360.png
 368,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0369.png
 396,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0397.png
@@ -1089,7 +1087,6 @@
 959,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0960.png
 960,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0961.png
 961,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0962.png
-962,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0963.png
 963,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0964.png
 964,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0965.png
 965,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0966.png
@@ -1151,6 +1148,7 @@
 1050,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1051.png
 1051,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1052.png
 1056,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1057.png
+1057,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1058.png
 1059,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1060.png
 1061,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1062.png
 1062,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1063.png
@@ -1186,7 +1184,6 @@
 1117,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1118.png
 1118,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1119.png
 1119,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1120.png
-1125,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1126.png
 1128,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1129.png
 1130,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1131.png
 1132,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1133.png
@@ -1308,6 +1305,7 @@
 1304,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1305.png
 1306,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1307.png
 1308,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1309.png
+1309,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1310.png
 1310,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1311.png
 1311,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1312.png
 1312,0,0.0,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1313.png
@@ -1538,7 +1536,6 @@
 1692,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1693.png
 1693,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1694.png
 1694,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1695.png
-1695,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1696.png
 1696,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1697.png
 1697,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1698.png
 1698,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1699.png
@@ -1762,6 +1759,7 @@
 2019,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2020.png
 2025,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2026.png
 2026,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2027.png
+2027,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2028.png
 2028,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2029.png
 2029,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2030.png
 2030,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2031.png
@@ -1933,6 +1931,7 @@
 2248,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2249.png
 2249,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2250.png
 2250,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2251.png
+2251,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2252.png
 2252,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2253.png
 2253,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2254.png
 2254,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2255.png
@@ -2181,6 +2180,7 @@
 2558,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2559.png
 2559,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2560.png
 2560,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2561.png
+2561,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2562.png
 2562,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2563.png
 2563,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2564.png
 2568,0,0.0,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2569.png
@@ -2238,7 +2238,6 @@
 209,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0210.png
 213,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0214.png
 214,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0215.png
-215,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0216.png
 226,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0227.png
 234,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0235.png
 237,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0238.png
@@ -2246,9 +2245,9 @@
 266,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0267.png
 269,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0270.png
 324,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0325.png
-325,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0326.png
 539,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0540.png
 545,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0546.png
+561,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0562.png
 596,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0597.png
 624,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0625.png
 626,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0627.png
@@ -2257,6 +2256,7 @@
 668,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0669.png
 669,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0670.png
 676,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0677.png
+684,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0685.png
 688,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0689.png
 705,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0706.png
 709,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0710.png
@@ -2265,7 +2265,6 @@
 801,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0802.png
 815,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0816.png
 817,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0818.png
-837,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0838.png
 871,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0872.png
 893,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0894.png
 894,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0895.png
@@ -2310,7 +2309,6 @@
 1324,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1325.png
 1325,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1326.png
 1326,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1327.png
-1327,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1328.png
 1328,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1329.png
 1329,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1330.png
 1330,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1331.png
@@ -2332,6 +2330,7 @@
 1372,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1373.png
 1376,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1377.png
 1377,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1378.png
+1385,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1386.png
 1386,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1387.png
 1387,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1388.png
 1394,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1395.png
@@ -2341,6 +2340,7 @@
 1403,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1404.png
 1411,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1412.png
 1412,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1413.png
+1413,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1414.png
 1428,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1429.png
 1429,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1430.png
 1430,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1431.png
@@ -2358,7 +2358,6 @@
 1475,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1476.png
 1476,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1477.png
 1482,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1483.png
-1485,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1486.png
 1486,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1487.png
 1491,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1492.png
 1493,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1494.png
@@ -2465,6 +2464,7 @@
 2330,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2331.png
 2385,1,0.3333333333333333,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2386.png
 2396,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2397.png
+2399,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2400.png
 2407,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2408.png
 2409,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2410.png
 2411,1,0.3333333333333333,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2412.png
@@ -2508,7 +2508,6 @@
 190,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0191.png
 201,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0202.png
 203,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0204.png
-204,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0205.png
 216,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0217.png
 217,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0218.png
 218,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0219.png
@@ -2528,14 +2527,12 @@
 628,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0629.png
 677,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0678.png
 682,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0683.png
-683,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0684.png
 700,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0701.png
 713,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0714.png
 730,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0731.png
 757,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0758.png
-759,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0760.png
 782,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0783.png
-796,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0797.png
+790,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0791.png
 806,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0807.png
 865,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0866.png
 892,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell0893.png
@@ -2547,13 +2544,13 @@
 1024,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1025.png
 1025,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1026.png
 1027,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1028.png
-1084,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1085.png
 1089,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1090.png
 1094,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1095.png
 1103,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1104.png
 1126,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1127.png
 1161,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1162.png
 1176,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1177.png
+1178,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1179.png
 1186,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1187.png
 1187,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1188.png
 1188,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1189.png
@@ -2575,6 +2572,7 @@
 1398,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1399.png
 1405,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1406.png
 1406,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1407.png
+1407,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1408.png
 1408,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1409.png
 1410,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1411.png
 1415,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1416.png
@@ -2591,10 +2589,12 @@
 1838,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1839.png
 1840,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1841.png
 1922,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1923.png
+1949,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1950.png
 1952,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1953.png
 1964,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell1965.png
 2121,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2122.png
 2165,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2166.png
+2171,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2172.png
 2203,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2204.png
 2204,2,0.6666666666666666,mono,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2205.png
 2366,2,0.6666666666666666,poly,/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/images/cell2367.png

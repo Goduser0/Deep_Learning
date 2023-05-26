@@ -85,9 +85,10 @@ def evaluate_accuracy(net, data_iter, device=None):
     return metric[0] / metric[1]
 
 ###########################################################################################################
-# FUNCTION: trainer()
+# FUNCTION: classification_trainer()
+# 用于分类网络的训练
 ###########################################################################################################
-def trainer(net, train_iter, test_iter, num_epochs, lr, device):
+def classification_trainer(net, train_iter, test_iter, num_epochs, lr, device):
     def init_weights(m):
         if type(m) == torch.nn.Linear or type(m) == torch.nn.Conv2d:
             torch.nn.init.xavier_uniform_(m.weight)
@@ -126,3 +127,4 @@ def trainer(net, train_iter, test_iter, num_epochs, lr, device):
             f'test acc {test_acc:.3f}')
         print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec '
             f'on {str(device)}')
+        print(f'--------------------------------------')

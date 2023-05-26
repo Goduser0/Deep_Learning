@@ -5,6 +5,12 @@ import torch.utils.data as data
 import torchvision
 import torchvision.transforms as transforms
 
+import sys
+
+##########################################################################################################
+# Resnet18
+##########################################################################################################
+
 # 残差块
 class Residual(nn.Module):
     def __init__(self, input_channels, num_channels, use_1x1conv=False, stride=1):
@@ -59,5 +65,60 @@ Resnet18 = nn.Sequential(
     nn.Linear(512, 6),
 )
 
+###########################################################################################################
+# VGG-11
+###########################################################################################################
+# VGG块
+def vgg_block(num_convs, in_channels, out_channels):
+    layers = []
+    for _ in range(num_convs):
+        layers.append(nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1))
+        layers.append(nn.ReLU())
+        in_channels = out_channels
+    layers.append(nn.MaxPool2d(kernel_size=2, stride=2))
+    return nn.Sequential(*layers)
+# VGG-11
+def vgg(conv_arch):
+    conv_blks = []
+    in_channels = 1
+    for (num_convs, out_channels) in conv_arch:
+        conv_blks.append(vgg_block(num_convs, in_channels, out_channels))
+        in_channels = out_channels
+    
+    return nn.Sequential(
+        *conv_blks,
+
+        nn.Flatten(),
+        nn.Linear(out_channels * 7 * 7, 4096), 
+        nn.ReLU(),
+        nn.Dropout(0.5),
+
+        nn.Linear(4096, 4096),
+        nn.ReLU(),
+        nn.Dropout(0.5),
+
+        nn.Linear(4096, 6)
+    )
+
+conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
+VGG11 = vgg(conv_arch)
+
+##########################################################################################################
 # Add other Nets
-      
+##########################################################################################################
+
+
+##########################################################################################################
+# FUNCTION:classsification_net_select
+# Classification_net_select
+##########################################################################################################
+def classification_net_select(name):
+    if name.lower() == 'resnet18':
+        return Resnet18
+    elif name.lower() == 'vgg11':
+        return VGG11
+
+    else:
+        sys.exit(f"ERROR:\t({__name__}):The Net: '{name}' doesn't exist")
+    
+    
