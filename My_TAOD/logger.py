@@ -1,6 +1,7 @@
-import time
 import os
 import re
+import time
+
 
 def logger(config):
     if config.log:
@@ -16,3 +17,4 @@ def logger(config):
         f.close()
     else:
         pass
+    

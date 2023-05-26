@@ -1,16 +1,27 @@
-import torch
-import torchvision
-from torch.utils.data import Dataset, DataLoader, random_split
-from PIL import Image
-import numpy as np
 import os
-import pandas as pd
-import torchvision.transforms as transforms
-from d2l import torch as d2l
-import matplotlib.pyplot as plt
 import time
 from tqdm import tqdm
+
+import numpy as np
+import pandas as pd
+from PIL import Image
+import matplotlib.pyplot as plt
+
+from d2l import torch as d2l
+
+import torch
+from torch import nn, optim
+from torch.utils.data import Dataset, DataLoader, random_split
+import torchvision.transforms as T
+
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+
+argmax = lambda x, *args, **kwargs: x.argmax(*args, **kwargs)
+astype = lambda x, *args, **kwargs: x.type(*args, **kwargs)
+reduce_sum = lambda x, *args, **kwargs: x.sum(*args, **kwargs)
+size = lambda x, *args, **kwargs: x.numel(*args, **kwargs)
+
 
 class Accumulator(object):
     """累加器"""
@@ -28,6 +39,7 @@ class Accumulator(object):
         
     def __getitem__(self, idx):
         return self.data[idx]
+
 
 class Timer(object):
     """计时器"""
@@ -52,10 +64,6 @@ class Timer(object):
     def cumsum(self):
         return np.array(self.times).cumsum().tolist()    
 
-argmax = lambda x, *args, **kwargs: x.argmax(*args, **kwargs)
-astype = lambda x, *args, **kwargs: x.type(*args, **kwargs)
-reduce_sum = lambda x, *args, **kwargs: x.sum(*args, **kwargs)
-size = lambda x, *args, **kwargs: x.numel(*args, **kwargs)
 
 def cal_correct(y_hat, y):
     """计算预测正确的数量"""
@@ -65,9 +73,10 @@ def cal_correct(y_hat, y):
     cmp = astype(y_hat, y.dtype) == y
     return float(reduce_sum(astype(cmp, y.dtype)))
 
+
 def evaluate_accuracy(net, data_iter, device=None):
     """计算模型在数据集上的准确率"""
-    if isinstance(net, torch.nn.Module):
+    if isinstance(net, nn.Module):
         net.eval()
         if not device:
             device = next(iter(net.parameters())).device
@@ -84,22 +93,22 @@ def evaluate_accuracy(net, data_iter, device=None):
             metric.add(cal_correct(net(X), y), size(y))
     return metric[0] / metric[1]
 
+
 ###########################################################################################################
 # FUNCTION: classification_trainer()
 # 用于分类网络的训练
 ###########################################################################################################
 def classification_trainer(net, train_iter, test_iter, num_epochs, lr, device):
     def init_weights(m):
-        if type(m) == torch.nn.Linear or type(m) == torch.nn.Conv2d:
-            torch.nn.init.xavier_uniform_(m.weight)
+        if type(m) == nn.Linear or type(m) == nn.Conv2d:
+            nn.init.xavier_uniform_(m.weight)
     net.apply(init_weights)
     
     device = torch.device(device)
-    print('training on', device)
     net.to(device)
     
-    optimizer = torch.optim.Adam(net.parameters(), lr=lr)
-    loss_fuction = torch.nn.CrossEntropyLoss()
+    optimizer = optim.Adam(net.parameters(), lr=lr)
+    loss_fuction = nn.CrossEntropyLoss()
     
     timer = Timer()
     for epoch in range(num_epochs):
@@ -122,9 +131,9 @@ def classification_trainer(net, train_iter, test_iter, num_epochs, lr, device):
         train_loss = metric[0] / metric[2]
         train_acc = metric[1] / metric[2]
         test_acc = evaluate_accuracy(net, test_iter)
-        print(f'epoch{epoch+1}:')
-        print(f'loss{train_loss:.3f}, train acc{train_acc:.3f}, '
-            f'test acc {test_acc:.3f}')
+        print(f'epoch:{epoch+1}')
+        print(f'loss:{train_loss:.3f}, train acc:{train_acc:.3f}, test acc:{test_acc:.3f}')
         print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec '
-            f'on {str(device)}')
+            f'on ({str(device)})')
         print(f'--------------------------------------')
+        

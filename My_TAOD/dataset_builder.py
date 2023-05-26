@@ -1,25 +1,24 @@
 import os
 import sys
-import pandas as pd
-
-import torch
-import torchvision
 import random
-from torch.utils import data
-from PIL import Image
+
 import numpy as np
-import os
+import pandas as pd
+from PIL import Image
+
+import torch.utils.data as data
 import torchvision.transforms as T
+
 
 ###########################################################################################################
 # 处理函数
 ###########################################################################################################
-
 def bmp2ndarray(file_path):
     """将BMP文件转为ndarray"""
     img = Image.open(file_path).convert('L')
     img_array = np.array(img)
     return img_array
+
 
 def png2ndarray(file_path):
     """将PNG文件转为ndarray"""
@@ -77,7 +76,8 @@ class NEU_CLS(data.Dataset):
     
     def save_csv(self):
         self.samples.to_csv("NEU_CLS.csv")
-        
+
+  
 ###########################################################################################################
 # DATASET: elpv
 ###########################################################################################################
@@ -120,25 +120,33 @@ class elpv(data.Dataset):
     def save_csv(self):
         self.samples.to_csv("elpv.csv")
 
-target_dir = '/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset'
 
 ###########################################################################################################
 # DATASET:DeepPCB
 ###########################################################################################################
 
+
+
 ###########################################################################################################
 # DATASET:PKUPCB
 ###########################################################################################################
 
+
+
 ###########################################################################################################
 # DATASET: Add other dataset
 ###########################################################################################################
+
+
 
 ###########################################################################################################
 # FUNCTION: bulid_dataset
 # 将原始数据集每类抽样划分为适用于fewshot的训练集和测试集，并存为对应的csv文件
 # 之后的Dataloader将直接从对应的csv文件中读取数据的地址
 ###########################################################################################################
+target_dir = '/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset'
+
+
 def build_dataset(dataset):
     if dataset == 'NEU_CLS':
         dataset_origin = NEU_CLS()
@@ -185,6 +193,7 @@ def build_dataset(dataset):
         df_train.to_csv(dir_class + f'/train.csv')
         df_test.to_csv(dir_class + f'/test.csv')
     print(f'({__name__}):Dataset:{dataset}\tBuild Successfully!!!')
+
 
 ###########################################################################################################
 # 运行函数：创建Dataset

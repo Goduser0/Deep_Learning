@@ -1,17 +1,19 @@
 import os
-import argparse
 import sys
+import argparse
 
 from torch.backends import cudnn
+# torch.backends.cudnn:提供对Nvidia cuDNN的支持，可加速深度学习模型在GPU上的计算速度
+
 from dataset_loader import get_loader
 from train import classification_trainer
 from models import classification_net_select
 from logger import logger
 
-# torch.backends.cudnn:提供对Nvidia cuDNN的支持，可加速深度学习模型在GPU上的计算速度
 
 def str2bool(v):
     return v.lower() in ('true')
+
 
 def main(config):
     # For fast training on GPUs
@@ -56,8 +58,8 @@ if __name__ == '__main__':
     # Training Configuration
     dataset_list = ['NEU_CLS', 'elpv']
     parser.add_argument('--dataset_class', type=str, default='NEU_CLS', choices=dataset_list, help="Choose datasets")
-    parser.add_argument('--dataset_train_dir', default=f'/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/30-shot/train.csv', type=str)
-    parser.add_argument('--dataset_test_dir', default=f'/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/30-shot/test.csv', type=str)
+    parser.add_argument('--dataset_train_dir', type=str, default=f'/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/30-shot/train.csv')
+    parser.add_argument('--dataset_test_dir', type=str, default=f'/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/30-shot/test.csv')
     parser.add_argument('--train_batch_size', type=int, default=64, help='Mini-batch size of train')
     parser.add_argument('--test_batch_size', type=int, default=64, help='Mini-batch size of test')
     parser.add_argument('--lr', type=float, default=0.0001, help='Learning rate for training')
@@ -74,12 +76,13 @@ if __name__ == '__main__':
     parser.add_argument('--sample_dir', type=str, default='./My_TAOD/samples')
     parser.add_argument('--result_dir', type=str, default='./My_TAOD/results')
     
-    # Logger
+    # Parser
     parser.add_argument('--log', type=bool, default=True)
-    
     config = parser.parse_args()
-    # print(config)
     
+    # Logger
     logger(config)
+    
+    # Main
     main(config)
     

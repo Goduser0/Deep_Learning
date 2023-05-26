@@ -1,19 +1,21 @@
-import torch
-import torchvision
-import random
-from torch.utils import data
-from PIL import Image
-import numpy as np
 import os
-import pandas as pd
-import torchvision.transforms as T
 import sys
+import random
+
+import numpy as np
+import pandas as pd
+from PIL import Image
+
+import torch.utils.data as data
+import torchvision.transforms as T
+
 
 def bmp2ndarray(file_path):
     """将BMP文件转为ndarray"""
     img = Image.open(file_path).convert('L')
     img_array = np.array(img)
     return img_array
+
 
 def png2ndarray(file_path):
     """将PNG文件转为ndarray"""

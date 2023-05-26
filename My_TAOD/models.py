@@ -1,16 +1,14 @@
-import torch
-from torch import nn
-from torch.nn import functional as F
-import torch.utils.data as data
-import torchvision
-import torchvision.transforms as transforms
-
 import sys
+
+from torch import nn
+import torch.nn.functional as F
+import torch.utils.data as data
+import torchvision.transforms as T
+
 
 ##########################################################################################################
 # Resnet18
 ##########################################################################################################
-
 # 残差块
 class Residual(nn.Module):
     def __init__(self, input_channels, num_channels, use_1x1conv=False, stride=1):
@@ -44,6 +42,7 @@ b1 = nn.Sequential(
     nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
 )
 
+
 def resnet_block(in_channels, out_channels, num_residual, first_block=False):
     blk=[]
     for i in range(num_residual):
@@ -52,6 +51,7 @@ def resnet_block(in_channels, out_channels, num_residual, first_block=False):
         else:
             blk.append(Residual(out_channels, out_channels))
     return blk
+
 
 b2 = nn.Sequential(*resnet_block(64, 64, 2, first_block=True))
 b3 = nn.Sequential(*resnet_block(64, 128, 2))
@@ -77,6 +77,8 @@ def vgg_block(num_convs, in_channels, out_channels):
         in_channels = out_channels
     layers.append(nn.MaxPool2d(kernel_size=2, stride=2))
     return nn.Sequential(*layers)
+
+
 # VGG-11
 def vgg(conv_arch):
     conv_blks = []
@@ -99,13 +101,16 @@ def vgg(conv_arch):
 
         nn.Linear(4096, 6)
     )
+    
 
 conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
 VGG11 = vgg(conv_arch)
 
+
 ##########################################################################################################
 # Add other Nets
 ##########################################################################################################
+
 
 
 ##########################################################################################################
@@ -120,5 +125,4 @@ def classification_net_select(name):
 
     else:
         sys.exit(f"ERROR:\t({__name__}):The Net: '{name}' doesn't exist")
-    
     
