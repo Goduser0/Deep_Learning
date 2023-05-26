@@ -83,10 +83,12 @@ def vgg_block(num_convs, in_channels, out_channels):
 def vgg(conv_arch):
     conv_blks = []
     in_channels = 1
+    out_channels = 1
+    
     for (num_convs, out_channels) in conv_arch:
         conv_blks.append(vgg_block(num_convs, in_channels, out_channels))
         in_channels = out_channels
-    
+                
     return nn.Sequential(
         *conv_blks,
 
