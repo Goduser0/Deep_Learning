@@ -12,3 +12,4 @@ import matplotlib.pyplot as plt
 a = Image.open('./My_Datasets/Classification/NEU-CLS/Pa_299.bmp')
 
 plt.imshow(a)
+plt.show()
