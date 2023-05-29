@@ -167,7 +167,7 @@ def classification_trainer(config, net, train_iter, test_iter, num_epochs, lr, d
             
         train_loss = metric[0] / metric[2]
         train_acc = metric[1] / metric[2]
-        test_acc = evaluate_accuracy(net, test_iter)0
+        test_acc = evaluate_accuracy(net, test_iter)
 
         # Show
         print(f'epoch:{epoch+1}')
