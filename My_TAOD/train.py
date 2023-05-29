@@ -17,6 +17,9 @@ import torchvision.transforms as T
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
 
+###########################################################################################################
+# 通用函数
+###########################################################################################################
 argmax = lambda x, *args, **kwargs: x.argmax(*args, **kwargs)
 astype = lambda x, *args, **kwargs: x.type(*args, **kwargs)
 reduce_sum = lambda x, *args, **kwargs: x.sum(*args, **kwargs)
@@ -31,7 +34,7 @@ class Accumulator(object):
         
     def add(self, *args):
         # data累加args
-        self.data = [a + float(b) for a, b in zip(self.data, args)]
+        self.data = [a + float(b) for a, b in zip(self.data, args)] # type: ignore
 
     def reset(self):
         # 重置累加器
@@ -93,12 +96,45 @@ def evaluate_accuracy(net, data_iter, device=None):
             metric.add(cal_correct(net(X), y), size(y))
     return metric[0] / metric[1]
 
+def save_results(config, content, plot=False):
+    """将实验数据存为csv文件"""
+    assert os.path.exists(config.result_dir), f"ERROR:\t({__name__}): No config.result_dir"
+    filename = config.classification_net + ' ' + config.dataset_class + ' ' + config.time
+    filepath = config.result_dir + '/' + filename + '.csv'
+    
+    content = pd.DataFrame.from_dict(content, orient="index").T
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.read_csv(filepath)
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+    
+    if plot:
+        results = pd.read_csv(filepath)
+        epoch = results["epoch"]
+        train_loss = results["train loss"]
+        test_loss = results["test acc"]
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot(epoch, train_loss, color='tab:red')
+        ax2 = ax1.twinx()
+        ax2.plot(epoch, test_loss, color='tab:blue')
+        
+        ax1.set_xlabel('Epochs', fontsize=10)
+        ax1.set_ylabel('Train Loss', color='tab:red', fontsize=10)
+        ax1.grid(alpha=0.4)
+        ax2.set_ylabel('Test Acc', color='tab:blue', fontsize=10)
+        
+        fig.tight_layout()
+        plt.savefig(f'{config.result_dir}/{filename}.jpg')
+        plt.close()
 
 ###########################################################################################################
 # FUNCTION: classification_trainer()
 # 用于分类网络的训练
 ###########################################################################################################
-def classification_trainer(net, train_iter, test_iter, num_epochs, lr, device):
+def classification_trainer(config, net, train_iter, test_iter, num_epochs, lr, device):
     def init_weights(m):
         if type(m) == nn.Linear or type(m) == nn.Conv2d:
             nn.init.xavier_uniform_(m.weight)
@@ -115,6 +151,7 @@ def classification_trainer(net, train_iter, test_iter, num_epochs, lr, device):
         metric = Accumulator(3)
         net.train()
         
+        
         for i, (X, y) in enumerate(train_iter):
             timer.start()
             optimizer.zero_grad()
@@ -125,15 +162,28 @@ def classification_trainer(net, train_iter, test_iter, num_epochs, lr, device):
             optimizer.step()
             
             with torch.no_grad():
-                metric.add(loss*X.shape[0], cal_correct(y_hat, y),X.shape[0])
+                metric.add(loss*X.shape[0], cal_correct(y_hat, y), X.shape[0])
             timer.stop()
             
         train_loss = metric[0] / metric[2]
         train_acc = metric[1] / metric[2]
-        test_acc = evaluate_accuracy(net, test_iter)
+        test_acc = evaluate_accuracy(net, test_iter)0
+
+        # Show
         print(f'epoch:{epoch+1}')
-        print(f'loss:{train_loss:.3f}, train acc:{train_acc:.3f}, test acc:{test_acc:.3f}')
+        print(f'train loss:{train_loss:.3f}, train acc:{train_acc:.3f}, test acc:{test_acc:.3f}')
         print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec '
             f'on ({str(device)})')
         print(f'--------------------------------------')
+        # Record Data
+        save_results(config, 
+                     {
+                        "epoch": f"{epoch+1}", 
+                        "train loss":f"{train_loss:.5f}", 
+                        "train acc":f"{train_acc:.5f}", 
+                        "test acc":f"{test_acc:0.5f}",
+                        "time":f"{timer.sum()}"
+                     },
+                     plot=True,
+                    )
         

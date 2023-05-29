@@ -5,8 +5,9 @@ import time
 
 def logger(config):
     if config.log:
-        assert os.path.exists(config.log_dir), 'Error: No config.log_dir'
-        filename = config.classification_net + ' ' + config.dataset_class + ' ' + time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())
+        assert os.path.exists(config.log_dir), f"ERROR:\t({__name__}): No config.log_dir"
+
+        filename = config.classification_net + ' ' + config.dataset_class + ' ' + config.time
         with open(config.log_dir + '/' + filename + '.txt', 'w') as f:
             content = str(config)
             content_list = re.split(r"\(|\)", content)

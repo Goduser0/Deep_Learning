@@ -27,7 +27,7 @@ def png2ndarray(file_path):
 ###########################################################################################################
 # FUNCTION: get_loader
 ###########################################################################################################
-def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle):
+def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, transforms=None):
     df = pd.read_csv(dataset_dir)
     
     if dataset_class.lower() == 'neu_cls':
@@ -68,13 +68,10 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle):
     else:
         sys.exit(f"ERROR:\t({__name__}):The dataset_class '{dataset_class}' doesn't exist")
     
-    # 添加trans
-    trans = [T.ToTensor(), T.Resize(224)]
-    trans = T.Compose(trans)
-    
+
     # 返回dataloader
     dataset_iter_loader = data.DataLoader(
-        dataset=MyDataset(df, transforms=trans), # type: ignore
+        dataset=MyDataset(df, transforms=transforms), # type: ignore
         batch_size=batch_size,
         shuffle=shuffle,
         num_workers=num_workers,

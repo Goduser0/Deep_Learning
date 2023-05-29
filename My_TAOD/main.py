@@ -1,7 +1,9 @@
 import os
 import sys
+import time
 import argparse
 
+import torchvision.transforms as T
 from torch.backends import cudnn
 # torch.backends.cudnn:提供对Nvidia cuDNN的支持，可加速深度学习模型在GPU上的计算速度
 
@@ -37,13 +39,15 @@ def main(config):
     test_iter_loader = None
     # Data loader           
     if config.dataset_class in dataset_list:
-        train_iter_loader = get_loader(config.dataset_class, config.dataset_train_dir, config.train_batch_size, config.num_workers, shuffle=True)
-        test_iter_loader = get_loader(config.dataset_class, config.dataset_test_dir, config.test_batch_size, config.num_workers, shuffle=False)
+        trans = T.Compose([T.ToTensor(), T.Resize(224)])
+        train_iter_loader = get_loader(config.dataset_class, config.dataset_train_dir, config.train_batch_size, config.num_workers, shuffle=True, transforms=trans)
+        trans = T.Compose([T.ToTensor(), T.Resize(224)])
+        test_iter_loader = get_loader(config.dataset_class, config.dataset_test_dir, config.test_batch_size, config.num_workers, shuffle=False, transforms=trans)
         
     if config.mode == 'train':
         if config.dataset_class in dataset_list:
             net = classification_net_select(config.classification_net)
-            classification_trainer(net, train_iter_loader, test_iter_loader, config.epochs, config.lr, config.device)
+            classification_trainer(config, net, train_iter_loader, test_iter_loader, config.epochs, config.lr, config.device)
     elif config.mode == 'test':
         if config.dataset_class in dataset_list:
             pass #**#
@@ -53,7 +57,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     
     # Model Configuration
-    parser.add_argument('--classification_net', type=str, default='Resnet18', choices=['Resnet18', 'VGG11'])
+    parser.add_argument('--classification_net', type=str, default='Resnet18', choices=['Resnet18', 'VGG11', 'Resnet50'])
     
     # Training Configuration
     dataset_list = ['NEU_CLS', 'elpv']
@@ -62,8 +66,11 @@ if __name__ == '__main__':
     parser.add_argument('--dataset_test_dir', type=str, default=f'/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/30-shot/test.csv')
     parser.add_argument('--train_batch_size', type=int, default=64, help='Mini-batch size of train')
     parser.add_argument('--test_batch_size', type=int, default=64, help='Mini-batch size of test')
-    parser.add_argument('--lr', type=float, default=0.0001, help='Learning rate for training')
-    parser.add_argument('--epochs', type=int, default=20, help="Training epochs")
+    parser.add_argument('--lr', type=float, default=1e-4, help='Learning rate for training')
+    parser.add_argument('--epochs', type=int, default=100, help="Training epochs")
+    
+    # Augumentation Configuration
+    
     
     # Others Configuration
     parser.add_argument('--device', type=str, default='cuda:0')
@@ -78,6 +85,7 @@ if __name__ == '__main__':
     
     # Parser
     parser.add_argument('--log', type=bool, default=True)
+    parser.add_argument('--time', type=str, default=time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime()))
     config = parser.parse_args()
     
     # Logger
