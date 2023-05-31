@@ -36,7 +36,7 @@ def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
 ##########################################################################################################
 # Ploting Result
 ########################################################################################################## 
-df = pd.read_csv('/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/1-shot/train.csv')
+df = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/NEU_CLS/1-shot/train.csv')
 images = []
 names = []
 for i in zip(df['Image_Path'], df['Image_Class']):

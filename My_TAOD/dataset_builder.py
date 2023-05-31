@@ -114,7 +114,7 @@ class elpv(data.Dataset):
         
         sample_list = zip(img_label, probs, types, image_fnames)
         df = pd.DataFrame(sample_list, columns=['Image_Label', 'probs', 'types', 'Image_Path'])
-        df['Image_Path'] = '/home/zhouquan/MyDoc/DL_Learning/My_Datasets/Classification/elpv-dataset-master/' + df['Image_Path']
+        df['Image_Path'] = '/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/elpv-dataset-master/' + df['Image_Path']
         return df
 
     def save_csv(self):
