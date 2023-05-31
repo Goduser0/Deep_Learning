@@ -1,9 +1,9 @@
-classification_net:	'Resnet50'
+classification_net:	'Resnet18'
  dataset_class:	'NEU_CLS'
  dataset_train_dir:	'/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/30-shot/train.csv'
  dataset_test_dir:	'/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/30-shot/test.csv'
- train_batch_size:	64
- test_batch_size:	64
+ train_batch_size:	128
+ test_batch_size:	128
  lr:	0.0001
  epochs:	100
  device:	'cuda:0'
@@ -14,4 +14,4 @@ classification_net:	'Resnet50'
  sample_dir:	'./My_TAOD/samples'
  result_dir:	'./My_TAOD/results'
  log:	True
- time:	'2023-05-29_16:03:58'
+ time:	'2023-05-31_15:44:28'
