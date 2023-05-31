@@ -64,8 +64,8 @@ if __name__ == '__main__':
     parser.add_argument('--dataset_class', type=str, default='NEU_CLS', choices=dataset_list, help="Choose datasets")
     parser.add_argument('--dataset_train_dir', type=str, default=f'/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/30-shot/train.csv')
     parser.add_argument('--dataset_test_dir', type=str, default=f'/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset/NEU_CLS/30-shot/test.csv')
-    parser.add_argument('--train_batch_size', type=int, default=128, help='Mini-batch size of train')
-    parser.add_argument('--test_batch_size', type=int, default=128, help='Mini-batch size of test')
+    parser.add_argument('--train_batch_size', type=int, default=256, help='Mini-batch size of train')
+    parser.add_argument('--test_batch_size', type=int, default=256, help='Mini-batch size of test')
     parser.add_argument('--lr', type=float, default=1e-4, help='Learning rate for training')
     parser.add_argument('--epochs', type=int, default=100, help="Training epochs")
     
