@@ -7,11 +7,11 @@ import torchvision.transforms as T
 from torch.backends import cudnn
 # torch.backends.cudnn:提供对Nvidia cuDNN的支持，可加速深度学习模型在GPU上的计算速度
 
-from dataset_loader import get_loader
-from train import classification_trainer
-from test import classification_tester
-from models import classification_net_select
-from logger import logger
+from My_TAOD.dataset_loader import get_loader
+from My_TAOD.trainer import classification_trainer
+from My_TAOD.tester import classification_tester
+from My_TAOD.models import classification_net_select
+from My_TAOD.logger import logger
 
 
 def str2bool(v):
@@ -72,6 +72,8 @@ if __name__ == '__main__':
     
     # Augumentation Configuration
     
+    # Test Configuration
+    parser.add_argument('--test_model_path', type=str, default="")
     
     # Others Configuration
     parser.add_argument('--device', type=str, default='cuda:0')
