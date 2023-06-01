@@ -151,7 +151,6 @@ def classification_trainer(config, net, train_iter, test_iter, num_epochs, lr, d
         metric = Accumulator(3)
         net.train()
         
-        
         for i, (X, y) in enumerate(train_iter):
             timer.start()
             optimizer.zero_grad()
@@ -175,6 +174,7 @@ def classification_trainer(config, net, train_iter, test_iter, num_epochs, lr, d
         print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec '
             f'on ({str(device)})')
         print(f'--------------------------------------')
+        
         # Record Data
         save_results(config, 
                      {
@@ -186,4 +186,10 @@ def classification_trainer(config, net, train_iter, test_iter, num_epochs, lr, d
                      },
                      plot=True,
                     )
+            
+    # Save Classification_net
+    assert os.path.exists(config.model_save_dir), f"ERROR:\t({__name__}): No config.model_save_dir"
+    filename = config.classification_net + ' ' + config.dataset_class + ' ' + config.time
+    filepath = config.model_save_dir + '/Classification ' + filename + '.pt'
+    torch.save(net.state_dict(), filepath)
         

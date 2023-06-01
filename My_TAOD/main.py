@@ -9,6 +9,7 @@ from torch.backends import cudnn
 
 from dataset_loader import get_loader
 from train import classification_trainer
+from test import classification_tester
 from models import classification_net_select
 from logger import logger
 
@@ -50,7 +51,7 @@ def main(config):
             classification_trainer(config, net, train_iter_loader, test_iter_loader, config.epochs, config.lr, config.device)
     elif config.mode == 'test':
         if config.dataset_class in dataset_list:
-            pass #**#
+            classification_tester(config, )
     
         
 if __name__ == '__main__':
@@ -67,7 +68,7 @@ if __name__ == '__main__':
     parser.add_argument('--train_batch_size', type=int, default=256, help='Mini-batch size of train')
     parser.add_argument('--test_batch_size', type=int, default=256, help='Mini-batch size of test')
     parser.add_argument('--lr', type=float, default=1e-4, help='Learning rate for training')
-    parser.add_argument('--epochs', type=int, default=100, help="Training epochs")
+    parser.add_argument('--epochs', type=int, default=1, help="Training epochs")
     
     # Augumentation Configuration
     
