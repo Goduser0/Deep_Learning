@@ -159,3 +159,4 @@ class HyperSphereLoss(nn.Module):
         for i in range(1, moment + 1):
             loss += torch.mean(torch.pow(sphere_d, i))
         return loss
+    

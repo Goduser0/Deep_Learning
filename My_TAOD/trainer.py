@@ -192,4 +192,18 @@ def classification_trainer(config, net, train_iter, test_iter, num_epochs, lr, d
     filename = config.classification_net + ' ' + config.dataset_class + ' ' + config.time
     filepath = config.model_save_dir + '/Classification ' + filename + '.pt'
     torch.save(net.state_dict(), filepath)
-        
+
+
+###########################################################################################################
+# FUNCTION: gan_trainer()
+# 用于GAN网络的训练
+###########################################################################################################
+def gan_trainer():
+    pass
+
+###########################################################################################################
+# FUNCTION: transfer_trainer()
+# 用于transfer网络的训练
+###########################################################################################################
+def transfer_trainer():
+    pass

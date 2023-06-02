@@ -75,6 +75,7 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
         batch_size=batch_size,
         shuffle=shuffle,
         num_workers=num_workers,
+        
         )
 
     return dataset_iter_loader

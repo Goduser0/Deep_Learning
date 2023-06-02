@@ -3,7 +3,7 @@ import re
 import time
 
 
-def logger(config):
+def classification_logger(config):
     if config.log:
         assert os.path.exists(config.log_dir), f"ERROR:\t({__name__}): No config.log_dir"
 
@@ -18,4 +18,6 @@ def logger(config):
         f.close()
     else:
         pass
+    
+
     
