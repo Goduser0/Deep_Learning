@@ -64,7 +64,24 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
                     image = self.transforms(image)
                 label = self.df.loc[index, "Image_Label"]
                 return image, label
-        
+
+    elif dataset_class.lower() == 'magnetic_tile':
+        class MyDataset(data.Dataset):
+            # 依据csv文件创建dataset
+            def __init__(self, df, transforms=None):
+                self.df = df
+                self.transforms = transforms
+            
+            def __len__(self):
+                return len(self.df)
+            
+            def __getitem__(self, index):
+                image_path = self.df.loc[index, "Image_Path"]
+                image = png2ndarray(image_path)
+                if self.transforms:
+                    image = self.transforms(image)
+                label = self.df.loc[index, "Image_Label"]
+                return image, label
     else:
         sys.exit(f"ERROR:\t({__name__}):The dataset_class '{dataset_class}' doesn't exist")
     

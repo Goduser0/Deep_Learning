@@ -68,7 +68,7 @@ if __name__ == '__main__':
     parser.add_argument('--classification_net', type=str, default='Resnet18', choices=['Resnet18', 'VGG11', 'Resnet50'])
     
     # Training Configuration
-    dataset_list = ['NEU_CLS', 'elpv']
+    dataset_list = ['NEU_CLS', 'elpv', 'Magnetic_Tile']
     parser.add_argument('--dataset_class', type=str, default='NEU_CLS', choices=dataset_list, help="Choose datasets")
     parser.add_argument('--dataset_train_dir', type=str, default=f'/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/NEU_CLS/30-shot/train.csv')
     parser.add_argument('--dataset_test_dir', type=str, default=f'/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/NEU_CLS/30-shot/test.csv')

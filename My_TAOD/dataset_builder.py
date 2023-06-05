@@ -97,12 +97,14 @@ class elpv(data.Dataset):
         return len(self.samples)
     
     def __getitem__(self, idx):
-        img = self.samples.loc[idx, 'Image_Content']
+        img_path = self.samples.loc[idx, 'Image_Path']
+        img_content = bmp2ndarray(img_path)
         prob = self.samples.loc[idx, 'probs']
         type = self.samples.loc[idx, 'types']
+        img_label = self.samples.loc[idx, 'Image_Label']
         if self.transform:
             img = self.transform(img)
-        return img, prob, type
+        return img_content, img_label
         
     def load_samples(self):
         data = np.genfromtxt(self.label_path, dtype=['|S19', '<f8', '|S4'], names=['path', 'probability', 'type'])
@@ -114,7 +116,7 @@ class elpv(data.Dataset):
         
         sample_list = zip(img_label, probs, types, image_fnames)
         df = pd.DataFrame(sample_list, columns=['Image_Label', 'probs', 'types', 'Image_Path'])
-        df['Image_Path'] = '/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/elpv-dataset-master/' + df['Image_Path']
+        df['Image_Path'] = './My_Datasets/Classification/elpv-dataset-master/' + df['Image_Path']
         return df
 
     def save_csv(self):
@@ -137,7 +139,13 @@ class Magnetic_Tile(data.Dataset):
         return len(self.samples)
     
     def __gititem__(self, idx):
-        pass
+        img_path = self.samples.loc[idx, 'Image_Path']
+        img_content = bmp2ndarray(img_path)
+        img_class = self.samples.loc[idx, 'Image_Class']
+        img_label = self.samples.loc[idx, 'Image_Label']
+        if self.transform:
+            img_content = self.transform(img_content)
+        return img_content, img_label
     
     def load_samples(self):
         sample_list = []
@@ -161,7 +169,7 @@ class Magnetic_Tile(data.Dataset):
 
 
     def save_csv(self):
-        self.samples.to_csv("Magnetic_Tile.csv")
+        self.samples.to_csv("./My_TAOD/dataset/Magnetic_Tile.csv")
 
 
 ###########################################################################################################
@@ -210,7 +218,6 @@ def build_dataset(dataset):
     
     dir_dataset = target_dir+'/'+dataset
     if not os.path.exists(dir_dataset):
-        print(dir_dataset)
         os.makedirs(dir_dataset, exist_ok=True)
     
     for dataset_train_size in dataset_train_size_list:
