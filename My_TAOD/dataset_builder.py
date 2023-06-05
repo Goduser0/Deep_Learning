@@ -75,7 +75,7 @@ class NEU_CLS(data.Dataset):
         return pd.DataFrame(sample_list, columns=['Image_Label', 'Image_Class', 'Image_Path'])
     
     def save_csv(self):
-        self.samples.to_csv("NEU_CLS.csv")
+        self.samples.to_csv("./My_TAOD/dataset/NEU_CLS.csv")
 
   
 ###########################################################################################################
@@ -118,13 +118,50 @@ class elpv(data.Dataset):
         return df
 
     def save_csv(self):
-        self.samples.to_csv("elpv.csv")
+        self.samples.to_csv("./My_TAOD/dataset/elpv.csv")
 
 
 ###########################################################################################################
-# DATASET:DeepPCB
+# DATASET:Magnetic_Tile
 ###########################################################################################################
+class Magnetic_Tile(data.Dataset):
+    """Dataset class for Magnetic_Tile"""
+    
+    def __init__(self, root_dir='./My_Datasets/Classification/Magnetic-Tile-Defect', transform=None):
+        self.root_dir = root_dir
+        self.transform = transform
+        self.samples = self.load_samples()
+        self.label_list = self.samples["Image_Class"].unique().tolist()
+        
+    def __len__(self):
+        return len(self.samples)
+    
+    def __gititem__(self, idx):
+        pass
+    
+    def load_samples(self):
+        sample_list = []
+        file_list = os.listdir(self.root_dir)
+        file_list = [filename for filename in file_list if filename[:2]=='MT']
+        for file_class in file_list:
+            for filename in os.listdir(self.root_dir + '/' + file_class + '/Imgs'):
+                if filename[-3:] == 'jpg':
+                    # image_path
+                    img_path = os.path.join(self.root_dir + '/' + file_class + '/Imgs', filename)
+                    # image_class
+                    img_class = file_class
+                    # image_label
+                    img_classes = ['MT_Blowhole', 'MT_Break', 'MT_Crack', 'MT_Fray', 'MT_Free', 'MT_Uneven']
+                    img_label = img_classes.index(img_class)
+                    
+                    image_item = [img_label, img_class, img_path]
+                    sample_list.append(image_item)
+        
+        return pd.DataFrame(sample_list, columns=['Image_Label', 'Image_Class', 'Image_Path'])                
 
+
+    def save_csv(self):
+        self.samples.to_csv("Magnetic_Tile.csv")
 
 
 ###########################################################################################################
@@ -144,7 +181,7 @@ class elpv(data.Dataset):
 # 将原始数据集每类抽样划分为适用于fewshot的训练集和测试集，并存为对应的csv文件
 # 之后的Dataloader将直接从对应的csv文件中读取数据的地址
 ###########################################################################################################
-target_dir = '/home/zhouquan/MyDoc/DL_Learning/My_TAOD/dataset'
+target_dir = '/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset'
 
 
 def build_dataset(dataset):
@@ -159,7 +196,13 @@ def build_dataset(dataset):
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
         dataset_train_size_list = [1, 5, 10, 30, 100]
-        
+    
+    elif dataset == 'Magnetic_Tile':
+        dataset_origin = Magnetic_Tile()
+        df = dataset_origin.samples
+        label_list = df['Image_Label'].unique().tolist()
+        dataset_train_size_list = [1, 5, 10, 30]
+    
     else:
         sys.exit(f"ERROR:\t({__name__}):The dataset '{dataset}' doesn't exist")
     
@@ -167,6 +210,7 @@ def build_dataset(dataset):
     
     dir_dataset = target_dir+'/'+dataset
     if not os.path.exists(dir_dataset):
+        print(dir_dataset)
         os.makedirs(dir_dataset, exist_ok=True)
     
     for dataset_train_size in dataset_train_size_list:
@@ -179,6 +223,8 @@ def build_dataset(dataset):
             if dataset == 'NEU_CLS':
                 df_class = df.loc[df["Image_Label"] == label]
             elif dataset == 'elpv':
+                df_class = df.loc[df["Image_Label"] == label]
+            elif dataset == 'Magnetic_Tile':
                 df_class = df.loc[df["Image_Label"] == label]
             else:
                 sys.exit(f"ERROR:\t({__name__}):The dataset '{dataset}' doesn't exist")
@@ -200,3 +246,4 @@ def build_dataset(dataset):
 ###########################################################################################################
 build_dataset('NEU_CLS')
 build_dataset('elpv')
+build_dataset('Magnetic_Tile')
