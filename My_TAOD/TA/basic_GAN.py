@@ -37,11 +37,11 @@ class Discriminator(nn.Module):
     
 # 超参数定义
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-lr = 0.0002
+lr = 0.00001
 batch_size = 128
 hidden_size = 256
 input_size = 100
-num_epochs = 10
+num_epochs = 100
 
 # 定义数据加载器
 transform = transforms.Compose([
