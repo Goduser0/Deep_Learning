@@ -15,6 +15,7 @@ def train_tgt(src_encoder, tgt_encoder, critic,
     """Train encoder for target domain."""
     ####################
     # 1. setup network #
+    
     ####################
 
     # set train state for Dropout and BN layers
