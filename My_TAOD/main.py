@@ -3,6 +3,7 @@ import sys
 import time
 import argparse
 
+import torch
 import torchvision.transforms as T
 from torch.backends import cudnn
 # torch.backends.cudnn:提供对Nvidia cuDNN的支持，可加速深度学习模型在GPU上的计算速度
@@ -20,7 +21,8 @@ def str2bool(v):
 
 def main(config):
     # For fast training on GPUs
-    cudnn.benchmark = True
+    if torch.cuda.is_available():
+        cudnn.benchmark = True
     
     # Create directories if not exist
     if not os.path.exists(config.log_dir):
@@ -38,9 +40,9 @@ def main(config):
     eval_iter_loader = None
     # Data loader           
     if config.dataset_class in dataset_list:
-        trans = T.Compose([T.ToTensor(), T.Resize(224)])
+        trans = T.Compose([T.ToTensor(), T.Resize(224), T.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))])
         train_iter_loader = get_loader(config.dataset_class, config.dataset_train_dir, config.train_batch_size, config.num_workers, shuffle=True, transforms=trans)
-        trans = T.Compose([T.ToTensor(), T.Resize(224)])
+        trans = T.Compose([T.ToTensor(), T.Resize(224), T.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))])
         test_iter_loader = get_loader(config.dataset_class, config.dataset_test_dir, config.test_batch_size, config.num_workers, shuffle=False, transforms=trans)
         
     if config.mode == 'train':
@@ -65,7 +67,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     
     # Model Configuration
-    parser.add_argument('--classification_net', type=str, default='Resnet18', choices=['Resnet18', 'VGG11', 'Resnet50'])
+    classification_net_list = ['Resnet18', 'VGG11', 'Resnet50']
+    parser.add_argument('--classification_net', type=str, default='Resnet18', choices=classification_net_list)
     
     # Training Configuration
     dataset_list = ['NEU_CLS', 'elpv', 'Magnetic_Tile']

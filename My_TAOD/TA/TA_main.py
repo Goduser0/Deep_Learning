@@ -3,13 +3,15 @@ import sys
 import time
 import argparse
 
+import torch
 import torchvision.transforms as T
 from torch.backends import cudnn
 
 
 def main(config):
     # For fast training on GPUs
-    cudnn.benchmark = True
+    if torch.cuda.is_available():
+        cudnn.benchmark = True
     
     # Create directories if not exist
     if not os.path.exists(config.log_dir):
