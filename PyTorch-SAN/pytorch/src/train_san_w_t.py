@@ -327,7 +327,7 @@ if __name__ == "__main__":
 
     # train config
     config = {}
-    config["num_iterations"] = 50004
+    config["num_iterations"] = 5000
     config["test_interval"] = args.test_interval
     config["snapshot_interval"] = args.snapshot_interval
     config["output_path"] = "../snapshot/" + args.output_dir

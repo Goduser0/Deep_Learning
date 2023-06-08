@@ -64,7 +64,7 @@ def main(config):
     
         
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Classification")
     
     # Model Configuration
     classification_net_list = ['Resnet18', 'VGG11', 'Resnet50']

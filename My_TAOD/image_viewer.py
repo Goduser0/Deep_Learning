@@ -36,7 +36,9 @@ def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
 ##########################################################################################################
 # Ploting Result
 ########################################################################################################## 
-df = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/NEU_CLS/1-shot/train.csv')
+df1 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/NEU_CLS/1-shot/train.csv')
+df2 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/Magnetic_Tile/1-shot/train.csv')
+df = pd.concat([df1, df2])
 images = []
 names = []
 for i in zip(df['Image_Path'], df['Image_Class']):
@@ -51,8 +53,7 @@ trans = T.Compose([
 for image in images:
     images_trans.append(trans(image))
     
-images = images + images_trans
 names = names + names
-axes = show_images(images, 2, len(images_trans), names)
+axes = show_images(images, 2, int(len(images_trans)/2), names, scale=3)
 plt.savefig('a.png')
 plt.close()

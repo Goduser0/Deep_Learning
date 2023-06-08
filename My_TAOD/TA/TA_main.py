@@ -29,7 +29,7 @@ def main(config):
         
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Transfer Augumation")
     
     # Directories
     parser.add_argument('--log_dir', type=str, default='./My_TAOD/TA/logs')

@@ -190,7 +190,7 @@ def train(args, loader, generator, discriminator, extra, g_optim, d_optim, e_opt
 
     requires_grad(g_source, False)
     requires_grad(d_source, False)
-    sub_region_z = get_subspace(args, init_z.clone(), vis_flag=True)
+    sub_region_z = get_subspace(args, init_z.clone(), vis_flag=True) # 获得子空间向量
     for idx in pbar:
         i = idx + args.start_iter
         which = i % args.subspace_freq # defines whether we sample from anchor region in this iteration or other
