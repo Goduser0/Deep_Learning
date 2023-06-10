@@ -3,6 +3,9 @@ import re
 import time
 
 
+##########################################################################################################
+# FUNCTION: classification_logger
+##########################################################################################################
 def classification_logger(config):
     if config.log:
         assert os.path.exists(config.log_dir), f"ERROR:\t({__name__}): No config.log_dir"

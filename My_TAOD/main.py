@@ -11,7 +11,7 @@ from torch.backends import cudnn
 from dataset_loader import get_loader
 from trainer import classification_trainer
 from evaluator import classification_evaluator
-from models import classification_net_select
+from My_TAOD.classification_models import classification_net_select
 from logger import classification_logger
 
 

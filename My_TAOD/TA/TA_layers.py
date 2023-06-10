@@ -12,6 +12,10 @@ import pandas as pd
 from PIL import Image
 import matplotlib.pyplot as plt
 
+
+##########################################################################################################
+# CLASS: pixel_norm
+##########################################################################################################
 class pixel_norm(nn.Module):
     """像素归一化"""
     def __init__(self):
@@ -21,6 +25,9 @@ class pixel_norm(nn.Module):
         return input * torch.rsqrt(torch.mean(input**2, dim=1, keepdim=True) + 1e-8)
 
 
+##########################################################################################################
+# CLASS: equal_conv2d
+##########################################################################################################
 class equal_conv2d(nn.Module):
     def __init__(
         self, in_channel, out_channel, kernel_size, stride=1, padding=0, bias=True
@@ -57,7 +64,10 @@ class equal_conv2d(nn.Module):
             f' {self.weight.shape[2]}, stride={self.stride}, padding={self.padding})'
         )
     
-    
+
+##########################################################################################################
+# CLASS: equal_linear
+##########################################################################################################
 class equal_linear(nn.Module):
     def __init__(
         self, in_dim, out_dim, bias=True, bias_init=0, lr_mul=1, activation=None  
@@ -93,7 +103,10 @@ class equal_linear(nn.Module):
             f'{self.__class__.__name__}({self.weight.shape[1]}, {self.weight.shape[0]})'
         )
         
-
+        
+##########################################################################################################
+# CLASS: scaled_leak_relu
+##########################################################################################################
 class scaled_leak_relu(nn.Module):
     def __init__(self, negative_slope=0.2):
         super().__init__()
@@ -106,6 +119,9 @@ class scaled_leak_relu(nn.Module):
         return output * math.sqrt(2)
     
 
+##########################################################################################################
+# CLASS: noise_injection
+##########################################################################################################
 class noise_injection(nn.Module):
     def __init__(self):
         super().__init__()
@@ -119,7 +135,10 @@ class noise_injection(nn.Module):
             
         return image + self.weight * noise
     
-    
+
+##########################################################################################################
+# CLASS: constant_input
+##########################################################################################################
 class constant_input(nn.Module):
     def __init__(self, channel, size=4):
         super().__init__()
@@ -131,4 +150,5 @@ class constant_input(nn.Module):
         
         return output
     
+
 
