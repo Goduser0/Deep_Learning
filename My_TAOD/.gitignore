@@ -1,3 +1,9 @@
 logs/
 models/
 results/
+samples/
+
+TA/logs/
+TA/models/
+TA/results/
+TA/samples/
