@@ -4,7 +4,11 @@ import torch
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+<<<<<<< HEAD
 from models import classification_net_select
+=======
+from My_TAOD.classification_models import classification_net_select
+>>>>>>> 59c893ce09ef6426b0bea5b10e15d4976f1a23fa
 from trainer import Timer, Accumulator, cal_correct
 
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
@@ -12,6 +16,13 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 size = lambda x, *args, **kwargs: x.numel(*args, **kwargs)
 argmax = lambda x, *args, **kwargs: x.argmax(*args, **kwargs)
 
+<<<<<<< HEAD
+=======
+
+##########################################################################################################
+# FUNCTION: classification_evaluator
+########################################################################################################## 
+>>>>>>> 59c893ce09ef6426b0bea5b10e15d4976f1a23fa
 def classification_evaluator(config, data_iter):
     if not config.eval_model_path:
         sys.exit(f"ERROR:\t({__name__}): config.eval_model_path is None")
@@ -64,7 +75,11 @@ def classification_evaluator(config, data_iter):
         plt.ylabel('Actual Label')
         plt.savefig('cm.png')
         plt.close()
+<<<<<<< HEAD
            
+=======
+
+>>>>>>> 59c893ce09ef6426b0bea5b10e15d4976f1a23fa
    
         
     
