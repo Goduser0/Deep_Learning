@@ -11,7 +11,7 @@ from torch.backends import cudnn
 from dataset_loader import get_loader
 from trainer import classification_trainer
 from evaluator import classification_evaluator
-from My_TAOD.classification_models import classification_net_select
+from classification_models import classification_net_select
 from logger import classification_logger
 
 
@@ -40,9 +40,10 @@ def main(config):
     eval_iter_loader = None
     # Data loader           
     if config.dataset_class in dataset_list:
-        trans = T.Compose([T.ToTensor(), T.Resize(224), T.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))])
+        # T.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
+        trans = T.Compose([T.ToTensor(), T.Resize(224)])
         train_iter_loader = get_loader(config.dataset_class, config.dataset_train_dir, config.train_batch_size, config.num_workers, shuffle=True, transforms=trans)
-        trans = T.Compose([T.ToTensor(), T.Resize(224), T.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))])
+        trans = T.Compose([T.ToTensor(), T.Resize(224)])
         test_iter_loader = get_loader(config.dataset_class, config.dataset_test_dir, config.test_batch_size, config.num_workers, shuffle=False, transforms=trans)
         
     if config.mode == 'train':
