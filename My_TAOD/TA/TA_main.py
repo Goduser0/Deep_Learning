@@ -7,11 +7,7 @@ import torch
 import torchvision.transforms as T
 from torch.backends import cudnn
 
-<<<<<<< HEAD
-from utils import init_random_seed
-=======
-from My_TAOD.TA.TA_utils import init_random_seed
->>>>>>> 59c893ce09ef6426b0bea5b10e15d4976f1a23fa
+from TA_utils import init_random_seed
 
 def main(config):
     # Init random seed
@@ -46,12 +42,6 @@ if __name__ == '__main__':
     parser.add_argument('--manual_seed', type=int, default=None)
     
     # Parser
-<<<<<<< HEAD
-    config  = parser.parse_args()
-    
-    main(config)
-=======
     TA_config  = parser.parse_args()
     
     main(TA_config)
->>>>>>> 59c893ce09ef6426b0bea5b10e15d4976f1a23fa

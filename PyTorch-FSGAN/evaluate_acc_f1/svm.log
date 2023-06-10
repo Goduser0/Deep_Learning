@@ -1,0 +1,70 @@
+shape of raw image data: (250, 12288)
+shape of raw image data: (200, 12288)
+shape of raw image data: (50, 12288)
+pre ['Op' 'Sh' 'Cs' 'No' 'No' 'Ns' 'Ns' 'Ns' 'Sh' 'No' 'Ns' 'No' 'Op' 'No'
+ 'Cs' 'No' 'Ns' 'Sh' 'Ns' 'Sh' 'No' 'Sh' 'Op' 'No' 'Op' 'Sh' 'Cs' 'Cs'
+ 'Op' 'Op' 'No' 'Ns' 'Op' 'No' 'Sh' 'No' 'Sh' 'Ns' 'No' 'No' 'No' 'Cs'
+ 'Op' 'Sh' 'No' 'Op' 'Op' 'Cs' 'Ns' 'Sh']
+test ['Op' 'Sh' 'Cs' 'Cs' 'Op' 'Ns' 'Ns' 'Ns' 'Sh' 'Op' 'No' 'No' 'No' 'No'
+ 'Cs' 'No' 'Ns' 'Sh' 'Ns' 'Sh' 'No' 'Sh' 'Op' 'Cs' 'Ns' 'Sh' 'Cs' 'Sh'
+ 'Sh' 'Op' 'No' 'Sh' 'Op' 'No' 'Sh' 'Op' 'Sh' 'Ns' 'Ns' 'Ns' 'Op' 'Cs'
+ 'Op' 'Ns' 'No' 'Sh' 'Op' 'Cs' 'Ns' 'Sh']
+Train Complished!!!
+0.6973333333333334 0.7007943497240755
+All time cost:  7.711432218551636
+shape of raw image data: (250, 12288)
+shape of raw image data: (200, 12288)
+shape of raw image data: (50, 12288)
+pre ['Op' 'Sh' 'Cs' 'No' 'No' 'Ns' 'Ns' 'Ns' 'Sh' 'No' 'Ns' 'No' 'Op' 'No'
+ 'Cs' 'No' 'Ns' 'Sh' 'Ns' 'Sh' 'No' 'Sh' 'Op' 'No' 'Op' 'Sh' 'Cs' 'Cs'
+ 'Op' 'Op' 'No' 'Ns' 'Op' 'No' 'Sh' 'No' 'Sh' 'Ns' 'No' 'No' 'No' 'Cs'
+ 'Op' 'Sh' 'No' 'Op' 'Op' 'Cs' 'Ns' 'Sh']
+test ['Op' 'Sh' 'Cs' 'Cs' 'Op' 'Ns' 'Ns' 'Ns' 'Sh' 'Op' 'No' 'No' 'No' 'No'
+ 'Cs' 'No' 'Ns' 'Sh' 'Ns' 'Sh' 'No' 'Sh' 'Op' 'Cs' 'Ns' 'Sh' 'Cs' 'Sh'
+ 'Sh' 'Op' 'No' 'Sh' 'Op' 'No' 'Sh' 'Op' 'Sh' 'Ns' 'Ns' 'Ns' 'Op' 'Cs'
+ 'Op' 'Ns' 'No' 'Sh' 'Op' 'Cs' 'Ns' 'Sh']
+Train Complished!!!
+0.6973333333333334 0.7007943497240755
+All time cost:  6.793479681015015
+shape of raw image data: (250, 12288)
+shape of raw image data: (200, 12288)
+shape of raw image data: (50, 12288)
+pre ['Op' 'Sh' 'Cs' 'No' 'No' 'Ns' 'Ns' 'Ns' 'Sh' 'No' 'Ns' 'No' 'Op' 'No'
+ 'Cs' 'No' 'Ns' 'Sh' 'Ns' 'Sh' 'No' 'Sh' 'Op' 'No' 'Op' 'Sh' 'Cs' 'Cs'
+ 'Op' 'Op' 'No' 'Ns' 'Op' 'No' 'Sh' 'No' 'Sh' 'Ns' 'No' 'No' 'No' 'Cs'
+ 'Op' 'Sh' 'No' 'Op' 'Op' 'Cs' 'Ns' 'Sh']
+test ['Op' 'Sh' 'Cs' 'Cs' 'Op' 'Ns' 'Ns' 'Ns' 'Sh' 'Op' 'No' 'No' 'No' 'No'
+ 'Cs' 'No' 'Ns' 'Sh' 'Ns' 'Sh' 'No' 'Sh' 'Op' 'Cs' 'Ns' 'Sh' 'Cs' 'Sh'
+ 'Sh' 'Op' 'No' 'Sh' 'Op' 'No' 'Sh' 'Op' 'Sh' 'Ns' 'Ns' 'Ns' 'Op' 'Cs'
+ 'Op' 'Ns' 'No' 'Sh' 'Op' 'Cs' 'Ns' 'Sh']
+Train Complished!!!
+0.6973333333333334 0.7007943497240755
+All time cost:  6.471428155899048
+shape of raw image data: (250, 12288)
+shape of raw image data: (200, 12288)
+shape of raw image data: (50, 12288)
+pre ['Op' 'Sh' 'Cs' 'No' 'No' 'Ns' 'Ns' 'Ns' 'Sh' 'No' 'Ns' 'No' 'Op' 'No'
+ 'Cs' 'No' 'Ns' 'Sh' 'Ns' 'Sh' 'No' 'Sh' 'Op' 'No' 'Op' 'Sh' 'Cs' 'Cs'
+ 'Op' 'Op' 'No' 'Ns' 'Op' 'No' 'Sh' 'No' 'Sh' 'Ns' 'No' 'No' 'No' 'Cs'
+ 'Op' 'Sh' 'No' 'Op' 'Op' 'Cs' 'Ns' 'Sh']
+test ['Op' 'Sh' 'Cs' 'Cs' 'Op' 'Ns' 'Ns' 'Ns' 'Sh' 'Op' 'No' 'No' 'No' 'No'
+ 'Cs' 'No' 'Ns' 'Sh' 'Ns' 'Sh' 'No' 'Sh' 'Op' 'Cs' 'Ns' 'Sh' 'Cs' 'Sh'
+ 'Sh' 'Op' 'No' 'Sh' 'Op' 'No' 'Sh' 'Op' 'Sh' 'Ns' 'Ns' 'Ns' 'Op' 'Cs'
+ 'Op' 'Ns' 'No' 'Sh' 'Op' 'Cs' 'Ns' 'Sh']
+Train Complished!!!
+0.6973333333333334 0.7007943497240755
+All time cost:  6.590261220932007
+shape of raw image data: (250, 12288)
+shape of raw image data: (200, 12288)
+shape of raw image data: (50, 12288)
+pre ['Op' 'Sh' 'Cs' 'No' 'No' 'Ns' 'Ns' 'Ns' 'Sh' 'No' 'Ns' 'No' 'Op' 'No'
+ 'Cs' 'No' 'Ns' 'Sh' 'Ns' 'Sh' 'No' 'Sh' 'Op' 'No' 'Op' 'Sh' 'Cs' 'Cs'
+ 'Op' 'Op' 'No' 'Ns' 'Op' 'No' 'Sh' 'No' 'Sh' 'Ns' 'No' 'No' 'No' 'Cs'
+ 'Op' 'Sh' 'No' 'Op' 'Op' 'Cs' 'Ns' 'Sh']
+test ['Op' 'Sh' 'Cs' 'Cs' 'Op' 'Ns' 'Ns' 'Ns' 'Sh' 'Op' 'No' 'No' 'No' 'No'
+ 'Cs' 'No' 'Ns' 'Sh' 'Ns' 'Sh' 'No' 'Sh' 'Op' 'Cs' 'Ns' 'Sh' 'Cs' 'Sh'
+ 'Sh' 'Op' 'No' 'Sh' 'Op' 'No' 'Sh' 'Op' 'Sh' 'Ns' 'Ns' 'Ns' 'Op' 'Cs'
+ 'Op' 'Ns' 'No' 'Sh' 'Op' 'Cs' 'Ns' 'Sh']
+Train Complished!!!
+0.6973333333333334 0.7007943497240755
+All time cost:  7.470792770385742

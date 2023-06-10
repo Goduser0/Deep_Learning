@@ -1,0 +1,157 @@
+Namespace(batch_size=64, gpu_ids=0, log_name='coloraug_yespre', model_name='resnet18', n_epochs=50, num_classes=6, output='results10', pretrained=True, test_path='../dataset/NEU/NEU-10-r64/test', train_path='../dataset/NEU/NEU-10-r64-pad/color')
+Compose(
+    Resize(size=256, interpolation=bicubic, max_size=None, antialias=None)
+    CenterCrop(size=(224, 224))
+    ToTensor()
+    Normalize(mean=tensor([0.4850, 0.4560, 0.4060]), std=tensor([0.2290, 0.2240, 0.2250]))
+)
+Epoch: 1
+------------------------------
+Accuracy: 87.44, Avg loss: 0.723564
+Epoch: 2
+------------------------------
+Accuracy: 91.00, Avg loss: 0.258041
+Epoch: 3
+------------------------------
+Accuracy: 90.89, Avg loss: 0.246414
+Epoch: 4
+------------------------------
+Accuracy: 92.11, Avg loss: 0.217250
+Epoch: 5
+------------------------------
+Accuracy: 92.78, Avg loss: 0.200143
+Epoch: 6
+------------------------------
+Accuracy: 92.11, Avg loss: 0.214192
+Epoch: 7
+------------------------------
+Accuracy: 92.44, Avg loss: 0.208544
+Epoch: 8
+------------------------------
+Accuracy: 93.00, Avg loss: 0.208009
+Epoch: 9
+------------------------------
+Accuracy: 92.67, Avg loss: 0.211769
+Epoch: 10
+------------------------------
+Accuracy: 92.56, Avg loss: 0.213312
+Epoch: 11
+------------------------------
+Accuracy: 92.44, Avg loss: 0.214019
+Epoch: 12
+------------------------------
+Accuracy: 92.33, Avg loss: 0.211332
+Epoch: 13
+------------------------------
+Accuracy: 92.56, Avg loss: 0.212468
+Epoch: 14
+------------------------------
+Accuracy: 92.11, Avg loss: 0.214045
+Epoch: 15
+------------------------------
+Accuracy: 92.56, Avg loss: 0.212863
+Epoch: 16
+------------------------------
+Accuracy: 92.22, Avg loss: 0.215937
+Epoch: 17
+------------------------------
+Accuracy: 92.56, Avg loss: 0.212472
+Epoch: 18
+------------------------------
+Accuracy: 92.22, Avg loss: 0.216075
+Epoch: 19
+------------------------------
+Accuracy: 92.67, Avg loss: 0.215155
+Epoch: 20
+------------------------------
+Accuracy: 92.33, Avg loss: 0.217008
+Epoch: 21
+------------------------------
+Accuracy: 92.78, Avg loss: 0.215743
+Epoch: 22
+------------------------------
+Accuracy: 92.22, Avg loss: 0.217067
+Epoch: 23
+------------------------------
+Accuracy: 92.56, Avg loss: 0.217853
+Epoch: 24
+------------------------------
+Accuracy: 92.56, Avg loss: 0.217570
+Epoch: 25
+------------------------------
+Accuracy: 92.44, Avg loss: 0.217212
+Epoch: 26
+------------------------------
+Accuracy: 92.22, Avg loss: 0.219219
+Epoch: 27
+------------------------------
+Accuracy: 92.56, Avg loss: 0.218104
+Epoch: 28
+------------------------------
+Accuracy: 92.56, Avg loss: 0.218688
+Epoch: 29
+------------------------------
+Accuracy: 92.44, Avg loss: 0.218823
+Epoch: 30
+------------------------------
+Accuracy: 92.56, Avg loss: 0.219829
+Epoch: 31
+------------------------------
+Accuracy: 92.67, Avg loss: 0.219804
+Epoch: 32
+------------------------------
+Accuracy: 92.56, Avg loss: 0.219850
+Epoch: 33
+------------------------------
+Accuracy: 92.67, Avg loss: 0.220066
+Epoch: 34
+------------------------------
+Accuracy: 92.44, Avg loss: 0.221919
+Epoch: 35
+------------------------------
+Accuracy: 92.56, Avg loss: 0.220560
+Epoch: 36
+------------------------------
+Accuracy: 92.56, Avg loss: 0.221850
+Epoch: 37
+------------------------------
+Accuracy: 92.56, Avg loss: 0.223066
+Epoch: 38
+------------------------------
+Accuracy: 92.56, Avg loss: 0.222331
+Epoch: 39
+------------------------------
+Accuracy: 92.56, Avg loss: 0.222884
+Epoch: 40
+------------------------------
+Accuracy: 92.56, Avg loss: 0.223492
+Epoch: 41
+------------------------------
+Accuracy: 92.56, Avg loss: 0.223018
+Epoch: 42
+------------------------------
+Accuracy: 92.44, Avg loss: 0.223741
+Epoch: 43
+------------------------------
+Accuracy: 92.44, Avg loss: 0.223278
+Epoch: 44
+------------------------------
+Accuracy: 92.56, Avg loss: 0.224381
+Epoch: 45
+------------------------------
+Accuracy: 92.56, Avg loss: 0.224689
+Epoch: 46
+------------------------------
+Accuracy: 92.44, Avg loss: 0.224584
+Epoch: 47
+------------------------------
+Accuracy: 92.44, Avg loss: 0.225316
+Epoch: 48
+------------------------------
+Accuracy: 92.44, Avg loss: 0.224415
+Epoch: 49
+------------------------------
+Accuracy: 92.33, Avg loss: 0.224956
+Epoch: 50
+------------------------------
+Accuracy: 92.33, Avg loss: 0.225230
