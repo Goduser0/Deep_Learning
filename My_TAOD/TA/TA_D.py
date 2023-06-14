@@ -72,52 +72,52 @@ class FeatureMatchDiscriminator(nn.Module):
         self.softmax = nn.Softmax(dim=-1)
         
     def forward(self, X):
-        results = []
+        features = []
         
         output = self.layer1(X)
         feature1 = output
-        results.append(feature1) # 1st Feature map layer 
+        features.append(feature1) # 0: Feature map layer: (B, 3, W, H) -> (B, 64, W//2, H//2)
         
         output = self.layer2(output)
         feature2 = output
-        results.append(feature2) # 2nd Feature map layer
+        features.append(feature2) # 1: Feature map layer: -> (B, 128, W//4, H//4)
         
         output = self.layer3(output)
         output, p1 = self.attention1(output)
         feature3 = output
-        results.append(feature3) # 3rd Feature map layer
+        features.append(feature3) # 2: Feature map layer: -> (B, 256, W//8, H//8)
         
         output = self.layer4(output)
         output, p2 = self.attention2(output)
         feature4 = output
-        results.append(feature4) # 4th Feature map layer
+        features.append(feature4) # 3: Feature map layer: -> (B, 512, W//16, H//16)
         
-        output = self.last(output)
-        output = output.reshape(output.shape[0], -1)
-        results.append(output) # Final output to calculate GAN loss
+        output = self.last(output) # -> (B, 1, 1, 1)
+        output = output.reshape(output.shape[0], -1) # -> (B, 1)
+        features.append(output) # 4: Final output to calculate GAN loss: ->(B, 1)
         
-        output = self.MLP(output)
-        results.append(output) # Project output to calculate MMD loss
+        output = self.MLP(output) # -> (B, 64)
+        features.append(output) # 5: Project output to calculate MMD loss: ->(B, 64)
         
         # Attention Module
-        feature4_up = self.Upsample1(feature4)
-        feature3 = feature3 + feature4_up
+        feature4_up = self.Upsample1(feature4) # (B, 512, W//16, H//16) -> (B, 256, W//8, H//8)
+        feature3_combine = feature3 + feature4_up
         
-        feature3_up = self.Upsample2(feature3)
-        feature2 = feature2 + feature3_up
+        feature3_up = self.Upsample2(feature3_combine) # (B, 256, W//8, H//8) -> (B, 128, W//4, H//4)
+        feature2_combine = feature2 + feature3_up
         
-        feature2_up = self.Upsample3(feature2)
-        feature1 = feature1 + feature2_up
+        feature2_up = self.Upsample3(feature2_combine) # (B, 128, W//4, H//4) -> (B, 64, W//2, H//2)
+        feature1_combine = feature1 + feature2_up
         
-        feature_avg = self.avg(feature1).reshape(feature1.shape[0], -1)
-        feature_attention = self.weights(feature_avg)
-        feature_attention = self.softmax(feature_attention)
+        feature_avg = self.avg(feature1_combine).reshape(feature1_combine.shape[0], -1) # (B, 64, W//4, H//4) -> (B, 64)
+        feature_attention = self.weights(feature_avg) # (B, 64) -> (B, 4)
+        feature_attention = self.softmax(feature_attention) # (B, 4) -> Softmax
         
         for i in range(feature_attention.shape[1]):
             attention = feature_attention[:, i].reshape(feature_attention.shape[0], 1, 1, 1)
-            results[i] = results[i] * attention
+            features[i] = features[i] * attention
         
-        return results
+        return features
     
     
 ########################################################################################################
@@ -127,7 +127,7 @@ class FeatureMatchPatchDiscriminator(nn.Module):
     def __init__(self, img_size=64, conv_dim=64):
         super(FeatureMatchPatchDiscriminator, self).__init__()
         self.img_size = img_size
-
+        
         layer1 = []
         layer2 = []
         layer3 = []
@@ -184,52 +184,52 @@ class FeatureMatchPatchDiscriminator(nn.Module):
         self.softmax = nn.Softmax(dim=-1)
         
     def forward(self, X):
-        results = []
+        features = []
         
         output = self.layer1(X)
         feature1 = output
-        results.append(feature1) # 1st Feature map layer 
+        features.append(feature1) # 0: Feature map layer: (B, 3, W, H) -> (B, 64, W//2, H//2)
         
         output = self.layer2(output)
         feature2 = output
-        results.append(feature2) # 2nd Feature map layer
+        features.append(feature2) # 1: Feature map layer: -> (B, 128, W//4, H//4)
         
         output = self.layer3(output)
         output, p1 = self.attention1(output)
         feature3 = output
-        results.append(feature3) # 3rd Feature map layer
+        features.append(feature3) # 2: Feature map layer: -> (B, 256, W//8, H//8)
         
         output = self.layer4(output)
         output, p2 = self.attention2(output)
         feature4 = output
-        results.append(feature4) # 4th Feature map layer
+        features.append(feature4) # 3: Feature map layer: -> (B, 512, W//16, H//16)
         
-        output = self.last(output)
-        output = output.reshape(output.shape[0], -1)
-        results.append(output) # Final output to calculate GAN loss
+        output = self.last(output) # -> (B, 1, 1, 1)
+        output = output.reshape(output.shape[0], -1) # -> (B, 1)
+        features.append(output) # 4: Final output to calculate GAN loss: ->(B, 1)
         
-        output = self.MLP(output)
-        results.append(output) # Project output to calculate MMD loss
+        output = self.MLP(output) # -> (B, 64)
+        features.append(output) # 5: Project output to calculate MMD loss: ->(B, 64)
         
         # Attention Module
-        feature4_up = self.Upsample1(feature4)
-        feature3 = feature3 + feature4_up
+        feature4_up = self.Upsample1(feature4) # (B, 512, W//16, H//16) -> (B, 256, W//8, H//8)
+        feature3_combine = feature3 + feature4_up
         
-        feature3_up = self.Upsample2(feature3)
-        feature2 = feature2 + feature3_up
+        feature3_up = self.Upsample2(feature3_combine) # (B, 256, W//8, H//8) -> (B, 128, W//4, H//4)
+        feature2_combine = feature2 + feature3_up
         
-        feature2_up = self.Upsample3(feature2)
-        feature1 = feature1 + feature2_up
+        feature2_up = self.Upsample3(feature2_combine) # (B, 128, W//4, H//4) -> (B, 64, W//2, H//2)
+        feature1_combine = feature1 + feature2_up
         
-        feature_avg = self.avg(feature1).reshape(feature1.shape[0], -1)
-        feature_attention = self.weights(feature_avg)
-        feature_attention = self.softmax(feature_attention)
+        feature_avg = self.avg(feature1_combine).reshape(feature1_combine.shape[0], -1) # (B, 64, W//4, H//4) -> (B, 64)
+        feature_attention = self.weights(feature_avg) # (B, 64) -> (B, 4)
+        feature_attention = self.softmax(feature_attention) # (B, 4) -> Softmax
         
         for i in range(feature_attention.shape[1]):
             attention = feature_attention[:, i].reshape(feature_attention.shape[0], 1, 1, 1)
-            results[i] = results[i] * attention
+            features[i] = features[i] * attention
         
-        return results
+        return features
 
 ########################################################################################################
 # CLASS TEST
