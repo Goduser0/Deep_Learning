@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from deformable_attention import DeformableAttention
+# from deformable_attention import DeformableAttention
 
 
 class SelfAttention(nn.Module):

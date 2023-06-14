@@ -633,18 +633,19 @@ class Discriminator(nn.Module):
         super().__init__()
 
         channels = {
-            4: 512,
-            8: 512,
-            16: 512,
-            32: 512,
-            64: 256 * channel_multiplier,
-            128: 128 * channel_multiplier,
-            256: 64 * channel_multiplier,
-            512: 32 * channel_multiplier,
-            1024: 16 * channel_multiplier,
+            4: 512, #2
+            8: 512, #3
+            16: 512, #4
+            32: 512, #5
+            64: 256 * channel_multiplier, #6
+            128: 128 * channel_multiplier, #7
+            256: 64 * channel_multiplier, #8
+            512: 32 * channel_multiplier, #9
+            1024: 16 * channel_multiplier, #10   
         }
 
         convs = [ConvLayer(3, channels[size], 1)]
+        # (B, 3, W, H) -> (B, 64, W, H)
 
         log_size = int(math.log(size, 2))
 
@@ -654,7 +655,7 @@ class Discriminator(nn.Module):
             out_channel = channels[2 ** (i - 1)]
 
             convs.append(ResBlock(in_channel, out_channel, blur_kernel))
-
+            # (B, 64, W, H) -> (B, 128, W, H) -> (B, 256, W, H) -> (B, 512, W, H) -> (B, 512, W, H)
             in_channel = out_channel
 
         self.convs = nn.Sequential(*convs)
@@ -663,6 +664,7 @@ class Discriminator(nn.Module):
         self.stddev_feat = 1
 
         self.final_conv = ConvLayer(in_channel + 1, channels[4], 3)
+        
         self.final_linear = nn.Sequential(
             EqualLinear(channels[4] * 4 * 4, channels[4], activation='fused_lrelu'),
             EqualLinear(channels[4], 1),
@@ -766,6 +768,7 @@ class Patch_Discriminator(nn.Module):
                     return inp, None
 
         out = inp
+        
         batch, channel, height, width = out.shape
         group = min(batch, self.stddev_group)
         stddev = out.view(
@@ -780,6 +783,8 @@ class Patch_Discriminator(nn.Module):
         feat.append(out)
         out = out.view(batch, -1)
         out = self.final_linear(out)
+        
+        
         return out, None 
 
 

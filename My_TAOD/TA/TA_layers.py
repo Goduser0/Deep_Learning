@@ -92,9 +92,14 @@ class EqualLinear(nn.Module):
             # out = fused_leaky_relu(out, self.bias * self.lr_mul)
             
         else:
-            output = F.linear(
-                input, self.weight * self.scale, bias=self.bias * self.lr_mul
-            )
+            if self.bias:
+                output = F.linear(
+                    input, self.weight * self.scale, bias=self.bias * self.lr_mul
+                )
+            else:
+                output = F.linear(
+                    input, self.weight * self.scale
+                )
         
         return output
     
@@ -264,4 +269,21 @@ class MultiHeadSelfAttention(nn.Module):
         # (B, C, W, H)
 
         return output, attention 
+    
+
+#######################################################################################################
+# CLASS: Extra
+#######################################################################################################
+class Extra(nn.Module):
+    def __init__(self):
+        super().__init__()
         
+        self.new_conv = nn.ModuleList()
+        self.new_conv.append(nn.Conv2d(512, 1, 3))
+        self.new_conv.append(nn.Conv2d(512, 1, 3))
+        self.new_conv.append(nn.Conv2d(512, 1, 3))
+        self.new_conv.append(nn.Conv2d(512, 1, 3))
+        
+    def forward(self, inp, index):
+        output = self.new_conv[index](inp)
+        return output
