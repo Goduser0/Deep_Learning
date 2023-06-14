@@ -11,6 +11,12 @@ import pandas as pd
 from PIL import Image
 import matplotlib.pyplot as plt
 
-file_list = os.listdir('./My_Datasets/Classification/Magnetic-Tile-Defect')
-file_list = [filename for filename in file_list if filename[:2]=='MT']
-print(file_list)
+out = torch.randn(16, 3, 200, 200)
+
+stddev = torch.randn(16, 1, 1, 3, 200, 200)
+stddev = torch.sqrt(stddev.var(0, unbiased=False) + 1e-8)
+stddev = stddev.mean([2, 3, 4], keepdim=True).squeeze(2)
+stddev = stddev.repeat(16, 1, 200, 200)
+stddev = torch.cat([out, stddev], 1)
+
+print(stddev.detach().shape)

@@ -563,6 +563,8 @@ if __name__ == "__main__":
         #discriminator = nn.parallel.DataParallel(discriminator)
         discriminator.load_state_dict(ckpt["d"])
         d_source.load_state_dict(ckpt_source["d"])
+        # 初始为相同的参数
+
 
         if 'g_optim' in ckpt.keys():
             g_optim.load_state_dict(ckpt["g_optim"])

@@ -8,11 +8,12 @@ from torchinfo import summary
 from TA_layers import SelfAttention
 
 
-##########################################################################################################
+########################################################################################################
 # CLASS: FeatureMatchDiscriminator()
-#########################################################################################################
+########################################################################################################
 class FeatureMatchDiscriminator(nn.Module):
     def __init__(self, img_size=64, conv_dim=64):
+        super(FeatureMatchDiscriminator, self).__init__()
         self.img_size = img_size
         
         layer1 = []
@@ -119,13 +120,14 @@ class FeatureMatchDiscriminator(nn.Module):
         return results
     
     
-##########################################################################################################
+########################################################################################################
 # CLASS: FeatureMatchPatchDiscriminator()
-#########################################################################################################
+########################################################################################################
 class FeatureMatchPatchDiscriminator(nn.Module):
     def __init__(self, img_size=64, conv_dim=64):
+        super(FeatureMatchPatchDiscriminator, self).__init__()
         self.img_size = img_size
-        
+
         layer1 = []
         layer2 = []
         layer3 = []
@@ -186,27 +188,27 @@ class FeatureMatchPatchDiscriminator(nn.Module):
         
         output = self.layer1(X)
         feature1 = output
-        results.append(feature1) # 1st Feature map layer: (B, 3, W, H) -> (B, 64, W//2, H//2)
+        results.append(feature1) # 1st Feature map layer 
         
         output = self.layer2(output)
         feature2 = output
-        results.append(feature2) # 2nd Feature map layer: -> (B, 128, W//4, H//4)
+        results.append(feature2) # 2nd Feature map layer
         
         output = self.layer3(output)
         output, p1 = self.attention1(output)
         feature3 = output
-        results.append(feature3) # 3rd Feature map layer: -> (B, 256, W//8, H//8)
+        results.append(feature3) # 3rd Feature map layer
         
         output = self.layer4(output)
         output, p2 = self.attention2(output)
         feature4 = output
-        results.append(feature4) # 4th Feature map layer: -> (B, 512, W//16, H//16)
+        results.append(feature4) # 4th Feature map layer
         
-        output = self.last(output) # -> (B, 1, 1, 1)
-        output = output.reshape(output.shape[0], -1) # -> (B, 1)
+        output = self.last(output)
+        output = output.reshape(output.shape[0], -1)
         results.append(output) # Final output to calculate GAN loss
         
-        output = self.MLP(output) # -> (B, 64)
+        output = self.MLP(output)
         results.append(output) # Project output to calculate MMD loss
         
         # Attention Module
@@ -228,8 +230,16 @@ class FeatureMatchPatchDiscriminator(nn.Module):
             results[i] = results[i] * attention
         
         return results
-        
 
-
+########################################################################################################
+# CLASS TEST
+########################################################################################################
+D = FeatureMatchDiscriminator()
+X = torch.randn(128, 3, 64, 64) # (B, C, W, H)
+print(f"Input X: {X.detach().shape}")
+Y = D(X)
+print(f"Y = FeatureMatchDiscriminator(X)")
+for i in range(len(Y)):
+    print(f"Y[{i}] : {Y[i].detach().shape}")
         
         

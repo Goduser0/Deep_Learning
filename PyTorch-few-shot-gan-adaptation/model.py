@@ -655,7 +655,7 @@ class Discriminator(nn.Module):
             out_channel = channels[2 ** (i - 1)]
 
             convs.append(ResBlock(in_channel, out_channel, blur_kernel))
-            # (B, 64, W, H) -> (B, 128, W, H) -> (B, 256, W, H) -> (B, 512, W, H) -> (B, 512, W, H)
+            # (B, 64, W, H) -> (B, 128, W, H) -> (B, 256, W, H) -> (B, 512, W, H) -> (B, 512, 4, 4)
             in_channel = out_channel
 
         self.convs = nn.Sequential(*convs)
@@ -689,22 +689,36 @@ class Discriminator(nn.Module):
 
         out = inp
 
-        batch, channel, height, width = out.shape
+        batch, channel, height, width = out.shape # out:(B, C, 4, 4)
         group = min(batch, self.stddev_group)
-        stddev = out.view(
+        stddev = out.view( # if group==batch, 
             group, -1, self.stddev_feat, channel // self.stddev_feat, height, width
+            # -> (B, 1, 1, C, 4, 4)
         )
+        
         stddev = torch.sqrt(stddev.var(0, unbiased=False) + 1e-8)
+        # -> (1, 1, C, 4, 4)
+        
         stddev = stddev.mean([2, 3, 4], keepdims=True).squeeze(2)
+        # -> (1, 1, 1, 1)
+        
         stddev = stddev.repeat(group, 1, height, width)
+        # -> (B, 1, 4, 4)
+        
         out = torch.cat([out, stddev], 1)
-
+        # (B, C, 4, 4) + (B, 1, 4, 4) -> (B, C+1, 4, 4)
 
         out = self.final_conv(out)
+        # -> (B, 512, 4, 4)
+        
         feat.append(out)
+        
         out = out.view(batch, -1)
+        # -> (B, 512*4*4)
+         
         out = self.final_linear(out)
-
+        # (B, 8192) -> (B, 512) -> (B, 1)
+        
         return out, feat
 
 
@@ -720,6 +734,7 @@ class Patch_Discriminator(nn.Module):
             64: 256 * channel_multiplier,
             128: 128 * channel_multiplier,
             256: 64 * channel_multiplier,
+            
             512: 32 * channel_multiplier,
             1024: 16 * channel_multiplier,
         }
@@ -755,6 +770,7 @@ class Patch_Discriminator(nn.Module):
             if i == 0:
                 inp = self.convs[i](inp)
             else:
+                
                 temp1 = self.convs[i].conv1(inp)
                 if (flag > 0) and (temp1.shape[1] == 512) and (temp1.shape[2] == 32 or temp1.shape[2] == 16):
                     feat.append(temp1)
@@ -762,12 +778,13 @@ class Patch_Discriminator(nn.Module):
                 if (flag > 0) and (temp2.shape[1] == 512) and (temp2.shape[2] == 32 or temp2.shape[2] == 16):
                     feat.append(temp2)
                 inp = self.convs[i](inp)
+                
                 if (flag > 0) and len(feat) == 4:
                     # We use 4 possible intermediate feature maps to be used for patch-based adversarial loss. Any one of them is selected randomly during training.
                     inp = extra(feat[p_ind], p_ind)
                     return inp, None
 
-        out = inp
+        out = inp # out:(B, C, 4, 4)
         
         batch, channel, height, width = out.shape
         group = min(batch, self.stddev_group)

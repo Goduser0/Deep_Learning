@@ -284,6 +284,9 @@ class Extra(nn.Module):
         self.new_conv.append(nn.Conv2d(512, 1, 3))
         self.new_conv.append(nn.Conv2d(512, 1, 3))
         
+        self.activater = F.leaky_relu()
+        
     def forward(self, inp, index):
         output = self.new_conv[index](inp)
+        output = self.activater(output)
         return output
