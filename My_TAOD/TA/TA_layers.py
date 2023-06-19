@@ -271,22 +271,3 @@ class MultiHeadSelfAttention(nn.Module):
         return output, attention 
     
 
-#######################################################################################################
-# CLASS: Extra
-#######################################################################################################
-class Extra(nn.Module):
-    def __init__(self):
-        super().__init__()
-        
-        self.new_conv = nn.ModuleList()
-        self.new_conv.append(nn.Conv2d(512, 1, 3))
-        self.new_conv.append(nn.Conv2d(512, 1, 3))
-        self.new_conv.append(nn.Conv2d(512, 1, 3))
-        self.new_conv.append(nn.Conv2d(512, 1, 3))
-        
-        self.activater = F.leaky_relu()
-        
-    def forward(self, inp, index):
-        output = self.new_conv[index](inp)
-        output = self.activater(output)
-        return output

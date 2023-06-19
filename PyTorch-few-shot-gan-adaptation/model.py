@@ -631,7 +631,7 @@ class ResBlock(nn.Module):
 class Discriminator(nn.Module):
     def __init__(self, size, channel_multiplier=2, blur_kernel=[1, 3, 3, 1]):
         super().__init__()
-
+        # size=256
         channels = {
             4: 512, #2
             8: 512, #3
@@ -640,6 +640,7 @@ class Discriminator(nn.Module):
             64: 256 * channel_multiplier, #6
             128: 128 * channel_multiplier, #7
             256: 64 * channel_multiplier, #8
+            
             512: 32 * channel_multiplier, #9
             1024: 16 * channel_multiplier, #10   
         }

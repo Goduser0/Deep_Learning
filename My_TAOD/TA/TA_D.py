@@ -3,6 +3,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 from torch.nn.utils.parametrizations import spectral_norm as SpectralNorm
+import torch.nn.functional as F
 from torchinfo import summary
 
 from TA_layers import SelfAttention
@@ -119,12 +120,32 @@ class FeatureMatchDiscriminator(nn.Module):
         
         return features
     
-    
+
+#######################################################################################################
+# CLASS: Extra
+#######################################################################################################
+class Extra(nn.Module):
+    def __init__(self):
+        super().__init__()
+        
+        self.new_conv = nn.ModuleList()
+        self.new_conv.append(nn.Conv2d(512, 1, 3))
+        self.new_conv.append(nn.Conv2d(512, 1, 3))
+        self.new_conv.append(nn.Conv2d(512, 1, 3))
+        self.new_conv.append(nn.Conv2d(512, 1, 3))
+        
+        self.activater = nn.LeakyReLU()
+    def forward(self, inp, index):
+        output = self.new_conv[index](inp)
+        output = self.activater(output)
+        return output
+
+
 ########################################################################################################
 # CLASS: FeatureMatchPatchDiscriminator()
 ########################################################################################################
 class FeatureMatchPatchDiscriminator(nn.Module):
-    def __init__(self, img_size=64, conv_dim=64):
+    def __init__(self, img_size=64, conv_dim=64, flag=None):
         super(FeatureMatchPatchDiscriminator, self).__init__()
         self.img_size = img_size
         
@@ -183,7 +204,7 @@ class FeatureMatchPatchDiscriminator(nn.Module):
         self.weights = nn.Linear(64, 4)
         self.softmax = nn.Softmax(dim=-1)
         
-    def forward(self, X):
+    def forward(self, X, inp, flag=None, p_ind=None, extra=None):
         features = []
         
         output = self.layer1(X)
