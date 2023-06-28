@@ -135,6 +135,7 @@ class Extra(nn.Module):
         self.new_conv.append(nn.Conv2d(512, 1, 3))
         
         self.activater = nn.LeakyReLU()
+        
     def forward(self, inp, index):
         output = self.new_conv[index](inp)
         output = self.activater(output)
@@ -145,7 +146,7 @@ class Extra(nn.Module):
 # CLASS: FeatureMatchPatchDiscriminator()
 ########################################################################################################
 class FeatureMatchPatchDiscriminator(nn.Module):
-    def __init__(self, img_size=64, conv_dim=64, flag=None):
+    def __init__(self, img_size=64, conv_dim=64):
         super(FeatureMatchPatchDiscriminator, self).__init__()
         self.img_size = img_size
         
@@ -204,7 +205,7 @@ class FeatureMatchPatchDiscriminator(nn.Module):
         self.weights = nn.Linear(64, 4)
         self.softmax = nn.Softmax(dim=-1)
         
-    def forward(self, X, inp, flag=None, p_ind=None, extra=None):
+    def forward(self, X, flag=None, p_ind=None, extra=None):
         features = []
         
         output = self.layer1(X)
@@ -242,7 +243,7 @@ class FeatureMatchPatchDiscriminator(nn.Module):
         feature2_up = self.Upsample3(feature2_combine) # (B, 128, W//4, H//4) -> (B, 64, W//2, H//2)
         feature1_combine = feature1 + feature2_up
         
-        feature_avg = self.avg(feature1_combine).reshape(feature1_combine.shape[0], -1) # (B, 64, W//4, H//4) -> (B, 64)
+        feature_avg = self.avg(feature1_combine).reshape(feature1_combine.shape[0], -1) # (B, 64, W//2, H//2) -> (B, 64)
         feature_attention = self.weights(feature_avg) # (B, 64) -> (B, 4)
         feature_attention = self.softmax(feature_attention) # (B, 4) -> Softmax
         
@@ -250,17 +251,21 @@ class FeatureMatchPatchDiscriminator(nn.Module):
             attention = feature_attention[:, i].reshape(feature_attention.shape[0], 1, 1, 1)
             features[i] = features[i] * attention
         
+        # Patch Discriminator
+        if (flag) and (flag>0):
+            output = extra(features[p_ind], p_ind)
+            return output
+        
+        # Image Discriminator
         return features
 
 ########################################################################################################
-# CLASS TEST
+# Discriminator TEST
 ########################################################################################################
-D = FeatureMatchDiscriminator()
+D = FeatureMatchPatchDiscriminator()
 X = torch.randn(128, 3, 64, 64) # (B, C, W, H)
 print(f"Input X: {X.detach().shape}")
-Y = D(X)
-print(f"Y = FeatureMatchDiscriminator(X)")
-for i in range(len(Y)):
-    print(f"Y[{i}] : {Y[i].detach().shape}")
+Y = D(X, flag=0, p_ind=3, extra=Extra())
+summary(D, X.shape, device="cpu")
         
         

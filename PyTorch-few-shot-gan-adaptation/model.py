@@ -575,8 +575,8 @@ class ConvLayer(nn.Sequential):
         if downsample:
             factor = 2
             p = (len(blur_kernel) - factor) + (kernel_size - 1)
-            pad0 = (p + 1) // 2
-            pad1 = p // 2
+            pad0 = (p + 1) // 2 # pad0=2
+            pad1 = p // 2   # pad1=2
 
             layers.append(Blur(blur_kernel, pad=(pad0, pad1)))
 
@@ -639,24 +639,25 @@ class Discriminator(nn.Module):
             32: 512, #5
             64: 256 * channel_multiplier, #6
             128: 128 * channel_multiplier, #7
-            256: 64 * channel_multiplier, #8
             
+            256: 64 * channel_multiplier, #8
             512: 32 * channel_multiplier, #9
             1024: 16 * channel_multiplier, #10   
         }
 
         convs = [ConvLayer(3, channels[size], 1)]
-        # (B, 3, W, H) -> (B, 64, W, H)
+        # (B, 3, W, H) -> (B, 128, W, H)
 
         log_size = int(math.log(size, 2))
 
         in_channel = channels[size]
 
         for i in range(log_size, 2, -1):
-            out_channel = channels[2 ** (i - 1)]
+            out_channel = channels[2 ** (i - 1)] #[128 64 32 16 8 4] 
 
             convs.append(ResBlock(in_channel, out_channel, blur_kernel))
-            # (B, 64, W, H) -> (B, 128, W, H) -> (B, 256, W, H) -> (B, 512, W, H) -> (B, 512, 4, 4)
+            # (B, 128, 256, 256) -> (B, 256, 128, 128) -> (B, 512, 64, 64) -> (B, 512, 32, 32) -> (B, 512, 16, 16) -> (B, 512, 8, 8) -> (B, 512, 4, 4)
+            
             in_channel = out_channel
 
         self.convs = nn.Sequential(*convs)
@@ -778,33 +779,49 @@ class Patch_Discriminator(nn.Module):
                 temp2 = self.convs[i].conv2(temp1)
                 if (flag > 0) and (temp2.shape[1] == 512) and (temp2.shape[2] == 32 or temp2.shape[2] == 16):
                     feat.append(temp2)
+    
                 inp = self.convs[i](inp)
-                
+        
                 if (flag > 0) and len(feat) == 4:
                     # We use 4 possible intermediate feature maps to be used for patch-based adversarial loss. Any one of them is selected randomly during training.
                     inp = extra(feat[p_ind], p_ind)
                     return inp, None
 
-        out = inp # out:(B, C, 4, 4)
+        out = inp 
+        # out:(B, C, 4, 4)
         
         batch, channel, height, width = out.shape
         group = min(batch, self.stddev_group)
-        stddev = out.view(
+        
+        stddev = out.view( # if group==batch
             group, -1, self.stddev_feat, channel // self.stddev_feat, height, width
         )
+        # -> (B, 1, 1, C, 4, 4)
+        
         stddev = torch.sqrt(stddev.var(0, unbiased=False) + 1e-8)
+        # -> (1, 1, C, 4, 4)
+        
         stddev = stddev.mean([2, 3, 4], keepdims=True).squeeze(2)
+        # -> (1, 1, 1, 1)
+        
         stddev = stddev.repeat(group, 1, height, width)
+        # -> (B, 1, 4, 4)
+        
         out = torch.cat([out, stddev], 1)
+        # (B, C, 4, 4) + (B, 1, 4, 4) -> (B, C+1, 4, 4)
 
         out = self.final_conv(out)
-        feat.append(out)
-        out = out.view(batch, -1)
-        out = self.final_linear(out)
+        # -> (B, 512, 4, 4)
         
+        feat.append(out)
+        
+        out = out.view(batch, -1)
+        # -> (B, 512*4*4)
+        
+        out = self.final_linear(out)
+        # (B, 8192) -> (B, 512) -> (B, 1)
         
         return out, None 
-
 
 
 class Extra(nn.Module):

@@ -18,5 +18,5 @@ stddev = torch.sqrt(stddev.var(0, unbiased=False) + 1e-8)
 stddev = stddev.mean([2, 3, 4], keepdim=True).squeeze(2)
 stddev = stddev.repeat(16, 1, 200, 200)
 stddev = torch.cat([out, stddev], 1)
-
-print(stddev.detach().shape)
+for i in range(8, 2, -1):
+    print()
