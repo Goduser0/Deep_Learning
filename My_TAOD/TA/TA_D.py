@@ -6,7 +6,7 @@ from torch.nn.utils.parametrizations import spectral_norm as SpectralNorm
 import torch.nn.functional as F
 from torchinfo import summary
 
-from TA_layers import SelfAttention
+from TA_layers import SelfAttention, StdDevNorm
 
 
 ########################################################################################################
@@ -129,15 +129,15 @@ class Extra(nn.Module):
         super().__init__()
         
         self.new_conv = nn.ModuleList()
-        self.new_conv.append(nn.Conv2d(512, 1, 3))
-        self.new_conv.append(nn.Conv2d(512, 1, 3))
-        self.new_conv.append(nn.Conv2d(512, 1, 3))
+        self.new_conv.append(nn.Conv2d(64, 1, 3))
+        self.new_conv.append(nn.Conv2d(128, 1, 3))
+        self.new_conv.append(nn.Conv2d(256, 1, 3))
         self.new_conv.append(nn.Conv2d(512, 1, 3))
         
         self.activater = nn.LeakyReLU()
         
-    def forward(self, inp, index):
-        output = self.new_conv[index](inp)
+    def forward(self, input, index):
+        output = self.new_conv[index](input)
         output = self.activater(output)
         return output
 
@@ -154,6 +154,7 @@ class FeatureMatchPatchDiscriminator(nn.Module):
         layer2 = []
         layer3 = []
         layer4 = []
+        stdnorm = []
         last = []
         
         # layer1
@@ -178,6 +179,9 @@ class FeatureMatchPatchDiscriminator(nn.Module):
         curr_dim = curr_dim * 2
         attention2_dim = curr_dim
         
+        # stdnorm
+        stdnorm.append(StdDevNorm())
+        
         # last
         last.append(nn.Conv2d(curr_dim, 1, 4))
         
@@ -185,6 +189,7 @@ class FeatureMatchPatchDiscriminator(nn.Module):
         self.layer2 = nn.Sequential(*layer2)
         self.layer3 = nn.Sequential(*layer3)
         self.layer4 = nn.Sequential(*layer4)
+        self.stdnorm = nn.Sequential(*stdnorm)
         self.last = nn.Sequential(*last)
         
         self.attention1 = SelfAttention(attention1_dim)
@@ -226,6 +231,8 @@ class FeatureMatchPatchDiscriminator(nn.Module):
         feature4 = output
         features.append(feature4) # 3: Feature map layer: -> (B, 512, W//16, H//16)
         
+        output = self.stdnorm(output)
+        
         output = self.last(output) # -> (B, 1, 1, 1)
         output = output.reshape(output.shape[0], -1) # -> (B, 1)
         features.append(output) # 4: Final output to calculate GAN loss: ->(B, 1)
@@ -262,10 +269,12 @@ class FeatureMatchPatchDiscriminator(nn.Module):
 ########################################################################################################
 # Discriminator TEST
 ########################################################################################################
-D = FeatureMatchPatchDiscriminator()
-X = torch.randn(128, 3, 64, 64) # (B, C, W, H)
-print(f"Input X: {X.detach().shape}")
-Y = D(X, flag=0, p_ind=3, extra=Extra())
-summary(D, X.shape, device="cpu")
-        
+def test():
+    D = FeatureMatchPatchDiscriminator()
+    X = torch.randn(128, 3, 64, 64) # (B, C, W, H)
+    print(f"Input X: {X.detach().shape}")
+    Y = D(X, flag=1, p_ind=0, extra=Extra())
+    summary(D, X.shape, device="cpu")
+
+# test()
         

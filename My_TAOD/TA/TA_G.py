@@ -30,8 +30,8 @@ class FeatureMatchGenerator(nn.Module):
             for i in range(n_mlp):
                 mlp.append(EqualLinear(z_dim, z_dim, lr_mul=lr_mlp, activation='leaky_relu'))
             
-        repeat_num = int(np.log2(self.img_size)) - 3
-        multi = 2 ** repeat_num
+        repeat_num = int(np.log2(self.img_size)) - 3 # =3
+        multi = 2 ** repeat_num # =8
         
         layer1.append(SpectralNorm(nn.ConvTranspose2d(z_dim, conv_dim * multi, 4)))
         layer1.append(nn.BatchNorm2d(conv_dim * multi))
@@ -92,7 +92,10 @@ class FeatureMatchGenerator(nn.Module):
 ########################################################################################################
 # CLASS: Generater TEST
 ########################################################################################################
-z = torch.randn(12, 128) # batchsize z_dim
-FMG = FeatureMatchGenerator(n_mlp=2)
-output = FMG(z)
-summary(FMG, z.shape, device="cpu")
+def test():
+    z = torch.randn(12, 128) # batchsize z_dim
+    FMG = FeatureMatchGenerator(n_mlp=2)
+    output = FMG(z)
+    summary(FMG, z.shape, device="cpu")
+
+test()
