@@ -12,6 +12,9 @@ import pandas as pd
 from PIL import Image
 import matplotlib.pyplot as plt
 
+import cv2 as cv
+
+from TA_utils import *
 
 ##########################################################################################################
 # CLASS: PixelNorm
@@ -88,19 +91,18 @@ class EqualLinear(nn.Module):
         
     def forward(self, input):
         if self.activation:
+            # 平替
             output = F.linear(input, self.weight * self.scale)
-            # out = fused_leaky_relu(out, self.bias * self.lr_mul)
+            output = fused_leaky_relu(output, self.bias * self.lr_mul)
+            # 自定义
+            #output = F.linear(input, self.weight * self.scale, self.bias * self.lr_mul)
+            #output = F.leaky_relu(output, 0.2)
             
         else:
-            if self.bias:
-                output = F.linear(
-                    input, self.weight * self.scale, bias=self.bias * self.lr_mul
-                )
-            else:
-                output = F.linear(
-                    input, self.weight * self.scale
-                )
-        
+            output = F.linear(
+                input, self.weight * self.scale, bias=self.bias * self.lr_mul
+            )
+
         return output
     
     def __repr__(self):
@@ -122,6 +124,21 @@ class ScaledLeakRelu(nn.Module):
         output = F.leaky_relu(input, negative_slope=self.negative_slope)
         
         return output * math.sqrt(2)
+    
+
+##########################################################################################################
+# CLASS: FusedLeakyRelu()
+##########################################################################################################
+class FusedLeakyRelu(nn.Module):
+    def __init__(self, channel, negative_slope=0.2, scale=2 ** 0.5):
+        super().__init__()
+        
+        self.bias = nn.Parameter(torch.zeros(channel))
+        self.negative_slope = negative_slope
+        self.scale = scale
+        
+    def forward(self, input):
+        return fused_leaky_relu(input, self.bias, self.negative_slope, self.scale)
     
 
 ##########################################################################################################
@@ -156,6 +173,54 @@ class ConstantInput(nn.Module):
         return output
     
     
+#######################################################################################################
+# CLASS: Upsample
+#######################################################################################################
+class Upsample(nn.Module):
+    def __init__(self, kernel, factor=2):
+        super().__init__()
+        
+        self.factor = factor
+        kernel = make_kernel(kernel) * (factor ** 2)
+        self.kernel = kernel
+        
+        p = kernel.shape[0] - factor
+        
+        pad0 = (p + 1) // 2 + factor -1
+        pad1 = p // 2
+        
+        self.pad = (pad0, pad1)
+        
+    def forward(self, input):
+        output = upfirdn2d(input, self.kernel, up=self.factor, down=1, pad=self.pad)
+        
+        return output
+
+
+#######################################################################################################
+# CLASS: Downsample
+#######################################################################################################
+class Downsample(nn.Module):
+    def __init__(self, kernel, factor=2):
+        super().__init__()
+        
+        self.factor = factor
+        kernel = make_kernel(kernel)
+        self.kernel = kernel
+        
+        p = kernel.shape[0] - factor
+        
+        pad0 = (p + 1) // 2
+        pad1 = p // 2
+        
+        self.pad = (pad0, pad1)
+        
+    def forward(self, input):
+        output = upfirdn2d(input, self.kernel, up=1, down=self.factor, pad=self.pad)
+        
+        return output
+        
+        
 #######################################################################################################
 # CLASS: SelfAttention
 #######################################################################################################
@@ -271,3 +336,16 @@ class MultiHeadSelfAttention(nn.Module):
         return output, attention 
     
 
+#######################################################################################################
+# CLASS: TEST
+#######################################################################################################
+def test():
+    x = torch.randn(12, 3, 128, 128)
+    print(x.shape)
+    ds = Downsample([1, 3, 3, 1], factor=2)
+    
+    y = ds(x)
+    print(y.shape)
+    
+test()
+    

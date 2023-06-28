@@ -7,6 +7,7 @@ import numpy as np
 import torch
 import torch.backends.cudnn as cudnn
 from torch.autograd import Variable
+import torch.nn.functional as F
 
 #######################################################################################################
 # FUNCTION: init_random_seed()
@@ -66,6 +67,79 @@ def get_subspace(config, init_z, vis_flag=False):
     
     return z
 
+
+#######################################################################################################
+# FUNCTION: fused_leaky_relu()
+#######################################################################################################
+def fused_leaky_relu(input, bias, negative_slope=0.2, scale= 2 ** 0.5):
+    return scale * F.leaky_relu(
+        input + bias.view((1, -1) + (1,) * (len(input.shape) - 2)), 
+        negative_slope=negative_slope
+                                )
+
+
+#######################################################################################################
+# FUNCTION: upfirdn2d_native()
+#######################################################################################################
+def upfirdn2d_native(input, kernel, up_x, up_y, down_x, down_y, pad_x0, pad_x1, pad_y0, pad_y1):
+    input = input.permute(0, 2, 3, 1)
+    _, in_h, in_w, minor = input.shape
+    kernel_h, kernel_w = kernel.shape
+    
+    output = input.view(-1, in_h, 1, in_w, 1, minor)
+    output = F.pad(output, [0, 0, 0, up_x-1, 0, 0, 0, up_y -1])
+    output = output.view(-1, in_h * up_y, in_w * up_x, minor)
+    
+    output = F.pad(output, [0, 0, max(pad_x0, 0), max(pad_x1, 0), max(pad_y0, 0), max(pad_y1, 0)])
+    
+    output = output[
+        :,
+        max(-pad_y0, 0) : output.shape[1] - max(-pad_y1, 0),
+        max(-pad_x0, 0) : output.shape[2] - max(-pad_x1, 0),
+        :,
+    ]
+    
+    output = output.permute(0, 3, 1, 2)
+    output = output.reshape(
+        [-1, 1, in_h * up_y + pad_y0 + pad_y1, in_w * up_x + pad_x0 + pad_x1]
+    )
+    
+    w = torch.flip(kernel, [0, 1]).view(1, 1, kernel_h, kernel_w)
+    output = F.conv2d(output, w)
+    output = output.reshape(
+        -1, 
+        minor, 
+        in_h * up_y + pad_y0 + pad_y1 - kernel_h + 1,
+        in_w * up_x + pad_x0 + pad_x1 - kernel_w + 1,
+    )
+    
+    return output[:, :, ::down_y, ::down_x]
+    
+    
+#######################################################################################################
+# FUNCTION: upfirdn2d()
+#######################################################################################################
+def upfirdn2d(input, kernel, up=1, down=1, pad=(0, 0)):
+    output = upfirdn2d_native(input, kernel, up, up, down, down, pad[0], pad[1], pad[0], pad[1])
+    
+    return output
+
+#######################################################################################################
+# FUNCTION: make_kernel()
+#######################################################################################################
+def make_kernel(ksize):
+    ksize = torch.tensor(ksize, dtype=torch.float32)
+    
+    if ksize.ndim == 1:
+        kernel = ksize[None, :] * ksize[:, None]
+    else:
+        kernel = ksize
+        
+    kernel /= kernel.sum()
+    
+    return kernel
+
+
 #######################################################################################################
 # Function Test
 #######################################################################################################
@@ -85,3 +159,13 @@ def get_subspace(config, init_z, vis_flag=False):
 # a = mix_noise(16, 10, 0.9, torch.device('cuda'))
 # for i in a:
 #     print(i.detach().shape)
+
+# k = [1, 4, 4, 1]
+# kernel = make_kernel(k)
+# print(kernel)
+
+# k = [1, 4, 4, 1]
+# kernel = make_kernel(k)
+# x = torch.randn(12, 3, 64, 64)
+# y = upfirdn2d(x, kernel, 7, 7)
+# print(y.shape)
