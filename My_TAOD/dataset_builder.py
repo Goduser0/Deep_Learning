@@ -182,7 +182,16 @@ class Magnetic_Tile(data.Dataset):
 # DATASET: Add other dataset
 ###########################################################################################################
 
-
+###########################################################################################################
+# FUNCTION: dataset_by_label
+###########################################################################################################
+def dataset_by_label(df, filepath, mode):
+    label_list = df['Image_Label'].unique().tolist() 
+    os.makedirs(filepath + '/' + mode, exist_ok=True)
+    for label in label_list:
+        label_dir = filepath + '/' + mode + '/' + str(label) + '.csv'
+        df_class = df.loc[df["Image_Label"] == label]
+        df_class.to_csv(label_dir)
 
 ###########################################################################################################
 # FUNCTION: bulid_dataset
@@ -244,7 +253,10 @@ def build_dataset(dataset):
             # 将保留的样本插入测试集df_test
             df_test = pd.concat([df_test, sample_rest])            
         df_train.to_csv(dir_class + f'/train.csv')
+        dataset_by_label(df_train, dir_class, 'train')
         df_test.to_csv(dir_class + f'/test.csv')
+        dataset_by_label(df_test, dir_class, 'test')
+        
     print(f'({__name__}):Dataset:{dataset}\tBuild Successfully!!!')
 
 

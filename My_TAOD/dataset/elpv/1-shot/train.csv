@@ -1,5 +1,5 @@
 ,Image_Label,probs,types,Image_Path
-1633,3,1.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1634.png
-1748,0,0.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1749.png
-1140,1,0.3333333333333333,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1141.png
-1949,2,0.6666666666666666,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1950.png
+1634,3,1.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1635.png
+933,0,0.0,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell0934.png
+269,1,0.3333333333333333,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell0270.png
+1027,2,0.6666666666666666,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1028.png

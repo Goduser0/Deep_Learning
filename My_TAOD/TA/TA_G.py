@@ -98,4 +98,4 @@ def test():
     output = FMG(z)
     summary(FMG, z.shape, device="cpu")
 
-test()
+# test()
