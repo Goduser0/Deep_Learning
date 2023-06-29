@@ -339,10 +339,11 @@ class MultiHeadSelfAttention(nn.Module):
 # CLASS: StdDevNorm
 #######################################################################################################
 class StdDevNorm(nn.Module):
-    def __init__(self, stddev_feat=1, stddev_group=4):
+    def __init__(self, input_channl, stddev_feat=1, stddev_group=4):
         super().__init__()
         self.stddev_feat = stddev_feat
         self.stddev_group = stddev_group
+        self.conv = nn.Conv2d(input_channl + 1, input_channl, 1)
         
     def forward(self, input):
         batch, channel, height, width = input.shape # (B, C, H, W)
@@ -352,10 +353,7 @@ class StdDevNorm(nn.Module):
         stddev = stddev.mean([2, 3, 4], keepdim=True).squeeze(2)
         stddev = stddev.repeat(group, 1, height, width)
         output = torch.cat([input, stddev], 1)
-        
-        conv = nn.Conv2d(channel + 1, channel, 1)
-        output = conv(output)
-        
+        output = self.conv(output)
         return output
 
 
@@ -363,9 +361,11 @@ class StdDevNorm(nn.Module):
 # CLASS: TEST
 #######################################################################################################
 def test():
-    x = torch.randn(1, 1, 2, 2)
+    x = torch.randn(1, 1, 2, 2).cuda()
     print(x)
-    sdn = StdDevNorm()
+    sdn = StdDevNorm(1).cuda()
+    for parameters in sdn.parameters():
+        print(parameters.device)
     y = sdn(x)
     print(y)
     

@@ -29,11 +29,11 @@ def init_random_seed(manual_seed):
 #######################################################################################################
 # FUNCTION: make_noise()
 #######################################################################################################
-def make_noise(batch_size, latent_dim, num_noise, device):
+def make_noise(batch_size, latent_dim, num_noise):
     if num_noise == 1:
-        noises = [torch.randn(batch_size, latent_dim, device=device)]
+        noises = [torch.randn(batch_size, latent_dim)] # [1, B, z_dim]
     else:
-        noises = torch.randn(num_noise, batch_size, latent_dim, device=device).unbind(0)
+        noises = torch.randn(num_noise, batch_size, latent_dim).unbind(0)
         
     return noises
 
@@ -41,14 +41,14 @@ def make_noise(batch_size, latent_dim, num_noise, device):
 #######################################################################################################
 # FUNCTION: mix_noise()
 #######################################################################################################
-def mix_noise(batch_size, latent_dim, prob, device):
+def mix_noise(batch_size, latent_dim, prob):
     """
     prob
     """
     if prob > 0 and random.random() < prob:
-        return make_noise(batch_size, latent_dim, 2, device)
+        return make_noise(batch_size, latent_dim, 2)
     else:
-        return make_noise(batch_size, latent_dim, 1, device)
+        return make_noise(batch_size, latent_dim, 1)
 
 
 #######################################################################################################
@@ -139,16 +139,22 @@ def make_kernel(ksize):
     
     return kernel
 
+#######################################################################################################
+#### FUNCTION: requires_grad()
+#######################################################################################################
+def requires_grad(model, flag=True):
+    for name, p in model.named_parameters():
+        p.requires_grad = flag
 
 #######################################################################################################
 # Function Test
 #######################################################################################################
-# parser = argparse.ArgumentParser()
-# parser.add_argument("--subspace_std", default=0.1)
-# parser.add_argument("--batch_size", default=20)
-# parser.add_argument("--n_sample", default=120)
-# parser.add_argument("--latent_dim", default=10)
-# config = parser.parse_args()
+parser = argparse.ArgumentParser()
+parser.add_argument("--subspace_std", default=0.1)
+parser.add_argument("--batch_size", default=20)
+parser.add_argument("--n_sample", default=120)
+parser.add_argument("--latent_dim", default=10)
+config = parser.parse_args()
 
 # init_z = torch.randn(config.n_sample, config.latent_dim, device=torch.device('cuda'))
 # print(init_z.detach().shape)
@@ -156,9 +162,8 @@ def make_kernel(ksize):
 # print(z.detach().shape)
 
 
-# a = mix_noise(16, 10, 0.9, torch.device('cuda'))
-# for i in a:
-#     print(i.detach().shape)
+# a = mix_noise(16, 10, 0.5)
+# print(a[1].shape)
 
 # k = [1, 4, 4, 1]
 # kernel = make_kernel(k)

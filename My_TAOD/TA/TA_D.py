@@ -180,7 +180,7 @@ class FeatureMatchPatchDiscriminator(nn.Module):
         attention2_dim = curr_dim
         
         # stdnorm
-        stdnorm.append(StdDevNorm())
+        stdnorm.append(StdDevNorm(curr_dim))
         
         # last
         last.append(nn.Conv2d(curr_dim, 1, 4))
@@ -271,6 +271,7 @@ class FeatureMatchPatchDiscriminator(nn.Module):
 ########################################################################################################
 def test():
     D = FeatureMatchPatchDiscriminator()
+    print(D.device)
     X = torch.randn(128, 3, 64, 64) # (B, C, W, H)
     print(f"Input X: {X.detach().shape}")
     Y = D(X, flag=1, p_ind=0, extra=Extra())
