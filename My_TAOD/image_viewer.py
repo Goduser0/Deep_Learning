@@ -42,7 +42,7 @@ df = pd.concat([df1, df2])
 images = []
 names = []
 for i in zip(df['Image_Path'], df['Image_Class']):
-    images.append(Image.open(i[0]).convert('L')) # type: ignore
+    images.append(Image.open(i[0]).convert('RGB')) # type: ignore
     names.append(str(i[1])) # type: ignore
 
 images_trans = []

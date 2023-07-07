@@ -1,7 +1,7 @@
 ,Image_Label,Image_Class,Image_Path
-14,0,MT_Blowhole,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Blowhole/Imgs/exp3_num_328014.jpg
-125,3,MT_Fray,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Fray/Imgs/exp6_num_77744.jpg
-785,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_255674.jpg
-1124,2,MT_Crack,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Crack/Imgs/exp2_num_32153.jpg
-1182,5,MT_Uneven,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Uneven/Imgs/exp3_num_352516.jpg
-1264,1,MT_Break,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Break/Imgs/exp1_num_320649.jpg
+86,0,MT_Blowhole,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Blowhole/Imgs/exp2_num_54273.jpg
+141,3,MT_Fray,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Fray/Imgs/exp4_num_135615.jpg
+516,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_37319.jpg
+1105,2,MT_Crack,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Crack/Imgs/exp2_num_85846.jpg
+1166,5,MT_Uneven,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Uneven/Imgs/exp6_num_172365.jpg
+1325,1,MT_Break,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Break/Imgs/exp1_num_284482.jpg

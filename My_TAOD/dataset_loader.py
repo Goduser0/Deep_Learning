@@ -12,22 +12,20 @@ import torchvision.transforms as T
 
 def bmp2ndarray(file_path):
     """将BMP文件转为ndarray"""
-    img = Image.open(file_path).convert('L')
+    img = Image.open(file_path).convert('RGB')
     img_array = np.array(img)
     return img_array
 
-
-def png2ndarray(file_path):
-    """将PNG文件转为ndarray"""
-    img = Image.open(file_path).convert('L')
-    img_array = np.array(img)
-    return img_array
+def bmp2PIL(file_path):
+    """将BMP文件转为PIL Image"""
+    img = Image.open(file_path).convert('RGB')
+    return img
 
 
 ###########################################################################################################
 # FUNCTION: get_loader
 ###########################################################################################################
-def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, transforms=None):
+def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, transforms=None, img_type='ndarray'):
     df = pd.read_csv(dataset_dir)
     
     if dataset_class.lower() == 'neu_cls':
@@ -42,11 +40,17 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
             
             def __getitem__(self, index):
                 image_path = self.df.loc[index, "Image_Path"]
-                image = bmp2ndarray(image_path)
+                if img_type.lower() == 'ndarray':
+                    image = bmp2ndarray(image_path)
+                elif img_type.lower() == 'pil':
+                    image = bmp2PIL(image_path)
+                    
                 if self.transforms:
                     image = self.transforms(image)
+    
                 label = self.df.loc[index, "Image_Label"]
                 return image, label
+            
     elif dataset_class.lower() == 'elpv':
         class MyDataset(data.Dataset):
             # 依据csv文件创建dataset
@@ -59,9 +63,14 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
             
             def __getitem__(self, index):
                 image_path = self.df.loc[index, "Image_Path"]
-                image = png2ndarray(image_path)
+                if img_type.lower() == 'ndarray':
+                    image = bmp2ndarray(image_path)
+                elif img_type.lower() == 'pil':
+                    image = bmp2PIL(image_path)
+                
                 if self.transforms:
                     image = self.transforms(image)
+                    
                 label = self.df.loc[index, "Image_Label"]
                 return image, label
 
@@ -77,9 +86,14 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
             
             def __getitem__(self, index):
                 image_path = self.df.loc[index, "Image_Path"]
-                image = png2ndarray(image_path)
+                if img_type.lower() == 'ndarray':
+                    image = bmp2ndarray(image_path)
+                elif img_type.lower() == 'pil':
+                    image = bmp2PIL(image_path)
+                
                 if self.transforms:
                     image = self.transforms(image)
+                    
                 label = self.df.loc[index, "Image_Label"]
                 return image, label
     else:
@@ -92,7 +106,6 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
         batch_size=batch_size,
         shuffle=shuffle,
         num_workers=num_workers,
-        
         )
 
     return dataset_iter_loader

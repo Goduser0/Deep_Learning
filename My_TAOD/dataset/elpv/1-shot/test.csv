@@ -588,7 +588,7 @@
 1630,3,1.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1631.png
 1631,3,1.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1632.png
 1632,3,1.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1633.png
-1634,3,1.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1635.png
+1633,3,1.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1634.png
 1636,3,1.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1637.png
 1637,3,1.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1638.png
 1638,3,1.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1639.png
@@ -1067,7 +1067,6 @@
 930,0,0.0,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell0931.png
 931,0,0.0,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell0932.png
 932,0,0.0,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell0933.png
-933,0,0.0,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell0934.png
 934,0,0.0,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell0935.png
 936,0,0.0,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell0937.png
 937,0,0.0,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell0938.png
@@ -1586,6 +1585,7 @@
 1743,0,0.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1744.png
 1744,0,0.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1745.png
 1746,0,0.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1747.png
+1748,0,0.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1749.png
 1750,0,0.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1751.png
 1752,0,0.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1753.png
 1753,0,0.0,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1754.png
@@ -2252,7 +2252,6 @@
 237,1,0.3333333333333333,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell0238.png
 239,1,0.3333333333333333,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell0240.png
 266,1,0.3333333333333333,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell0267.png
-269,1,0.3333333333333333,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell0270.png
 324,1,0.3333333333333333,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell0325.png
 325,1,0.3333333333333333,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell0326.png
 539,1,0.3333333333333333,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell0540.png
@@ -2290,6 +2289,7 @@
 1123,1,0.3333333333333333,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1124.png
 1124,1,0.3333333333333333,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1125.png
 1129,1,0.3333333333333333,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1130.png
+1140,1,0.3333333333333333,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1141.png
 1150,1,0.3333333333333333,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1151.png
 1158,1,0.3333333333333333,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1159.png
 1159,1,0.3333333333333333,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1160.png
@@ -2559,7 +2559,6 @@
 1021,2,0.6666666666666666,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1022.png
 1024,2,0.6666666666666666,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1025.png
 1025,2,0.6666666666666666,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1026.png
-1027,2,0.6666666666666666,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1028.png
 1084,2,0.6666666666666666,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1085.png
 1089,2,0.6666666666666666,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1090.png
 1094,2,0.6666666666666666,mono,./My_Datasets/Classification/elpv-dataset-master/images/cell1095.png
@@ -2606,6 +2605,7 @@
 1838,2,0.6666666666666666,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1839.png
 1840,2,0.6666666666666666,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1841.png
 1922,2,0.6666666666666666,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1923.png
+1949,2,0.6666666666666666,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1950.png
 1952,2,0.6666666666666666,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1953.png
 1964,2,0.6666666666666666,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell1965.png
 2121,2,0.6666666666666666,poly,./My_Datasets/Classification/elpv-dataset-master/images/cell2122.png
