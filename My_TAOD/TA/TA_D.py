@@ -13,7 +13,7 @@ from TA_layers import SelfAttention, StdDevNorm
 # CLASS: FeatureMatchDiscriminator()
 ########################################################################################################
 class FeatureMatchDiscriminator(nn.Module):
-    def __init__(self, img_size=64, conv_dim=64):
+    def __init__(self, img_size=128, conv_dim=64):
         super(FeatureMatchDiscriminator, self).__init__()
         self.img_size = img_size
         
@@ -21,6 +21,7 @@ class FeatureMatchDiscriminator(nn.Module):
         layer2 = []
         layer3 = []
         layer4 = []
+        stdnorm = []
         last = []
         
         # layer1
@@ -45,13 +46,17 @@ class FeatureMatchDiscriminator(nn.Module):
         curr_dim = curr_dim * 2
         attention2_dim = curr_dim
         
+        # stdnorm
+        stdnorm.append(StdDevNorm(curr_dim))
+        
         # last
-        last.append(nn.Conv2d(curr_dim, 1, 4))
+        last.append(nn.Conv2d(curr_dim, 1, img_size // 16))
         
         self.layer1 = nn.Sequential(*layer1)
         self.layer2 = nn.Sequential(*layer2)
         self.layer3 = nn.Sequential(*layer3)
         self.layer4 = nn.Sequential(*layer4)
+        self.stdnorm = nn.Sequential(*stdnorm)
         self.last = nn.Sequential(*last)
         
         self.attention1 = SelfAttention(attention1_dim)
@@ -92,6 +97,8 @@ class FeatureMatchDiscriminator(nn.Module):
         output, p2 = self.attention2(output)
         feature4 = output
         features.append(feature4) # 3: Feature map layer: -> (B, 512, W//16, H//16)
+        
+        output = self.stdnorm(output)
         
         output = self.last(output) # -> (B, 1, 1, 1)
         output = output.reshape(output.shape[0], -1) # -> (B, 1)
@@ -146,7 +153,7 @@ class Extra(nn.Module):
 # CLASS: FeatureMatchPatchDiscriminator()
 ########################################################################################################
 class FeatureMatchPatchDiscriminator(nn.Module):
-    def __init__(self, img_size=64, conv_dim=64):
+    def __init__(self, img_size=128, conv_dim=64):
         super(FeatureMatchPatchDiscriminator, self).__init__()
         self.img_size = img_size
         
@@ -183,7 +190,7 @@ class FeatureMatchPatchDiscriminator(nn.Module):
         stdnorm.append(StdDevNorm(curr_dim))
         
         # last
-        last.append(nn.Conv2d(curr_dim, 1, 4))
+        last.append(nn.Conv2d(curr_dim, 1, img_size // 16))
         
         self.layer1 = nn.Sequential(*layer1)
         self.layer2 = nn.Sequential(*layer2)
@@ -270,12 +277,11 @@ class FeatureMatchPatchDiscriminator(nn.Module):
 # Discriminator TEST
 ########################################################################################################
 def test():
-    D = FeatureMatchPatchDiscriminator()
-    print(D.device)
-    X = torch.randn(128, 3, 64, 64) # (B, C, W, H)
+    D = FeatureMatchDiscriminator()
+    X = torch.randn(128, 3, 128, 128) # (B, C, W, H)
     print(f"Input X: {X.detach().shape}")
-    Y = D(X, flag=1, p_ind=0, extra=Extra())
+    Y = D(X)
     summary(D, X.shape, device="cpu")
 
-# test()
+test()
         

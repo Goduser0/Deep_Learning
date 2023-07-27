@@ -1,13 +1,20 @@
 import os
 import random
 import argparse
+import time
 
 import numpy as np
+import pandas as pd
+from sklearn import preprocessing
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+from PIL import Image
 
 import torch
 import torch.backends.cudnn as cudnn
 from torch.autograd import Variable
 import torch.nn.functional as F
+import torchvision.transforms as T
 
 #######################################################################################################
 # FUNCTION: init_random_seed()
@@ -147,30 +154,66 @@ def requires_grad(model, flag=True):
         p.requires_grad = flag
 
 #######################################################################################################
+#### FUNCTION: plt_tsne()
+#######################################################################################################
+def plt_tsne2d(X, Y, labels=None):
+    # tsne
+    tsne = TSNE(n_components=2, random_state=501)
+    X_tsne = tsne.fit_transform(X)
+    # 归一化
+    scaler = preprocessing.MinMaxScaler(feature_range=(-1, 1))
+    X_norm = scaler.fit_transform(X_tsne)
+    
+    # plot
+    plt.figure(figsize=(15, 15))
+    scatter = plt.scatter(X_norm[:,0], X_norm[:,1], c=Y, s=50)
+    if labels:
+        pass
+    else:
+        labels = range(len(scatter.legend_elements()[0]))
+    plt.legend(handles=scatter.legend_elements()[0],labels=labels,title="classes")
+                
+    t = time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())
+    save_path = "./My_TAOD/TA/results/" + str(t) + ".png"
+    plt.savefig(save_path)
+    plt.close()
+
+#######################################################################################################
 # Function Test
 #######################################################################################################
-parser = argparse.ArgumentParser()
-parser.add_argument("--subspace_std", default=0.1)
-parser.add_argument("--batch_size", default=20)
-parser.add_argument("--n_sample", default=120)
-parser.add_argument("--latent_dim", default=10)
-config = parser.parse_args()
+def test():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--subspace_std", default=0.1)
+    parser.add_argument("--batch_size", default=20)
+    parser.add_argument("--n_sample", default=120)
+    parser.add_argument("--latent_dim", default=10)
+    config = parser.parse_args()
 
-# init_z = torch.randn(config.n_sample, config.latent_dim, device=torch.device('cuda'))
-# print(init_z.detach().shape)
-# z = get_subspace(config, init_z)
-# print(z.detach().shape)
+    # init_z = torch.randn(config.n_sample, config.latent_dim, device=torch.device('cuda'))
+    # print(init_z.detach().shape)
+    # z = get_subspace(config, init_z)
+    # print(z.detach().shape)
 
+    df = pd.read_csv("./My_TAOD/dataset/Magnetic_Tile/30-shot/train.csv")
+    image_path = df["Image_Path"]
+    image_label = df["Image_Label"]
+    image_path = list(image_path)
 
-# a = mix_noise(16, 10, 0.5)
-# print(a[1].shape)
+    image = []
+    for path in image_path:
+        img = Image.open(path).convert('RGB')
+        img_array = np.asarray(img)
+        
+        trans = T.Compose([T.ToTensor(), T.Resize((224, 224))])
+        img_array = trans(img_array)
+        
+        image.append(img_array)
+    
 
-# k = [1, 4, 4, 1]
-# kernel = make_kernel(k)
-# print(kernel)
+    image = torch.stack(image)
+    image = image.view(len(image), -1)
+    image_label = torch.Tensor(image_label)
+    plt_tsne2d(image, image_label)
 
-# k = [1, 4, 4, 1]
-# kernel = make_kernel(k)
-# x = torch.randn(12, 3, 64, 64)
-# y = upfirdn2d(x, kernel, 7, 7)
-# print(y.shape)
+test()
+

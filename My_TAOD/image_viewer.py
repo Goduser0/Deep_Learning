@@ -36,8 +36,8 @@ def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
 ##########################################################################################################
 # Ploting Result
 ########################################################################################################## 
-df1 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/NEU_CLS/1-shot/train.csv')
-df2 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/Magnetic_Tile/1-shot/train.csv')
+df1 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/NEU_CLS/10-shot/train.csv')
+df2 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/Magnetic_Tile/10-shot/train.csv')
 df = pd.concat([df1, df2])
 images = []
 names = []

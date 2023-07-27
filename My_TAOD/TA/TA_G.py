@@ -11,7 +11,7 @@ from TA_layers import SelfAttention, PixelNorm, EqualLinear
 # CLASS: FeatureMatchGenerator()
 ########################################################################################################
 class FeatureMatchGenerator(nn.Module):
-    def __init__(self, n_mlp=None, img_size=64, z_dim=128, conv_dim=64, lr_mlp=0.01):
+    def __init__(self, n_mlp=None, img_size=128, z_dim=128, conv_dim=64, lr_mlp=0.01):
         super(FeatureMatchGenerator, self).__init__()
         
         self.img_size = img_size
@@ -30,10 +30,10 @@ class FeatureMatchGenerator(nn.Module):
             for i in range(n_mlp):
                 mlp.append(EqualLinear(z_dim, z_dim, lr_mul=lr_mlp, activation='leaky_relu'))
             
-        repeat_num = int(np.log2(self.img_size)) - 3 # =3
-        multi = 2 ** repeat_num # =8
+        repeat_num = int(np.log2(self.img_size)) - 3 # =4
+        multi = 2 ** repeat_num # =16
         
-        layer1.append(SpectralNorm(nn.ConvTranspose2d(z_dim, conv_dim * multi, 4)))
+        layer1.append(SpectralNorm(nn.ConvTranspose2d(z_dim, conv_dim * multi, 8)))
         layer1.append(nn.BatchNorm2d(conv_dim * multi))
         layer1.append(nn.ReLU())
         
@@ -71,12 +71,8 @@ class FeatureMatchGenerator(nn.Module):
         
         self.attn1 = SelfAttention(attn1_dim)
         self.attn2 = SelfAttention(attn2_dim)
-        
-    
     
     def forward(self, z):
-        
-        
         z = self.mlp(z)
         z = z.reshape(z.shape[0], z.shape[1], 1, 1)
         output = self.layer1(z)
@@ -96,6 +92,7 @@ def test():
     z = torch.randn(12, 128) # batchsize z_dim
     FMG = FeatureMatchGenerator(n_mlp=2)
     output = FMG(z)
+    print(output.shape)
     summary(FMG, z.shape, device="cpu")
 
 # test()
