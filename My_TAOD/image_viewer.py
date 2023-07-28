@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 # FUNCTION:show_images
 ##########################################################################################################
 def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
-    """Plot a list of images."""
+    """Plot a list of images."""    
     figsize = (num_cols * scale, num_rows * scale)
     _, axes = plt.subplots(num_rows, num_cols, figsize=figsize)
     axes = axes.flatten()
@@ -36,15 +36,18 @@ def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
 ##########################################################################################################
 # Ploting Result
 ########################################################################################################## 
-df1 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/NEU_CLS/10-shot/train.csv')
-df2 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/Magnetic_Tile/10-shot/train.csv')
+df1 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_Crop/1-shot/train.csv')
+df2 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_200/1-shot/train.csv')
 df = pd.concat([df1, df2])
+
+
 images = []
 names = []
 for i in zip(df['Image_Path'], df['Image_Class']):
     images.append(Image.open(i[0]).convert('RGB')) # type: ignore
     names.append(str(i[1])) # type: ignore
 
+# image_transform
 images_trans = []
 trans = T.Compose([
     T.RandomVerticalFlip(),
@@ -52,8 +55,8 @@ trans = T.Compose([
 ])
 for image in images:
     images_trans.append(trans(image))
-    
-names = names + names
-axes = show_images(images, 2, int(len(images_trans)/2), names, scale=3)
-plt.savefig('a.png')
+
+# show image
+axes = show_images(images, 2, int(len(images)/2)+1, names, scale=3)
+plt.savefig('image_viewer_plot.png')
 plt.close()

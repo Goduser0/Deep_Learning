@@ -1,0 +1,61 @@
+,Image_Label,Image_Class,Image_Path
+0,2,Short,./My_Datasets/Classification/PCB-200/Short/000323_0_01_05175_16449.bmp
+11,2,Short,./My_Datasets/Classification/PCB-200/Short/000169_0_02_01152_06565.bmp
+12,2,Short,./My_Datasets/Classification/PCB-200/Short/000053_0_02_15335_16094.bmp
+16,2,Short,./My_Datasets/Classification/PCB-200/Short/07609_0_01_08253_08136.bmp
+17,2,Short,./My_Datasets/Classification/PCB-200/Short/07809_0_01_05282_07950.bmp
+19,2,Short,./My_Datasets/Classification/PCB-200/Short/000007_0_02_03171_07733.bmp
+21,2,Short,./My_Datasets/Classification/PCB-200/Short/000166_0_03_01094_16511.bmp
+23,2,Short,./My_Datasets/Classification/PCB-200/Short/000050_0_01_15109_11755.bmp
+24,2,Short,./My_Datasets/Classification/PCB-200/Short/000053_0_01_05171_16412.bmp
+26,2,Short,./My_Datasets/Classification/PCB-200/Short/000004_0_01_05334_09273.bmp
+32,2,Short,./My_Datasets/Classification/PCB-200/Short/000035_0_01_15195_15987.bmp
+33,2,Short,./My_Datasets/Classification/PCB-200/Short/000050_0_03_11025_17290.bmp
+36,2,Short,./My_Datasets/Classification/PCB-200/Short/000005_0_03_13551_15519.bmp
+41,2,Short,./My_Datasets/Classification/PCB-200/Short/000053_0_02_01144_13081.bmp
+43,2,Short,./My_Datasets/Classification/PCB-200/Short/000035_0_03_01094_15966.bmp
+54,2,Short,./My_Datasets/Classification/PCB-200/Short/图片 1.png-2.png
+58,2,Short,./My_Datasets/Classification/PCB-200/Short/000319_0_00_07387_06965.bmp
+64,2,Short,./My_Datasets/Classification/PCB-200/Short/000318_0_04_08536_12168.bmp
+65,2,Short,./My_Datasets/Classification/PCB-200/Short/000047_0_02_15319_11001.bmp
+66,2,Short,./My_Datasets/Classification/PCB-200/Short/000005_0_01_05260_16449.bmp
+68,2,Short,./My_Datasets/Classification/PCB-200/Short/000194_0_02_01138_13073.bmp
+70,2,Short,./My_Datasets/Classification/PCB-200/Short/04687_0_01_03475_09660.bmp
+75,2,Short,./My_Datasets/Classification/PCB-200/Short/000007_0_01_15072_08885.bmp
+78,2,Short,./My_Datasets/Classification/PCB-200/Short/图片 1.png-11.png
+81,2,Short,./My_Datasets/Classification/PCB-200/Short/000047_0_01_15201_08831.bmp
+83,2,Short,./My_Datasets/Classification/PCB-200/Short/000001_0_03_10148_16254.bmp
+87,2,Short,./My_Datasets/Classification/PCB-200/Short/000007_0_03_15079_15514.bmp
+88,2,Short,./My_Datasets/Classification/PCB-200/Short/000323_0_00_11525_15661.bmp
+90,2,Short,./My_Datasets/Classification/PCB-200/Short/000051_0_02_12999_13167.bmp
+92,2,Short,./My_Datasets/Classification/PCB-200/Short/图片 1.png-36.png
+94,2,Short,./My_Datasets/Classification/PCB-200/Short/000008_0_02_15410_10969 - 副本.bmp
+100,2,Short,./My_Datasets/Classification/PCB-200/Short/000052_0_04_08519_16874.bmp
+102,2,Short,./My_Datasets/Classification/PCB-200/Short/000317_0_03_01057_15945.bmp
+108,2,Short,./My_Datasets/Classification/PCB-200/Short/000035_0_03_01054_15943.bmp
+111,2,Short,./My_Datasets/Classification/PCB-200/Short/000053_0_01_15204_15990.bmp
+114,2,Short,./My_Datasets/Classification/PCB-200/Short/000005_0_01_15464_06461.bmp
+117,2,Short,./My_Datasets/Classification/PCB-200/Short/000169_0_02_14843_15797.bmp
+118,2,Short,./My_Datasets/Classification/PCB-200/Short/04260_0_01_06752_08286.bmp
+122,2,Short,./My_Datasets/Classification/PCB-200/Short/000160_0_02_15387_16004.bmp
+127,2,Short,./My_Datasets/Classification/PCB-200/Short/000002_0_01_05877_16346.bmp
+129,2,Short,./My_Datasets/Classification/PCB-200/Short/000048_0_02_12992_13319.bmp
+131,2,Short,./My_Datasets/Classification/PCB-200/Short/图片 1.png-41.png
+141,2,Short,./My_Datasets/Classification/PCB-200/Short/000317_0_03_01057_15999.bmp
+142,2,Short,./My_Datasets/Classification/PCB-200/Short/000008_0_02_14776_15869.bmp
+143,2,Short,./My_Datasets/Classification/PCB-200/Short/000035_0_02_14770_15821.bmp
+145,2,Short,./My_Datasets/Classification/PCB-200/Short/000052_0_01_02342_17366.bmp
+146,2,Short,./My_Datasets/Classification/PCB-200/Short/000008_0_01_05215_16312.bmp
+147,2,Short,./My_Datasets/Classification/PCB-200/Short/000007_0_01_08163_16453.bmp
+153,2,Short,./My_Datasets/Classification/PCB-200/Short/000284_0_02_14672_15907.bmp
+155,2,Short,./My_Datasets/Classification/PCB-200/Short/000049_0_00_10785_16704.bmp
+157,2,Short,./My_Datasets/Classification/PCB-200/Short/000003_0_02_13141_13350.bmp
+163,2,Short,./My_Datasets/Classification/PCB-200/Short/000160_0_03_01049_11015.bmp
+175,2,Short,./My_Datasets/Classification/PCB-200/Short/000169_0_02_01673_16380.bmp
+176,2,Short,./My_Datasets/Classification/PCB-200/Short/000047_0_02_14702_15812.bmp
+178,2,Short,./My_Datasets/Classification/PCB-200/Short/07767_0_01_01442_06687.bmp
+182,2,Short,./My_Datasets/Classification/PCB-200/Short/000166_0_03_01099_16019.bmp
+183,2,Short,./My_Datasets/Classification/PCB-200/Short/000318_0_02_13029_13394.bmp
+184,2,Short,./My_Datasets/Classification/PCB-200/Short/000053_0_03_01023_16035.bmp
+189,2,Short,./My_Datasets/Classification/PCB-200/Short/000002_0_01_05028_16030.bmp
+196,2,Short,./My_Datasets/Classification/PCB-200/Short/000050_0_02_14737_15869.bmp
