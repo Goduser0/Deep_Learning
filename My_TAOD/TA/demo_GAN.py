@@ -49,7 +49,7 @@ transform = transforms.Compose([
     transforms.Normalize(mean=[0.5], std=[0.5]),
 ])
     
-train_dataset = MNIST(root='./data', train=True, download=True, transform=transform)
+train_dataset = MNIST(root='./My_Datasets/study', train=True, download=True, transform=transform)
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, drop_last=True)
 
 # 初始化生成器和判别器
@@ -74,6 +74,7 @@ for epoch in range(num_epochs):
         
         # 训练判别器使用真实数据
         real_outputs = discriminator(real_images)
+        print(real_outputs.shape)
         d_loss_real = loss(real_outputs, real_labels)
         d_loss_real.backward()
         
@@ -99,4 +100,6 @@ for epoch in range(num_epochs):
         
         if (i+1) % 200 == 0:
             print("Epoch [{}/{}], Step[{}/{}], d_loss:{:.4f}, g_loss:{:.4f}".format(epoch+1, num_epochs, i+1, len(train_loader), d_loss.item(), g_loss.item()) )
-            
+        
+        break
+    break  

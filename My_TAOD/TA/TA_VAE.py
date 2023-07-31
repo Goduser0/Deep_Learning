@@ -102,11 +102,12 @@ class VAE(nn.Module):
         mu = args[2]
         log_var = args[3]
         
-        kld_weight = kwargs['M_N']
-        recons_loss = F.mse_loss(recons, input)
+        recons_weight = kwargs['recons_weight']
+        kld_weight = kwargs['kld_weight']
         
+        recons_loss = F.mse_loss(recons, input)
         kld_loss = torch.mean(-0.5 * torch.sum(1 + log_var - mu**2 - log_var.exp(), dim=1), dim=0)
-        loss = recons_loss + kld_weight * kld_loss
+        loss = recons_weight * recons_loss + kld_weight * kld_loss
         return {'loss': loss, 'Reconstruction_loss': recons_loss.detach(), 'KLD': -kld_loss.detach()}
         
     def sample(self, num_samples: int, current_device: str, **kwargs) -> torch.Tensor:
@@ -122,11 +123,12 @@ class VAE(nn.Module):
 # CLASS: VAE TEST
 ########################################################################################################
 def test():
-    dir = "My_Datasets/Classification/PCB-200/残铜/000009_0_03_08859_19170.bmp"
+    dir = "My_Datasets/Classification/PCB-200/Open_circuit/000001_0_00_07022_09338.bmp"
     img = Image.open(dir).convert("RGB")
     trans = T.ToTensor()
     X = trans(img)
     X = X.unsqueeze(0)
+    print(X.shape)
     vae_test = VAE(3, 128)
     
     optimizer = torch.optim.Adam(vae_test.parameters(), lr=1e-3)
@@ -138,7 +140,7 @@ def test():
         train_nsample = 0
         
         Y = vae_test(X)
-        loss = vae_test.loss_function(*Y, **{'M_N': 0.5})
+        loss = vae_test.loss_function(*Y, **{'M_N': 1.0})
         loss['loss'].backward()
         
         optimizer.step()

@@ -2,10 +2,12 @@ import os
 import sys
 import random
 
+import cv2
 import numpy as np
 import pandas as pd
 from PIL import Image
 
+import torch
 import torch.utils.data as data
 import torchvision.transforms as T
 
@@ -25,7 +27,7 @@ def bmp2PIL(file_path):
 ###########################################################################################################
 # FUNCTION: get_loader
 ###########################################################################################################
-def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, transforms=None, img_type='ndarray'):
+def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, trans=None, img_type='PIL', drop_last=False):
     df = pd.read_csv(dataset_dir)
     
     if dataset_class.lower() == 'neu_cls':
@@ -96,16 +98,82 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
                     
                 label = self.df.loc[index, "Image_Label"]
                 return image, label
+            
+    elif dataset_class.lower() == 'pcb_crop':
+        class MyDataset(data.Dataset):
+            # 依据csv文件创建dataset
+            def __init__(self, df, transforms=None):
+                self.df = df
+                self.transforms = transforms
+            
+            def __len__(self):
+                return len(self.df)
+            
+            def __getitem__(self, index):
+                image_path = self.df.loc[index, "Image_Path"]
+                if img_type.lower() == 'ndarray':
+                    image = bmp2ndarray(image_path)
+                elif img_type.lower() == 'pil':
+                    image = bmp2PIL(image_path)
+                
+                if self.transforms:
+                    image = self.transforms(image)
+                
+                label = self.df.loc[index, "Image_Label"]
+                return image, label
+            
+    elif dataset_class.lower() == 'pcb_200':
+        class MyDataset(data.Dataset):
+            # 依据csv文件创建dataset
+            def __init__(self, df, transforms=None):
+                self.df = df
+                self.transforms = transforms
+            
+            def __len__(self):
+                return len(self.df)
+            
+            def __getitem__(self, index):
+                image_path = self.df.loc[index, "Image_Path"]
+                if img_type.lower() == 'ndarray':
+                    image = bmp2ndarray(image_path)
+                elif img_type.lower() == 'pil':
+                    image = bmp2PIL(image_path)
+    
+                if self.transforms:
+                    image = self.transforms(image)
+            
+                label = self.df.loc[index, "Image_Label"]
+                return image, label
+            
     else:
         sys.exit(f"ERROR:\t({__name__}):The dataset_class '{dataset_class}' doesn't exist")
     
 
     # 返回dataloader
     dataset_iter_loader = data.DataLoader(
-        dataset=MyDataset(df, transforms=transforms), # type: ignore
+        dataset=MyDataset(df, transforms=trans), # type: ignore
         batch_size=batch_size,
         shuffle=shuffle,
         num_workers=num_workers,
+        drop_last=drop_last,
         )
 
     return dataset_iter_loader
+
+#######################################################################################################
+## Test
+#######################################################################################################
+def test():
+    a = cv2.imread("/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/PCB-Crop/Short/01_short_01_0.jpg")
+    a = np.array(torch.tensor([[[0, 0, 0], [255, 255, 255]], [[12, 125, 96], [210, 175, 100]]]), dtype=np.uint8)
+    trans = T.Compose(
+    [
+        T.ToTensor(), 
+        # T.Resize((128, 128)),
+        T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    ])
+    b = trans(a)
+    print(a)
+    print(b.detach())
+    
+# test()

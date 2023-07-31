@@ -89,7 +89,7 @@ class FeatureMatchGenerator(nn.Module):
 # CLASS: Generater TEST
 ########################################################################################################
 def test():
-    z = torch.randn(12, 128) # batchsize z_dim
+    z = torch.randn(8, 128) # batchsize z_dim
     FMG = FeatureMatchGenerator(n_mlp=2)
     output = FMG(z)
     print(output.shape)

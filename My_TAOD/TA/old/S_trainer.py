@@ -42,6 +42,7 @@ parser.add_argument("--gan_type", type=str, default="")
 parser.add_argument("--img_size", type=int, default=64)
 parser.add_argument("--conv_dim", type=int, default=64)
 parser.add_argument("--lr", type=float, default=0.002)
+parser.add_argument("--subspace_freq", type=int, default=4)
 
 # g_source
 parser.add_argument("--n_train", type=int, default=210)
@@ -49,6 +50,8 @@ parser.add_argument("--n_sample", type=int, default=210)
 parser.add_argument("--n_mlp", type=int, default=3)
 
 parser.add_argument("--z_dim", type=int, default=128)
+parser.add_argument("--subspace_std", type=float, default=0.1)
+parser.add_argument("--mix_prob", type=float, default=0.9)
 
 parser.add_argument("--lr_mlp", type=float, default=0.01)
 parser.add_argument("--g_reg_every", type=int, default=4)
@@ -110,6 +113,7 @@ g_source = FeatureMatchGenerator(
 d_source = FeatureMatchPatchDiscriminator(
     config.img_size, config.conv_dim
 ).cuda()
+extra = Extra().cuda()
 
 # optimizers
 g_reg_ratio = config.g_reg_every / (config.g_reg_every + 1)
@@ -127,10 +131,20 @@ d_optim = torch.optim.Adam(
     betas=(0 ** d_reg_ratio, 0.99 ** d_reg_ratio),
 )
 
+e_optim = torch.optim.Adam(
+    extra.parameters(),
+    lr=config.lr * d_reg_ratio,
+    betas=(0 ** d_reg_ratio, 0.99 ** d_reg_ratio),
+)
+
 
 ########################################################################################################
 #### Train
 ########################################################################################################
+init_z = torch.randn(config.n_train, config.z_dim).cuda() # (n_train, z_dim)
+sample_z = torch.randn(config.n_sample, config.z_dim).cuda() # (n_sample, z_dim)
+sub_region_z = get_subspace(config, init_z.clone(), vis_flag=True) # (B, z_dim)
+
 
 kl_loss = nn.KLDivLoss()
 cos_sim = nn.CosineSimilarity()
@@ -147,3 +161,16 @@ for epoch in range(1, config.num_epochs + 1):
         #### train generator()
         #########################################
         g_optim.zero_grad()
+        if z_flag > 0:
+            # sampling normally
+            noise = mix_noise(config.batch_size, config.z_dim, config.mix_prob)
+        else:
+            # sampling from anchor
+            noise = [get_subspace(config, init_z.clone())]
+        noise = noise[0].cuda()
+        fake_img = g_source(noise)
+        
+        real_features = d_source(real_img, extra=extra, flag=z_flag, p_ind=np.random.randint(0, 4))
+        fake_features = d_source(fake_img, extra=extra, flag=z_flag, p_ind=np.random.randint(0, 4))
+        break
+    break

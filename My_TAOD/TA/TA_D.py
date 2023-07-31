@@ -77,7 +77,7 @@ class FeatureMatchDiscriminator(nn.Module):
         self.weights = nn.Linear(64, 4)
         self.softmax = nn.Softmax(dim=-1)
         
-    def forward(self, X):
+    def forward(self, X) -> list:
         features = []
         
         output = self.layer1(X)
@@ -278,10 +278,10 @@ class FeatureMatchPatchDiscriminator(nn.Module):
 ########################################################################################################
 def test():
     D = FeatureMatchDiscriminator()
-    X = torch.randn(128, 3, 128, 128) # (B, C, W, H)
-    print(f"Input X: {X.detach().shape}")
+    X = torch.randn(8, 3, 128, 128) # (B, C, W, H)
+    print(f"Input X: {X.shape}")
     Y = D(X)
     summary(D, X.shape, device="cpu")
 
-test()
+# test()
         

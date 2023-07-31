@@ -194,7 +194,7 @@ def test():
     # z = get_subspace(config, init_z)
     # print(z.detach().shape)
 
-    df = pd.read_csv("./My_TAOD/dataset/Magnetic_Tile/30-shot/train.csv")
+    df = pd.read_csv("./My_TAOD/dataset/PCB-Crop/30-shot/train.csv")
     image_path = df["Image_Path"]
     image_label = df["Image_Label"]
     image_path = list(image_path)
@@ -215,5 +215,5 @@ def test():
     image_label = torch.Tensor(image_label)
     plt_tsne2d(image, image_label)
 
-test()
+# test()
 
