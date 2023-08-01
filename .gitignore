@@ -1,5 +1,3 @@
-My_Datasets/
-
 My_TAOD/logs/
 My_TAOD/models/
 My_TAOD/results/
@@ -10,3 +8,4 @@ My_TAOD/TA/models/
 My_TAOD/TA/results/
 My_TAOD/TA/samples/
 
+My_Datasets/
