@@ -1,4 +1,4 @@
 ,Image_Label,Image_Class,Image_Path
-2555,4,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_09_2.jpg
-2694,4,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_13_0.jpg
-2672,4,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_08_0.jpg
+2298,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/09_spurious_copper_06_0.jpg
+2237,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/07_spurious_copper_06_0.jpg
+2393,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/01_spurious_copper_02_2.jpg

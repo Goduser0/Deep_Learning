@@ -255,7 +255,7 @@ class PCB_Crop(data.Dataset):
                     # image_class
                     img_class = file_class
                     # image_label
-                    img_classes = ['Missing_hole', 'Mouse_bite', 'Open_circuit', 'Short', 'Spur', 'Spurious_copper']
+                    img_classes = ['Mouse_bite', 'Open_circuit', 'Short', 'Spur', 'Spurious_copper', 'Missing_hole']
                     img_label = img_classes.index(img_class)
                     
                     # image_item
@@ -366,5 +366,5 @@ def build_dataset(dataset):
 # build_dataset('NEU_CLS')
 # build_dataset('elpv')
 # build_dataset('Magnetic_Tile')
-build_dataset('PCB_200')
-# build_dataset('PCB_Crop')
+# build_dataset('PCB_200')
+build_dataset('PCB_Crop')

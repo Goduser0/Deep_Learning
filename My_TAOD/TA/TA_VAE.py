@@ -140,12 +140,12 @@ def test():
         train_nsample = 0
         
         Y = vae_test(X)
-        loss = vae_test.loss_function(*Y, **{'M_N': 1.0})
+        loss = vae_test.loss_function(*Y, **{'recons_weight': 0.5, 'kld_weight':0.5})
         loss['loss'].backward()
         
         optimizer.step()
         optimizer.zero_grad()
-        
+        print(Y[4].shape)
         Y = Y[0].detach().numpy()[0]
         Y = np.transpose(Y, (1, 2, 0))
         plt.imshow(Y)  

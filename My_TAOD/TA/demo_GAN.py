@@ -37,7 +37,7 @@ class Discriminator(nn.Module):
     
 # 超参数定义
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-lr = 0.00001
+lr = 1e-5
 batch_size = 128
 hidden_size = 256
 input_size = 100
@@ -74,7 +74,6 @@ for epoch in range(num_epochs):
         
         # 训练判别器使用真实数据
         real_outputs = discriminator(real_images)
-        print(real_outputs.shape)
         d_loss_real = loss(real_outputs, real_labels)
         d_loss_real.backward()
         
@@ -100,6 +99,4 @@ for epoch in range(num_epochs):
         
         if (i+1) % 200 == 0:
             print("Epoch [{}/{}], Step[{}/{}], d_loss:{:.4f}, g_loss:{:.4f}".format(epoch+1, num_epochs, i+1, len(train_loader), d_loss.item(), g_loss.item()) )
-        
-        break
-    break  
+          

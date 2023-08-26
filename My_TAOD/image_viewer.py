@@ -44,14 +44,14 @@ df = pd.concat([df1, df2])
 images = []
 names = []
 for i in zip(df['Image_Path'], df['Image_Class']):
-    images.append(Image.open(i[0]).convert('RGB')) # type: ignore
-    names.append(str(i[1])) # type: ignore
-
+    images.append(Image.open(i[0]).convert('RGB'))
+    names.append(str(i[1]))
+    
 # image_transform
 images_trans = []
 trans = T.Compose([
     T.RandomVerticalFlip(),
-    T.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5), # type: ignore
+    T.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
 ])
 for image in images:
     images_trans.append(trans(image))

@@ -174,16 +174,14 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         raw_img = data[0].cuda() # [B, C, H, W] -1~1
         category_label = data[1].cuda() # [B]
         
-        ##################################################################################
-        ## Decoupling Branch
-        ##################################################################################
-        #-------------------------------------------------------------------
-        # Train VAE
-        #-------------------------------------------------------------------
+        #########################################
+        #### Decoupling Branch
+        #########################################
+        # 原始图像解耦
+        # train VAE
         VAE_common_optim.zero_grad()
         VAE_unique_optim.zero_grad()
         
-        # 原始图像解耦
         results_common_raw = VAE_common(raw_img)
         results_unique_raw = VAE_unique(raw_img)
         [recon_img_common_raw, _, mu_common_raw, log_var_common_raw] = [i for i in results_common_raw] #[B, C, H, W] [B, 64] [B, 64]
@@ -192,8 +190,17 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         features_unique_raw = VAE_unique.reparameterize(mu_unique_raw, log_var_unique_raw) # [B, 64]
         features_raw = torch.concat([features_common_raw, features_unique_raw], dim=1) # [B, 128]
         
+        # 1.Loss_KLD
+        loss_vae_common_raw = VAE_common.loss_function(*results_common_raw, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
+        loss_vae_unique_raw = VAE_unique.loss_function(*results_unique_raw, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
+        loss_vae_common_raw.backward()
+        loss_vae_unique_raw.backward()
+        
+        VAE_common_optim.step()
+        VAE_unique_optim.step()
+        
         # 图像生成
-        gen_img = g_source(features_raw) # [B, 3, 128, 128]
+        gen_img = g_source(features_raw.detach()) # [B, 3, 128, 128]
         
         # 生成图像解耦
         VAE_common_optim.zero_grad()
@@ -204,26 +211,15 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         [recon_img_common_gen, _, mu_common_gen, log_var_common_gen] = [i for i in results_common_gen]
         [recon_img_unique_gen, _, mu_unique_gen, log_var_unique_gen] = [i for i in results_common_gen]
 
-        # 1.loss_kld_vae_raw
-        loss_kld_vae_common_raw = VAE_common.loss_function(*results_common_raw, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
-        loss_kld_vae_unique_raw = VAE_unique.loss_function(*results_unique_raw, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
-        loss_kld_vae_raw = 0.5 * (loss_kld_vae_common_raw + loss_kld_vae_unique_raw)
-        # 2.loss_kld_vae_gen
-        loss_kld_vae_common_gen = VAE_common.loss_function(*results_common_gen, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
-        loss_kld_vae_unique_gen = VAE_unique.loss_function(*results_unique_gen, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
-        loss_kld_vae_gen = 0.5 * (loss_kld_vae_common_gen + loss_kld_vae_unique_gen)
-        # 3.loss_imgrecon
-        loss_imgrecon = F.mse_loss(raw_img, gen_img)
-        # Total Loss VAE
-        TotalLoss_vae = loss_kld_vae_raw + loss_kld_vae_gen + loss_imgrecon
+        loss_vae_common_gen = VAE_common.loss_function(*results_common_gen, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
+        loss_vae_unique_gen = VAE_unique.loss_function(*results_unique_gen, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
+        loss_vae_common_gen.backward()
+        loss_vae_unique_gen.backward()
         
-        TotalLoss_vae.backward()
         VAE_common_optim.step()
         VAE_unique_optim.step()
         
-        #-------------------------------------------------------------------
-        # Train G
-        #-------------------------------------------------------------------
+        # train G 
         g_optim.zero_grad()
         
         results_common_raw = VAE_common(raw_img)
@@ -241,29 +237,27 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         features_common_gen = VAE_common.reparameterize(mu_common_gen, log_var_common_gen) # [B, 64]
         features_unique_gen = VAE_unique.reparameterize(mu_unique_gen, log_var_unique_gen) # [B, 64]
         
-        # 1.loss_featurerecon
-        loss_featurerecon_common = kl_loss(features_common_raw, features_common_gen)
-        loss_featurerecon_unique = kl_loss(features_unique_raw, features_unique_gen)
-        # 2.loss_imgrecon
-        loss_imgrecon = F.mse_loss(raw_img, gen_img)
-        # Total Loss G
-        TotalLoss_g = loss_featurerecon_common + loss_featurerecon_unique + loss_imgrecon
-        
-        TotalLoss_g.backward()
+        loss_recon_features_common = kl_loss(features_common_raw, features_common_gen)
+        loss_recon_features_unique = kl_loss(features_unique_raw, features_unique_gen)
+        loss_recon_gen_img = F.mse_loss(raw_img, gen_img)
+        loss = loss_recon_features_common + loss_recon_features_unique + loss_recon_gen_img*2
+        loss.backward()
         g_optim.step()
+        #########################################
+        #### Discriminating Branch
+        #########################################
         
-        ##################################################################################
-        ## Discriminating Branch
-        ##################################################################################
-        #-------------------------------------------------------------------
+        #---------------
         # Train G
-        #-------------------------------------------------------------------
+        #---------------
         g_optim.zero_grad()
+        VAE_unique_optim.zero_grad()
         
         # Generate fake images
         D_z = Variable(torch.cuda.FloatTensor(np.random.normal(0, 1, (raw_img.shape[0], 64))), requires_grad=False).cuda() # [B, 64]
         D_features = torch.concat([D_z, features_unique_raw.detach()], dim=1) # [B, 128]
         D_gen_img = g_source(D_features) # [B, 3, 128, 128]
+        
         # Calculate G loss_adv
         D_raw_img_output = d_source(raw_img) # [B, 64, 64, 64] [B, 128, 32, 32] [B, 256, 16, 16] [B, 512, 8, 8] [B, 1] [B, 64]
         D_gen_img_output = d_source(D_gen_img) # [B, 64, 64, 64] [B, 128, 32, 32] [B, 256, 16, 16] [B, 512, 8, 8] [B, 1] [B, 64]
@@ -272,12 +266,11 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         labels_raw_img = torch.ones_like(pred_raw_img).cuda() # [B, 1]
         labels_gen_img = torch.zeros_like(pred_gen_img).cuda() # [B, 1]
         
-        # 1.loss_adv
         loss_adv_raw_img = nn.BCEWithLogitsLoss()(pred_raw_img, labels_raw_img)
         loss_adv_gen_img = nn.BCEWithLogitsLoss()(pred_gen_img, labels_gen_img)
         loss_adv = loss_adv_raw_img + loss_adv_gen_img
         
-        # 2.loss_FM
+        # Calculate G loss_FM
         criterionFeat = nn.L1Loss()
         loss_FM = torch.cuda.FloatTensor(1).fill_(0)
         num_features_maps = 4
@@ -286,15 +279,16 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
             i_loss_FM = criterionFeat(D_gen_img_output[i_map], D_raw_img_output[i_map])
             loss_FM += i_loss_FM * weights_features_maps[i_map]
         
-        # Total Loss G
-        TotalLoss_g = loss_adv + loss_FM
+        # Total
+        loss_g_source = loss_adv + loss_FM
+        loss_g_source.backward()
         
-        TotalLoss_g.backward()
         g_optim.step()
+        VAE_unique_optim.step()
         
-        #-------------------------------------------------------------------
+        #---------------
         # Train D
-        #-------------------------------------------------------------------
+        #---------------
         d_optim.zero_grad()
         
         # Calculate D loss_adv
@@ -310,15 +304,11 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         loss_adv = loss_adv_raw_img + loss_adv_gen_img
         
         loss_adv.backward()
+        
         d_optim.step()
         
         break
-    ##################################################################################
-    ## Checkpoint
-    ##################################################################################
-    #-------------------------------------------------------------------
     # Save model G & VAE
-    #-------------------------------------------------------------------
     if epoch % (config.num_epochs // 25) == 0:
         net_g_source_path = config.models_dir + '%d_net_g_source.pth' % epoch
         torch.save({
@@ -340,9 +330,8 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
             "model_state_dict": VAE_unique.state_dict(),
             "z_dim": config.z_dim,
         }, net_VAE_unique_path)
-    #-------------------------------------------------------------------
+        
     # Save model D
-    #-------------------------------------------------------------------
     if epoch == config.num_epochs:
         net_d_source_path = config.models_dir + '%d_net_d_source.pth' % epoch
         torch.save({

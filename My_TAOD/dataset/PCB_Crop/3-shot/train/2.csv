@@ -1,4 +1,4 @@
 ,Image_Label,Image_Class,Image_Path
-1869,2,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_13_2.jpg
-1694,2,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_14_0.jpg
-1728,2,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_02_0.jpg
+384,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_05_0.jpg
+396,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_02_0.jpg
+48,2,Short,./My_Datasets/Classification/PCB-Crop/Short/10_short_05_2.jpg

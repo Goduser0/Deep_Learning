@@ -1,4 +1,4 @@
 ,Image_Label,Image_Class,Image_Path
-2267,5,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/06_spurious_copper_08_0.jpg
-2134,5,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/04_spurious_copper_11_1.jpg
-2186,5,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/04_spurious_copper_09_1.jpg
+548,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/06_missing_hole_01_1.jpg
+617,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_03_3.jpg
+804,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/06_missing_hole_09_3.jpg

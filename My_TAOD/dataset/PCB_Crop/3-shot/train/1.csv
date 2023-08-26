@@ -1,4 +1,4 @@
 ,Image_Label,Image_Class,Image_Path
-1119,1,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/09_mouse_bite_09_2.jpg
-1462,1,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/10_mouse_bite_04_4.jpg
-1384,1,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/09_mouse_bite_02_1.jpg
+1498,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_06_0.jpg
+1954,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_06_0.jpg
+1580,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_02_0.jpg
