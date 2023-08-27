@@ -177,7 +177,50 @@ def plt_tsne2d(X, Y, labels=None):
     save_path = "./My_TAOD/TA/results/" + str(t) + ".png"
     plt.savefig(save_path)
     plt.close()
-
+    
+#######################################################################################################
+#### FUNCTION: record_data()
+#######################################################################################################
+def record_data(config, content, flag_plot=True):
+    """Save Data"""
+    assert os.path.exists(config.results_dir)
+    filename = config.dataset_class + ' ' + config.catagory + ' ' + config.time
+    filepath = config.results_dir + '/' + filename + '.csv'
+    content = pd.DataFrame.from_dict(content, orient="index").T
+    
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+    
+    if flag_plot:
+        results = pd.read_csv(filepath)
+        
+        epoch = results["epoch"]
+        num_epochs = results["num_epochs"]
+        batch = results["batch"]
+        num_batchs = results["num_batchs"]
+        
+        TotalLoss_vae = results["TotalLoss_vae"]
+        TotalLoss_g = results["TotalLoss_g"]
+        D_TotalLoss_g = results["D_TotalLoss_g"]
+        D_TotalLoss_d = results["D_TotalLoss_d"]
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        x = [a+'_'+b for a in epoch for b in batch]
+        ax1.plot(x, TotalLoss_vae)
+        ax2 = ax1.twinx()
+        ax2.plot(x, TotalLoss_g)
+        ax3 = ax1.twinx()
+        ax3.plot(x, D_TotalLoss_g)
+        ax4 = ax1.twinx()
+        ax4.plot(x, D_TotalLoss_d)
+        
+        fig.tight_layout()
+        plt.savefig(f'{config.result_dir}/{filename}.jpg')
+        plt.close()
+    
 #######################################################################################################
 # Function Test
 #######################################################################################################
