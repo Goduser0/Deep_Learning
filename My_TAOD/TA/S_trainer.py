@@ -20,7 +20,7 @@ from TA_layers import KLDLoss
 from TA_logger import S_trainer_logger
 
 import sys
-sys.path.append("/home/zhouquan/MyDoc/Deep_Learning/My_TAOD")
+sys.path.append("./My_TAOD")
 from dataset_loader import get_loader
 
 ########################################################################################################
