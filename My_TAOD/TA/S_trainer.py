@@ -15,7 +15,7 @@ import time
 from TA_G import FeatureMatchGenerator
 from TA_D import FeatureMatchDiscriminator
 from TA_VAE import VAE
-from TA_utils import requires_grad
+from TA_utils import requires_grad, record_data
 from TA_layers import KLDLoss
 from TA_logger import S_trainer_logger
 
@@ -40,7 +40,7 @@ parser.add_argument('--samples_dir',
                     default='./My_TAOD/TA/samples')
 parser.add_argument('--results_dir', 
                     type=str, 
-                    default='./My_TAOD/TA/results')
+                    default='./My_TAOD/TA/results/source')
 
 # random seed
 parser.add_argument("--random_seed", type=int, default=1)
@@ -57,7 +57,7 @@ parser.add_argument("--catagory",
                     type=str,
                     default="0")
 parser.add_argument("--num_workers", type=int, default=4)
-parser.add_argument("--batch_size", type=int, default=8)
+parser.add_argument("--batch_size", type=int, default=2)
 
 # train
 parser.add_argument("--num_epochs", type=int, default=100)
@@ -101,6 +101,9 @@ assert (config.data_path.split('/')[-4]==config.dataset_class
 
 # logger
 S_trainer_logger(config)
+
+models_save_path = config.models_dir + '/' + config.dataset_class + ' ' + config.catagory + ' ' + config.time
+os.makedirs(models_save_path, exist_ok=False)
 
 ######################################################################################################
 #### Setting
@@ -331,12 +334,27 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         D_TotalLoss_d.backward()
         d_optim.step()
         
+        # Show
         print(
             "[Epoch %d/%d] [Batch %d/%d] [TotalLoss_vae: %f] [TotalLoss_g: %f] [D_TotalLoss_g: %f] [D_TotalLoss_d: %f]"
             %
             (epoch, config.num_epochs, i, len(data_iter_loader), TotalLoss_vae, TotalLoss_g, D_TotalLoss_g, D_TotalLoss_d)
         )
         
+        # Record Data
+        record_data(config, 
+                    {
+                        "epoch": f"{epoch}",
+                        "num_epochs": f"{config.num_epochs}",
+                        "batch": f"{i}",
+                        "num_batchs": f"{len(data_iter_loader)}",
+                        "TotalLoss_vae": f"{TotalLoss_vae}",
+                        "TotalLoss_g": f"{TotalLoss_g}", 
+                        "D_TotalLoss_g": f"{D_TotalLoss_g}",                   
+                        "D_TotalLoss_d": f"{D_TotalLoss_d}",
+                    },
+                    plot=True,
+                    )
     ##################################################################################
     ## Checkpoint
     ##################################################################################
@@ -344,21 +362,21 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
     # Save model G & VAE
     #-------------------------------------------------------------------
     if epoch % (config.num_epochs // 25) == 0:
-        net_g_source_path = config.models_dir + '/%d_net_g_source.pth' % epoch
+        net_g_source_path = models_save_path + '/%d_net_g_source.pth' % epoch
         torch.save({
             "epoch": epoch,
             "model_state_dict": g_source.state_dict(),
             "z_dim": config.z_dim,
         }, net_g_source_path)
         
-        net_VAE_common_path = config.models_dir + '/%d_net_VAE_common.pth' % epoch
+        net_VAE_common_path = models_save_path + '/%d_net_VAE_common.pth' % epoch
         torch.save({
             "epoch": epoch,
             "model_state_dict": VAE_common.state_dict(),
             "z_dim": config.z_dim,
         }, net_VAE_common_path)
         
-        net_VAE_unique_path = config.models_dir + '/%d_net_VAE_unique.pth' % epoch
+        net_VAE_unique_path = models_save_path + '/%d_net_VAE_unique.pth' % epoch
         torch.save({
             "epoch": epoch,
             "model_state_dict": VAE_unique.state_dict(),
@@ -368,7 +386,7 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
     # Save model D
     #-------------------------------------------------------------------
     if epoch == config.num_epochs:
-        net_d_source_path = config.models_dir + '/%d_net_d_source.pth' % epoch
+        net_d_source_path = models_save_path + '/%d_net_d_source.pth' % epoch
         torch.save({
             "epoch": epoch,
             "model_state_dict": d_source.state_dict(),
