@@ -15,3 +15,6 @@ import matplotlib.pyplot as plt
 
 def traditional_aug():
     pass
+
+def generate(z_dim, model_path, samples_save_path):
+    pass

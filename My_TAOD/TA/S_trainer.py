@@ -57,7 +57,7 @@ parser.add_argument("--catagory",
                     type=str,
                     default="0")
 parser.add_argument("--num_workers", type=int, default=4)
-parser.add_argument("--batch_size", type=int, default=2)
+parser.add_argument("--batch_size", type=int, default=16)
 
 # train
 parser.add_argument("--num_epochs", type=int, default=100)
@@ -69,23 +69,22 @@ parser.add_argument("--img_size", type=int, default=128)
 parser.add_argument("--conv_dim", type=int, default=64)
 
 # g_source
+parser.add_argument("--g_reg_every", type=int, default=4)
+parser.add_argument("--lr_g", type=float, default=1e-4)
+
 parser.add_argument("--n_train", type=int, default=210)
 parser.add_argument("--n_sample", type=int, default=210)
 parser.add_argument("--n_mlp", type=int, default=3)
-parser.add_argument("--lr_g", type=float, default=2e-3)
-
 parser.add_argument("--z_dim", type=int, default=128)
-
 parser.add_argument("--lr_mlp", type=float, default=1e-2)
-parser.add_argument("--g_reg_every", type=int, default=4)
 
 # d_source
-parser.add_argument("--d_reg_every", type=int, default=16)
-parser.add_argument("--lr_d", type=float, default=2e-3)
+parser.add_argument("--d_reg_every", type=int, default=4)
+parser.add_argument("--lr_d", type=float, default=1e-5)
 
 # VAE
 parser.add_argument("--latent_dim", type=int, default=64)
-parser.add_argument("--lr_vae", type=float, default=1e-5)
+parser.add_argument("--lr_vae", type=float, default=1e-4)
 
 # Others
 parser.add_argument("--log", type=bool, default=True)
@@ -131,7 +130,7 @@ data_iter_loader = get_loader(config.dataset_class,
                               shuffle=True, 
                               trans=trans,
                               img_type='PIL',
-                              drop_last=False
+                              drop_last=True
                               ) # 像素值范围：（-1, 1）[B, C, H, W]
 
 # model
@@ -293,10 +292,7 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         labels_raw_img = torch.ones_like(pred_raw_img).cuda() # [B, 1]
         labels_gen_img = torch.zeros_like(pred_gen_img).cuda() # [B, 1]
         
-        # 1.loss_adv
-        loss_adv_raw_img = nn.BCEWithLogitsLoss()(pred_raw_img, labels_raw_img)
-        loss_adv_gen_img = nn.BCEWithLogitsLoss()(pred_gen_img, labels_gen_img)
-        loss_adv = loss_adv_raw_img + loss_adv_gen_img
+        # 1.loss_PPL
         
         # 2.loss_FM
         criterionFeat = nn.L1Loss()
@@ -308,7 +304,7 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
             loss_FM += i_loss_FM * weights_features_maps[i_map]
         
         # D Total Loss G
-        D_TotalLoss_g = loss_adv + loss_FM
+        D_TotalLoss_g = loss_FM
         
         D_TotalLoss_g.backward()
         g_optim.step()
@@ -348,12 +344,12 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
                         "num_epochs": f"{config.num_epochs}",
                         "batch": f"{i}",
                         "num_batchs": f"{len(data_iter_loader)}",
-                        "TotalLoss_vae": f"{TotalLoss_vae}",
-                        "TotalLoss_g": f"{TotalLoss_g}", 
-                        "D_TotalLoss_g": f"{D_TotalLoss_g}",                   
-                        "D_TotalLoss_d": f"{D_TotalLoss_d}",
+                        "TotalLoss_vae": f"{TotalLoss_vae.item()}",
+                        "TotalLoss_g": f"{TotalLoss_g.item()}", 
+                        "D_TotalLoss_g": f"{D_TotalLoss_g.item()}",                   
+                        "D_TotalLoss_d": f"{D_TotalLoss_d.item()}",
                     },
-                    plot=True,
+                    flag_plot=True,
                     )
     ##################################################################################
     ## Checkpoint

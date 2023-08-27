@@ -191,6 +191,7 @@ def record_data(config, content, flag_plot=True):
     if not os.path.exists(filepath):
         content.to_csv(filepath, index=False)
     else:
+        results = pd.read_csv(filepath)
         results = pd.concat([results, content], axis=0, ignore_index=True)
         results.to_csv(filepath, index=False)
     
@@ -208,17 +209,15 @@ def record_data(config, content, flag_plot=True):
         D_TotalLoss_d = results["D_TotalLoss_d"]
         
         fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
-        x = [a+'_'+b for a in epoch for b in batch]
-        ax1.plot(x, TotalLoss_vae)
-        ax2 = ax1.twinx()
-        ax2.plot(x, TotalLoss_g)
-        ax3 = ax1.twinx()
-        ax3.plot(x, D_TotalLoss_g)
-        ax4 = ax1.twinx()
-        ax4.plot(x, D_TotalLoss_d)
+        x = [str(a)+'_'+str(b) for a in epoch for b in batch]
+        ax1.plot([y for y in TotalLoss_vae], label="TotalLoss_vae")
+        ax1.plot([y for y in TotalLoss_g], label="TotalLoss_g")
+        ax1.plot([y for y in D_TotalLoss_g], label="D_TotalLoss_g")
+        ax1.plot([y for y in D_TotalLoss_d], label="D_TotalLoss_d")
         
+        ax1.legend()
         fig.tight_layout()
-        plt.savefig(f'{config.result_dir}/{filename}.jpg')
+        plt.savefig(f'{config.results_dir}/{filename}.jpg')
         plt.close()
     
 #######################################################################################################
