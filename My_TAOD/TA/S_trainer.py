@@ -10,12 +10,14 @@ import os
 import argparse
 import random
 import tqdm
+import time
 
 from TA_G import FeatureMatchGenerator
-from TA_D import FeatureMatchDiscriminator, FeatureMatchPatchDiscriminator
+from TA_D import FeatureMatchDiscriminator
 from TA_VAE import VAE
 from TA_utils import requires_grad
 from TA_layers import KLDLoss
+from TA_logger import S_trainer_logger
 
 import sys
 sys.path.append("/home/zhouquan/MyDoc/Deep_Learning/My_TAOD")
@@ -29,31 +31,36 @@ parser = argparse.ArgumentParser()
 # Saved Directories
 parser.add_argument('--logs_dir', 
                     type=str, 
-                    default='/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/logs')
+                    default='./My_TAOD/TA/logs/source')
 parser.add_argument('--models_dir', 
                     type=str, 
-                    default='/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/models')
+                    default='./My_TAOD/TA/models/source')
 parser.add_argument('--samples_dir', 
                     type=str, 
-                    default='/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/samples')
+                    default='./My_TAOD/TA/samples')
 parser.add_argument('--results_dir', 
                     type=str, 
-                    default='/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/results')
+                    default='./My_TAOD/TA/results')
 
 # random seed
 parser.add_argument("--random_seed", type=int, default=1)
 
 # data loader
-dataset_list = ['PCB_Crop', 'PCB_200']
-parser.add_argument("--dataset_class", type=str, default='PCB_Crop', choices=dataset_list)
+parser.add_argument("--dataset_class",
+                    type=str, 
+                    default='PCB_Crop', 
+                    choices=['PCB_Crop', 'PCB_200'])
 parser.add_argument("--data_path", 
                     type=str, 
-                    default="/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_Crop/0.7-shot/train/0.csv")
+                    default="./My_TAOD/dataset/PCB_Crop/0.7-shot/train/0.csv")
+parser.add_argument("--catagory",
+                    type=str,
+                    default="0")
 parser.add_argument("--num_workers", type=int, default=4)
-parser.add_argument("--batch_size", type=int, default=32)
+parser.add_argument("--batch_size", type=int, default=8)
 
 # train
-parser.add_argument("--num_epochs", type=int, default=1)
+parser.add_argument("--num_epochs", type=int, default=100)
 parser.add_argument("--gpu_id", type=str, default="0")
 
 # g_source && d_source
@@ -78,11 +85,22 @@ parser.add_argument("--lr_d", type=float, default=2e-3)
 
 # VAE
 parser.add_argument("--latent_dim", type=int, default=64)
-parser.add_argument("--lr_vae", type=float, default=1e-4)
+parser.add_argument("--lr_vae", type=float, default=1e-5)
+
+# Others
+parser.add_argument("--log", type=bool, default=True)
+parser.add_argument("--time", type=str, default=time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime()))
 
 # config
 config = parser.parse_args()
 
+# 一致性校验
+assert (config.data_path.split('/')[-4]==config.dataset_class 
+        and 
+        config.data_path.split('/')[-1][0]==config.catagory)
+
+# logger
+S_trainer_logger(config)
 
 ######################################################################################################
 #### Setting
@@ -286,10 +304,10 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
             i_loss_FM = criterionFeat(D_gen_img_output[i_map], D_raw_img_output[i_map])
             loss_FM += i_loss_FM * weights_features_maps[i_map]
         
-        # Total Loss G
-        TotalLoss_g = loss_adv + loss_FM
+        # D Total Loss G
+        D_TotalLoss_g = loss_adv + loss_FM
         
-        TotalLoss_g.backward()
+        D_TotalLoss_g.backward()
         g_optim.step()
         
         #-------------------------------------------------------------------
@@ -308,11 +326,17 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         loss_adv_raw_img = nn.BCEWithLogitsLoss()(pred_raw_img, labels_raw_img)
         loss_adv_gen_img = nn.BCEWithLogitsLoss()(pred_gen_img, labels_gen_img)
         loss_adv = loss_adv_raw_img + loss_adv_gen_img
+        D_TotalLoss_d = loss_adv
         
-        loss_adv.backward()
+        D_TotalLoss_d.backward()
         d_optim.step()
         
-        break
+        print(
+            "[Epoch %d/%d] [Batch %d/%d] [TotalLoss_vae: %f] [TotalLoss_g: %f] [D_TotalLoss_g: %f] [D_TotalLoss_d: %f]"
+            %
+            (epoch, config.num_epochs, i, len(data_iter_loader), TotalLoss_vae, TotalLoss_g, D_TotalLoss_g, D_TotalLoss_d)
+        )
+        
     ##################################################################################
     ## Checkpoint
     ##################################################################################
@@ -320,21 +344,21 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
     # Save model G & VAE
     #-------------------------------------------------------------------
     if epoch % (config.num_epochs // 25) == 0:
-        net_g_source_path = config.models_dir + '%d_net_g_source.pth' % epoch
+        net_g_source_path = config.models_dir + '/%d_net_g_source.pth' % epoch
         torch.save({
             "epoch": epoch,
             "model_state_dict": g_source.state_dict(),
             "z_dim": config.z_dim,
         }, net_g_source_path)
         
-        net_VAE_common_path = config.models_dir + '%d_net_VAE_common.pth' % epoch
+        net_VAE_common_path = config.models_dir + '/%d_net_VAE_common.pth' % epoch
         torch.save({
             "epoch": epoch,
             "model_state_dict": VAE_common.state_dict(),
             "z_dim": config.z_dim,
         }, net_VAE_common_path)
         
-        net_VAE_unique_path = config.models_dir + '%d_net_VAE_unique.pth' % epoch
+        net_VAE_unique_path = config.models_dir + '/%d_net_VAE_unique.pth' % epoch
         torch.save({
             "epoch": epoch,
             "model_state_dict": VAE_unique.state_dict(),
@@ -344,7 +368,7 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
     # Save model D
     #-------------------------------------------------------------------
     if epoch == config.num_epochs:
-        net_d_source_path = config.models_dir + '%d_net_d_source.pth' % epoch
+        net_d_source_path = config.models_dir + '/%d_net_d_source.pth' % epoch
         torch.save({
             "epoch": epoch,
             "model_state_dict": d_source.state_dict(),

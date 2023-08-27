@@ -99,7 +99,7 @@ if __name__ == '__main__':
     parser.add_argument('--sample_dir', type=str, default='./My_TAOD/samples')
     parser.add_argument('--result_dir', type=str, default='./My_TAOD/results')
     
-    
+    # Others
     parser.add_argument('--log', type=bool, default=True)
     parser.add_argument('--time', type=str, default=time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime()))
     # Parser
