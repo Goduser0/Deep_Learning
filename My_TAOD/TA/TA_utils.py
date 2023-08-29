@@ -179,9 +179,9 @@ def plt_tsne2d(X, Y, labels=None):
     plt.close()
     
 #######################################################################################################
-#### FUNCTION: record_data()
+#### FUNCTION: S_trainer_record_data()
 #######################################################################################################
-def record_data(config, content, flag_plot=True):
+def S_trainer_record_data(config, content, flag_plot=True):
     """Save Data"""
     assert os.path.exists(config.results_dir)
     filename = config.dataset_class + ' ' + config.catagory + ' ' + config.time
@@ -195,6 +195,9 @@ def record_data(config, content, flag_plot=True):
         results = pd.concat([results, content], axis=0, ignore_index=True)
         results.to_csv(filepath, index=False)
     
+    if not os.path.exists(f"{config.results_dir}/{filename}"):
+        os.makedirs(f"{config.results_dir}/{filename}")
+        
     if flag_plot:
         results = pd.read_csv(filepath)
         
@@ -209,16 +212,77 @@ def record_data(config, content, flag_plot=True):
         D_TotalLoss_d = results["D_TotalLoss_d"]
         
         fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
-        x = [str(a)+'_'+str(b) for a in epoch for b in batch]
         ax1.plot([y for y in TotalLoss_vae], label="TotalLoss_vae")
-        ax1.plot([y for y in TotalLoss_g], label="TotalLoss_g")
-        ax1.plot([y for y in D_TotalLoss_g], label="D_TotalLoss_g")
-        ax1.plot([y for y in D_TotalLoss_d], label="D_TotalLoss_d")
-        
         ax1.legend()
         fig.tight_layout()
-        plt.savefig(f'{config.results_dir}/{filename}.jpg')
+        plt.savefig(f'{config.results_dir}/{filename}/TotalLoss_vae.jpg')
         plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in TotalLoss_g], label="TotalLoss_g")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/TotalLoss_g.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_TotalLoss_g], label="D_TotalLoss_g")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/D_TotalLoss_g.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_TotalLoss_d], label="D_TotalLoss_d")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/D_TotalLoss_d.jpg')
+        plt.close()
+        
+
+#######################################################################################################
+#### FUNCTION: S2T_trainer_record_data()
+#######################################################################################################
+def S2T_trainer_record_data(config, content, flag_plot=True):
+    """Save Data"""
+    assert os.path.exists(config.results_dir)
+    filename = config.dataset_class + ' ' + config.catagory + ' ' + config.time
+    filepath = config.results_dir + '/' + filename + '.csv'
+    content = pd.DataFrame.from_dict(content, orient="index").T
+    
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.read_csv(filepath)
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+    
+    if not os.path.exists(f"{config.results_dir}/{filename}"):
+        os.makedirs(f"{config.results_dir}/{filename}")
+        
+    if flag_plot:
+        results = pd.read_csv(filepath)
+        
+        epoch = results["epoch"]
+        num_epochs = results["num_epochs"]
+        
+        TotalLoss_vae_unique = results["TotalLoss_vae_unique"]
+        TotalLoss_g_target = results["TotalLoss_g_target"]
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in TotalLoss_vae_unique], label="TotalLoss_vae_unique")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/TotalLoss_vae_unique.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in TotalLoss_g_target], label="TotalLoss_g_target")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/TotalLoss_g_target.jpg')
+        plt.close()
+        
     
 #######################################################################################################
 # Function Test

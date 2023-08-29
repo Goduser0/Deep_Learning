@@ -165,15 +165,15 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
 #######################################################################################################
 def test():
     a = cv2.imread("/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/PCB-Crop/Short/01_short_01_0.jpg")
-    a = np.array(torch.tensor([[[0, 0, 0], [255, 255, 255]], [[12, 125, 96], [210, 175, 100]]]), dtype=np.uint8)
+    # a = np.array(torch.tensor([[[0, 0, 0], [255, 255, 255]], [[12, 125, 96], [210, 175, 100]]]), dtype=np.uint8)
     trans = T.Compose(
     [
         T.ToTensor(), 
-        # T.Resize((128, 128)),
+        T.Resize((128, 128)),
         T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
     b = trans(a)
-    print(a)
-    print(b.detach())
+    print(a.shape)
+    print(b.shape)
     
 # test()

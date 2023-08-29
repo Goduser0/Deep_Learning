@@ -25,27 +25,14 @@ from sklearn.manifold import TSNE
 
 import tqdm
 
-# dir =  "My_Datasets/Classification/PCB-200/残铜/00001_0_01_05159_05657.bmp"
-# img = Image.open(dir).convert('RGB')
-# trans = T.Compose([
-#     T.ToTensor(),
-#     T.Resize(64)
-#     ])
-# img = trans(img)
-# print(img.shape)
 
+# 创建一个示例的 (3, 128, 128) 的 NumPy 数组
+image_array = np.random.randint(0, 256, size=(3, 128, 128), dtype=np.uint8)
 
-p = torch.randn([8, 64])
-q = torch.randn([8, 64])
+# 将 NumPy 数组转换为 PIL 图像
+print(type(image_array), image_array.shape)
+image = Image.fromarray(image_array.transpose(1, 2, 0))
 
-# 归一化处理，使其成为概率分布
-p = F.softmax(p, dim=-1)
-q = F.softmax(q, dim=-1)
-print(p.sum(dim=1))
-# 创建 KL 散度损失函数
-
-# 计算 KL 散度损失
-loss = F.kl_div(p.log(), q, reduction='batchmean')
-
-print("KL 散度损失:", loss)
+# 保存图像
+image.save('output_image.png')
 

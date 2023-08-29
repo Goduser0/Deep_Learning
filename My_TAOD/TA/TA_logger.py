@@ -27,10 +27,10 @@ def S_trainer_logger(config):
 ##########################################################################################################
 def S2T_trainer_logger(config):
     if config.log:
-        assert os.path.exists(config.log_dir), f"ERROR:\t({__name__}): No config.log_dir"
+        assert os.path.exists(config.logs_dir), f"ERROR:\t({__name__}): No config.log_dir"
 
-        filename = config.classification_net + ' ' + config.dataset_class + ' ' + config.time
-        with open(config.log_dir + '/' + filename + '.txt', 'w') as f:
+        filename = config.dataset_target + ' ' + config.catagory + ' ' + config.time
+        with open(config.logs_dir + '/' + filename + '.txt', 'w') as f:
             content = str(config)
             content_list = re.split(r"\(|\)", content)
             content_list = content_list[1].split(",")
