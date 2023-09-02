@@ -1,15 +1,36 @@
 import torch
 import torch.nn as nn
 import numpy as np
+import pandas as pd
 from scipy import linalg
 import os
+import cv2
+import random
 
 import torchvision.models as models
 import torchvision.transforms as T
 
-import sys
-sys.path.append("./TA_metrics")
-from load_images import load_images
+def load_images(csv_path, trans=None, batch_size=15):
+    df = pd.read_csv(csv_path)
+    
+    nums = len(df)
+    catagory_lables = df["Image_Label"]
+    image_path = df["Image_Path"]
+
+    images = []
+    image_list = random.sample(list(image_path), k=batch_size)
+    for i, img in enumerate(image_list):
+        img = cv2.imread(img)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    
+        if trans:
+            img = T.ToPILImage()(img)
+            img = trans(img)
+    
+        images.append(img.numpy())
+    images = torch.FloatTensor(np.array(images))
+    
+    return images
 
 class ConvNetFeatureExtract(object):
     def __init__(self, model='resnet34', workers=4):
@@ -67,16 +88,16 @@ class ConvNetFeatureExtract(object):
             self.inception = inception
             self.inception_feature = inception_feature
             self.trans = T.Compose([
+                T.Resize(299),
                 T.ToTensor(),
-                T.Resize((299, 299)),
-                # T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+                T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
             ])
         else:
             raise NotImplementedError
 
     def extractFeature(self, images_path):
         # build images dataset
-        images = load_images(images_path, trans=self.trans)[0]
+        images = load_images(images_path, trans=self.trans)
         
         print("Extracting Features...")
         with torch.no_grad():
@@ -100,7 +121,7 @@ def calculator_FID(source, target):
     m = source.mean(0)
     m_w = target.mean(0)
     X_np = source.numpy()
-    Y_np = target.numpt()
+    Y_np = target.numpy()
     
     C = np.cov(X_np.transpose())
     C_w = np.cov(Y_np.transpose())
@@ -114,12 +135,13 @@ def calculator_FID(source, target):
 if __name__ == '__main__':
     os.environ["CUDA_VISIBLE_DEVICES"] = "1"
     
-    real_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_Crop/10-shot/train/0.csv"
-    fake_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_Crop/10-shot/train/0.csv"
+    real_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_Crop/30-shot/train/0.csv"
+    fake_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_Crop/30-shot/train/1.csv"
 
     convnet_feature_extract = ConvNetFeatureExtract(model="inception_v3", workers=4)
     real_feature = convnet_feature_extract.extractFeature(real_path)
     fake_feature = convnet_feature_extract.extractFeature(fake_path)
     
-    print(calculator_FID(real_feature, fake_feature))
+    result = calculator_FID(real_feature, fake_feature)
+    print(f"FID: {result}")
 

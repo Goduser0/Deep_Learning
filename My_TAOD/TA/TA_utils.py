@@ -177,7 +177,8 @@ def plt_tsne2d(X, Y, labels=None):
     save_path = "./My_TAOD/TA/results/" + str(t) + ".png"
     plt.savefig(save_path)
     plt.close()
-    
+
+
 #######################################################################################################
 #### FUNCTION: S_trainer_record_data()
 #######################################################################################################
@@ -246,7 +247,7 @@ def S_trainer_record_data(config, content, flag_plot=True):
 def S2T_trainer_record_data(config, content, flag_plot=True):
     """Save Data"""
     assert os.path.exists(config.results_dir)
-    filename = config.dataset_class + ' ' + config.catagory + ' ' + config.time
+    filename = config.dataset_target + ' ' + config.catagory + ' ' + config.time
     filepath = config.results_dir + '/' + filename + '.csv'
     content = pd.DataFrame.from_dict(content, orient="index").T
     

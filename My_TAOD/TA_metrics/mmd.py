@@ -2,9 +2,35 @@ import torch
 import torch.nn as nn
 import torchvision.transforms as T
 
-import sys
-sys.path.append("./TA_metrics")
-from load_images import load_images
+import pandas as pd
+import cv2
+import numpy as np
+
+def load_images(csv_path, trans=None):
+    df = pd.read_csv(csv_path)
+    
+    nums = len(df)
+    catagory_lables = df["Image_Label"]
+    image_path = df["Image_Path"]
+    
+    images = []
+    for i in image_path:
+        img = cv2.imread(i)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = img / 255.
+        if trans:
+            img = trans(img)
+        else:
+            img = img.transpose(2, 0, 1)
+        images.append(img)
+    
+    if trans:
+        images = torch.cat(images, dim=0)
+    else:
+        images = torch.FloatTensor(np.array(images))
+
+    return images, catagory_lables, nums
+
 
 class calculator_MMD(nn.Module):
     def __init__(self, kernel_type='rbf', kernel_mul=2.0, kernel_num=5):
@@ -99,5 +125,5 @@ if __name__ == '__main__':
     y = fake_img.reshape(fake_img.shape[0], -1)
     result = MMD(x, y)
     
-    print(result)
+    print(f"MMD: {result.numpy()}")
     

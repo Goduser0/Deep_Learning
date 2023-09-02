@@ -72,8 +72,6 @@ parser.add_argument("--conv_dim", type=int, default=64)
 parser.add_argument("--g_reg_every", type=int, default=4)
 parser.add_argument("--lr_g", type=float, default=1e-4)
 
-parser.add_argument("--n_train", type=int, default=210)
-parser.add_argument("--n_sample", type=int, default=210)
 parser.add_argument("--n_mlp", type=int, default=3)
 parser.add_argument("--z_dim", type=int, default=128)
 parser.add_argument("--lr_mlp", type=float, default=1e-2)
@@ -94,9 +92,9 @@ parser.add_argument("--time", type=str, default=time.strftime("%Y-%m-%d_%H:%M:%S
 config = parser.parse_args()
 
 # 一致性校验
-assert (config.data_path.split('/')[-4]==config.dataset_class 
-        and 
-        config.data_path.split('/')[-1][0]==config.catagory)
+assert(config.data_path.split('/')[-4]==config.dataset_class 
+       and 
+       config.data_path.split('/')[-1][0]==config.catagory)
 
 # logger
 S_trainer_logger(config)
@@ -119,8 +117,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
 trans = T.Compose(
     [
         T.ToTensor(), 
-        T.Resize((128, 128)),
-        T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)) # (-1, 1)
+        T.Resize((128, 128)), # (0, 255)
     ]
 )
 data_iter_loader = get_loader(config.dataset_class, 
@@ -129,7 +126,7 @@ data_iter_loader = get_loader(config.dataset_class,
                               config.num_workers, 
                               shuffle=True, 
                               trans=trans,
-                              img_type='PIL',
+                              img_type='ndarray',
                               drop_last=True
                               ) # 像素值范围：（-1, 1）[B, C, H, W]
 

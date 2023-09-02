@@ -79,11 +79,11 @@ parser.add_argument("--lr_vae", type=float, default=1e-4)
 # vae_common
 parser.add_argument("--vae_common_init_path",
                     type=str, 
-                    default="./My_TAOD/TA/models/source/PCB_200 0 2023-08-28_14:51:31/100_net_VAE_common.pth")
+                    default="./My_TAOD/TA/models/source/PCB_200 0 2023-08-28_20:37:07/100_net_VAE_common.pth")
 # vae_unique
 parser.add_argument("--vae_unique_init_path",
                     type=str, 
-                    default="./My_TAOD/TA/models/source/PCB_200 0 2023-08-28_14:51:31/100_net_VAE_unique.pth")
+                    default="./My_TAOD/TA/models/source/PCB_200 0 2023-08-28_20:37:07/100_net_VAE_unique.pth")
 # g_target
 parser.add_argument("--img_size", type=int, default=128)
 parser.add_argument("--conv_dim", type=int, default=64)
@@ -96,7 +96,7 @@ parser.add_argument("--lr_mlp", type=float, default=1e-2)
 
 parser.add_argument("--g_target_init_path",
                     type=str, 
-                    default="./My_TAOD/TA/models/source/PCB_200 0 2023-08-28_14:51:31/100_net_g_source.pth")
+                    default="./My_TAOD/TA/models/source/PCB_200 0 2023-08-28_20:37:07/100_net_g_source.pth")
 
 # Others
 parser.add_argument("--log", type=bool, default=True)
@@ -105,6 +105,24 @@ parser.add_argument("--time", type=str, default=time.strftime("%Y-%m-%d_%H:%M:%S
 # config
 config = parser.parse_args()
 
+# 一致性检验
+assert(
+    config.dataset_source == config.data_source_path.split('/')[-4]
+    and
+    config.dataset_target == config.data_target_path.split('/')[-4]
+    and
+    config.catagory == config.data_source_path.split('/')[-1][0]
+    and
+    config.catagory == config.data_target_path.split('/')[-1][0]
+    and
+    config.vae_common_init_path.split('/')[-2] == config.g_target_init_path.split('/')[-2]
+    and
+    config.vae_unique_init_path.split('/')[-2] == config.g_target_init_path.split('/')[-2]
+    and
+    config.g_target_init_path.split('/')[-2].split(" ")[0] == config.dataset_source
+    and
+    config.g_target_init_path.split('/')[-2].split(" ")[1] == config.catagory
+)
 # logger
 S2T_trainer_logger(config)
 
@@ -126,8 +144,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
 trans = T.Compose(
     [
         T.ToTensor(), 
-        T.Resize((128, 128)),
-        T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)) # (-1, 1)
+        T.Resize((128, 128)), # (0, 255)
     ]
 )
 
@@ -137,7 +154,7 @@ source_iter_loader = get_loader(config.dataset_source,
                               config.num_workers, 
                               shuffle=True, 
                               trans=trans,
-                              img_type='PIL',
+                              img_type='ndarray',
                               drop_last=True
                               ) # 像素值范围：（-1, 1）[B, C, H, W]
 # target_loader
@@ -147,7 +164,7 @@ target_iter_loader = get_loader(config.dataset_target,
                               config.num_workers, 
                               shuffle=True, 
                               trans=trans,
-                              img_type='PIL',
+                              img_type='ndarray',
                               drop_last=True
                               ) # 像素值范围：（-1, 1）[B, C, H, W]
 
@@ -156,16 +173,20 @@ VAE_common = VAE(
     in_channels=3, 
     latent_dim=config.latent_dim,
     input_size=config.img_size,
-    ).cuda().load_state_dict(torch.load(config.vae_common_init_path)["model_state_dict"])
+    ).cuda()
+VAE_common.load_state_dict(torch.load(config.vae_common_init_path)["model_state_dict"])
+
 VAE_unique = VAE(
     in_channels=3, 
     latent_dim=config.latent_dim,
     input_size=config.img_size,
-    ).cuda().load_state_dict(torch.load(config.vae_unique_init_path)["model_state_dict"])
+    ).cuda()
+VAE_unique.load_state_dict(torch.load(config.vae_unique_init_path)["model_state_dict"])
 
 g_target = FeatureMatchGenerator(
     config.n_mlp, config.img_size, config.z_dim, config.conv_dim, config.lr_mlp
-).cuda().load_state_dict(torch.load(config.g_target_init_path)["model_state_dict"])
+    ).cuda()
+g_target.load_state_dict(torch.load(config.g_target_init_path)["model_state_dict"])
 
 VAE_unique_optim = torch.optim.Adam(
     VAE_unique.parameters(), 

@@ -6,28 +6,43 @@ import cv2
 import numpy as np
 import pandas as pd
 from PIL import Image
+import matplotlib.pyplot as plt
 
 import torch
 import torch.utils.data as data
 import torchvision.transforms as T
 
-
+# png/jpg/bmp -> ndarray
 def bmp2ndarray(file_path):
     """将BMP文件转为ndarray"""
     img = Image.open(file_path).convert('RGB')
     img_array = np.array(img)
     return img_array
 
-def bmp2PIL(file_path):
-    """将BMP文件转为PIL Image"""
-    img = Image.open(file_path).convert('RGB')
-    return img
+# # png/jpg/bmp -> PIL.Image
+# def bmp2PIL(file_path):
+#     """将BMP文件转为PIL Image"""
+#     img = Image.open(file_path).convert('RGB')
+#     return img
 
+# [0, 255] -> [-1, 1]
+def img_255to1(img_uint):
+    """ [0, 255] -> [-1, 1]
+        Keep the device.
+    """
+    return img_uint / 127.5 - 1.
+
+# [-1, 1] -> [0, 255]
+def img_1to255(img_tensor):
+    """ [-1, 1] -> [0, 255]
+        Keep the device.
+    """
+    return ((img_tensor + 1.) * 127.5).astype(np.uint8)
 
 ###########################################################################################################
 # FUNCTION: get_loader
 ###########################################################################################################
-def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, trans=None, img_type='PIL', drop_last=False):
+def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, trans=None, img_type='ndarray', drop_last=False):
     df = pd.read_csv(dataset_dir)
     
     if dataset_class.lower() == 'neu_cls':
@@ -44,9 +59,10 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
                 image_path = self.df.loc[index, "Image_Path"]
                 if img_type.lower() == 'ndarray':
                     image = bmp2ndarray(image_path)
-                elif img_type.lower() == 'pil':
-                    image = bmp2PIL(image_path)
-                    
+                    image = img_255to1(image)
+                else:
+                    raise "img_type should be ndarray"
+                
                 if self.transforms:
                     image = self.transforms(image)
     
@@ -67,8 +83,9 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
                 image_path = self.df.loc[index, "Image_Path"]
                 if img_type.lower() == 'ndarray':
                     image = bmp2ndarray(image_path)
-                elif img_type.lower() == 'pil':
-                    image = bmp2PIL(image_path)
+                    image = img_255to1(image)
+                else:
+                    raise "img_type should be ndarray"
                 
                 if self.transforms:
                     image = self.transforms(image)
@@ -90,8 +107,9 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
                 image_path = self.df.loc[index, "Image_Path"]
                 if img_type.lower() == 'ndarray':
                     image = bmp2ndarray(image_path)
-                elif img_type.lower() == 'pil':
-                    image = bmp2PIL(image_path)
+                    image = img_255to1(image)
+                else:
+                    raise "img_type should be ndarray"
                 
                 if self.transforms:
                     image = self.transforms(image)
@@ -113,8 +131,9 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
                 image_path = self.df.loc[index, "Image_Path"]
                 if img_type.lower() == 'ndarray':
                     image = bmp2ndarray(image_path)
-                elif img_type.lower() == 'pil':
-                    image = bmp2PIL(image_path)
+                    image = img_255to1(image)
+                else:
+                    raise "img_type should be ndarray"
                 
                 if self.transforms:
                     image = self.transforms(image)
@@ -136,8 +155,9 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
                 image_path = self.df.loc[index, "Image_Path"]
                 if img_type.lower() == 'ndarray':
                     image = bmp2ndarray(image_path)
-                elif img_type.lower() == 'pil':
-                    image = bmp2PIL(image_path)
+                    image = img_255to1(image)
+                else:
+                    raise "img_type should be ndarray"
     
                 if self.transforms:
                     image = self.transforms(image)
@@ -165,15 +185,36 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
 #######################################################################################################
 def test():
     a = cv2.imread("/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/PCB-Crop/Short/01_short_01_0.jpg")
-    # a = np.array(torch.tensor([[[0, 0, 0], [255, 255, 255]], [[12, 125, 96], [210, 175, 100]]]), dtype=np.uint8)
+    b = bmp2ndarray("/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/PCB-Crop/Short/01_short_01_0.jpg")
+    c = np.array([[[255., 255., 255.], [0., 0., 0.]], [[255., 255., 255.], [0., 0., 0.]]])
+    
     trans = T.Compose(
     [
         T.ToTensor(), 
         T.Resize((128, 128)),
-        T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
-    b = trans(a)
-    print(a.shape)
-    print(b.shape)
+    result = trans(img_255to1(b))
+    # print(result, result.shape)
+    
+    data_iter_loader = get_loader('PCB_200', 
+                              "./My_TAOD/dataset/PCB_200/0.7-shot/train/0.csv", 
+                              1,
+                              4, 
+                              shuffle=False, 
+                              trans=trans,
+                              img_type='ndarray',
+                              drop_last=True,
+                              ) # 像素值范围：（-1, 1）[B, C, H, W]
+    for i, data in enumerate(data_iter_loader):
+        raw_img = data[0][0] # [B, C, H, W] -1~1
+        category_label = data[1] # [B]
+        raw_img = raw_img.numpy()
+        raw_img = img_1to255(raw_img)
+        raw_img = raw_img.transpose(1, 2, 0)
+        # print(raw_img, raw_img.shape)
+        plt.imshow(raw_img)
+        plt.savefig("test_test.jpg")
+        plt.close()
+        break
     
 # test()

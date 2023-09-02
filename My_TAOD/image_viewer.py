@@ -53,6 +53,7 @@ trans = T.Compose([
     T.RandomVerticalFlip(),
     T.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
 ])
+
 for image in images:
     images_trans.append(trans(image))
 
