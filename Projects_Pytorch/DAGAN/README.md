@@ -1,102 +1,112 @@
-# DAGAN
-Implementation of DAGAN: Data Augmentation Generative Adversarial Networks
+# Data Augmentation GAN in PyTorch
 
-## Introduction
+<img src="resources/dagan_tracking_images.png" width=560 height=56/>
+<img src="resources/dagan_training_progress.gif" width=560 height=56/>
 
-This is an implementation of DAGAN as described in https://arxiv.org/abs/1711.04340. The implementation provides data loaders, model builders, model trainers, and synthetic data generators for the Omniglot and VGG-Face datasets.
+<i>Time-lapse of DAGAN generations on the omniglot dataset over the course of the training process.</i>
 
-## Installation
 
-To use the DAGAN repository you must first install the project dependencies. This can be done by install miniconda3 from <a href="https://conda.io/miniconda.html">here</a> 
- with python 3 and running:
+## Table of Contents
+1. [Intro](#intro)
+2. [Background](#background)
+3. [Results](#results)
+4. [Training your own DAGAN](#train)
+5. [Technical Details](#details)
+	1. [DAGAN Training Process](#dagan_train)
+	2. [Classifier Training Process](#classifier_train)
+	3. [Architectures](#architectures)
+6. [Acknowledgements](#acknowledgements)
 
-```pip install -r requirements.txt```
+## 1. Intro <a name="intro"></a>
 
-## Datasets
+This is a PyTorch implementation of Data Augmentation GAN (DAGAN), which was first proposed in [this paper](https://arxiv.org/abs/1711.04340) with a [corresponding TensorFlow implementation](https://github.com/AntreasAntoniou/DAGAN).
 
-The Omniglot and VGG-Face datasets can be obtained in numpy format <a href="https://drive.google.com/drive/folders/15x2C11OrNeKLMzBDHrv8NPOwyre6H3O5?usp=sharing" target="_blank">here</a>. They should then be placed in the `datasets` folder.
+This repo uses the same generator and discriminator architecture of the original TF implementation, while also including a classifier script for the omniglot dataset to test out the quality of a trained DAGAN.
 
-## Training a DAGAN
+## 2. Background <a name="background"></a>
 
-After the datasets are downloaded and the dependencies are installed, a DAGAN can be trained by running:
+The motivation for this work is to train a [Generative Adversarial Network (GAN)](https://en.wikipedia.org/wiki/Generative_adversarial_network) which takes in an image of a given class (e.g. a specific letter in an alphabet) and outputs another image of the same class that is sufficiently different looking than the input. This GAN is then used as a tool for data augmentation when training an image classifier.
 
-```
-python train_omniglot_dagan.py --batch_size 32 --generator_inner_layers 3 --discriminator_inner_layers 5 --num_generations 64 --experiment_title omniglot_dagan_experiment_default --num_of_gpus 1 --z_dim 100 --dropout_rate_value 0.5
-```
+Standard data augmentation includes methods such as adding noise to, rotating, or cropping images, which increases variation in the training samples and improves the robustness of the trained classifier. Randomly passing some images through the DAGAN generator before using them in training serves a similar purpose.
 
-Here, `generator_inner_layers` and `discriminator_inner_layers` refer to the number of inner layers per MultiLayer in the generator and discriminator respectively. `num_generations` refers to the number of samples generated for use in the spherical interpolations at the end of each epoch.
+## 3. Results <a name="results"></a>
 
-## Multi-GPU Usage
+To measure the quality of the DAGAN, classifiers were trained both with and without DAGAN augmentations to see if there was improvement in classifier accuracy with augmentations. The original paper showed improvement on the omniglot dataset using 5, 10, and 15 images per class to train the classifier. As expected, the fewer samples used, the more impactful the augmentations were.
 
-Our implementation supports multi-GPU training. Simply pass `--num_of_gpus <x>` to the script to train on  x GPUs (note that this only works if the GPUs are on the same machine).
+This PyTorch implementation showed statistically significant improvment on the omniglot dataset with 1-4 samples per class but had negligible gains with 5+ samples per class. The below table shows the classifier accuracy with and without DAGAN augmentations as well as the statistical significance level that the augmentations are in fact better. (More details on confidence interval methodology [can be found here](#classifier_train)).
 
-## Defining a new task for the DAGAN
 
-If you want to train your own DAGAN on a new dataset you need to do the following:
+| Samples per Class                            | 1     | 2     | 3     | 4     | 5     |
+|----------------------------------------------|-------|-------|-------|-------|-------|
+| <b>Acc. w/o DAGAN</b>                               | 16.4% | 29.0% | 46.5% | 57.8% | 67.1% |
+| <b>Acc. w/ DAGAN</b>                                | 19.2% | 39.4% | 52.0% | 65.3% | 69.5% |
+| <b>Confidence level that augmentations are better | 97.6% | 99.9% | 97.4% | 97.8% | 60.7% |
 
-1. Edit data.py and define a new data loader class that inherits from either DAGANDataset or DAGANImblancedDataset. The first class is used when a dataset is balanced (i.e. every class has the same number of samples), the latter is for when this is not the case.
 
-An example class for a balanced dataset is:
+## 4. Training your own DAGAN <a name="train"></a>
 
-```
-class OmniglotDAGANDataset(DAGANDataset):
-    def __init__(self, batch_size, gan_training_index, reverse_channels, num_of_gpus, gen_batches):
-        super(OmniglotDAGANDataset, self).__init__(batch_size, gan_training_index, reverse_channels, num_of_gpus,
-                                                   gen_batches)
+The easiest way to train your own DAGAN or augmented omniglot classifier is through Google Colab. The Colab notebooks used to produce the results shown here can be found below:
+- [Train omniglot DAGAN](https://colab.research.google.com/drive/1U-twOEiguyIgiL6h9H6130tF-O_g-b-u)
+- [Train omniglot classifier with DAGAN augmentations](https://colab.research.google.com/drive/1oJggcS6-3x_chbEfahSJCsy19kWBxWeE)
 
-    def load_dataset(self, gan_training_index):
+Running those notebooks as is should reproduce the results presented in this readme. One of the advantages of PyTorch relative to TensorFlow is the ease of modifying and testing out changes in the training process, particulary to the network architecture. To test out changes, you can fork this repo, make necessary changes, and re-run the colab script using the forked repo.
 
-        self.x = np.load("datasets/omniglot_data.npy")
-        x_train, x_test, x_val = self.x[:1200], self.x[1200:1600], self.x[1600:]
-        x_train = x_train[:gan_training_index]
+## 5. Technical Details <a name="details"></a>
 
-        return x_train, x_test, x_val
- ```
- 
- An example for an imbalanced dataset is:
- 
- ```
- class OmniglotImbalancedDAGANDataset(DAGANImbalancedDataset):
-    def __init__(self, batch_size, gan_training_index, reverse_channels, num_of_gpus, gen_batches):
-        super(OmniglotImbalancedDAGANDataset, self).__init__(batch_size, gan_training_index, reverse_channels,
-                                                             num_of_gpus, gen_batches)
+### 5.1 DAGAN Training Process <a name="dagan_train"></a>
+Recall the procedure for training a traditional GAN:
+  - Create 2 networks, a generator (G) and a discriminator (D)
+  - To train D
+    - Randomly sample images from G and train D to recognize as fake
+    - Randomly sample real images and train D to recognize as real`
+  - To train G
+    - Sample images from G and pass them through D
+    - Train/modify G to increase likelihood D classifies given samples as real
+  - Train G and D alternately
+  - This iteratively makes D better at distinguishing real and fake, while making G better at producing realistic images
 
-    def load_dataset(self, gan_training_index):
+Training a DAGAN requires a slight twist:
+  - To train D
+    - Randomly sample pairs of real images (source, target), where both items in a pair belong to the same class
+    - Pass both source, target to D to recognize as real
+    - Pass source image to G to produce a realistic looking target
+    - Pass source, generated target to D to recognize as fake
+  - To train G
+    - Sample real images (source) and pass them through G to produce generated targets
+    - Train/modify G to increase likelihood D classifies (source, generated target) pairs as real
+  - D learns to distinguish real and fake targets for a given source image
+  - G learns to produce images that belong to the same class as source, while not being too similar to source (being too similar would provide a simple way for D to recognize fake targets)
+  - Thus, G provides varied images that are somewhat similar to the source, which is our ultimate goal
 
-        x = np.load("datasets/omniglot_data.npy")
-        x_temp = []
-        for i in range(x.shape[0]):
-            choose_samples = np.random.choice([i for i in range(1, 15)])
-            x_temp.append(x[i, :choose_samples])
-        self.x = np.array(x_temp)
-        x_train, x_test, x_val = self.x[:1200], self.x[1200:1600], self.x[1600:]
-        x_train = x_train[:gan_training_index]
+The omniglot DAGAN was trained on all the examples in the first 1200 classes of the dataset. The generator was validated on the next 200 classes by visual inspection. Training was done for 50 epochs, which took 3.3 hours on a Tesla T4 GPU.
 
-        return x_train, x_test, x_val
- ```
+The network was trained using the Adam optimizer and the Improved Wasserstein loss function, which has some useful properties allowing signal to better pass from D to G during the training of G. More details can be found in the [Improved Wasserstein GAN paper](https://arxiv.org/abs/1704.00028).
 
-In short, you need to define your own load_dataset function. This function should load your dataset in the form [num_classes, num_samples, im_height, im_width, im_channels]. Make sure your data values lie within the 0.0 to 1.0 range otherwise the system will fail to model them. Then you need to choose which classes go to each of your training, validation and test sets.
+### 5.2 Omniglot Classifier Training Process <a name="classifier_train"></a>
 
-2. Once your data loader is ready, use a template such as train_omniglot_dagan.py and change the data loader that is being passed. This should be sufficient to run experiments on any new image dataset.
+Omniglot classifiers were trained on classes #1420-1519 (100 classes) of the dataset for 200 epochs. Classifiers were trained with and without augmentations. When trained with augmentations, every other batch was passed through the DAGAN, so the total number of steps was the same in both configurations.
 
-## To Generate Data
+To estimate more robustly the accuracy in each configuration, 10 classifiers were trained, each on a slightly different dataset. More specifically, out of the 20 samples available for each class, a different subset of k images was chosen for each of the 10 classifiers. A two-sample t-test was then used to determine confidence level that the 2 distributions of accuracies were sufficiently different (i.e. statistical significance of accuracy improvement from augmentation).
 
-The model training automatically uses unseen data to produce generations at the end of each epoch. However, once you have trained a model to satisfication you can generate samples for the whole of the validation set using the following command:
+This exercise was repeated using (1, 2, 3, 4, 5) samples per class. Training was done using Adam optimizer and standard cross-entropy loss.
 
-```
-python gen_omniglot_dagan.py -batch_size 32 --generator_inner_layers 3 --discriminator_inner_layers 5 --num_generations 64 --experiment_title omniglot_dagan_experiment_default --num_of_gpus 1 --z_dim 100 --dropout_rate_value 0.5 --continue_from_epoch 38
-```
-All the arguments must match the trained network's arguments and the `continue_from_epoch` argument must correspond to the epoch the trained model was at.
+### 5.3 Architectures <a name="architectures"></a>
 
-## Additional generated data not shown in the paper
+The DAGAN architectures are described in detail in the paper and can also be seen in the PyTorch implementation of the [generator](https://github.com/amurthy1/dagan_torch/blob/master/generator.py) and [discriminator](https://github.com/amurthy1/dagan_torch/blob/master/discriminator.py).
 
-For further generated data please visit 
-<a href="https://drive.google.com/drive/folders/1IqdhiQzxHysSSnfSrGA9_jKTWzp9gl0k?usp=sharing" target="_blank">my Google Drive folder</a>.
+In a nutshell, the generator is a UNet of dense convolutional blocks. Each block has 4 conv layers, while the UNet itself is 4 blocks deep on each side.
 
-## Acknowledgements
+The discriminator is a DenseNet with 4 blocks, each containing 4 conv layers.
 
-Special thanks to the CDT in Data Science at the University of Edinburgh for providing the funding and resources for this project.
-Furthermore, special thanks to my colleagues James Owers, Todor Davchev, Elliot Crowley, and Gavin Gray for reviewing this code and providing improvements and suggestions.
+The omniglot classifier uses the [standard PyTorch DenseNet implementation](https://pytorch.org/hub/pytorch_vision_densenet/) with 4 blocks, each having 3 conv layers. The last layer of the classifier was concatenated with a 0/1 flag representing whether a given input was real or generated. This was followed by 2 dense layers before outputting the final classification probabilities. This was useful to allow the image features output from the last layer of the DenseNet to interact with the real/generated flag in order to produce more accurate predictions.
 
-Furthermore, the interpolations used in this project are a result of the <a href="https://arxiv.org/abs/1609.04468" target="_blank">Sampling Generative Networks paper</a> by Tom White. 
-The code itself was found at https://github.com/dribnet/plat.
+
+## 6. Acknowledgements <a name="acknowledgements"></a>
+
+- As mentioned earlier, this work was adopted from [this paper](https://arxiv.org/abs/1711.04340) and [this repo](https://github.com/AntreasAntoniou/DAGAN) by A. Antoniou et al.
+
+- The omniglot dataset was originally sourced from [this github repo](https://github.com/brendenlake/omniglot/) by user [brendanlake](https://github.com/brendenlake).
+
+- The PyTorch Wasserstein GAN (WGAN) implementation in this repo was closely adopted from [this repo](https://github.com/EmilienDupont/wgan-gp) by user [EmilienDupont](https://github.com/EmilienDupont/).
+
+
