@@ -14,6 +14,9 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import time
 
+import sys
+sys.path.append("./My_TAOD")
+from dataset_loader import get_loader, img_1to255, img_255to1
 from TA_VAE import VAE
 from TA_G import FeatureMatchGenerator
 
@@ -67,15 +70,15 @@ def generate(z_dim, n, model_path, samples_save_path):
 #          "./My_TAOD/TA/samples",
 #          )
 
-def img_translater(vae_common_params, vae_unique_params, g_params, img_path):
-    
-    data_iter_loader = get_loader(config.dataset_class, 
-                              config.data_path, 
-                              config.batch_size, 
-                              config.num_workers, 
-                              shuffle=True, 
+def img_translater(vae_common_params, vae_unique_params, g_params, trans):
+    data_iter_loader = get_loader('PCB_200', 
+                              "./My_TAOD/dataset/PCB_200/0.7-shot/train/0.csv", 
+                              1,
+                              4, 
+                              shuffle=False, 
                               trans=trans,
-                              drop_last=True
+                              img_type='ndarray',
+                              drop_last=True,
                               ) # 像素值范围：（-1, 1）[B, C, H, W]
     VAE_common = VAE(in_channels=3, latent_dim=64, input_size=128)
     VAE_unique = VAE(in_channels=3, latent_dim=64, input_size=128)
@@ -89,12 +92,37 @@ def img_translater(vae_common_params, vae_unique_params, g_params, img_path):
     VAE_unique.eval()
     G.eval()
     
-    img = img_path
-    feat_common = VAE_common(img)
-    feat_unique = VAE_unique(img)
-    feat = torch.concat([feat_common, feat_unique], dim=1)
-    output = G(feat)
+    for i, data in enumerate(data_iter_loader):
+        if i == 10:
+            img = data[0]
+            
+            results_common = VAE_common(img)
+            results_unique = VAE_unique(img)
+            [recon_img_common, _, mu_common, log_var_common] = [i for i in results_common]
+            [recon_img_unique, _, mu_unique, log_var_unique] = [i for i in results_unique]    
+            features_common = VAE_common.reparameterize(mu_common, log_var_common)
+            features_unique = VAE_unique.reparameterize(mu_unique, log_var_unique)
+            features = torch.concat([features_common, features_unique], dim=1)
+            output = G(features)
+            
+            raw_img = img[0]
+            raw_img = img_1to255(raw_img.numpy()).transpose(1, 2, 0)
+            plt.imshow(raw_img)
+            plt.savefig(f"test_raw_{i}.jpg")
+            plt.close()
+            
+            gen_img = output[0]
+            gen_img = img_1to255(gen_img.detach().numpy()).transpose(1, 2, 0)
+            plt.imshow(gen_img)
+            plt.savefig(f"test_gen_{i}.jpg")
+            plt.close()
+            
+            break        
     
-img_translater
-    
+img_translater(
+    "./My_TAOD/TA/models/source/PCB_200 0 2023-09-02_20:17:48/500_net_VAE_common.pth",
+    "./My_TAOD/TA/models/source/PCB_200 0 2023-09-02_20:17:48/500_net_VAE_unique.pth",
+    "./My_TAOD/TA/models/source/PCB_200 0 2023-09-02_20:17:48/500_net_g_source.pth",
+    trans=T.Compose([T.ToTensor(), T.Resize((128, 128))]),
+)
     

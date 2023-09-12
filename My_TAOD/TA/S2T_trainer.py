@@ -303,3 +303,4 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
             "model_state_dict": VAE_unique.state_dict(),
             "z_dim": config.z_dim,
         }, net_VAE_unique_path)
+        

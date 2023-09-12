@@ -70,19 +70,19 @@ parser.add_argument("--conv_dim", type=int, default=64)
 
 # g_source
 parser.add_argument("--g_reg_every", type=int, default=4)
-parser.add_argument("--lr_g", type=float, default=1e-4)
+parser.add_argument("--lr_g", type=float, default=5e-6)
 
 parser.add_argument("--n_mlp", type=int, default=3)
 parser.add_argument("--z_dim", type=int, default=128)
-parser.add_argument("--lr_mlp", type=float, default=1e-2)
+parser.add_argument("--lr_mlp", type=float, default=1e-3)
 
 # d_source
 parser.add_argument("--d_reg_every", type=int, default=4)
-parser.add_argument("--lr_d", type=float, default=1e-5)
+parser.add_argument("--lr_d", type=float, default=1e-4)
 
 # VAE
 parser.add_argument("--latent_dim", type=int, default=64)
-parser.add_argument("--lr_vae", type=float, default=1e-4)
+parser.add_argument("--lr_vae", type=float, default=1e-5)
 
 # Others
 parser.add_argument("--log", type=bool, default=True)
@@ -117,7 +117,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
 trans = T.Compose(
     [
         T.ToTensor(), 
-        T.Resize((128, 128)), # (0, 255)
+        T.Resize((config.img_size, config.img_size)), # (0, 255)
     ]
 )
 data_iter_loader = get_loader(config.dataset_class, 
@@ -157,12 +157,12 @@ d_reg_ratio = config.d_reg_every / (config.d_reg_every + 1)
 g_optim = torch.optim.Adam(
     g_source.parameters(),
     lr = config.lr_g * g_reg_ratio,
-    betas=(0 ** g_reg_ratio, 0.99 ** g_reg_ratio),
+    betas=(0.0 ** g_reg_ratio, 0.9 ** g_reg_ratio),
 )
 d_optim = torch.optim.Adam(
     d_source.parameters(),
     lr=config.lr_d * d_reg_ratio,
-    betas=(0 ** d_reg_ratio, 0.99 ** d_reg_ratio),
+    betas=(0.0 ** d_reg_ratio, 0.9 ** d_reg_ratio),
 )
 
 VAE_common_optim = torch.optim.Adam(
@@ -191,7 +191,6 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
     for i, data in enumerate(data_iter_loader):
         raw_img = data[0].cuda() # [B, C, H, W] -1~1
         category_label = data[1].cuda() # [B]
-        
         ##################################################################################
         ## Decoupling Branch
         ##################################################################################
@@ -223,12 +222,12 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         [recon_img_unique_gen, _, mu_unique_gen, log_var_unique_gen] = [i for i in results_common_gen]
 
         # 1.loss_kld_vae_raw
-        loss_kld_vae_common_raw = VAE_common.loss_function(*results_common_raw, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
-        loss_kld_vae_unique_raw = VAE_unique.loss_function(*results_unique_raw, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
+        loss_kld_vae_common_raw = VAE_common.loss_function(*results_common_raw, **{"recons_weight":0.9, "kld_weight": 0.1})["loss"]
+        loss_kld_vae_unique_raw = VAE_unique.loss_function(*results_unique_raw, **{"recons_weight":0.9, "kld_weight": 0.1})["loss"]
         loss_kld_vae_raw = 0.5 * (loss_kld_vae_common_raw + loss_kld_vae_unique_raw)
         # 2.loss_kld_vae_gen
-        loss_kld_vae_common_gen = VAE_common.loss_function(*results_common_gen, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
-        loss_kld_vae_unique_gen = VAE_unique.loss_function(*results_unique_gen, **{"recons_weight":0.0, "kld_weight": 1.0})["loss"]
+        loss_kld_vae_common_gen = VAE_common.loss_function(*results_common_gen, **{"recons_weight":0.9, "kld_weight": 0.1})["loss"]
+        loss_kld_vae_unique_gen = VAE_unique.loss_function(*results_unique_gen, **{"recons_weight":0.9, "kld_weight": 0.1})["loss"]
         loss_kld_vae_gen = 0.5 * (loss_kld_vae_common_gen + loss_kld_vae_unique_gen)
         # 3.loss_imgrecon
         loss_imgrecon = F.mse_loss(raw_img, gen_img)
@@ -266,7 +265,7 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         # 3.loss_imgrecon
         loss_imgrecon = F.mse_loss(raw_img, gen_img)
         # Total Loss G
-        TotalLoss_g = loss_featurerecon_common + loss_featurerecon_unique + loss_imgrecon
+        TotalLoss_g = loss_featurerecon_common + loss_featurerecon_unique + 5.0 * loss_imgrecon
         
         TotalLoss_g.backward()
         g_optim.step()

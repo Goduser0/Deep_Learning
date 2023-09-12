@@ -1,5 +1,6 @@
 import numpy as np
 
+import os
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -123,17 +124,24 @@ class VAE(nn.Module):
 # CLASS: VAE TEST
 ########################################################################################################
 def test():
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    # dir = "My_Datasets/Classification/PCB-Crop/Mouse_bite/01_mouse_bite_06_1.jpg"
     dir = "My_Datasets/Classification/PCB-200/Open_circuit/000001_0_00_07022_09338.bmp"
+    # dir = "My_Datasets/Classification/PCB-Crop/Spur/01_spur_01_0.jpg"
+    
     img = Image.open(dir).convert("RGB")
-    trans = T.ToTensor()
-    X = trans(img)
+    plt.imshow(img)
+    plt.savefig("test_vae_raw.png")
+    plt.close()
+    trans = T.Compose([T.ToTensor(), T.Resize((128, 128))])
+    X = trans(img).cuda()
     X = X.unsqueeze(0)
     print(X.shape)
-    vae_test = VAE(3, 128)
+    vae_test = VAE(3, 128).cuda()
     
-    optimizer = torch.optim.Adam(vae_test.parameters(), lr=1e-3)
+    optimizer = torch.optim.Adam(vae_test.parameters(), lr=1e-3, betas=[0.0, 0.9])
     
-    for i in tqdm.trange(100):
+    for i in tqdm.trange(200):
         vae_test.train()
         
         train_loss = 0
@@ -145,11 +153,10 @@ def test():
         
         optimizer.step()
         optimizer.zero_grad()
-        print(Y[4].shape)
-        Y = Y[0].detach().numpy()[0]
+        Y = Y[0].detach().to('cpu').numpy()[0]
         Y = np.transpose(Y, (1, 2, 0))
-        plt.imshow(Y)  
-        plt.savefig("test.png")
+        plt.imshow(Y)
+        plt.savefig("test_vae_gen.png")
         plt.close()
         
 # test()

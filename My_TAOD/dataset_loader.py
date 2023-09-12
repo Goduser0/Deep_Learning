@@ -16,7 +16,7 @@ import torchvision.transforms as T
 def bmp2ndarray(file_path):
     """将BMP文件转为ndarray"""
     img = Image.open(file_path).convert('RGB')
-    img_array = np.array(img)
+    img_array = np.array(img).astype(np.float32)
     return img_array
 
 # # png/jpg/bmp -> PIL.Image
