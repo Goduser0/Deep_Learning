@@ -49,7 +49,7 @@ parser.add_argument("--random_seed", type=int, default=1)
 parser.add_argument("--dataset_class",
                     type=str, 
                     default='PCB_200', 
-                    choices=['PCB_Crop', 'PCB_200'])
+                    choices=['PCB_Crop', 'PCB_200', 'DeepPCB_Crop'])
 parser.add_argument("--data_path", 
                     type=str, 
                     default="./My_TAOD/dataset/PCB_200/0.7-shot/train/0.csv")

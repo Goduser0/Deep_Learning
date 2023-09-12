@@ -269,6 +269,54 @@ class PCB_Crop(data.Dataset):
         
 
 ###########################################################################################################
+# DATASET:DeepPCB-Crop
+###########################################################################################################
+class DeepPCB_Crop(data.Dataset):
+    """Dataset class for DeepPCB-Corp"""
+    
+    def __init__(self, root_dir="./My_Datasets/Classification/DeepPCB-Crop", transform=None):
+        self.root_dir = root_dir
+        self.transform = transform
+        self.samples = self.load_samples()
+        self.label_list = self.samples["Image_Class"].unique().tolist()
+        
+    def __len__(self):
+        return len(self.samples)
+    
+    def __getitem__(self, idx):
+        img_path = self.samples.loc[idx, 'Image_Path']
+        img_content = bmp2ndarray(img_path)
+        img_class = self.samples.loc[idx, 'Image_Class']
+        img_label = self.samples.loc[idx, 'Image_Label']
+        if self.transform:
+            img_content = self.transform(img_content)
+        return img_content, img_label
+        
+    def load_samples(self):
+        sample_list = []
+        file_list = os.listdir(self.root_dir)
+        for file_class in file_list:
+            for filename in os.listdir(os.path.join(self.root_dir, file_class)):
+                if filename[-3:] == 'bmp' or filename[-3:] == 'png' or filename[-3:] == 'jpg':
+                    # image_path
+                    img_path = os.path.join(self.root_dir, *[file_class, filename])
+                    # image_class
+                    img_class = file_class
+                    # image_label
+                    img_classes = ['Mouse_bite', 'Open_circuit', 'Short', 'Spur', 'Spurious_copper', 'Pin_hole']
+                    img_label = img_classes.index(img_class)
+                    
+                    # image_item
+                    image_item = [img_label, img_class, img_path]
+                    sample_list.append(image_item)
+                    
+        return pd.DataFrame(sample_list, columns=['Image_Label', 'Image_Class', 'Image_Path'])
+    
+    def save_csv(self):
+        self.samples.to_csv("./My_TAOD/dataset/DeepPCB_Crop.csv")
+        
+        
+###########################################################################################################
 # DATASET: Add other dataset
 ###########################################################################################################
 
@@ -324,6 +372,12 @@ def build_dataset(dataset):
         label_list = df['Image_Label'].unique().tolist()
         dataset_train_size_list = [1, 5, 10, 30, 0.7]
     
+    elif dataset == 'DeepPCB_Crop':
+        dataset_origin = DeepPCB_Crop()
+        df = dataset_origin.samples
+        label_list = df['Image_Label'].unique().tolist()
+        dataset_train_size_list = [1, 5, 10, 30, 0.7]
+        
     else:
         sys.exit(f"ERROR:\t({__name__}):The dataset '{dataset}' doesn't exist")
     
@@ -364,8 +418,11 @@ def build_dataset(dataset):
 ###########################################################################################################
 # 运行函数：创建Dataset
 ###########################################################################################################
-build_dataset('NEU_CLS')
-# build_dataset('elpv')
-# build_dataset('Magnetic_Tile')
-build_dataset('PCB_200')
-build_dataset('PCB_Crop')
+if __name__ == "__main__":
+    # build_dataset('NEU_CLS')
+    # build_dataset('elpv')
+    # build_dataset('Magnetic_Tile')
+    # build_dataset('PCB_200')
+    # build_dataset('PCB_Crop')
+    # build_dataset('DeepPCB_Crop')
+    pass
