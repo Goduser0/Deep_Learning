@@ -126,8 +126,8 @@ class VAE(nn.Module):
 def test():
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     # dir = "My_Datasets/Classification/PCB-Crop/Mouse_bite/01_mouse_bite_06_1.jpg"
-    dir = "My_Datasets/Classification/PCB-200/Open_circuit/000001_0_00_07022_09338.bmp"
-    # dir = "My_Datasets/Classification/PCB-Crop/Spur/01_spur_01_0.jpg"
+    # dir = "My_Datasets/Classification/PCB-200/Open_circuit/000001_0_00_07022_09338.bmp"
+    dir = "My_Datasets/Classification/PCB-Crop/Spur/01_spur_01_0.jpg"
     
     img = Image.open(dir).convert("RGB")
     plt.imshow(img)
@@ -158,5 +158,6 @@ def test():
         plt.imshow(Y)
         plt.savefig("test_vae_gen.png")
         plt.close()
-        
-# test()
+
+if __name__ == "__main__":
+    test()

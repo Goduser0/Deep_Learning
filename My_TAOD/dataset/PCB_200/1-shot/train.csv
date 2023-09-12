@@ -1,6 +1,6 @@
 ,Image_Label,Image_Class,Image_Path
-151,2,Short,./My_Datasets/Classification/PCB-200/Short/000053_0_04_01756_04382.bmp
-310,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000096_0_03_12619_12690.bmp
-416,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/图片 1.png-34.png
-640,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001288_0_01_07433_02208.bmp
-968,3,Spur,./My_Datasets/Classification/PCB-200/Spur/000338_0_03_14329_14404.bmp
+136,2,Short,./My_Datasets/Classification/PCB-200/Short/000034_0_01_14966_08930.bmp
+257,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000488_0_04_03926_16887.bmp
+519,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000054_0_02_02063_06747.bmp
+718,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000239_0_03_02943_18294.bmp
+895,3,Spur,./My_Datasets/Classification/PCB-200/Spur/000191_0_03_12648_05768.bmp

@@ -171,6 +171,7 @@
 169,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_05_1.jpg
 170,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_03_0.jpg
 171,2,Short,./My_Datasets/Classification/PCB-Crop/Short/09_short_09_1.jpg
+172,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_06_4.jpg
 173,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_09_4.jpg
 174,2,Short,./My_Datasets/Classification/PCB-Crop/Short/07_short_02_4.jpg
 175,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_03_1.jpg
@@ -392,7 +393,6 @@
 391,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_01_2.jpg
 392,2,Short,./My_Datasets/Classification/PCB-Crop/Short/05_short_10_0.jpg
 393,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_15_1.jpg
-394,2,Short,./My_Datasets/Classification/PCB-Crop/Short/10_short_04_3.jpg
 395,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_10_2.jpg
 396,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_02_0.jpg
 397,2,Short,./My_Datasets/Classification/PCB-Crop/Short/07_short_06_4.jpg
@@ -499,6 +499,7 @@
 498,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/04_missing_hole_20_1.jpg
 499,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/11_missing_hole_03_1.jpg
 500,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_20_0.jpg
+501,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/08_missing_hole_01_0.jpg
 502,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/11_missing_hole_03_0.jpg
 503,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/09_missing_hole_08_1.jpg
 504,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_08_4.jpg
@@ -789,7 +790,6 @@
 789,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/05_missing_hole_08_3.jpg
 790,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_02_4.jpg
 791,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/05_missing_hole_01_0.jpg
-792,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_05_5.jpg
 793,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/07_missing_hole_01_3.jpg
 794,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_10_3.jpg
 795,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/08_missing_hole_05_1.jpg
@@ -1296,7 +1296,6 @@
 1296,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/09_mouse_bite_04_4.jpg
 1297,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/08_mouse_bite_08_2.jpg
 1298,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/10_mouse_bite_05_2.jpg
-1299,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/08_mouse_bite_05_1.jpg
 1300,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/07_mouse_bite_04_4.jpg
 1301,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/01_mouse_bite_14_1.jpg
 1302,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/05_mouse_bite_04_4.jpg
@@ -1347,6 +1346,7 @@
 1347,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/11_mouse_bite_05_0.jpg
 1348,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/07_mouse_bite_04_0.jpg
 1349,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/07_mouse_bite_07_3.jpg
+1350,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/06_mouse_bite_02_3.jpg
 1351,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/06_mouse_bite_05_2.jpg
 1352,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/04_mouse_bite_16_0.jpg
 1353,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/08_mouse_bite_02_1.jpg
@@ -1479,6 +1479,7 @@
 1480,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_10_3.jpg
 1481,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_06_2.jpg
 1482,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_09_2.jpg
+1483,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_04_3.jpg
 1484,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_03_3.jpg
 1485,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_07_2.jpg
 1486,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_06_2.jpg
@@ -1830,7 +1831,6 @@
 1832,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_01_1.jpg
 1833,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_17_1.jpg
 1834,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_07_0.jpg
-1835,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_09_2.jpg
 1836,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_08_4.jpg
 1837,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_08_1.jpg
 1838,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_08_4.jpg
@@ -2035,7 +2035,6 @@
 2037,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/05_spurious_copper_04_4.jpg
 2038,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/04_spurious_copper_19_2.jpg
 2039,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/12_spurious_copper_09_3.jpg
-2040,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/12_spurious_copper_08_3.jpg
 2041,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/08_spurious_copper_09_4.jpg
 2042,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/08_spurious_copper_06_1.jpg
 2043,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/05_spurious_copper_08_2.jpg
@@ -2143,6 +2142,7 @@
 2145,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/09_spurious_copper_09_4.jpg
 2146,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/04_spurious_copper_06_0.jpg
 2147,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/11_spurious_copper_09_5.jpg
+2148,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/08_spurious_copper_08_0.jpg
 2149,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/11_spurious_copper_10_4.jpg
 2150,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/05_spurious_copper_03_1.jpg
 2151,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/10_spurious_copper_01_3.jpg
@@ -2557,7 +2557,6 @@
 2560,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_06_3.jpg
 2561,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_13_2.jpg
 2562,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_03_2.jpg
-2563,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_10_0.jpg
 2564,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_16_2.jpg
 2565,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_16_1.jpg
 2566,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_01_3.jpg
@@ -2886,6 +2885,7 @@
 2889,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_20_1.jpg
 2890,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_08_4.jpg
 2891,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_05_1.jpg
+2892,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_17_2.jpg
 2893,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/10_spur_01_4.jpg
 2894,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_02_1.jpg
 2895,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_02_1.jpg

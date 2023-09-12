@@ -25,6 +25,7 @@ def traditional_aug():
     pass
 
 def generate(z_dim, n, model_path, samples_save_path):
+    """加载生成器，随机生成"""
     local_time = time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())
     
     z = torch.FloatTensor(np.random.normal(0, 1, (n, z_dim)))
@@ -71,6 +72,7 @@ def generate(z_dim, n, model_path, samples_save_path):
 #          )
 
 def img_translater(vae_common_params, vae_unique_params, g_params, trans):
+    """加载图像"""
     data_iter_loader = get_loader('PCB_200', 
                               "./My_TAOD/dataset/PCB_200/0.7-shot/train/0.csv", 
                               1,

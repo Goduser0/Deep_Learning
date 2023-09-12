@@ -296,6 +296,7 @@ def build_dataset(dataset):
     # 传入小数：代表训练集所占比例
     if dataset == 'NEU_CLS':
         dataset_origin = NEU_CLS()
+        df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
         dataset_train_size_list = [1, 5, 10, 30, 1.0]
         
@@ -315,13 +316,13 @@ def build_dataset(dataset):
         dataset_origin = PCB_200()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [1, 3, 10, 30, 0.7]
+        dataset_train_size_list = [1, 5, 10, 30, 0.7]
         
     elif dataset == 'PCB_Crop':
         dataset_origin = PCB_Crop()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [1, 3, 10, 30, 0.7]
+        dataset_train_size_list = [1, 5, 10, 30, 0.7]
     
     else:
         sys.exit(f"ERROR:\t({__name__}):The dataset '{dataset}' doesn't exist")
@@ -363,8 +364,8 @@ def build_dataset(dataset):
 ###########################################################################################################
 # 运行函数：创建Dataset
 ###########################################################################################################
-# build_dataset('NEU_CLS')
+build_dataset('NEU_CLS')
 # build_dataset('elpv')
 # build_dataset('Magnetic_Tile')
-# build_dataset('PCB_200')
+build_dataset('PCB_200')
 build_dataset('PCB_Crop')
