@@ -257,6 +257,7 @@
 255,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041018_1.jpg
 256,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_44000099_1.jpg
 257,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12300065_1.jpg
+258,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041097_1.jpg
 259,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100060_1.jpg
 260,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085040_2.jpg
 261,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000022_2.jpg
@@ -268,7 +269,6 @@
 267,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000076_1.jpg
 268,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100179_1.jpg
 269,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085232_3.jpg
-270,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085247_2.jpg
 271,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000087_6.jpg
 272,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_44000087_2.jpg
 273,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041013_6.jpg
@@ -323,6 +323,7 @@
 322,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_77000024_3.jpg
 323,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_90100035_6.jpg
 324,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085094_1.jpg
+325,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12000102_1.jpg
 326,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085248_2.jpg
 327,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_92000028_1.jpg
 328,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041128_1.jpg
@@ -334,7 +335,6 @@
 334,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041009_1.jpg
 335,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100183_1.jpg
 336,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_44000104_1.jpg
-337,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100136_1.jpg
 338,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12300152_1.jpg
 339,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_92000002_1.jpg
 340,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12000038_2.jpg
@@ -454,7 +454,6 @@
 454,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085006_0.jpg
 455,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100171_1.jpg
 456,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000055_1.jpg
-457,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085075_9.jpg
 458,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_77000095_1.jpg
 459,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000108_2.jpg
 460,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000040_5.jpg
@@ -466,6 +465,7 @@
 466,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12300217_1.jpg
 467,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100161_1.jpg
 468,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085266_7.jpg
+469,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_50600020_1.jpg
 470,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000079_1.jpg
 471,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000123_1.jpg
 472,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_44000093_3.jpg
@@ -520,7 +520,7 @@
 521,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085025_1.jpg
 522,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12300234_1.jpg
 523,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041183_5.jpg
-524,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041144_6.jpg
+525,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085059_7.jpg
 526,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041174_6.jpg
 527,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_44000065_1.jpg
 528,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085215_2.jpg
@@ -770,6 +770,7 @@
 772,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_90100045_1.jpg
 773,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085224_2.jpg
 774,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041102_1.jpg
+775,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085184_2.jpg
 776,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085087_7.jpg
 777,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085307_1.jpg
 778,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041049_6.jpg
@@ -869,7 +870,6 @@
 872,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_90100011_3.jpg
 873,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085227_3.jpg
 874,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085109_1.jpg
-875,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_77000062_0.jpg
 876,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_90100009_4.jpg
 877,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000011_5.jpg
 878,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000109_1.jpg
@@ -937,6 +937,7 @@
 940,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000080_9.jpg
 941,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041208_2.jpg
 942,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085057_3.jpg
+943,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12300077_1.jpg
 944,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_90100030_1.jpg
 945,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041077_1.jpg
 946,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085073_1.jpg
@@ -1110,6 +1111,7 @@
 1114,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041138_7.jpg
 1115,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12300119_1.jpg
 1116,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_92000008_1.jpg
+1117,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085289_1.jpg
 1118,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100020_7.jpg
 1119,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041023_1.jpg
 1120,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085310_1.jpg
@@ -1172,7 +1174,6 @@
 1177,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085108_8.jpg
 1178,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_90100008_4.jpg
 1179,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041011_1.jpg
-1180,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041005_1.jpg
 1181,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_77000047_0.jpg
 1182,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_50600042_1.jpg
 1183,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_90100066_1.jpg
@@ -1197,6 +1198,7 @@
 1202,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_50600048_1.jpg
 1203,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_44000020_3.jpg
 1204,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085217_1.jpg
+1205,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000214_1.jpg
 1206,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_90100013_3.jpg
 1207,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_44000103_1.jpg
 1208,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085251_1.jpg
@@ -1206,7 +1208,6 @@
 1212,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100129_1.jpg
 1213,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085036_1.jpg
 1214,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12300228_1.jpg
-1215,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_77000034_5.jpg
 1216,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100190_1.jpg
 1217,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085275_7.jpg
 1218,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000048_1.jpg
@@ -1288,7 +1289,6 @@
 1294,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_92000027_1.jpg
 1295,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_90100012_7.jpg
 1296,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085017_2.jpg
-1297,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085055_6.jpg
 1298,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085154_2.jpg
 1299,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085252_1.jpg
 1300,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100002_1.jpg
@@ -1297,7 +1297,6 @@
 1303,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085070_1.jpg
 1304,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_50600047_1.jpg
 1305,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_92000100_1.jpg
-1306,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085012_1.jpg
 1307,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_92000057_5.jpg
 1308,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085212_2.jpg
 1309,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_44000045_1.jpg
@@ -1372,6 +1371,7 @@
 1378,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041187_1.jpg
 1379,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100164_4.jpg
 1380,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_77000033_1.jpg
+1381,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085277_8.jpg
 1382,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12300127_1.jpg
 1383,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085129_2.jpg
 1384,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041183_6.jpg
@@ -1385,6 +1385,7 @@
 1392,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041154_5.jpg
 1393,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_13000137_1.jpg
 1394,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085236_3.jpg
+1395,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100021_1.jpg
 1396,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085053_8.jpg
 1397,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_44000106_3.jpg
 1398,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041032_1.jpg
@@ -1441,7 +1442,6 @@
 1449,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_00041122_2.jpg
 1450,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_50600062_1.jpg
 1451,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085038_5.jpg
-1452,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085214_4.jpg
 1453,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100013_5.jpg
 1454,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_20085107_1.jpg
 1455,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_50600063_1.jpg
@@ -1507,6 +1507,7 @@
 1515,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000020_6.jpg
 1516,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_50600016_2.jpg
 1517,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000032_2.jpg
+1518,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300129_2.jpg
 1519,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000015_1.jpg
 1520,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085136_3.jpg
 1521,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000079_2.jpg
@@ -1521,6 +1522,7 @@
 1530,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_90100020_4.jpg
 1531,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000156_2.jpg
 1532,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000038_2.jpg
+1533,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100009_1.jpg
 1534,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085210_5.jpg
 1535,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_92000072_0.jpg
 1536,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085291_6.jpg
@@ -1697,6 +1699,7 @@
 1707,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000043_2.jpg
 1708,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041118_2.jpg
 1709,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085207_3.jpg
+1710,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085321_0.jpg
 1711,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041124_6.jpg
 1712,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000056_4.jpg
 1713,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041158_7.jpg
@@ -1766,6 +1769,7 @@
 1777,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041050_3.jpg
 1778,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041126_8.jpg
 1779,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100147_6.jpg
+1780,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041090_8.jpg
 1781,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000011_4.jpg
 1782,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085241_3.jpg
 1783,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000012_5.jpg
@@ -1855,7 +1859,6 @@
 1867,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041189_1.jpg
 1868,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085145_2.jpg
 1869,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300239_2.jpg
-1870,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085045_3.jpg
 1871,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300122_1.jpg
 1872,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085284_2.jpg
 1873,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085004_0.jpg
@@ -1923,7 +1926,6 @@
 1935,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300238_1.jpg
 1936,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000169_5.jpg
 1937,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000106_1.jpg
-1938,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000092_2.jpg
 1939,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100046_2.jpg
 1940,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041202_1.jpg
 1941,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300141_7.jpg
@@ -1992,7 +1994,6 @@
 2004,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300237_3.jpg
 2005,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100017_2.jpg
 2006,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085106_5.jpg
-2007,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000002_1.jpg
 2008,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_90100017_7.jpg
 2009,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041043_2.jpg
 2010,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000016_1.jpg
@@ -2296,7 +2297,6 @@
 2308,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000085_5.jpg
 2309,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085042_5.jpg
 2310,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041115_8.jpg
-2311,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041174_1.jpg
 2312,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000068_7.jpg
 2313,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085271_7.jpg
 2314,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085001_4.jpg
@@ -2364,6 +2364,7 @@
 2376,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000137_2.jpg
 2377,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041043_8.jpg
 2378,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000125_0.jpg
+2379,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000018_0.jpg
 2380,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300217_2.jpg
 2381,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000064_0.jpg
 2382,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085105_2.jpg
@@ -2606,7 +2607,6 @@
 2619,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085241_4.jpg
 2620,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085312_0.jpg
 2621,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085317_1.jpg
-2622,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085295_2.jpg
 2623,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_50600007_4.jpg
 2624,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000060_1.jpg
 2625,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_50600050_1.jpg
@@ -2651,6 +2651,7 @@
 2664,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000099_2.jpg
 2665,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000086_7.jpg
 2666,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000066_1.jpg
+2667,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085125_9.jpg
 2668,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000007_2.jpg
 2669,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041035_8.jpg
 2670,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041013_5.jpg
@@ -2712,7 +2713,6 @@
 2726,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085280_5.jpg
 2727,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300225_2.jpg
 2728,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041006_7.jpg
-2729,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085229_6.jpg
 2730,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085321_5.jpg
 2731,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100163_2.jpg
 2732,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000018_1.jpg
@@ -2972,16 +2972,17 @@
 2986,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000076_2.jpg
 2987,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041162_1.jpg
 2988,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085074_2.jpg
+2989,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000110_3.jpg
 2990,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000021_4.jpg
 2991,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041137_2.jpg
 2992,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_92000087_1.jpg
 2993,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000194_1.jpg
+2994,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085294_3.jpg
 2995,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085029_4.jpg
 2996,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041061_2.jpg
 2997,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000107_0.jpg
 2998,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041197_1.jpg
 2999,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041121_2.jpg
-3000,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300061_5.jpg
 3001,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041013_1.jpg
 3002,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300123_2.jpg
 3003,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041016_2.jpg
@@ -3018,7 +3019,6 @@
 3034,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041032_2.jpg
 3035,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000028_2.jpg
 3036,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000052_3.jpg
-3037,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041194_2.jpg
 3038,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000210_4.jpg
 3039,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041023_2.jpg
 3040,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000027_4.jpg
@@ -3039,7 +3039,6 @@
 3055,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000039_6.jpg
 3056,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085051_2.jpg
 3057,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100038_2.jpg
-3058,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100031_6.jpg
 3059,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100051_2.jpg
 3060,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085163_0.jpg
 3061,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_50600018_2.jpg
@@ -3263,7 +3262,6 @@
 3279,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000022_2.jpg
 3280,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041137_6.jpg
 3281,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000067_3.jpg
-3282,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000030_5.jpg
 3283,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085245_4.jpg
 3284,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000171_0.jpg
 3285,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085046_2.jpg
@@ -3345,6 +3343,7 @@
 3361,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041038_1.jpg
 3362,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000031_2.jpg
 3363,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041091_8.jpg
+3364,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100146_2.jpg
 3365,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085231_4.jpg
 3366,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085120_2.jpg
 3367,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100013_1.jpg
@@ -3429,6 +3428,7 @@
 3446,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085294_7.jpg
 3447,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100138_1.jpg
 3448,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085018_2.jpg
+3449,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100039_5.jpg
 3450,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085265_1.jpg
 3451,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041090_1.jpg
 3452,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000094_2.jpg
@@ -3489,7 +3489,6 @@
 3507,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085011_2.jpg
 3508,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_92000032_0.jpg
 3509,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085066_0.jpg
-3510,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100188_0.jpg
 3511,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_92000108_0.jpg
 3512,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085011_1.jpg
 3513,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100137_0.jpg
@@ -3529,7 +3528,6 @@
 3547,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041158_0.jpg
 3548,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085209_0.jpg
 3549,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_44000113_2.jpg
-3550,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12300230_0.jpg
 3551,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_77000035_0.jpg
 3552,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_50600058_0.jpg
 3553,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12300229_0.jpg
@@ -3565,7 +3563,6 @@
 3583,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000123_0.jpg
 3584,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100005_0.jpg
 3585,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12000017_0.jpg
-3586,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_44000026_0.jpg
 3587,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_77000006_0.jpg
 3588,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085143_0.jpg
 3589,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085185_0.jpg
@@ -3716,6 +3713,7 @@
 3734,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085094_0.jpg
 3735,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_92000012_0.jpg
 3736,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_90100058_6.jpg
+3737,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041011_0.jpg
 3738,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000173_0.jpg
 3739,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041064_0.jpg
 3740,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085260_0.jpg
@@ -4066,7 +4064,6 @@
 4085,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085214_1.jpg
 4086,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085128_0.jpg
 4087,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085092_4.jpg
-4088,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041168_0.jpg
 4089,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000033_0.jpg
 4090,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085229_2.jpg
 4091,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12300133_0.jpg
@@ -4079,6 +4076,7 @@
 4098,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041004_0.jpg
 4099,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041178_7.jpg
 4100,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_44000049_0.jpg
+4101,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12300122_0.jpg
 4102,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085251_3.jpg
 4103,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085029_0.jpg
 4104,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12300236_1.jpg
@@ -4090,7 +4088,6 @@
 4110,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085033_0.jpg
 4111,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041174_0.jpg
 4112,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12300118_0.jpg
-4113,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085112_5.jpg
 4114,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085184_1.jpg
 4115,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_44000016_0.jpg
 4116,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085235_7.jpg
@@ -4239,7 +4236,6 @@
 4259,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12300066_0.jpg
 4260,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041000_8.jpg
 4261,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041095_0.jpg
-4262,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_50600074_0.jpg
 4263,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_44000109_0.jpg
 4264,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085018_0.jpg
 4265,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085103_9.jpg
@@ -4312,6 +4308,7 @@
 4332,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000087_0.jpg
 4333,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12300124_0.jpg
 4334,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041216_0.jpg
+4335,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041086_8.jpg
 4336,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_92000100_0.jpg
 4337,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085238_1.jpg
 4338,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12300142_0.jpg
@@ -4366,7 +4363,6 @@
 4387,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_90100064_0.jpg
 4388,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041114_0.jpg
 4389,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_92000034_1.jpg
-4390,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000091_1.jpg
 4391,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041005_7.jpg
 4392,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_90100008_1.jpg
 4393,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041023_0.jpg
@@ -4377,6 +4373,7 @@
 4398,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085300_0.jpg
 4399,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_77000031_4.jpg
 4400,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085280_0.jpg
+4401,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12300228_0.jpg
 4402,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_90100021_0.jpg
 4403,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_77000020_5.jpg
 4404,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_92000038_0.jpg
@@ -4648,7 +4645,6 @@
 4670,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085088_0.jpg
 4671,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100179_0.jpg
 4672,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085097_0.jpg
-4673,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_44000040_0.jpg
 4674,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_92000059_0.jpg
 4675,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085055_0.jpg
 4676,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_92000103_0.jpg
@@ -4760,6 +4756,7 @@
 4782,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085088_6.jpg
 4783,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_50600012_0.jpg
 4784,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_44000041_0.jpg
+4785,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100029_4.jpg
 4786,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041006_0.jpg
 4787,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041151_0.jpg
 4788,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_77000037_0.jpg
@@ -4860,6 +4857,7 @@
 4883,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085233_1.jpg
 4884,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085186_0.jpg
 4885,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085274_0.jpg
+4886,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100190_0.jpg
 4887,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085135_7.jpg
 4888,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085080_4.jpg
 4889,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041077_0.jpg
@@ -4898,6 +4896,7 @@
 4922,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000075_0.jpg
 4923,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041220_0.jpg
 4924,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085232_0.jpg
+4925,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041218_0.jpg
 4926,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041038_0.jpg
 4927,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041198_0.jpg
 4928,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000214_0.jpg
@@ -4940,7 +4939,6 @@
 4965,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000021_0.jpg
 4966,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085096_0.jpg
 4967,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_90100003_0.jpg
-4968,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_44000110_0.jpg
 4969,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_90100020_1.jpg
 4970,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_77000045_0.jpg
 4971,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100031_0.jpg
@@ -4957,6 +4955,7 @@
 4982,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085215_1.jpg
 4983,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_77000078_0.jpg
 4984,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041148_3.jpg
+4985,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_92000065_0.jpg
 4986,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041100_0.jpg
 4987,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041098_0.jpg
 4988,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100019_0.jpg
@@ -5035,6 +5034,7 @@
 5061,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100185_0.jpg
 5062,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085202_0.jpg
 5063,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085178_0.jpg
+5064,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041162_0.jpg
 5065,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100200_0.jpg
 5066,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085052_3.jpg
 5067,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_92000066_0.jpg
@@ -5326,6 +5326,7 @@
 5353,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000204_0.jpg
 5354,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_20085016_1.jpg
 5355,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000063_1.jpg
+5356,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041075_3.jpg
 5357,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000077_0.jpg
 5358,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100003_0.jpg
 5359,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041140_0.jpg
@@ -5336,7 +5337,6 @@
 5364,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_44000067_1.jpg
 5365,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_44000088_0.jpg
 5366,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_90100078_0.jpg
-5367,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_44000077_0.jpg
 5368,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_13000076_0.jpg
 5369,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_50600051_0.jpg
 5370,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_00041217_0.jpg
@@ -5392,6 +5392,7 @@
 5420,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100048_2.jpg
 5421,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000003_4.jpg
 5422,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600010_3.jpg
+5423,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085110_4.jpg
 5424,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000081_5.jpg
 5425,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000023_8.jpg
 5426,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085103_4.jpg
@@ -5447,6 +5448,7 @@
 5476,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000034_6.jpg
 5477,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041013_7.jpg
 5478,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300236_4.jpg
+5479,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085156_3.jpg
 5480,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085003_7.jpg
 5481,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041017_4.jpg
 5482,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041136_9.jpg
@@ -5467,7 +5469,6 @@
 5497,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085175_2.jpg
 5498,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000010_4.jpg
 5499,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041162_2.jpg
-5500,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041210_3.jpg
 5501,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085006_5.jpg
 5502,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100156_4.jpg
 5503,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100034_4.jpg
@@ -5614,6 +5615,7 @@
 5644,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100185_2.jpg
 5645,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041097_6.jpg
 5646,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000015_3.jpg
+5647,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085120_5.jpg
 5648,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000208_3.jpg
 5649,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100164_6.jpg
 5650,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041126_3.jpg
@@ -5631,7 +5633,6 @@
 5662,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085056_4.jpg
 5663,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041006_4.jpg
 5664,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000017_7.jpg
-5665,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100054_3.jpg
 5666,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000097_4.jpg
 5667,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000057_6.jpg
 5668,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000017_8.jpg
@@ -5931,6 +5932,7 @@
 5962,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100163_4.jpg
 5963,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100038_4.jpg
 5964,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000188_4.jpg
+5965,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041206_4.jpg
 5966,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300120_5.jpg
 5967,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100009_10.jpg
 5968,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085246_6.jpg
@@ -5973,6 +5975,7 @@
 6005,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085125_7.jpg
 6006,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300110_3.jpg
 6007,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000045_5.jpg
+6008,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085080_7.jpg
 6009,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000027_8.jpg
 6010,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085017_4.jpg
 6011,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041102_5.jpg
@@ -6004,7 +6007,6 @@
 6037,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085236_6.jpg
 6038,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000096_3.jpg
 6039,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041000_4.jpg
-6040,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000039_2.jpg
 6041,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085276_6.jpg
 6042,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085005_4.jpg
 6043,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041022_3.jpg
@@ -6060,7 +6062,6 @@
 6093,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000127_2.jpg
 6094,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000024_7.jpg
 6095,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000080_1.jpg
-6096,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100170_2.jpg
 6097,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041060_4.jpg
 6098,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600077_4.jpg
 6099,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041032_5.jpg
@@ -6093,7 +6094,6 @@
 6126,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000047_5.jpg
 6127,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100003_4.jpg
 6128,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085225_10.jpg
-6129,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000180_5.jpg
 6130,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000046_4.jpg
 6131,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041180_4.jpg
 6132,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041087_5.jpg
@@ -6361,6 +6361,7 @@
 6394,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000082_2.jpg
 6395,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041048_4.jpg
 6396,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000050_3.jpg
+6397,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100018_4.jpg
 6398,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100143_4.jpg
 6399,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085228_6.jpg
 6400,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000008_8.jpg
@@ -6392,6 +6393,7 @@
 6426,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100068_5.jpg
 6427,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000050_3.jpg
 6428,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041018_4.jpg
+6429,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000112_5.jpg
 6430,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085263_8.jpg
 6431,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100137_2.jpg
 6432,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300154_2.jpg
@@ -6423,7 +6425,6 @@
 6458,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100128_2.jpg
 6459,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000196_4.jpg
 6460,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041125_3.jpg
-6461,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041150_5.jpg
 6462,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600078_5.jpg
 6463,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000041_4.jpg
 6464,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000049_1.jpg
@@ -6440,6 +6441,7 @@
 6475,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000098_4.jpg
 6476,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000192_2.jpg
 6477,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100028_3.jpg
+6478,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085075_7.jpg
 6479,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085140_6.jpg
 6480,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300117_3.jpg
 6481,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041064_5.jpg
@@ -6460,7 +6462,6 @@
 6496,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300128_4.jpg
 6497,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600051_4.jpg
 6498,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085253_6.jpg
-6499,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000150_1.jpg
 6500,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085295_3.jpg
 6501,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041007_6.jpg
 6502,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085271_3.jpg
@@ -6630,13 +6631,13 @@
 6666,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085027_4.jpg
 6667,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100006_3.jpg
 6668,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085294_5.jpg
-6669,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000027_8.jpg
 6670,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041216_4.jpg
 6671,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085292_6.jpg
 6672,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041152_3.jpg
 6673,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100187_5.jpg
 6674,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041105_8.jpg
 6675,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085019_5.jpg
+6676,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041079_3.jpg
 6677,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300136_4.jpg
 6678,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085012_0.jpg
 6679,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000020_7.jpg
@@ -6775,6 +6776,7 @@
 6812,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000064_3.jpg
 6813,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12000001_4.jpg
 6814,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041034_3.jpg
+6815,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000115_2.jpg
 6816,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000063_3.jpg
 6817,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000167_3.jpg
 6818,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000097_3.jpg
@@ -6824,10 +6826,8 @@
 6862,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100060_5.jpg
 6863,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100132_2.jpg
 6864,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300125_2.jpg
-6865,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041046_4.jpg
 6866,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100036_3.jpg
 6867,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000103_4.jpg
-6868,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100057_4.jpg
 6869,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085095_2.jpg
 6870,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000025_5.jpg
 6871,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085296_3.jpg
@@ -6853,6 +6853,7 @@
 6891,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085081_6.jpg
 6892,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085205_5.jpg
 6893,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12000119_4.jpg
+6894,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300226_4.jpg
 6895,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100010_3.jpg
 6896,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041064_6.jpg
 6897,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000205_4.jpg
@@ -6922,6 +6923,7 @@
 6961,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000106_3.jpg
 6962,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000023_5.jpg
 6963,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600065_2.jpg
+6964,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000195_5.jpg
 6965,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041002_6.jpg
 6966,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085006_6.jpg
 6967,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000019_7.jpg
@@ -6937,6 +6939,7 @@
 6977,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041014_6.jpg
 6978,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085316_4.jpg
 6979,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100065_4.jpg
+6980,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085195_5.jpg
 6981,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085024_6.jpg
 6982,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600077_3.jpg
 6983,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041186_3.jpg
@@ -7120,7 +7123,6 @@
 7161,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000054_4.jpg
 7162,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085285_4.jpg
 7163,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100184_4.jpg
-7164,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000166_2.jpg
 7165,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000196_5.jpg
 7166,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000000_5.jpg
 7167,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000015_8.jpg
@@ -7184,13 +7186,13 @@
 7225,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300218_6.jpg
 7226,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600003_6.jpg
 7227,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085174_3.jpg
-7228,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085172_5.jpg
 7229,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000087_8.jpg
 7230,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085271_6.jpg
 7231,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600009_3.jpg
 7232,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300153_4.jpg
 7233,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000095_4.jpg
 7234,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100121_5.jpg
+7235,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000057_7.jpg
 7236,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100026_4.jpg
 7237,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12000136_4.jpg
 7238,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300242_6.jpg
@@ -7204,7 +7206,6 @@
 7246,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100081_3.jpg
 7247,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100160_4.jpg
 7248,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100029_3.jpg
-7249,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085171_3.jpg
 7250,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100001_5.jpg
 7251,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000008_4.jpg
 7252,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000009_5.jpg
@@ -7263,7 +7264,6 @@
 7305,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000102_4.jpg
 7306,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085323_5.jpg
 7307,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600010_4.jpg
-7308,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041139_5.jpg
 7309,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085105_4.jpg
 7310,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000096_3.jpg
 7311,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300247_4.jpg
@@ -7272,7 +7272,6 @@
 7314,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041063_5.jpg
 7315,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100159_6.jpg
 7316,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100059_4.jpg
-7317,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100058_3.jpg
 7318,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041136_8.jpg
 7319,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000039_5.jpg
 7320,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000127_3.jpg
@@ -7316,6 +7315,7 @@
 7358,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100056_4.jpg
 7359,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100020_2.jpg
 7360,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000069_3.jpg
+7361,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300073_6.jpg
 7362,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085012_6.jpg
 7363,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000154_2.jpg
 7364,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041165_4.jpg
@@ -7344,6 +7344,7 @@
 7387,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100040_4.jpg
 7388,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000074_2.jpg
 7389,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085244_8.jpg
+7390,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300116_2.jpg
 7391,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000005_5.jpg
 7392,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000086_3.jpg
 7393,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000070_3.jpg
@@ -7457,7 +7458,6 @@
 7501,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000158_2.jpg
 7502,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600057_5.jpg
 7503,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100051_5.jpg
-7504,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000141_4.jpg
 7505,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041028_4.jpg
 7506,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100144_6.jpg
 7507,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085179_4.jpg
@@ -7703,7 +7703,6 @@
 7747,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000026_11.jpg
 7748,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000109_7.jpg
 7749,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000094_4.jpg
-7750,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085149_6.jpg
 7751,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000071_3.jpg
 7752,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300070_3.jpg
 7753,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000001_4.jpg
@@ -7820,6 +7819,7 @@
 7864,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100136_6.jpg
 7865,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000149_4.jpg
 7866,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000103_3.jpg
+7867,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100000_5.jpg
 7868,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085224_9.jpg
 7869,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100017_4.jpg
 7870,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000014_2.jpg
@@ -7862,7 +7862,6 @@
 7907,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000034_8.jpg
 7908,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041098_2.jpg
 7909,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600062_5.jpg
-7910,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085016_6.jpg
 7911,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085051_4.jpg
 7912,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000101_1.jpg
 7913,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600078_4.jpg
@@ -8078,7 +8077,6 @@
 8123,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300228_4.jpg
 8124,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041141_4.jpg
 8125,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000053_5.jpg
-8126,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085277_5.jpg
 8127,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041120_7.jpg
 8128,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041175_2.jpg
 8129,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000210_2.jpg
@@ -8174,7 +8172,6 @@
 8219,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000055_6.jpg
 8220,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100007_4.jpg
 8221,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041092_3.jpg
-8222,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000186_0.jpg
 8223,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300072_3.jpg
 8224,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000084_6.jpg
 8225,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041122_7.jpg
@@ -8184,6 +8181,7 @@
 8229,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000148_2.jpg
 8230,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000014_1.jpg
 8231,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000011_6.jpg
+8232,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000072_2.jpg
 8233,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085213_7.jpg
 8234,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000058_4.jpg
 8235,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085121_5.jpg
@@ -8285,6 +8283,7 @@
 8331,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041155_8.jpg
 8332,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000022_2.jpg
 8333,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000030_5.jpg
+8334,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000083_6.jpg
 8335,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000115_4.jpg
 8336,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300240_5.jpg
 8337,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000079_4.jpg
@@ -8292,6 +8291,7 @@
 8339,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000111_2.jpg
 8340,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000104_2.jpg
 8341,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300225_4.jpg
+8342,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000089_4.jpg
 8343,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000073_6.jpg
 8344,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041205_3.jpg
 8345,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000029_3.jpg
@@ -8353,8 +8353,6 @@
 8401,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_92000088_3.jpg
 8402,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041081_3.jpg
 8403,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12300227_4.jpg
-8404,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_77000037_2.jpg
-8405,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100150_3.jpg
 8406,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100189_7.jpg
 8407,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085047_1.jpg
 8408,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_92000104_2.jpg
@@ -8362,6 +8360,7 @@
 8410,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100140_2.jpg
 8411,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041215_3.jpg
 8412,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085096_3.jpg
+8413,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_90100060_9.jpg
 8414,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000140_2.jpg
 8415,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000126_2.jpg
 8416,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100052_3.jpg
@@ -8454,6 +8453,7 @@
 8503,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085134_3.jpg
 8504,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000195_3.jpg
 8505,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085265_3.jpg
+8506,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041105_6.jpg
 8507,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_90100024_3.jpg
 8508,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041122_3.jpg
 8509,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000023_4.jpg
@@ -8495,7 +8495,6 @@
 8545,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_90100077_3.jpg
 8546,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000059_6.jpg
 8547,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_92000018_3.jpg
-8548,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085258_3.jpg
 8549,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085266_3.jpg
 8550,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000083_5.jpg
 8551,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085131_7.jpg
@@ -8948,6 +8947,7 @@
 8998,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000046_2.jpg
 8999,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000107_1.jpg
 9000,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_92000050_2.jpg
+9001,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000127_4.jpg
 9002,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000046_6.jpg
 9003,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000208_2.jpg
 9004,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100147_4.jpg
@@ -9034,6 +9034,7 @@
 9085,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_77000038_2.jpg
 9086,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100006_1.jpg
 9087,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000018_7.jpg
+9088,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100194_5.jpg
 9089,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085059_3.jpg
 9090,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041145_4.jpg
 9091,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085050_6.jpg
@@ -9058,6 +9059,7 @@
 9110,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000030_3.jpg
 9111,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085085_5.jpg
 9112,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085183_3.jpg
+9113,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_92000093_2.jpg
 9114,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041107_0.jpg
 9115,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12300155_3.jpg
 9116,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_92000075_6.jpg
@@ -9094,7 +9096,6 @@
 9147,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041056_3.jpg
 9148,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041074_5.jpg
 9149,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085107_5.jpg
-9150,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000205_7.jpg
 9151,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041026_6.jpg
 9152,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085003_6.jpg
 9153,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085163_1.jpg
@@ -9197,7 +9198,6 @@
 9250,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085144_3.jpg
 9251,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_77000048_4.jpg
 9252,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000109_7.jpg
-9253,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041106_6.jpg
 9254,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041189_4.jpg
 9255,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100178_2.jpg
 9256,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000092_6.jpg
@@ -9312,6 +9312,7 @@
 9365,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085083_10.jpg
 9366,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000088_4.jpg
 9367,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041013_8.jpg
+9368,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041211_2.jpg
 9369,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000103_5.jpg
 9370,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085244_4.jpg
 9371,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12300111_5.jpg
@@ -9340,6 +9341,7 @@
 9394,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100001_3.jpg
 9395,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085194_6.jpg
 9396,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_77000067_1.jpg
+9397,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000170_1.jpg
 9398,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000013_3.jpg
 9399,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100170_4.jpg
 9400,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085257_7.jpg
@@ -9387,7 +9389,6 @@
 9442,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100021_6.jpg
 9443,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100191_4.jpg
 9444,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085238_5.jpg
-9445,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085250_4.jpg
 9446,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000177_2.jpg
 9447,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000028_5.jpg
 9448,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_92000043_2.jpg
@@ -9466,7 +9467,6 @@
 9521,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_90100065_3.jpg
 9522,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085286_3.jpg
 9523,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085154_6.jpg
-9524,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041091_3.jpg
 9525,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000035_7.jpg
 9526,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085105_3.jpg
 9527,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085213_6.jpg
@@ -9529,6 +9529,7 @@
 9584,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000101_4.jpg
 9585,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085259_3.jpg
 9586,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085270_7.jpg
+9587,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000207_1.jpg
 9588,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000142_5.jpg
 9589,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000033_4.jpg
 9590,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041047_2.jpg
@@ -9552,6 +9553,7 @@
 9608,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085281_1.jpg
 9609,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041037_4.jpg
 9610,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000079_2.jpg
+9611,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_77000007_2.jpg
 9612,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041176_3.jpg
 9613,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085095_7.jpg
 9614,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_12100004_3.jpg
@@ -9564,7 +9566,6 @@
 9621,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000015_1.jpg
 9622,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085004_1.jpg
 9623,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041034_8.jpg
-9624,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000079_6.jpg
 9625,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000076_3.jpg
 9626,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085118_3.jpg
 9627,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041173_2.jpg
@@ -9574,7 +9575,6 @@
 9631,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085209_6.jpg
 9632,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041117_6.jpg
 9633,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000157_1.jpg
-9634,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085138_3.jpg
 9635,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085278_3.jpg
 9636,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041090_6.jpg
 9637,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_44000060_4.jpg
@@ -9785,7 +9785,6 @@
 9842,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_50600059_2.jpg
 9843,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_90100074_3.jpg
 9844,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085042_6.jpg
-9845,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041114_2.jpg
 9846,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000162_3.jpg
 9847,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000168_1.jpg
 9848,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000017_6.jpg
@@ -9904,6 +9903,7 @@
 9961,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085215_4.jpg
 9962,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_92000059_3.jpg
 9963,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000003_5.jpg
+9964,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_20085143_2.jpg
 9965,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_90100052_2.jpg
 9966,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_00041154_2.jpg
 9967,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_77000074_3.jpg

@@ -1,7 +1,0 @@
-,Image_Label,Image_Class,Image_Path
-1300,2,Short,./My_Datasets/Classification/DeepPCB-Crop/Short/Short_12100002_1.jpg
-1882,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12000171_1.jpg
-4929,1,Open_circuit,./My_Datasets/Classification/DeepPCB-Crop/Open_circuit/Open_circuit_12100041_0.jpg
-6699,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000058_3.jpg
-7574,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041067_4.jpg
-8664,3,Spur,./My_Datasets/Classification/DeepPCB-Crop/Spur/Spur_13000101_4.jpg

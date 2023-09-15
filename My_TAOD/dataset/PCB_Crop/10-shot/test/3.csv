@@ -61,7 +61,6 @@
 2524,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_03_3.jpg
 2525,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_02_2.jpg
 2526,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_08_3.jpg
-2527,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_05_4.jpg
 2528,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_03_2.jpg
 2529,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_10_1.jpg
 2530,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_04_0.jpg
@@ -98,6 +97,7 @@
 2561,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_13_2.jpg
 2562,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_03_2.jpg
 2563,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_10_0.jpg
+2564,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_16_2.jpg
 2565,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_16_1.jpg
 2566,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_01_3.jpg
 2567,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_03_0.jpg
@@ -127,10 +127,12 @@
 2591,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_06_4.jpg
 2592,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_08_0.jpg
 2593,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_20_2.jpg
+2594,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_04_2.jpg
 2595,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_01_0.jpg
 2596,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_10_4.jpg
 2597,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_02_0.jpg
 2598,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_09_4.jpg
+2599,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_01_3.jpg
 2600,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_03_2.jpg
 2601,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_02_2.jpg
 2602,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_05_3.jpg
@@ -142,7 +144,6 @@
 2608,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_06_0.jpg
 2609,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_04_0.jpg
 2610,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_10_2.jpg
-2611,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_04_3.jpg
 2612,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_02_3.jpg
 2613,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_10_4.jpg
 2614,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_01_4.jpg
@@ -162,6 +163,7 @@
 2628,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_02_0.jpg
 2629,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/10_spur_05_2.jpg
 2630,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_17_2.jpg
+2631,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_15_0.jpg
 2632,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_06_1.jpg
 2633,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_06_2.jpg
 2634,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_01_4.jpg
@@ -240,6 +242,7 @@
 2707,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_14_0.jpg
 2708,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_06_2.jpg
 2709,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_02_4.jpg
+2710,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_02_2.jpg
 2711,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_09_4.jpg
 2712,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_02_4.jpg
 2713,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_02_1.jpg
@@ -255,6 +258,7 @@
 2724,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_02_1.jpg
 2725,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_05_4.jpg
 2726,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_07_4.jpg
+2727,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_05_2.jpg
 2728,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_01_2.jpg
 2729,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/10_spur_02_3.jpg
 2730,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_10_3.jpg
@@ -296,7 +300,6 @@
 2766,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_04_0.jpg
 2767,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_03_3.jpg
 2768,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_09_1.jpg
-2769,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/10_spur_04_0.jpg
 2770,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_08_0.jpg
 2771,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_13_1.jpg
 2772,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_06_3.jpg
@@ -360,7 +363,6 @@
 2830,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/10_spur_03_2.jpg
 2831,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_06_1.jpg
 2832,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_06_4.jpg
-2833,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_06_2.jpg
 2834,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_09_1.jpg
 2835,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_02_3.jpg
 2836,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_01_1.jpg
@@ -378,9 +380,11 @@
 2848,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_09_2.jpg
 2849,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_05_3.jpg
 2850,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_09_4.jpg
+2851,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_08_3.jpg
 2852,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_04_2.jpg
 2853,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_04_4.jpg
 2854,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_03_1.jpg
+2855,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_05_0.jpg
 2856,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_04_1.jpg
 2857,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_20_0.jpg
 2858,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/10_spur_03_3.jpg
@@ -402,12 +406,12 @@
 2874,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_09_1.jpg
 2875,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_06_3.jpg
 2876,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_07_0.jpg
-2877,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_03_0.jpg
 2878,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_03_1.jpg
 2879,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_06_3.jpg
 2880,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_08_3.jpg
 2881,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_07_1.jpg
 2882,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_10_3.jpg
+2883,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_06_3.jpg
 2884,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_07_2.jpg
 2885,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_06_2.jpg
 2886,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_08_2.jpg
@@ -418,7 +422,6 @@
 2891,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_05_1.jpg
 2892,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_17_2.jpg
 2893,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/10_spur_01_4.jpg
-2894,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_02_1.jpg
 2895,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_02_1.jpg
 2896,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_01_3.jpg
 2897,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_14_2.jpg
@@ -449,7 +452,6 @@
 2922,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_09_3.jpg
 2923,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/10_spur_04_1.jpg
 2924,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_04_1.jpg
-2925,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_02_2.jpg
 2926,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_01_4.jpg
 2927,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/10_spur_02_2.jpg
 2928,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_02_4.jpg
@@ -460,11 +462,9 @@
 2933,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_02_0.jpg
 2934,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_06_2.jpg
 2935,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_03_2.jpg
-2936,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_04_1.jpg
 2937,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_07_4.jpg
 2938,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_09_2.jpg
 2939,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_08_2.jpg
-2940,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_06_1.jpg
 2941,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_04_3.jpg
 2942,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_08_0.jpg
 2943,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_07_1.jpg

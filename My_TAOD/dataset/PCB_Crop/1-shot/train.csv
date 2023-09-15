@@ -1,7 +1,0 @@
-,Image_Label,Image_Class,Image_Path
-394,2,Short,./My_Datasets/Classification/PCB-Crop/Short/10_short_04_3.jpg
-792,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_05_5.jpg
-1299,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/08_mouse_bite_05_1.jpg
-1835,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_09_2.jpg
-2040,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/12_spurious_copper_08_3.jpg
-2563,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_10_0.jpg

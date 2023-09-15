@@ -28,10 +28,11 @@ def TA_VAE_generator():
     sample_image = trans(raw_sample_image)
     sample_image = sample_image.unsqueeze(0)
     
-    generated_image = model(sample_image)[0]
-    # generated_image = model.sample(1, "cpu")
+    # generated_image = model(sample_image)[0]
+    generated_image = model.sample(1, "cpu")
     generated_image = generated_image.detach().numpy()[0]
-    plt_gen = img_1to255(generated_image)
+    plt_gen = generated_image
+    # plt_gen = img_1to255(generated_image)
     # print(np.max(plt_gen), np.min(plt_gen))
     plt_gen = np.transpose(plt_gen, (1, 2, 0))
     # 显示原始图像和生成的图像

@@ -1,6 +1,0 @@
-,Image_Label,Image_Class,Image_Path
-136,2,Short,./My_Datasets/Classification/PCB-200/Short/000034_0_01_14966_08930.bmp
-257,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000488_0_04_03926_16887.bmp
-519,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000054_0_02_02063_06747.bmp
-718,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000239_0_03_02943_18294.bmp
-895,3,Spur,./My_Datasets/Classification/PCB-200/Spur/000191_0_03_12648_05768.bmp

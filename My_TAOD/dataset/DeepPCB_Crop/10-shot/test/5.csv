@@ -6,6 +6,7 @@
 6891,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085081_6.jpg
 6892,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085205_5.jpg
 6893,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12000119_4.jpg
+6894,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300226_4.jpg
 6895,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100010_3.jpg
 6896,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041064_6.jpg
 6897,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000205_4.jpg
@@ -75,6 +76,7 @@
 6961,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000106_3.jpg
 6962,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000023_5.jpg
 6963,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600065_2.jpg
+6964,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000195_5.jpg
 6965,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041002_6.jpg
 6966,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085006_6.jpg
 6967,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000019_7.jpg
@@ -90,6 +92,7 @@
 6977,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041014_6.jpg
 6978,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085316_4.jpg
 6979,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100065_4.jpg
+6980,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085195_5.jpg
 6981,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085024_6.jpg
 6982,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600077_3.jpg
 6983,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041186_3.jpg
@@ -273,7 +276,6 @@
 7161,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000054_4.jpg
 7162,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085285_4.jpg
 7163,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100184_4.jpg
-7164,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000166_2.jpg
 7165,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000196_5.jpg
 7166,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000000_5.jpg
 7167,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000015_8.jpg
@@ -337,13 +339,13 @@
 7225,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300218_6.jpg
 7226,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600003_6.jpg
 7227,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085174_3.jpg
-7228,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085172_5.jpg
 7229,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000087_8.jpg
 7230,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085271_6.jpg
 7231,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600009_3.jpg
 7232,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300153_4.jpg
 7233,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000095_4.jpg
 7234,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100121_5.jpg
+7235,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000057_7.jpg
 7236,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100026_4.jpg
 7237,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12000136_4.jpg
 7238,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300242_6.jpg
@@ -357,7 +359,6 @@
 7246,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100081_3.jpg
 7247,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100160_4.jpg
 7248,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100029_3.jpg
-7249,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085171_3.jpg
 7250,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100001_5.jpg
 7251,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000008_4.jpg
 7252,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000009_5.jpg
@@ -416,7 +417,6 @@
 7305,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000102_4.jpg
 7306,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085323_5.jpg
 7307,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600010_4.jpg
-7308,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041139_5.jpg
 7309,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085105_4.jpg
 7310,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000096_3.jpg
 7311,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300247_4.jpg
@@ -425,7 +425,6 @@
 7314,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041063_5.jpg
 7315,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100159_6.jpg
 7316,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100059_4.jpg
-7317,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100058_3.jpg
 7318,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041136_8.jpg
 7319,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000039_5.jpg
 7320,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000127_3.jpg
@@ -469,6 +468,7 @@
 7358,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100056_4.jpg
 7359,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100020_2.jpg
 7360,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000069_3.jpg
+7361,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300073_6.jpg
 7362,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085012_6.jpg
 7363,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000154_2.jpg
 7364,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041165_4.jpg
@@ -497,6 +497,7 @@
 7387,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_90100040_4.jpg
 7388,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000074_2.jpg
 7389,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085244_8.jpg
+7390,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300116_2.jpg
 7391,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000005_5.jpg
 7392,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000086_3.jpg
 7393,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000070_3.jpg
@@ -610,7 +611,6 @@
 7501,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000158_2.jpg
 7502,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600057_5.jpg
 7503,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100051_5.jpg
-7504,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000141_4.jpg
 7505,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041028_4.jpg
 7506,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100144_6.jpg
 7507,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085179_4.jpg
@@ -856,7 +856,6 @@
 7747,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000026_11.jpg
 7748,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000109_7.jpg
 7749,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000094_4.jpg
-7750,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085149_6.jpg
 7751,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000071_3.jpg
 7752,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300070_3.jpg
 7753,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000001_4.jpg
@@ -973,6 +972,7 @@
 7864,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100136_6.jpg
 7865,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000149_4.jpg
 7866,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000103_3.jpg
+7867,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100000_5.jpg
 7868,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085224_9.jpg
 7869,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100017_4.jpg
 7870,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000014_2.jpg
@@ -1015,7 +1015,6 @@
 7907,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000034_8.jpg
 7908,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041098_2.jpg
 7909,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600062_5.jpg
-7910,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085016_6.jpg
 7911,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085051_4.jpg
 7912,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000101_1.jpg
 7913,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_50600078_4.jpg
@@ -1231,7 +1230,6 @@
 8123,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300228_4.jpg
 8124,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041141_4.jpg
 8125,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000053_5.jpg
-8126,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085277_5.jpg
 8127,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041120_7.jpg
 8128,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041175_2.jpg
 8129,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000210_2.jpg
@@ -1327,7 +1325,6 @@
 8219,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000055_6.jpg
 8220,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12100007_4.jpg
 8221,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041092_3.jpg
-8222,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000186_0.jpg
 8223,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300072_3.jpg
 8224,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000084_6.jpg
 8225,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041122_7.jpg
@@ -1337,6 +1334,7 @@
 8229,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000148_2.jpg
 8230,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000014_1.jpg
 8231,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000011_6.jpg
+8232,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000072_2.jpg
 8233,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085213_7.jpg
 8234,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000058_4.jpg
 8235,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_20085121_5.jpg
@@ -1438,6 +1436,7 @@
 8331,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041155_8.jpg
 8332,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000022_2.jpg
 8333,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000030_5.jpg
+8334,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000083_6.jpg
 8335,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_92000115_4.jpg
 8336,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300240_5.jpg
 8337,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000079_4.jpg
@@ -1445,6 +1444,7 @@
 8339,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_13000111_2.jpg
 8340,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000104_2.jpg
 8341,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_12300225_4.jpg
+8342,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000089_4.jpg
 8343,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_44000073_6.jpg
 8344,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_00041205_3.jpg
 8345,5,Pin_hole,./My_Datasets/Classification/DeepPCB-Crop/Pin_hole/Pin_hole_77000029_3.jpg

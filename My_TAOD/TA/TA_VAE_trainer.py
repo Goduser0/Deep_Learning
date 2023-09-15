@@ -31,7 +31,7 @@ def train_VAE():
     # dataloader = DataLoader(mnist, batch_size=512, shuffle=True)
     
     vae_test = VAE(3, 128).cuda()
-    optimizer = torch.optim.Adam(vae_test.parameters(), lr=5e-4, betas=[0.0, 0.9])
+    optimizer = torch.optim.Adam(vae_test.parameters(), lr=1e-4, betas=[0.0, 0.9])
     
     num_epochs = 1000
     for i in tqdm.trange(num_epochs):

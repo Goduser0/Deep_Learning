@@ -346,37 +346,37 @@ def build_dataset(dataset):
         dataset_origin = NEU_CLS()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [1, 5, 10, 30, 1.0]
+        dataset_train_size_list = [5, 10, 30, 0.7, 1.0]
         
     elif dataset == 'elpv':
         dataset_origin = elpv()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [1, 5, 10, 30, 100]
+        dataset_train_size_list = [5, 10, 30, 0.7, 1.0]
     
     elif dataset == 'Magnetic_Tile':
         dataset_origin = Magnetic_Tile()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [1, 5, 10, 30, 0.5]
+        dataset_train_size_list = [5, 10, 30, 0.7, 1.0]
         
     elif dataset == 'PCB_200':
         dataset_origin = PCB_200()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [1, 5, 10, 30, 0.7]
+        dataset_train_size_list = [5, 10, 30, 0.7, 1.0]
         
     elif dataset == 'PCB_Crop':
         dataset_origin = PCB_Crop()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [1, 5, 10, 30, 0.7]
+        dataset_train_size_list = [5, 10, 30, 0.7, 1.0]
     
     elif dataset == 'DeepPCB_Crop':
         dataset_origin = DeepPCB_Crop()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [1, 5, 10, 30, 0.7]
+        dataset_train_size_list = [5, 10, 30, 0.7, 1.0]
         
     else:
         sys.exit(f"ERROR:\t({__name__}):The dataset '{dataset}' doesn't exist")
@@ -419,10 +419,10 @@ def build_dataset(dataset):
 # 运行函数：创建Dataset
 ###########################################################################################################
 if __name__ == "__main__":
-    # build_dataset('NEU_CLS')
-    # build_dataset('elpv')
-    # build_dataset('Magnetic_Tile')
-    # build_dataset('PCB_200')
-    # build_dataset('PCB_Crop')
-    # build_dataset('DeepPCB_Crop')
+    build_dataset('NEU_CLS')
+    build_dataset('elpv')
+    build_dataset('Magnetic_Tile')
+    build_dataset('PCB_200')
+    build_dataset('PCB_Crop')
+    build_dataset('DeepPCB_Crop')
     pass
