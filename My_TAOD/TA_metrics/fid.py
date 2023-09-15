@@ -10,7 +10,7 @@ import random
 import torchvision.models as models
 import torchvision.transforms as T
 
-def load_images(csv_path, trans=None, batch_size=15):
+def load_images(csv_path, trans=None, batch_size=25):
     df = pd.read_csv(csv_path)
     
     nums = len(df)
@@ -98,7 +98,7 @@ class ConvNetFeatureExtract(object):
     def extractFeature(self, images_path):
         # build images dataset
         images = load_images(images_path, trans=self.trans)
-        
+        print(images.shape)
         print("Extracting Features...")
         with torch.no_grad():
             input = images.cuda()
@@ -136,7 +136,7 @@ if __name__ == '__main__':
     os.environ["CUDA_VISIBLE_DEVICES"] = "1"
     
     real_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_Crop/30-shot/train/0.csv"
-    fake_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_Crop/30-shot/train/1.csv"
+    fake_path = "My_TAOD/TA/samples/PCB_200 0 2023-09-04_11:18:31_500_net_g_source_AT_2023-09-12_22:20:01/generate_imgs.csv"
 
     convnet_feature_extract = ConvNetFeatureExtract(model="inception_v3", workers=4)
     real_feature = convnet_feature_extract.extractFeature(real_path)

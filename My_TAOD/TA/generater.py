@@ -5,6 +5,7 @@ import torch.nn.functional as F
 import torch.utils.data as data
 import torchvision.transforms as T
 from torch import optim
+from torch.autograd import Variable
 
 import os
 import math
@@ -66,8 +67,8 @@ def generate(z_dim, n, model_path, samples_save_path):
     
 
 # generate(128, 
-#          10, 
-#          "./My_TAOD/TA/models/source/PCB_200 0 2023-08-28_20:37:07/100_net_g_source.pth",
+#          32, 
+#          "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/models/source/PCB_200 0 2023-09-04_11:18:31/500_net_g_source.pth",
 #          "./My_TAOD/TA/samples",
 #          )
 
@@ -95,7 +96,7 @@ def img_translater(vae_common_params, vae_unique_params, g_params, trans):
     G.eval()
     
     for i, data in enumerate(data_iter_loader):
-        if i == 10:
+        if i <= 10:
             img = data[0]
             
             results_common = VAE_common(img)
@@ -105,6 +106,8 @@ def img_translater(vae_common_params, vae_unique_params, g_params, trans):
             features_common = VAE_common.reparameterize(mu_common, log_var_common)
             features_unique = VAE_unique.reparameterize(mu_unique, log_var_unique)
             features = torch.concat([features_common, features_unique], dim=1)
+            # add_z = Variable(torch.FloatTensor(np.random.normal(0, 1, (1, 32))), requires_grad=False) # [1, 32]
+            # features = torch.concat([features, add_z], dim=1)
             output = G(features)
             
             raw_img = img[0]
@@ -119,12 +122,11 @@ def img_translater(vae_common_params, vae_unique_params, g_params, trans):
             plt.savefig(f"test_gen_{i}.jpg")
             plt.close()
             
-            break        
+            # break        
     
 img_translater(
-    "./My_TAOD/TA/models/source/PCB_200 0 2023-09-02_20:17:48/500_net_VAE_common.pth",
-    "./My_TAOD/TA/models/source/PCB_200 0 2023-09-02_20:17:48/500_net_VAE_unique.pth",
-    "./My_TAOD/TA/models/source/PCB_200 0 2023-09-02_20:17:48/500_net_g_source.pth",
+    "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_VAE_common.pth",
+    "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_VAE_unique.pth",
+    "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_g_source.pth",
     trans=T.Compose([T.ToTensor(), T.Resize((128, 128))]),
 )
-    

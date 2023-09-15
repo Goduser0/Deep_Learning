@@ -265,7 +265,7 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
             print(
                 "[Epoch %d/%d] [Batch_Target %d/%d] [Batch_Source %d/%d] [TotalLoss_vae_unique: %f] [TotalLoss_g_target: %f]"
                 %
-                (epoch, config.num_epochs, i, len(target_iter_loader), j, len(source_iter_loader), TotalLoss_vae_unique, TotalLoss_g_target)
+                (epoch, config.num_epochs, i+1, len(target_iter_loader), j, len(source_iter_loader), TotalLoss_vae_unique, TotalLoss_g_target)
             )
             
             # Record Data

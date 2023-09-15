@@ -1,16 +1,13 @@
-import numpy as np
-
 import os
+import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+import tqdm
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as T
-from torchinfo import summary
-import matplotlib.pyplot as plt
-
-from PIL import Image
-import tqdm
-
 #######################################################################################################
 # CLASS: VAE
 #######################################################################################################
@@ -29,6 +26,8 @@ class VAE(nn.Module):
         if hidden_dims is None:
             hidden_dims = [32, 64, 128, 256, 512]
         
+        self.hidden_dims = hidden_dims
+        
         # Bulid Encoder
         encoder_layers = []
         for h_dim in hidden_dims:
@@ -43,11 +42,12 @@ class VAE(nn.Module):
             
         self.Encoder = nn.Sequential(*encoder_layers)
         # FC
-        self.fc_mu = nn.Linear(hidden_dims[-1] * 4 * 4, latent_dim)
-        self.fc_var = nn.Linear(hidden_dims[-1] * 4 * 4, latent_dim)
+        self.last_layer_size = input_size // 2**(len(hidden_dims))
+        self.fc_mu = nn.Linear(hidden_dims[-1] * self.last_layer_size * self.last_layer_size, latent_dim)
+        self.fc_var = nn.Linear(hidden_dims[-1] * self.last_layer_size * self.last_layer_size, latent_dim)
         
         # Bulid Decoder
-        self.decoder_input = nn.Linear(latent_dim, hidden_dims[-1] * 4 * 4)
+        self.decoder_input = nn.Linear(latent_dim, hidden_dims[-1] * self.last_layer_size * self.last_layer_size)
         
         hidden_dims.reverse()
         decoder_layers = []
@@ -82,7 +82,7 @@ class VAE(nn.Module):
     
     def decode(self, z: torch.Tensor) -> torch.Tensor:
         result = self.decoder_input(z)
-        result = result.view(-1, 512, 4, 4)
+        result = result.view(-1, self.hidden_dims[0], self.last_layer_size, self.last_layer_size)
         result = self.Decoder(result)
         result = self.final_layer(result)
         return result
@@ -109,7 +109,7 @@ class VAE(nn.Module):
         recons_loss = F.mse_loss(recons, input)
         kld_loss = torch.mean(-0.5 * torch.sum(1 + log_var - mu**2 - log_var.exp(), dim=1), dim=0)
         loss = recons_weight * recons_loss + kld_weight * kld_loss
-        return {'loss': loss, 'Reconstruction_loss': recons_loss.detach(), 'KLD': -kld_loss.detach()}
+        return {'loss': loss, 'Reconstruction_loss': recons_loss.detach(), 'KLD_loss': kld_loss.detach()}
         
     def sample(self, num_samples: int, current_device: str, **kwargs) -> torch.Tensor:
         z = torch.randn(num_samples, self.latent_dim)
@@ -121,14 +121,13 @@ class VAE(nn.Module):
         return self.forward(x)[0]
 
 ########################################################################################################
-# CLASS: VAE TEST
+## FUNCTION: test()
 ########################################################################################################
 def test():
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     # dir = "My_Datasets/Classification/PCB-Crop/Mouse_bite/01_mouse_bite_06_1.jpg"
-    # dir = "My_Datasets/Classification/PCB-200/Open_circuit/000001_0_00_07022_09338.bmp"
-    dir = "My_Datasets/Classification/PCB-Crop/Spur/01_spur_01_0.jpg"
-    
+    dir = "My_Datasets/Classification/PCB-200/Open_circuit/000001_0_00_07022_09338.bmp"
+    # dir = "My_Datasets/Classification/PCB-Crop/Spur/01_spur_01_0.jpg"
     img = Image.open(dir).convert("RGB")
     plt.imshow(img)
     plt.savefig("test_vae_raw.png")
@@ -138,21 +137,14 @@ def test():
     X = X.unsqueeze(0)
     print(X.shape)
     vae_test = VAE(3, 128).cuda()
-    
     optimizer = torch.optim.Adam(vae_test.parameters(), lr=1e-3, betas=[0.0, 0.9])
-    
     for i in tqdm.trange(200):
         vae_test.train()
-        
-        train_loss = 0
-        train_nsample = 0
-        
         Y = vae_test(X)
         loss = vae_test.loss_function(*Y, **{'recons_weight': 0.5, 'kld_weight':0.5})
-        loss['loss'].backward()
-        
-        optimizer.step()
         optimizer.zero_grad()
+        loss['loss'].backward()
+        optimizer.step()
         Y = Y[0].detach().to('cpu').numpy()[0]
         Y = np.transpose(Y, (1, 2, 0))
         plt.imshow(Y)

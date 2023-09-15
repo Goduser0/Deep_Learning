@@ -1,16 +1,15 @@
-import torch
-from torch.autograd import Variable
-import torch.nn.functional as F
-import torchvision.transforms as T
-import torch.nn as nn
-
-import numpy as np
-
 import os
 import argparse
 import random
 import tqdm
 import time
+import numpy as np
+
+import torch
+from torch.autograd import Variable
+import torch.nn.functional as F
+import torchvision.transforms as T
+import torch.nn as nn
 
 from TA_G import FeatureMatchGenerator
 from TA_D import FeatureMatchDiscriminator
@@ -205,9 +204,11 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         results_unique_raw = VAE_unique(raw_img)
         [recon_img_common_raw, _, mu_common_raw, log_var_common_raw] = [i for i in results_common_raw] #[B, C, H, W] [B, 64] [B, 64]
         [recon_img_unique_raw, _, mu_unique_raw, log_var_unique_raw] = [i for i in results_unique_raw] #[B, C, H, W] [B, 64] [B, 64]    
-        features_common_raw = VAE_common.reparameterize(mu_common_raw, log_var_common_raw) # [B, 64]
-        features_unique_raw = VAE_unique.reparameterize(mu_unique_raw, log_var_unique_raw) # [B, 64]
-        features_raw = torch.concat([features_common_raw, features_unique_raw], dim=1) # [B, 128]
+        features_common_raw = VAE_common.reparameterize(mu_common_raw, log_var_common_raw) # [B, 48]
+        features_unique_raw = VAE_unique.reparameterize(mu_unique_raw, log_var_unique_raw) # [B, 48]
+        features_raw = torch.concat([features_common_raw, features_unique_raw], dim=1) # [B, 96]
+        # add_z = Variable(torch.cuda.FloatTensor(np.random.normal(0, 1, (raw_img.shape[0], 32))), requires_grad=False).cuda() # [B, 32]
+        # features_raw = torch.concat([features_raw, add_z], dim=1) # [B, 128]
         
         # 图像生成
         gen_img = g_source(features_raw) # [B, 3, 128, 128]
@@ -247,9 +248,11 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         results_unique_raw = VAE_unique(raw_img)
         [recon_img_common_raw, _, mu_common_raw, log_var_common_raw] = [i for i in results_common_raw] #[B, C, H, W] [B, 64] [B, 64]
         [recon_img_unique_raw, _, mu_unique_raw, log_var_unique_raw] = [i for i in results_unique_raw] #[B, C, H, W] [B, 64] [B, 64]    
-        features_common_raw = VAE_common.reparameterize(mu_common_raw, log_var_common_raw) # [B, 64]
-        features_unique_raw = VAE_unique.reparameterize(mu_unique_raw, log_var_unique_raw) # [B, 64]
-        features_raw = torch.concat([features_common_raw, features_unique_raw], dim=1) # [B, 128]
+        features_common_raw = VAE_common.reparameterize(mu_common_raw, log_var_common_raw) # [B, 48]
+        features_unique_raw = VAE_unique.reparameterize(mu_unique_raw, log_var_unique_raw) # [B, 48]
+        features_raw = torch.concat([features_common_raw, features_unique_raw], dim=1) # [B, 96]
+        # add_z = Variable(torch.cuda.FloatTensor(np.random.normal(0, 1, (raw_img.shape[0], 32))), requires_grad=False).cuda() # [B, 32]
+        # features_raw = torch.concat([features_raw, add_z], dim=1) # [B, 128]
         gen_img = g_source(features_raw) # [B, 3, 128, 128]
         results_common_gen = VAE_common(gen_img) #[B, C, H, W] [B, 64] [B, 64]
         results_unique_gen = VAE_unique(gen_img) #[B, C, H, W] [B, 64] [B, 64]
@@ -279,8 +282,11 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         g_optim.zero_grad()
         
         # Generate fake images
-        D_z = Variable(torch.cuda.FloatTensor(np.random.normal(0, 1, (raw_img.shape[0], 64))), requires_grad=False).cuda() # [B, 64]
-        D_features = torch.concat([D_z, features_unique_raw.detach()], dim=1) # [B, 128]
+        D_z = Variable(torch.cuda.FloatTensor(np.random.normal(0, 1, (raw_img.shape[0], 64))), requires_grad=False).cuda() # [B, 48]
+        D_features = torch.concat([D_z, features_unique_raw.detach()], dim=1) # [B, 96]
+        
+        # D_add_z = Variable(torch.cuda.FloatTensor(np.random.normal(0, 1, (raw_img.shape[0], 32))), requires_grad=False).cuda() # [B, 32]
+        # D_features = torch.concat([D_features, D_add_z], dim=1) # [B, 128]
         D_gen_img = g_source(D_features) # [B, 3, 128, 128]
         
         # Calculate G loss_adv
@@ -304,9 +310,10 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
             loss_FM += i_loss_FM * weights_features_maps[i_map]
         
         # 3.loss_adv
-        loss_adv_raw_img = nn.BCEWithLogitsLoss()(pred_raw_img, labels_raw_img)
-        loss_adv_gen_img = nn.BCEWithLogitsLoss()(pred_gen_img, labels_gen_img)
-        loss_adv = 0.5 * (loss_adv_raw_img + loss_adv_gen_img)
+        # loss_adv_raw_img = nn.BCEWithLogitsLoss()(pred_raw_img, labels_raw_img)
+        loss_adv_gen_img = nn.BCEWithLogitsLoss()(pred_gen_img, torch.ones_like(pred_gen_img))
+        # loss_adv = 0.5 * (loss_adv_raw_img + loss_adv_gen_img)
+        loss_adv = loss_adv_gen_img
         
         # D Total Loss G
         D_TotalLoss_g = 10.0 * loss_FM + loss_adv
@@ -340,7 +347,7 @@ for epoch in tqdm.tqdm(range(1, config.num_epochs + 1), desc=f"On training"):
         print(
             "[Epoch %d/%d] [Batch %d/%d] [TotalLoss_vae: %f] [TotalLoss_g: %f] [D_TotalLoss_g: %f] [D_TotalLoss_d: %f]"
             %
-            (epoch, config.num_epochs, i, len(data_iter_loader), TotalLoss_vae, TotalLoss_g, D_TotalLoss_g, D_TotalLoss_d)
+            (epoch, config.num_epochs, i+1, len(data_iter_loader), TotalLoss_vae, TotalLoss_g, D_TotalLoss_g, D_TotalLoss_d)
         )
         
         # Record Data
