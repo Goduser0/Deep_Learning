@@ -7,10 +7,11 @@ import torch
 import torchvision.transforms as T
 
 import sys
-sys.path.append("./My_TAOD")
-sys.path.append("./My_TAOD/TA")
+sys.path.append("./My_TAOD/dataset")
 from dataset_loader import get_loader, img_1to255, img_255to1
+sys.path.append("./My_TAOD/TA/TA_Models")
 from TA_VAE import VAE
+
 #######################################################################################################
 ## FUNCTIONS: train_VAE()
 #######################################################################################################
@@ -19,7 +20,7 @@ def train_VAE():
     
     trans = T.Compose([T.ToTensor(), T.Resize((128, 128))])
     dataloader = get_loader("PCB_200", 
-                            "./My_TAOD/dataset/PCB_200/0.7-shot/train/0.csv", 
+                            "./My_TAOD/dataset/PCB_200/1.0-shot/train/0.csv", 
                             32, 
                             4, 
                             shuffle=True, 
@@ -31,9 +32,9 @@ def train_VAE():
     # dataloader = DataLoader(mnist, batch_size=512, shuffle=True)
     
     vae_test = VAE(3, 128).cuda()
-    optimizer = torch.optim.Adam(vae_test.parameters(), lr=1e-4, betas=[0.0, 0.9])
+    optimizer = torch.optim.Adam(vae_test.parameters(), lr=5e-5, betas=[0.0, 0.9])
     
-    num_epochs = 1000
+    num_epochs = 2000
     for i in tqdm.trange(num_epochs):
         vae_test.train()
         epoch_loss = 0.0
@@ -56,7 +57,7 @@ def train_VAE():
         with torch.no_grad():
             images = vae_test.sample(1, torch.device('cuda:0'))
             images = images.detach().to('cpu').numpy()[0]
-            images = img_1to255(images)
+            # images = img_1to255(images)
             # print(np.max(images), np.min(images))
             images = np.transpose(images, (1, 2, 0))
             plt.imshow(images)

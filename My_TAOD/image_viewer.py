@@ -15,7 +15,18 @@ import matplotlib.pyplot as plt
 # FUNCTION:show_images
 ##########################################################################################################
 def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
-    """Plot a list of images."""    
+    """Plot a list of images.
+
+    Args:
+        imgs (_type_): a list of images
+        num_rows (int)
+        num_cols (int)
+        titles (list, optional): a list of images'titles. Defaults to None.
+        scale (float, optional): Defaults to 1.5.
+
+    Returns:
+        A figure
+    """
     figsize = (num_cols * scale, num_rows * scale)
     _, axes = plt.subplots(num_rows, num_cols, figsize=figsize)
     axes = axes.flatten()
@@ -36,28 +47,29 @@ def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
 ##########################################################################################################
 # Ploting Result
 ########################################################################################################## 
-df1 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_Crop/1-shot/train.csv')
-df2 = pd.read_csv('/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_200/1-shot/train.csv')
-df = pd.concat([df1, df2])
+if __name__ == "__main__":
+    df1 = pd.read_csv('./My_TAOD/dataset/PCB_Crop/5-shot/train.csv')
+    df2 = pd.read_csv('./My_TAOD/dataset/PCB_200/5-shot/train.csv')
+    df = pd.concat([df1, df2])
 
+    images = []
+    names = []
+    for i in zip(df['Image_Path'], df['Image_Class']):
+        images.append(Image.open(i[0]).convert('RGB'))
+        names.append(str(i[1]))
+        
+    # image_transform
+    images_trans = []
+    trans = T.Compose([
+        T.RandomVerticalFlip(),
+        T.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
+    ])
 
-images = []
-names = []
-for i in zip(df['Image_Path'], df['Image_Class']):
-    images.append(Image.open(i[0]).convert('RGB'))
-    names.append(str(i[1]))
-    
-# image_transform
-images_trans = []
-trans = T.Compose([
-    T.RandomVerticalFlip(),
-    T.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
-])
+    for image in images:
+        images_trans.append(trans(image))
 
-for image in images:
-    images_trans.append(trans(image))
-
-# show image
-axes = show_images(images, 2, int(len(images)/2)+1, names, scale=3)
-plt.savefig('image_viewer_plot.png')
-plt.close()
+    # show image
+    num_rows = 3
+    axes = show_images(images, num_rows, int(len(images)/num_rows)+1, names, scale=3)
+    plt.savefig("image_viewer_plot.png")
+    plt.close()

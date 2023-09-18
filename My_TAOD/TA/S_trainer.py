@@ -11,16 +11,17 @@ import torch.nn.functional as F
 import torchvision.transforms as T
 import torch.nn as nn
 
+import sys
+sys.path.append("./My_TAOD/dataset")
+from dataset_loader import get_loader
+sys.path.append("./My_TAOD/TA/TA_Models")
 from TA_G import FeatureMatchGenerator
 from TA_D import FeatureMatchDiscriminator
 from TA_VAE import VAE
-from TA_utils import requires_grad, S_trainer_record_data
 from TA_layers import KLDLoss
+sys.path.append("./My_TAOD/TA/TA_Utils")
 from TA_logger import S_trainer_logger
-
-import sys
-sys.path.append("./My_TAOD")
-from dataset_loader import get_loader
+from TA_utils import requires_grad, S_trainer_record_data
 
 ########################################################################################################
 #### Config

@@ -11,14 +11,14 @@ import argparse
 import random
 import tqdm
 
-from TA_G import FeatureMatchGenerator
-from TA_D import FeatureMatchDiscriminator, FeatureMatchPatchDiscriminator
-from TA_VAE import VAE
+from My_TAOD.TA.TA_Models.TA_G import FeatureMatchGenerator
+from My_TAOD.TA.TA_Models.TA_D import FeatureMatchDiscriminator, FeatureMatchPatchDiscriminator
+from My_TAOD.TA.TA_Models.TA_VAE import VAE
 from TA_utils import requires_grad
 from TA_layers import KLDLoss
 
 import sys
-sys.path.append("/home/zhouquan/MyDoc/Deep_Learning/My_TAOD")
+sys.path.append("./My_TAOD/dataset")
 from dataset_loader import get_loader
 
 ########################################################################################################
