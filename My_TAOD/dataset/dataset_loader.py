@@ -16,7 +16,7 @@ import torchvision.transforms as T
 def bmp2ndarray(file_path):
     """将BMP文件转为ndarray"""
     img = Image.open(file_path).convert('RGB')
-    img_array = np.array(img).astype(np.float32)
+    img_array = np.array(img).astype(np.uint8)
     return img_array
 
 # # png/jpg/bmp -> PIL.Image
@@ -26,25 +26,53 @@ def bmp2ndarray(file_path):
 #     return img
 
 # [0, 255] -> [-1, 1]
-def img_255to1(img_uint):
-    """ [0, 255] -> [-1, 1]
-        Input: ndarray
-        Output: ndarray
+def img_255to1(img):
+    """ 
+    [0, 255] -> [-1, 1]
+    np.uint8 -> np.float32
+    torch.uint8 -> torch.float32
     """
-    return ((img_uint / 127.5) - 1.).astype(np.float32)
+    if img.dtype == np.uint8:
+        return ((img / 127.5) - 1.).astype(np.float32)
+    elif img.dtype == torch.uint8:
+        return ((img / 127.5) - 1.).to(torch.float32)
+    else:
+        raise TypeError
 
 # [-1, 1] -> [0, 255]
-def img_1to255(img_tensor):
-    """ [-1, 1] -> [0, 255]
-        Input: ndarray
-        Output: ndarray
+def img_1to255(img):
     """
-    return ((img_tensor + 1.) * 127.5).astype(np.uint8)
+    [-1, 1] -> [0, 255]
+    np.float32 -> np.uint8
+    torch.float32 -> torch.uint8
+    """
+    if img.dtype == np.float32:
+        return ((img + 1.) * 127.5).astype(np.uint8)
+    elif img.dtype == torch.float32:
+        return ((img + 1.) * 127.5).to(torch.uint8)
+    else:
+        raise TypeError
 
 ###########################################################################################################
 # FUNCTION: get_loader
 ###########################################################################################################
 def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, trans=None, img_type='ndarray', drop_last=False):
+    """_summary_
+
+    Args:
+        dataset_class (str)
+        dataset_dir (str)
+        batch_size (int)
+        num_workers (int)
+        shuffle (bool)
+        trans (_type_, optional): Defaults to None.
+        img_type (str, optional): Defaults to 'ndarray'.
+        drop_last (bool, optional): Defaults to False.
+
+    Returns:
+        [images, labels]: images(-1~1, if totensor -> torch.float32
+                                       else -> np.float32)
+    """
     df = pd.read_csv(dataset_dir)
     
     if dataset_class.lower() == 'neu_cls':

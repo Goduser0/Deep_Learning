@@ -4,6 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.utils.data as data
 import torchvision.transforms as T
+from torchvision.models import vgg16
 from torch import optim
 
 import math
@@ -12,10 +13,15 @@ import pandas as pd
 from PIL import Image
 import matplotlib.pyplot as plt
 import cv2 as cv
+import warnings
 
 import sys
 sys.path.append("My_TAOD/TA/TA_Utils")
 from TA_utils import *
+sys.path.append("./My_TAOD/dataset")
+from dataset_loader import get_loader, img_1to255, img_255to1
+sys.path.append("./My_TAOD/TA/TA_Models")
+from TA_Augmentation import ImgAugmentation
 
 ##########################################################################################################
 # CLASS: PixelNorm
@@ -371,16 +377,81 @@ class KLDLoss(nn.Module):
         loss = F.kl_div(q.log(), p, reduction=self.reduction)
         return loss
 
-   
+#######################################################################################################
+# CLASS: PerceptualLoss
+#######################################################################################################
+class PerceptualLoss(nn.Module):
+    def __init__(self, device, layer_indexs=None, loss=nn.MSELoss()):
+        """
+        Args:
+            real_img (torch.float32)
+            fake_img (torch.float32)
+        """
+        super(PerceptualLoss, self).__init__()
+        self.criterion = loss
+        self.device = device
+        self.layer_indexs = layer_indexs
+        
+        self.vgg_model = vgg16(pretrained=True).features[:16]
+        self.vgg_model = self.vgg_model.to(self.device)
+        self.layer_name_mapping = {
+            '3': "relu1_2",
+            '8': "relu2_2",
+            '15': "relu3_3",
+        }
+    
+    
+    def output_features(self, x):
+        output = {}
+        for name, module in self.vgg_model._modules.items():
+            x = module(x)
+            if name in self.layer_name_mapping:
+                output[self.layer_name_mapping[name]] = x
+    
+        return list(output.values())
+    
+    def forward(self, real_img, fake_img):
+        loss = []
+        real_img = real_img.to(self.device)
+        fake_img = fake_img.to(self.device)
+        real_img_features = self.output_features(real_img)
+        fake_img_features = self.output_features(fake_img)
+        for real_img_feature, fake_img_feature in zip(real_img_features, fake_img_features):
+            loss.append(self.criterion(real_img_feature, fake_img_feature))
+        return sum(loss) / len(loss)
 #######################################################################################################
 # CLASS: TEST
 #######################################################################################################
+def test():
+    warnings.filterwarnings("ignore")
+    PLloss = PerceptualLoss('cuda:0')
+    
+    trans = T.Compose(
+        [
+            T.ToTensor(), 
+            T.Resize((128, 128)), # (0, 255)
+        ]
+    )
+    data_iter_loader = get_loader('PCB_200', 
+                              "./My_TAOD/dataset/PCB_200/0.7-shot/train/0.csv", 
+                              32, 
+                              4, 
+                              shuffle=True, 
+                              trans=trans,
+                              img_type='ndarray',
+                              drop_last=True
+                              ) # 像素值范围：（-1, 1）[B, C, H, W]
+    imgAug = ImgAugmentation()
+    
+    for i, data in enumerate(data_iter_loader):
+        raw_img = data[0] # [B, C, H, W] -1~1
+        print(raw_img.shape)
+        real_imgs_aug = imgAug.imgRealAug(img_1to255(raw_img))
+        real_imgs_aug = img_255to1(real_imgs_aug)
+        loss = PLloss(raw_img, real_imgs_aug)
+        print(loss)
+        break
+    
 if __name__ == "__main__":
-    x = torch.randn(1, 1, 2, 2).cuda()
-    print(x)
-    sdn = StdDevNorm(1).cuda()
-    for parameters in sdn.parameters():
-        print(parameters.device)
-    y = sdn(x)
-    print(y)
+    test()
     

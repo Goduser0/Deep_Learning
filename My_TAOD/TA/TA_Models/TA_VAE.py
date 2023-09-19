@@ -93,9 +93,14 @@ class VAE(nn.Module):
         return eps * std + mu
     
     def forward(self, input: torch.Tensor, **kwargs) -> list[torch.Tensor]:
+        """
+        Returns:
+            list[torch.Tensor]: [decode(z), input, mu, log_var, z]
+            z是对mu, log_var重参化后的结构
+        """
         mu, log_var = self.encode(input)
         z = self.reparameterize(mu, log_var)
-        return [self.decode(z), input, mu, log_var]
+        return [self.decode(z), input, mu, log_var, z]
     
     def loss_function(self, *args, **kwargs) -> dict:
         recons = args[0]

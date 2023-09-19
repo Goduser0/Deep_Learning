@@ -22,7 +22,7 @@ from TA_VAE import VAE
 from TA_layers import KLDLoss
 sys.path.append("./My_TAOD/TA/TA_Utils")
 from TA_logger import S2T_trainer_logger
-from TA_utils import requires_grad, S_trainer_record_data
+from TA_utils import requires_grad, S2T_trainer_record_data
 
 ########################################################################################################
 #### Config

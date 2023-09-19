@@ -8,6 +8,9 @@ import sys
 sys.path.append("./My_TAOD/dataset")
 from dataset_loader import get_loader, img_1to255
 
+######################################################################################################
+#### Class:ImgAugmentation
+######################################################################################################
 class ImgAugmentation():
     """Image Data Augmentation
     `Aim`:
@@ -73,26 +76,39 @@ class ImgAugmentation():
     def imgRealAug(self, imgs):
         """_summary_
         Args:
-            imgs (_type_)
+            imgs (B-C-H-W, torch.uint8)
         Returns:
-            torch.Tensor
+            imgs (B-C-H-W, torch.uint8)
         """
+        if imgs.dtype != torch.uint8:
+            raise TypeError
+        imgs = imgs.permute(0, 2, 3, 1)
         imgs = np.array(imgs)
         imgs_aug = self.aug_real.augment_images(imgs)
-        return torch.from_numpy(imgs_aug)
+        imgs_aug = torch.from_numpy(imgs_aug)
+        imgs_aug = imgs_aug.permute(0, 3, 1, 2)
+        return imgs_aug
     
     def imgFakeAug(self, imgs):
         """_summary_
         Args:
-            imgs (_type_)
+            imgs (B-C-H-W, torch.uint8)
         Returns:
-            torch.Tensor
+            imgs (B-C-H-W, torch.uint8)
         """
+        if imgs.dtype != torch.uint8:
+            raise TypeError
+        imgs = imgs.permute(0, 2, 3, 1)
         imgs = np.array(imgs)
-        imgs_aug = self.aug_fake.augment_image(imgs)
-        return torch.from_numpy(imgs_aug)
+        imgs_aug = self.aug_fake.augment_images(imgs)
+        imgs_aug = torch.from_numpy(imgs_aug)
+        imgs_aug = imgs_aug.permute(0, 3, 1, 2)
+        return imgs_aug
 
-if __name__ == "__main__":
+######################################################################################################
+#### Test
+######################################################################################################
+def test():
     trans = T.Compose(
         [
             T.ToTensor(), 
@@ -100,7 +116,7 @@ if __name__ == "__main__":
         ]
     )
     data_iter_loader = get_loader('PCB_200', 
-                              "./My_TAOD/dataset/PCB_200/0.7-shot/train/0.csv", 
+                              "./My_TAOD/dataset/PCB_200/0.7-shot/train/1.csv", 
                               32, 
                               4, 
                               shuffle=True, 
@@ -111,23 +127,27 @@ if __name__ == "__main__":
     imgAug = ImgAugmentation()
     
     for i, data in enumerate(data_iter_loader):
-        raw_img = data[0] # [B, C, H, W] -1~1
-        real_imgs_aug = img_1to255(raw_img.numpy())
-        real_imgs_aug = imgAug.imgRealAug(real_imgs_aug)
+        raw_img = img_1to255(data[0])
+        real_aug = imgAug.imgRealAug(raw_img)
+        fake_aug = imgAug.imgFakeAug(raw_img)
         
-        raw_img = img_1to255(raw_img[0].numpy())
-        real_img_aug = img_1to255(real_imgs_aug[0].numpy())
-        raw_img = np.transpose(raw_img, (1, 2, 0))
-        real_img_aug = np.transpose(real_img_aug, (1, 2, 0))
-        
-        plt.subplot(1, 2, 1)
-        plt.title('O Image')
-        plt.imshow(raw_img)
-        plt.subplot(1, 2, 2)
-        plt.title('G Image')
-        plt.imshow(real_img_aug)
+        plt_raw_img = np.transpose(raw_img.numpy(), (0, 2, 3, 1))
+        plt_real_aug = np.transpose(real_aug.numpy(), (0, 2, 3, 1))
+        plt_fake_aug = np.transpose(fake_aug.numpy(), (0, 2, 3, 1))
+       
+        plt.subplot(1, 3, 1)
+        plt.title('O')
+        plt.imshow(plt_raw_img[0])
+        plt.subplot(1, 3, 2)
+        plt.title('real aug')
+        plt.imshow(plt_real_aug[0])
+        plt.subplot(1, 3, 3)
+        plt.title('fake aug')
+        plt.imshow(plt_fake_aug[0])
         plt.savefig("AUG.jpg")
         plt.close()
-        
         break
+    
+if __name__ == "__main__":
+    test()
     
