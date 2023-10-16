@@ -9,9 +9,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as T
 #######################################################################################################
-# CLASS: VAE
+# CLASS: VariationalAutoEncoder
 #######################################################################################################
-class VAE(nn.Module):
+class VariationalAutoEncoder(nn.Module):
     def __init__(self, 
                  in_channels: int, 
                  latent_dim: int,
@@ -19,7 +19,7 @@ class VAE(nn.Module):
                  hidden_dims: list = None,
                  **kwargs) -> None:
             
-        super(VAE, self).__init__()
+        super(VariationalAutoEncoder, self).__init__()
         
         self.latent_dim = latent_dim
         
@@ -141,7 +141,7 @@ if __name__ =="__main__":
     X = trans(img).cuda()
     X = X.unsqueeze(0)
     print(X.shape)
-    vae_test = VAE(3, 128).cuda()
+    vae_test = VariationalAutoEncoder(3, 128).cuda()
     optimizer = torch.optim.Adam(vae_test.parameters(), lr=1e-3, betas=[0.0, 0.9])
     for i in tqdm.trange(200):
         vae_test.train()

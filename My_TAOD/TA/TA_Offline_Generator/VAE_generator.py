@@ -14,10 +14,10 @@ from TA_VAE import VAE
 def TA_VAE_generator():
     model = VAE(3, 128)
     
-    model.load_state_dict(torch.load('TrainedModels/model_vae_mnist.pth'))
-    dir = "/home/zhouquan/MyDoc/Deep_Learning/mnist_3.jpg"
-    # model.load_state_dict(torch.load('vae_pcb.pth'))
-    # dir = "./My_Datasets/Classification/PCB-200/Mouse_bite/000939_0_02_02787_13116.bmp"
+    # model.load_state_dict(torch.load('TrainedModels/model_vae_mnist.pth'))
+    # dir = "/home/zhouquan/MyDoc/Deep_Learning/mnist_3.jpg"
+    model.load_state_dict(torch.load('vae_pcb_with_G.pth'))
+    dir = "./My_Datasets/Classification/PCB-200/Mouse_bite/000939_0_02_02787_13116.bmp"
     
     raw_sample_image = Image.open(dir).convert("RGB")
     raw_sample_image = np.array(raw_sample_image)
@@ -27,8 +27,8 @@ def TA_VAE_generator():
     sample_image = trans(raw_sample_image)
     sample_image = sample_image.unsqueeze(0)
     
-    # generated_image = model(sample_image)[0]
-    generated_image = model.sample(1, "cpu")
+    generated_image = model(sample_image)[0]
+    # generated_image = model.sample(1, "cpu")
     generated_image = generated_image.detach().numpy()[0]
     plt_gen = generated_image
     # plt_gen = img_1to255(generated_image)

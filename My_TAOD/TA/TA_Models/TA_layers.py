@@ -23,6 +23,7 @@ from dataset_loader import get_loader, img_1to255, img_255to1
 sys.path.append("./My_TAOD/TA/TA_Models")
 from TA_Augmentation import ImgAugmentation
 
+
 ##########################################################################################################
 # CLASS: PixelNorm
 ##########################################################################################################
@@ -34,45 +35,14 @@ class PixelNorm(nn.Module):
     def forward(self, input):
         return input * torch.rsqrt(torch.mean(input**2, dim=1, keepdim=True) + 1e-8)
 
-
-##########################################################################################################
-# CLASS: EqualConv2d
-##########################################################################################################
-class EqualConv2d(nn.Module):
-    def __init__(
-        self, in_channel, out_channel, kernel_size, stride=1, padding=0, bias=True
-    ):
-        super().__init__()
-        
-        self.weight = nn.Parameter(
-            torch.randn(out_channel, in_channel, kernel_size, kernel_size)
-        )
-        
-        self.scale = 1 / math.sqrt(in_channel * kernel_size ** 2)
-        self.stride = stride
-        self.padding = padding
-        
-        if bias:
-            self.bias = nn.Parameter(torch.zeros(out_channel))
-        else:
-            self.bias = None
-            
-    def forward(self, input):
-        out = F.conv2d(
-            input,
-            self.weight * self.scale,
-            bias = self.bias,
-            stride=self.stride,
-            padding=self.padding
-        )
-
-        return out
-    
-    def __repr__(self):
-        return (
-            f'{self.__class__.__name__}({self.weight.shape[1]}, {self.weight.shape[0]},'
-            f' {self.weight.shape[2]}, stride={self.stride}, padding={self.padding})'
-        )
+#######################################################################################################
+# FUNCTION: fused_leaky_relu()
+#######################################################################################################
+def fused_leaky_relu(input, bias, negative_slope=0.2, scale= 2 ** 0.5):
+    return scale * F.leaky_relu(
+        input + bias.view((1, -1) + (1,) * (len(input.shape) - 2)), 
+        negative_slope=negative_slope
+                                )
     
 
 ##########################################################################################################
@@ -111,123 +81,8 @@ class EqualLinear(nn.Module):
             )
 
         return output
+ 
     
-    def __repr__(self):
-        return (
-            f'{self.__class__.__name__}({self.weight.shape[1]}, {self.weight.shape[0]})'
-        )
-        
-        
-##########################################################################################################
-# CLASS: ScaledLeakRelu
-##########################################################################################################
-class ScaledLeakRelu(nn.Module):
-    def __init__(self, negative_slope=0.2):
-        super().__init__()
-        
-        self.negative_slope = negative_slope
-        
-    def forward(self, input):
-        output = F.leaky_relu(input, negative_slope=self.negative_slope)
-        
-        return output * math.sqrt(2)
-    
-
-##########################################################################################################
-# CLASS: FusedLeakyRelu()
-##########################################################################################################
-class FusedLeakyRelu(nn.Module):
-    def __init__(self, channel, negative_slope=0.2, scale=2 ** 0.5):
-        super().__init__()
-        
-        self.bias = nn.Parameter(torch.zeros(channel))
-        self.negative_slope = negative_slope
-        self.scale = scale
-        
-    def forward(self, input):
-        return fused_leaky_relu(input, self.bias, self.negative_slope, self.scale)
-    
-
-##########################################################################################################
-# CLASS: NoiseInjection
-##########################################################################################################
-class NoiseInjection(nn.Module):
-    def __init__(self):
-        super().__init__()
-        
-        self.weight = nn.Parameter(torch.zeros(1))
-        
-    def forward(self, image, noise=None):
-        if noise is None:
-            batch, _, height, width = image.shape
-            noise = image.new_empty(batch, 1, height, width).normal_()
-            
-        return image + self.weight * noise
-    
-
-##########################################################################################################
-# CLASS: ConstantInput
-##########################################################################################################
-class ConstantInput(nn.Module):
-    def __init__(self, channel, size=4):
-        super().__init__()
-        self.input = nn.Parameter(torch.randn(1, channel, size, size))
-        
-    def forward(self, input):
-        batch = input.shape[0]
-        output = self.input.repeat(batch, 1, 1, 1)
-        
-        return output
-    
-    
-#######################################################################################################
-# CLASS: Upsample
-#######################################################################################################
-class Upsample(nn.Module):
-    def __init__(self, kernel, factor=2):
-        super().__init__()
-        
-        self.factor = factor
-        kernel = make_kernel(kernel) * (factor ** 2)
-        self.kernel = kernel
-        
-        p = kernel.shape[0] - factor
-        
-        pad0 = (p + 1) // 2 + factor -1
-        pad1 = p // 2
-        
-        self.pad = (pad0, pad1)
-        
-    def forward(self, input):
-        output = upfirdn2d(input, self.kernel, up=self.factor, down=1, pad=self.pad)
-        
-        return output
-
-
-#######################################################################################################
-# CLASS: Downsample
-#######################################################################################################
-class Downsample(nn.Module):
-    def __init__(self, kernel, factor=2):
-        super().__init__()
-        
-        self.factor = factor
-        kernel = make_kernel(kernel)
-        self.kernel = kernel
-        
-        p = kernel.shape[0] - factor
-        
-        pad0 = (p + 1) // 2
-        pad1 = p // 2
-        
-        self.pad = (pad0, pad1)
-        
-    def forward(self, input):
-        output = upfirdn2d(input, self.kernel, up=1, down=self.factor, pad=self.pad)
-        
-        return output
-        
-        
 #######################################################################################################
 # CLASS: SelfAttention
 #######################################################################################################
@@ -364,6 +219,53 @@ class StdDevNorm(nn.Module):
         return output
 
 #######################################################################################################
+# CLASS: ResidualConv_original
+#######################################################################################################
+class ResidualConv_original(nn.Module):
+    def __init__(self, input_dim, output_dim, stride, padding):
+        super(ResidualConv_original, self).__init__()
+        
+        self.conv_block = nn.Sequential(
+            nn.BatchNorm2d(input_dim),
+            nn.ReLU(),
+            nn.Conv2d(input_dim, output_dim, kernel_size=3, stride=stride, padding=padding),
+            nn.BatchNorm2d(output_dim),
+            nn.ReLU(),
+            nn.Conv2d(output_dim, output_dim, kernel_size=3, padding=1),
+        )
+        self.conv_skip = nn.Sequential(
+            nn.Conv2d(input_dim, output_dim, kernel_size=3, stride=stride, padding=1),
+            nn.BatchNorm2d(output_dim),
+        )
+        
+    def forward(self, x):
+        return self.conv_block(x) + self.conv_skip(x)
+    
+#######################################################################################################
+# CLASS: ResidualConv
+#######################################################################################################
+class ResidualConv(nn.Module):
+    def __init__(self, input_dim, output_dim, stride, padding):
+        super(ResidualConv_original, self).__init__()
+        
+        self.leakyrelu_slope = 0.1
+        self.conv_block = nn.Sequential(
+            nn.BatchNorm2d(input_dim),
+            nn.LeakyReLU(self.leakyrelu_slope),
+            nn.Conv2d(input_dim, output_dim, kernel_size=3, stride=stride, padding=padding),
+            nn.BatchNorm2d(output_dim),
+            nn.LeakyReLU(self.leakyrelu_slope),
+            nn.Conv2d(output_dim, output_dim, kernel_size=3, padding=1),
+        )
+        self.conv_skip = nn.Sequential(
+            nn.Conv2d(input_dim, output_dim, kernel_size=3, stride=stride, padding=1),
+            nn.BatchNorm2d(output_dim),
+        )
+        
+    def forward(self, x):
+        return self.conv_block(x) + self.conv_skip(x)
+    
+#######################################################################################################
 # CLASS: KLDLoss
 #######################################################################################################
 class KLDLoss(nn.Module):
@@ -383,6 +285,7 @@ class KLDLoss(nn.Module):
 class PerceptualLoss(nn.Module):
     def __init__(self, device, layer_indexs=None, loss=nn.MSELoss()):
         """
+        return loss is "batchmean"
         Args:
             real_img (torch.float32)
             fake_img (torch.float32)
@@ -419,6 +322,7 @@ class PerceptualLoss(nn.Module):
         for real_img_feature, fake_img_feature in zip(real_img_features, fake_img_features):
             loss.append(self.criterion(real_img_feature, fake_img_feature))
         return sum(loss) / len(loss)
+
 #######################################################################################################
 # CLASS: TEST
 #######################################################################################################

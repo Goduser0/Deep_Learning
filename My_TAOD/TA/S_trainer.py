@@ -17,7 +17,7 @@ from dataset_loader import get_loader
 sys.path.append("./My_TAOD/TA/TA_Models")
 from TA_G import FeatureMatchGenerator
 from TA_D import FeatureMatchDiscriminator
-from TA_VAE import VAE
+from TA_VAE import VariationalAutoEncoder
 from TA_layers import KLDLoss
 sys.path.append("./My_TAOD/TA/TA_Utils")
 from TA_logger import S_trainer_logger
@@ -69,7 +69,7 @@ parser.add_argument("--img_size", type=int, default=128)
 parser.add_argument("--conv_dim", type=int, default=64)
 
 # g_source
-parser.add_argument("--g_reg_every", type=int, default=4)
+parser.add_argument("--g_reg_every", type=float, default=4.0)
 parser.add_argument("--lr_g", type=float, default=5e-6)
 
 parser.add_argument("--n_mlp", type=int, default=3)
@@ -77,7 +77,7 @@ parser.add_argument("--z_dim", type=int, default=128)
 parser.add_argument("--lr_mlp", type=float, default=1e-3)
 
 # d_source
-parser.add_argument("--d_reg_every", type=int, default=4)
+parser.add_argument("--d_reg_every", type=float, default=4.0)
 parser.add_argument("--lr_d", type=float, default=1e-4)
 
 # VAE
@@ -138,12 +138,12 @@ d_source = FeatureMatchDiscriminator(
     config.img_size, config.conv_dim
 ).cuda()
 
-VAE_common = VAE(
+VAE_common = VariationalAutoEncoder(
     in_channels=3, 
     latent_dim=config.latent_dim,
     input_size=config.img_size,
     ).cuda()
-VAE_unique = VAE(
+VAE_unique = VariationalAutoEncoder(
     in_channels=3, 
     latent_dim=config.latent_dim,
     input_size=config.img_size,

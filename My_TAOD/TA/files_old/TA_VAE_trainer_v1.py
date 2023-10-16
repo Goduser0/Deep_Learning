@@ -12,9 +12,6 @@ sys.path.append("./My_TAOD/dataset")
 from dataset_loader import get_loader, img_1to255, img_255to1
 sys.path.append("./My_TAOD/TA/TA_Models")
 from TA_VAE import VAE
-from TA_G import FeatureMatchGenerator
-from TA_D import FeatureMatchDiscriminator
-from TA_layers import KLDLoss
 
 #######################################################################################################
 ## FUNCTIONS: train_VAE()
@@ -36,21 +33,9 @@ def train_VAE():
     vae_test = VAE(3, 128).cuda()
     vae_optim = torch.optim.Adam(vae_test.parameters(), lr=1e-5, betas=[0.0, 0.9])
     
-    G = FeatureMatchGenerator(
-        3, 128, 128, 64, 1e-5
-    ).cuda()
-    g_reg_ratio = 4 / (4 + 1)
-    g_optim = torch.optim.Adam(
-        G.parameters(),
-        lr = 1e-5 * g_reg_ratio,
-        betas=(0.0 ** g_reg_ratio, 0.9 ** g_reg_ratio),
-)
-    
     num_epochs = 2000
     for epoch in tqdm.trange(num_epochs):
-        vae_test.train()
-        G.train()
-        
+        vae_test.train()        
         epoch_loss = 0.0
         recon_loss = 0.0
         kl_loss = 0.0

@@ -84,6 +84,8 @@ class FeatureMatchGenerator(nn.Module):
         output = self.last(output)
         
         return output
+    
+
         
 ########################################################################################################
 # CLASS: Generater TEST
