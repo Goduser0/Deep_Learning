@@ -2,20 +2,18 @@ import torch
 from torch.autograd import Variable
 import torchvision.transforms as T
 import torch.nn as nn
-
 import numpy as np
-
 import os
 import argparse
 import random
 
-from TA_G import FeatureMatchGenerator
-from TA_D import FeatureMatchPatchDiscriminator, Extra
-from TA_utils import requires_grad, mix_noise, get_subspace
-
 import sys
-sys.path.append("/home/zhouquan/MyDoc/Deep_Learning/My_TAOD")
+sys.path.append("./My_TAOD/dataset")
+sys.path.append("./My_TAOD/dataset")
 from dataset_loader import get_loader
+from My_TAOD.TA.TA_Models.TA_G import FeatureMatchGenerator
+from My_TAOD.TA.TA_Models.TA_D import FeatureMatchPatchDiscriminator, Extra
+from TA_utils import requires_grad, mix_noise, get_subspace
 
 ########################################################################################################
 #### Config

@@ -25,6 +25,7 @@
 126,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_223.bmp
 131,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_84.bmp
 136,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_178.bmp
+143,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_232.bmp
 148,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_176.bmp
 154,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_198.bmp
 157,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_251.bmp
@@ -53,7 +54,6 @@
 289,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_194.bmp
 291,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_242.bmp
 295,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_186.bmp
-304,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_183.bmp
 305,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_277.bmp
 310,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_134.bmp
 313,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_21.bmp
@@ -79,7 +79,6 @@
 439,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_199.bmp
 445,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_137.bmp
 456,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_135.bmp
-466,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_11.bmp
 483,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_101.bmp
 484,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_168.bmp
 487,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_112.bmp
@@ -103,13 +102,13 @@
 602,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_170.bmp
 605,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_45.bmp
 617,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_220.bmp
-621,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_120.bmp
 632,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_56.bmp
 639,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_171.bmp
 645,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_166.bmp
 648,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_142.bmp
 653,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_34.bmp
 670,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_32.bmp
+672,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_200.bmp
 675,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_37.bmp
 693,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_238.bmp
 702,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_191.bmp
@@ -140,6 +139,7 @@
 847,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_229.bmp
 869,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_103.bmp
 875,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_30.bmp
+876,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_26.bmp
 877,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_98.bmp
 879,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_76.bmp
 891,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_221.bmp
@@ -181,6 +181,7 @@
 1124,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_291.bmp
 1131,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_22.bmp
 1161,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_203.bmp
+1170,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_225.bmp
 1183,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_231.bmp
 1193,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_126.bmp
 1195,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_3.bmp
@@ -222,6 +223,7 @@
 1388,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_154.bmp
 1391,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_49.bmp
 1395,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_252.bmp
+1403,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_192.bmp
 1418,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_114.bmp
 1419,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_122.bmp
 1420,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_133.bmp
@@ -239,7 +241,6 @@
 1479,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_187.bmp
 1481,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_214.bmp
 1483,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_124.bmp
-1485,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_271.bmp
 1504,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_39.bmp
 1506,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_105.bmp
 1509,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_78.bmp
@@ -254,7 +255,6 @@
 1567,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_249.bmp
 1572,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_12.bmp
 1584,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_262.bmp
-1594,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_97.bmp
 1596,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_224.bmp
 1604,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_138.bmp
 1612,4,Sc,./My_Datasets/Classification/NEU-CLS/Sc_158.bmp

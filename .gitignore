@@ -1,8 +1,9 @@
 My_Datasets/
 
-
-My_TAOD/models/
-My_TAOD/samples/
+My_TAOD/Train_Classification/models/
+My_TAOD/Train_Classification/samples/
 
 My_TAOD/TA/models/
 My_TAOD/TA/samples/
+
+TrainedModels/
