@@ -73,14 +73,14 @@ for loss in loss_name:
 def train(epoch):
     for batch_idx, (data, TSrget) in enumerate(loader_T):
 
-	num = data.size(0)
-	dataPS, dataPT = data[:,:,:,:64].cuda(), data[:,:,:,64:].cuda()
+        num = data.size(0)
+        dataPS, dataPT = data[:,:,:,:64].cuda(), data[:,:,:,64:].cuda()
         
         for _, (data2, _) in enumerate(loader_S):
-	    dataTS = data2[:,:,:,:64].cuda()
+            dataTS = data2[:,:,:,:64].cuda()
             break
 
-	muPS, logvarPS, zrPS = encoder(dataPS, domain='S')
+        muPS, logvarPS, zrPS = encoder(dataPS, domain='S')
         muPT, logvarPT, zrPT = encoder(dataPT, domain='T')
         muTS, logvarTS, zrTS = encoder(dataTS, domain='S')        
 
@@ -129,17 +129,17 @@ def train(epoch):
         KLD_PT = -0.5 * torch.mean(1 + logvarPT - muPT.pow(2) - logvarPT.exp())        
         KLD_TS2B = -0.5 * torch.mean(1 + logvarTS2B - muTS2B.pow(2) - logvarTS2B.exp())
       
-	img_loss = recon_img_loss + recon_pair_loss
-	KLD = KLD_TS + KLD_PT + KLD_TS2B
+        img_loss = recon_img_loss + recon_pair_loss
+        KLD = KLD_TS + KLD_PT + KLD_TS2B
 
-	(img_loss + KLD*0.001+gen_loss*0.1).backward()
-	optim_gen.step()
+        (img_loss + KLD*0.001+gen_loss*0.1).backward()
+        optim_gen.step()
         optim_enc.step()
 
         loss_list['genS'].append(gen_lossS.item()) 
         loss_list['genT'].append(gen_lossT.item()) 
 
-	global iters
+        global iters
         if iters % args.save_model_period == 0: # and iters % 500 == 0:
                 torch.save(discriminatorS, os.path.join(checkpoint_dir, 'disc_S_{}'.format(epoch)))
                 torch.save(discriminatorT, os.path.join(checkpoint_dir, 'disc_T_{}'.format(epoch)))
@@ -167,12 +167,12 @@ def train(epoch):
                 plt.clf()
 
         if iters % args.display_period == 0:          
-	    s = '{} epoch: {} iters: {}'.format(strftime("%H:%M:%S", gmtime()), epoch, iters) 
-	    s += ' discS: {} genS: {}'.format(round(disc_lossS.item(), 4), round(gen_lossS.item(), 4))
+            s = '{} epoch: {} iters: {}'.format(strftime("%H:%M:%S", gmtime()), epoch, iters) 
+            s += ' discS: {} genS: {}'.format(round(disc_lossS.item(), 4), round(gen_lossS.item(), 4))
             s += ' discT: {} genT: {}'.format(round(disc_lossT.item(), 4), round(gen_lossT.item(), 4))
             s += ' recon_img_loss: {} recon_pair_loss: {}'.format(round(recon_img_loss.item(), 4), round(recon_pair_loss.item(), 4))
             print s
-	iters += 1
+            iters += 1
 
 fixed_z = Variable(torch.randn(args.batch_size, Z_dim).cuda())
 
