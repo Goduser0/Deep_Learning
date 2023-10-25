@@ -37,10 +37,10 @@ checkpoint_dir = 'checkpoints_64x64_'+ dname
 out_dir = 'out_' + dname
 
 if os.path.isdir(checkpoint_dir) is False:
-        os.makedirs(checkpoint_dir)
+    os.makedirs(checkpoint_dir)
 
 if os.path.isdir(out_dir) is False:
-        os.makedirs(out_dir)
+    os.makedirs(out_dir)
 
 Z_dim = 128
 
@@ -68,59 +68,59 @@ def train(epoch):
     global loss_name, loss_list, iters
     for batch_idx, (data, target) in enumerate(loader):
 
-	optim_gen.zero_grad()
-	num = data.size(0)
+        optim_gen.zero_grad()
+        num = data.size(0)
 
         data, target = Variable(data.cuda()), Variable(target.cuda())
         data = data[:,:,:,64:]
 
-	for _ in range(disc_iters):
-		z = Variable(torch.randn(num, Z_dim).cuda())
-		optim_disc.zero_grad()
-		out_rand = generator(z)
-		real_img_loss, real_patch_loss = discriminator(data)
-		fake_img_loss, fake_patch_loss = discriminator(out_rand)
+        for _ in range(disc_iters):
+            z = Variable(torch.randn(num, Z_dim).cuda())
+            optim_disc.zero_grad()
+            out_rand = generator(z)
+            real_img_loss, real_patch_loss = discriminator(data)
+            fake_img_loss, fake_patch_loss = discriminator(out_rand)
 
-		disc_patch_loss = nn.ReLU()(1.0 - real_patch_loss).mean() + nn.ReLU()(1.0 + fake_patch_loss).mean()
-                disc_img_loss = nn.ReLU()(1.0 - real_img_loss).mean() + nn.ReLU()(1.0 + fake_img_loss).mean()
+            disc_patch_loss = nn.ReLU()(1.0 - real_patch_loss).mean() + nn.ReLU()(1.0 + fake_patch_loss).mean()
+            disc_img_loss = nn.ReLU()(1.0 - real_img_loss).mean() + nn.ReLU()(1.0 + fake_img_loss).mean()
 
-		disc_loss = (disc_patch_loss + disc_img_loss)*0.5
-		(disc_loss).backward()
-		optim_disc.step()
-                loss_list['disc'].append(disc_loss.item())
+            disc_loss = (disc_patch_loss + disc_img_loss)*0.5
+            (disc_loss).backward()
+            optim_disc.step()
+            loss_list['disc'].append(disc_loss.item())
 
-	optim_gen.zero_grad()
-	fake_img_loss, fake_patch_loss = discriminator(generator(z))
-	gen_img_loss, gen_patch_loss = -fake_img_loss.mean() , -fake_patch_loss.mean()
-	gen_loss = (gen_patch_loss + gen_img_loss)*0.5
-	(gen_loss).backward()
-	optim_gen.step()
+        optim_gen.zero_grad()
+        fake_img_loss, fake_patch_loss = discriminator(generator(z))
+        gen_img_loss, gen_patch_loss = -fake_img_loss.mean() , -fake_patch_loss.mean()
+        gen_loss = (gen_patch_loss + gen_img_loss)*0.5
+        (gen_loss).backward()
+        optim_gen.step()
         loss_list['gen'].append(gen_loss.item()) 
 
         
         if iters % args.save_model_period == 0: 
-                torch.save(discriminator, os.path.join(checkpoint_dir, 'disc_{}'.format(epoch)))
-                torch.save(generator, os.path.join(checkpoint_dir, 'gen_{}'.format(epoch)))
+            torch.save(discriminator, os.path.join(checkpoint_dir, 'disc_{}'.format(epoch)))
+            torch.save(generator, os.path.join(checkpoint_dir, 'gen_{}'.format(epoch)))
 
         if iters % args.save_img_period == 0: 
-                out_rand = generator(zc.detach())
-                save_img(data.detach(), out_dir, 'origin_img', iters)
-                save_img(out_rand.detach(), out_dir, 'origin_rand', iters)
+            out_rand = generator(zc.detach())
+            save_img(data.detach(), out_dir, 'origin_img', iters)
+            save_img(out_rand.detach(), out_dir, 'origin_rand', iters)
 
         if iters % args.plot_period == 0:
-                for loss in loss_name:
-                        plt.plot(np.arange(len(loss_list[loss])), loss_list[loss], label=loss)
+            for loss in loss_name:
+                plt.plot(np.arange(len(loss_list[loss])), loss_list[loss], label=loss)
 
-                plt.legend()
-                plt.savefig(os.path.join(out_dir, str(iters)+'_loss.png'))
-                plt.clf()
+            plt.legend()
+            plt.savefig(os.path.join(out_dir, str(iters)+'_loss.png'))
+            plt.clf()
 
         if iters % args.display_period == 0:	    
             s = '{} epoch: {} iters: {}'.format(strftime("%H:%M:%S", gmtime()), epoch, iters) 
-	    s += ' disc: {} gen: {}'.format(round(disc_loss.item(), 4), round(gen_loss.item(), 4))
-            print s
+            s += ' disc: {} gen: {}'.format(round(disc_loss.item(), 4), round(gen_loss.item(), 4))
+            print(s)
 
-	iters += 1
+        iters += 1
 
 
 for epoch in range(20000):

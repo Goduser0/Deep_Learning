@@ -41,9 +41,9 @@ checkpoint_dir = 'checkpoints_64x64_'+ dname
 out_dir = 'out_' + dname
                     
 if os.path.isdir(checkpoint_dir) is False:
-        os.makedirs(checkpoint_dir)
+    os.makedirs(checkpoint_dir)
 if os.path.isdir(out_dir) is False:
-        os.makedirs(out_dir)
+    os.makedirs(out_dir)
 
 transform = transforms.Compose([transforms.Resize(64), transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 dataset_S = datasets.ImageFolder(args.dataset_dir_S, transform=transform)
@@ -89,22 +89,22 @@ def train(epoch):
         reconTS, reconTS2B = generator(zrTS, domain='S'), generator(zrTS, domain='T')
 
         for i in range(disc_iters):
-                z = Variable(torch.randn(num, Z_dim).cuda())
-                randA, randB = generator(z, domain='S'), generator(z, domain='T')
-                optim_discS.zero_grad()
-                optim_discT.zero_grad()
-                disc_lossS = nn.ReLU()(1.0 - discriminatorS(dataTS)).mean() + \
-                                nn.ReLU()(1.0 + discriminatorS(randA.detach())).mean()
+            z = Variable(torch.randn(num, Z_dim).cuda())
+            randA, randB = generator(z, domain='S'), generator(z, domain='T')
+            optim_discS.zero_grad()
+            optim_discT.zero_grad()
+            disc_lossS = nn.ReLU()(1.0 - discriminatorS(dataTS)).mean() + \
+                            nn.ReLU()(1.0 + discriminatorS(randA.detach())).mean()
 
-                disc_lossT = nn.ReLU()(1.0 - discriminatorT(dataPT)).mean() + \
-                                nn.ReLU()(1.0 + discriminatorT(randB.detach())).mean()*0.5 + \
-                                nn.ReLU()(1.0 + discriminatorT(reconTS2B.detach())).mean()*0.5
+            disc_lossT = nn.ReLU()(1.0 - discriminatorT(dataPT)).mean() + \
+                            nn.ReLU()(1.0 + discriminatorT(randB.detach())).mean()*0.5 + \
+                            nn.ReLU()(1.0 + discriminatorT(reconTS2B.detach())).mean()*0.5
 
-                disc_loss = (disc_lossS + disc_lossT)*0.5
-                (disc_loss*0.1).backward()
+            disc_loss = (disc_lossS + disc_lossT)*0.5
+            (disc_loss*0.1).backward()
 
-                optim_discS.step()
-                optim_discT.step()
+            optim_discS.step()
+            optim_discT.step()
 
         loss_list['discS'].append(disc_lossS.item()) 
         loss_list['discT'].append(disc_lossT.item()) 
@@ -141,38 +141,38 @@ def train(epoch):
 
         global iters
         if iters % args.save_model_period == 0: # and iters % 500 == 0:
-                torch.save(discriminatorS, os.path.join(checkpoint_dir, 'disc_S_{}'.format(epoch)))
-                torch.save(discriminatorT, os.path.join(checkpoint_dir, 'disc_T_{}'.format(epoch)))
-                torch.save(encoder, os.path.join(checkpoint_dir, 'enc_{}'.format(epoch)))
-                torch.save(generator, os.path.join(checkpoint_dir, 'gen_{}'.format(epoch)))
+            torch.save(discriminatorS, os.path.join(checkpoint_dir, 'disc_S_{}'.format(epoch)))
+            torch.save(discriminatorT, os.path.join(checkpoint_dir, 'disc_T_{}'.format(epoch)))
+            torch.save(encoder, os.path.join(checkpoint_dir, 'enc_{}'.format(epoch)))
+            torch.save(generator, os.path.join(checkpoint_dir, 'gen_{}'.format(epoch)))
 
         if iters % args.save_img_period == 0:
-                out1, out2 = generator(z, domain='S'), generator(z, domain='T')
+            out1, out2 = generator(z, domain='S'), generator(z, domain='T')
 
-                save_img(dataPS.detach(), out_dir, 'dataPS', iters)
-                save_img(reconPS.detach(), out_dir, 'reconPS', iters)
-                save_img(dataPT.detach(), out_dir, 'dataPT', iters)
-                save_img(reconPT.detach(), out_dir, 'reconPT', iters)
-                save_img(dataTS.detach(), out_dir, 'dataTS', iters)
-                save_img(reconTS.detach(), out_dir, 'reconTS', iters)
-                save_img(out1.data.detach(), out_dir, 'out1', iters)
-                save_img(out2.data.detach(), out_dir, 'out2', iters)
+            save_img(dataPS.detach(), out_dir, 'dataPS', iters)
+            save_img(reconPS.detach(), out_dir, 'reconPS', iters)
+            save_img(dataPT.detach(), out_dir, 'dataPT', iters)
+            save_img(reconPT.detach(), out_dir, 'reconPT', iters)
+            save_img(dataTS.detach(), out_dir, 'dataTS', iters)
+            save_img(reconTS.detach(), out_dir, 'reconTS', iters)
+            save_img(out1.data.detach(), out_dir, 'out1', iters)
+            save_img(out2.data.detach(), out_dir, 'out2', iters)
 
         if iters % args.plot_period == 0:
-                for loss in loss_name:
-                        plt.plot(np.arange(len(loss_list[loss])), loss_list[loss], label=loss)
+            for loss in loss_name:
+                plt.plot(np.arange(len(loss_list[loss])), loss_list[loss], label=loss)
 
-                plt.legend()
-                plt.savefig(os.path.join(out_dir, str(iters)+'_loss.png'))
-                plt.clf()
+            plt.legend()
+            plt.savefig(os.path.join(out_dir, str(iters)+'_loss.png'))
+            plt.clf()
 
         if iters % args.display_period == 0:          
             s = '{} epoch: {} iters: {}'.format(strftime("%H:%M:%S", gmtime()), epoch, iters) 
             s += ' discS: {} genS: {}'.format(round(disc_lossS.item(), 4), round(gen_lossS.item(), 4))
             s += ' discT: {} genT: {}'.format(round(disc_lossT.item(), 4), round(gen_lossT.item(), 4))
             s += ' recon_img_loss: {} recon_pair_loss: {}'.format(round(recon_img_loss.item(), 4), round(recon_pair_loss.item(), 4))
-            print s
-            iters += 1
+            print(s)
+        iters += 1
 
 fixed_z = Variable(torch.randn(args.batch_size, Z_dim).cuda())
 

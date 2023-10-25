@@ -41,9 +41,9 @@ checkpoint_dir = 'checkpoints_64x64_'+ dname
 out_dir = 'out_' + dname
 
 if os.path.isdir(checkpoint_dir) is False:
-        os.makedirs(checkpoint_dir)
+    os.makedirs(checkpoint_dir)
 if os.path.isdir(out_dir) is False:
-        os.makedirs(out_dir)
+    os.makedirs(out_dir)
 
 transform = transforms.Compose([transforms.Resize(64), transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 dataset_S = datasets.ImageFolder(args.dataset_dir_S, transform=transform)
@@ -67,71 +67,71 @@ for loss in loss_name:
     loss_list[loss] = []
 
 def train(epoch):
-        for batch_idx, (data, target) in enumerate(loader_T):
+    for batch_idx, (data, target) in enumerate(loader_T):
 
-                num = data.size(0)
-                dataPS, dataPT = data[:,:,:,:64].cuda(), data[:,:,:,64:].cuda()
+        num = data.size(0)
+        dataPS, dataPT = data[:,:,:,:64].cuda(), data[:,:,:,64:].cuda()
                 
-                for _, (data2, _) in enumerate(loader_S):
-                        dataTA = data2[:,:,:,:64].cuda()
-                        break
+        for _, (data2, _) in enumerate(loader_S):
+            dataTA = data2[:,:,:,:64].cuda()
+            break
 
-                for _ in range(disc_iters):
-                        z = Variable(torch.randn(num, Z_dim).cuda())
-                        randA, randB = generator(z, domain='S'), generator(z, domain='T')
-                        optim_disc.zero_grad()
-                        disc_lossS = nn.ReLU()(1.0 - discriminator(dataTA, domain='S')).mean() + \
-                                        nn.ReLU()(1.0 + discriminator(randA.detach(), domain='S')).mean()
+        for _ in range(disc_iters):
+            z = Variable(torch.randn(num, Z_dim).cuda())
+            randA, randB = generator(z, domain='S'), generator(z, domain='T')
+            optim_disc.zero_grad()
+            disc_lossS = nn.ReLU()(1.0 - discriminator(dataTA, domain='S')).mean() + \
+                            nn.ReLU()(1.0 + discriminator(randA.detach(), domain='S')).mean()
 
-                        disc_lossT = nn.ReLU()(1.0 - discriminator(dataPT, domain='T')).mean() + \
-                                        nn.ReLU()(1.0 + discriminator(randB.detach(), domain='T')).mean()
+            disc_lossT = nn.ReLU()(1.0 - discriminator(dataPT, domain='T')).mean() + \
+                            nn.ReLU()(1.0 + discriminator(randB.detach(), domain='T')).mean()
 
-                        disc_loss = (disc_lossS + disc_lossT)*0.5
-                        (disc_loss).backward()
+            disc_loss = (disc_lossS + disc_lossT)*0.5
+            (disc_loss).backward()
 
-                        optim_disc.step()
+            optim_disc.step()
 
-                loss_list['discS'].append(disc_lossS.item()) 
-                loss_list['discT'].append(disc_lossT.item()) 
+        loss_list['discS'].append(disc_lossS.item()) 
+        loss_list['discT'].append(disc_lossT.item()) 
 
-                optim_gen.zero_grad()    
-                randA, randB = generator(z, domain='S'), generator(z, domain='T')
+        optim_gen.zero_grad()    
+        randA, randB = generator(z, domain='S'), generator(z, domain='T')
 
-                gen_lossS = -discriminator(randA, domain='S').mean()
-                gen_lossT = -discriminator(randB, domain='T').mean()
-                gen_loss = (gen_lossS + gen_lossT)*0.5
+        gen_lossS = -discriminator(randA, domain='S').mean()
+        gen_lossT = -discriminator(randB, domain='T').mean()
+        gen_loss = (gen_lossS + gen_lossT)*0.5
 
-                (gen_loss).backward()
-                optim_gen.step()
+        (gen_loss).backward()
+        optim_gen.step()
 
-                loss_list['genS'].append(gen_lossS.item()) 
-                loss_list['genT'].append(gen_lossT.item()) 
+        loss_list['genS'].append(gen_lossS.item()) 
+        loss_list['genT'].append(gen_lossT.item()) 
 
-                global iters
-                if iters % args.save_model_period == 0: # and iters % 500 == 0:
-                        torch.save(discriminator, os.path.join(checkpoint_dir, 'disc_{}'.format(epoch)))
-                        torch.save(generator, os.path.join(checkpoint_dir, 'gen_{}'.format(epoch)))
+        global iters
+        if iters % args.save_model_period == 0: # and iters % 500 == 0:
+            torch.save(discriminator, os.path.join(checkpoint_dir, 'disc_{}'.format(epoch)))
+            torch.save(generator, os.path.join(checkpoint_dir, 'gen_{}'.format(epoch)))
 
-                if iters % args.save_img_period == 0:
-                        out1, out2 = generator(z, domain='S'), generator(z, domain='T')
+        if iters % args.save_img_period == 0:
+            out1, out2 = generator(z, domain='S'), generator(z, domain='T')
 
-                        save_img(out1.detach(), out_dir, 'rand_S', iters)
-                        save_img(out2.detach(), out_dir, 'rand_T', iters)
+            save_img(out1.detach(), out_dir, 'rand_S', iters)
+            save_img(out2.detach(), out_dir, 'rand_T', iters)
 
-                if iters % args.plot_period == 0:
-                        for loss in loss_name:
-                                plt.plot(np.arange(len(loss_list[loss])), loss_list[loss], label=loss)
+        if iters % args.plot_period == 0:
+            for loss in loss_name:
+                plt.plot(np.arange(len(loss_list[loss])), loss_list[loss], label=loss)
 
-                        plt.legend()
-                        plt.savefig(os.path.join(out_dir, str(iters)+'_loss.png'))
-                        plt.clf()
+            plt.legend()
+            plt.savefig(os.path.join(out_dir, str(iters)+'_loss.png'))
+            plt.clf()
 
-                if iters % args.display_period == 0:          
-                        s = '{} epoch: {} iters: {}'.format(strftime("%H:%M:%S", gmtime()), epoch, iters) 
-                        s += ' discS: {} genS: {}'.format(round(disc_lossS.item(), 4), round(gen_lossS.item(), 4))
-                        s += ' discT: {} genT: {}'.format(round(disc_lossT.item(), 4), round(gen_lossT.item(), 4))
-                        print s
-                iters += 1
+        if iters % args.display_period == 0:          
+            s = '{} epoch: {} iters: {}'.format(strftime("%H:%M:%S", gmtime()), epoch, iters) 
+            s += ' discS: {} genS: {}'.format(round(disc_lossS.item(), 4), round(gen_lossS.item(), 4))
+            s += ' discT: {} genT: {}'.format(round(disc_lossT.item(), 4), round(gen_lossT.item(), 4))
+            print(s)
+        iters += 1
 
 fixed_z = Variable(torch.randn(args.batch_size, Z_dim).cuda())
 
