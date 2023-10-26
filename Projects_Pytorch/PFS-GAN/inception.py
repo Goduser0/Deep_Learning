@@ -19,10 +19,10 @@ class InceptionV3(nn.Module):
     }
 
     def __init__(self,
-                 output_blocks=[DEFAULT_BLOCK_INDEX],
-                 resize_input=True,
-                 normalize_input=True,
-                 requires_grad=False):
+        output_blocks=[DEFAULT_BLOCK_INDEX],
+        resize_input=True,
+        normalize_input=True,
+        requires_grad=False):
         """Build pretrained InceptionV3
 
         Parameters

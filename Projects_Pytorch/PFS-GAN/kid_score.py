@@ -98,7 +98,7 @@ def extract_lenet_features(imgs, net):
     feats = []
     imgs = imgs.reshape([-1, 100] + list(imgs.shape[1:]))
     if imgs[0].min() < -0.001:
-      imgs = (imgs + 1)/2.0
+        imgs = (imgs + 1)/2.0
     print(imgs.shape, imgs.min(), imgs.max())
     imgs = torch.from_numpy(imgs).cuda()
     for i, images in enumerate(imgs):
@@ -145,7 +145,7 @@ def calculate_kid_given_paths(paths, batch_size, cuda, dims, model_type='incepti
         model = LeNet5()
         model.load_state_dict(torch.load('./models/lenet.pth'))
     if cuda:
-       model.cuda()
+        model.cuda()
 
     act_true = _compute_activations(pths[0], model, batch_size, dims, cuda, model_type)
     pths = pths[1:]

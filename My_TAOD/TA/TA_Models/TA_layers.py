@@ -217,54 +217,26 @@ class StdDevNorm(nn.Module):
         output = torch.cat([input, stddev], 1)
         output = self.conv(output)
         return output
-
-#######################################################################################################
-# CLASS: ResidualConv_original
-#######################################################################################################
-class ResidualConv_original(nn.Module):
-    def __init__(self, input_dim, output_dim, stride, padding):
-        super(ResidualConv_original, self).__init__()
-        
-        self.conv_block = nn.Sequential(
-            nn.BatchNorm2d(input_dim),
-            nn.ReLU(),
-            nn.Conv2d(input_dim, output_dim, kernel_size=3, stride=stride, padding=padding),
-            nn.BatchNorm2d(output_dim),
-            nn.ReLU(),
-            nn.Conv2d(output_dim, output_dim, kernel_size=3, padding=1),
-        )
-        self.conv_skip = nn.Sequential(
-            nn.Conv2d(input_dim, output_dim, kernel_size=3, stride=stride, padding=1),
-            nn.BatchNorm2d(output_dim),
-        )
-        
-    def forward(self, x):
-        return self.conv_block(x) + self.conv_skip(x)
     
 #######################################################################################################
-# CLASS: ResidualConv
+# CLASS: vgg
 #######################################################################################################
-class ResidualConv(nn.Module):
-    def __init__(self, input_dim, output_dim, stride, padding):
-        super(ResidualConv_original, self).__init__()
-        
-        self.leakyrelu_slope = 0.1
-        self.conv_block = nn.Sequential(
-            nn.BatchNorm2d(input_dim),
-            nn.LeakyReLU(self.leakyrelu_slope),
-            nn.Conv2d(input_dim, output_dim, kernel_size=3, stride=stride, padding=padding),
-            nn.BatchNorm2d(output_dim),
-            nn.LeakyReLU(self.leakyrelu_slope),
-            nn.Conv2d(output_dim, output_dim, kernel_size=3, padding=1),
-        )
-        self.conv_skip = nn.Sequential(
-            nn.Conv2d(input_dim, output_dim, kernel_size=3, stride=stride, padding=1),
-            nn.BatchNorm2d(output_dim),
-        )
+class vgg(nn.Module):
+    def __init__(self):
+        super(vgg, self).__init__()
+        v = vgg16(pretrained=True)
+        self.layer1 = v.features[:4]
+        self.layer2 = v.features[4:9]
+        self.layer3 = v.features[9:16]
+        self.layer4 = v.features[16:23]
         
     def forward(self, x):
-        return self.conv_block(x) + self.conv_skip(x)
-    
+        f0 = self.layer1(x)
+        f1 = self.layer2(f0)
+        f2 = self.layer3(f1)
+        f3 = self.layer4(f2)
+        return (f0, f1, f2, f3)
+              
 #######################################################################################################
 # CLASS: KLDLoss
 #######################################################################################################

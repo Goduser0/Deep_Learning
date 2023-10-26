@@ -128,17 +128,162 @@ class FeatureMatchDiscriminator(nn.Module):
             features[i] = features[i] * attention
         
         return features
+
+
+########################################################################################################
+# CLASS: FirstResBlockDiscriminator()
+########################################################################################################
+class FirstResBlockDiscriminator(nn.Module):
+    def __init__(self, in_channels, out_channels, stride=1):
+        super(FirstResBlockDiscriminator, self).__init__()
+        
+        self.conv1 = nn.Conv2d(in_channels, out_channels, 3, 1, padding=1)
+        self.conv2 = nn.Conv2d(out_channels, out_channels, 3, 1, padding=1)
+        self.skip_conv = nn.Conv2d(in_channels, out_channels, 1, 1, padding=0)
+        nn.init.xavier_uniform(self.conv1.weight.data, 1.)
+        nn.init.xavier_uniform(self.conv2.weight.data, 1.)
+        nn.init.xavier_uniform(self.skip_conv.weight.data, np.sqrt(2))
+        
+        self.convs = nn.Sequential(
+            self.conv1,
+            nn.ReLU(),
+            self.conv2,
+            nn.AvgPool2d(2),
+        )
+        self.skip = nn.Sequential(
+            nn.AvgPool2d(2),
+            self.skip_conv,
+        )
+        
+    def forward(self, x):
+        return self.convs(x) + self.skip(x)
     
+########################################################################################################
+# CLASS: ResBlockDiscriminator()
+########################################################################################################
+class ResBlockDiscriminator(nn.Module):
+    def __init__(self, in_channels, out_channels, stride=1):
+        super(ResBlockDiscriminator, self).__init__()
+        
+        self.conv1 = nn.Conv2d(in_channels, out_channels, 3, 1, padding=1)
+        self.conv2 = nn.Conv2d(out_channels, out_channels, 3, 1, padding=1)
+        nn.init.xavier_uniform(self.conv1.weight.data, 1.)
+        nn.init.xavier_uniform(self.conv2.weight.data, 1.)
+        # convs
+        if stride == 1:
+            self.convs = nn.Sequential(
+                nn.ReLU(),
+                self.conv1,
+                nn.ReLU(),
+                self.conv2,
+            )
+        else:
+            self.convs = nn.Sequential(
+                nn.ReLU(),
+                self.conv1,
+                nn.ReLU(),
+                self.conv2,
+                nn.AvgPool2d(2, stride=stride, padding=0)
+            )
+        # skip
+        self.skip = nn.Sequential()
+        if stride != 1:
+            self.skip_conv = nn.Conv2d(in_channels, out_channels, 1, 1, padding=0)
+            nn.init.xavier_uniform(self.skip_conv.weight.data, np.sqrt(2))
+            
+            self.skip = nn.Sequential(
+                self.skip_conv,
+                nn.AvgPool2d(2, stride=stride, padding=0),
+            )
+        
+    def forward(self, x, feat=False):
+        if feat:
+            return self.convs(x)
+        else:
+            return self.convs(x) + self.skip(x)
 
+########################################################################################################
+# CLASS: Discriminator_patch()
+########################################################################################################
+class Discriminator_patch(nn.Module):
+    def __init__(self, in_channels=3, out_channels=128):
+        super(Discriminator_patch, self).__init__()
+        self.in_channels = in_channels
+        self.out_channels = out_channels
+        self.inputBatch = nn.BatchNorm2d(self.in_channels)
+        self.model0 = FirstResBlockDiscriminator(self.in_channels, self.out_channels, stride=2)
+        self.model1 = ResBlockDiscriminator(self.out_channels, self.out_channels, stride=2)
+        self.model2 = ResBlockDiscriminator(self.out_channels, self.out_channels, stride=2)
+        self.model3 = ResBlockDiscriminator(self.out_channels, self.out_channels, stride=2)
+        self.model4 = ResBlockDiscriminator(self.out_channels, self.out_channels, stride=2)
+        
+        self.conv1 = nn.Conv2d(self.out_channels, 1, 1, 1, 0)
+        self.ReLU = nn.ReLU()
+        self.avg = nn.AvgPool2d(4)
+        
+        self.fc = nn.Linear(self.out_channels, 1)
+        nn.init.xavier_uniform(self.fc.weight.data, 1.)
+        
+    def forward(self, x):
+        x = self.model0(x)
+        x = self.model1(x)
+        x = self.model2(x)
+        # x1
+        x1 = self.conv1(x)
+        # x2
+        x = self.model3(x)
+        x = self.model4(x)
+        x = self.avg(x)
+        x = x.view(x.size(0), -1)
+        print(x.shape)
+        x2 = self.fc(x)
+        
+        return x1, x2
 
-
+########################################################################################################
+# CLASS: Discriminator()
+########################################################################################################
+class Discriminator(nn.Module):
+    def __init__(self, in_channels=3, out_channels=128):
+        super(Discriminator, self).__init__()
+        self.in_channels = in_channels
+        self.out_channels = out_channels
+        self.inputBatch = nn.BatchNorm2d(self.in_channels)
+        self.model0 = FirstResBlockDiscriminator(in_channels, self.out_channels, stride=2)
+        self.model1 = ResBlockDiscriminator(self.out_channels, self.out_channels, stride=2)
+        self.model2 = ResBlockDiscriminator(self.out_channels, self.out_channels, stride=2)
+        self.model3 = ResBlockDiscriminator(self.out_channels, self.out_channels, stride=2)
+        self.model4 = ResBlockDiscriminator(self.out_channels, self.out_channels, stride=2)
+        
+        self.ReLU = nn.ReLU()
+        self.avg = nn.AvgPool2d(4)
+        
+        self.fc = nn.Linear(self.out_channels, 1)
+        nn.init.xavier_uniform(self.fc.weight.data, 1.)
+    
+    def forward(self, x):
+        f0 = self.model0(x)
+        f1 = self.model1(f0)
+        f2 = self.model2(f1)
+        f3 = self.model3(f2)
+        
+        f3_r = self.ReLU(f3)
+        f4 = self.avg(f3_r)
+        f4_f = f4.view(-1, self.out_channels)
+        out = self.fc(f4_f)
+        return out
+        
 ########################################################################################################
 # Discriminator TEST
 ########################################################################################################
-if __name__ == "__main__":
-    D = FeatureMatchDiscriminator()
+def test():
+    D = Discriminator_patch()
     X = torch.randn(8, 3, 128, 128) # (B, C, W, H)
+    summary(D, X.shape, device="cpu")
+    
     print(f"Input X: {X.shape}")
     Y = D(X)
-    summary(D, X.shape, device="cpu")
-        
+    print(f"Output Y: {Y[1].shape}")
+    
+if __name__ == "__main__":
+    test()

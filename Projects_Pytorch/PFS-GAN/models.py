@@ -10,18 +10,18 @@ channels = 3
 
 class vgg(nn.Module):
     def __init__(self):
-		super(vgg, self).__init__()
-		v = models.vgg16(pretrained=True)
-		self.m1 = v.features[:4]
-		self.m2 = v.features[4:9]
-		self.m3 = v.features[9:16]
-		self.m4 = v.features[16:23]
+        super(vgg, self).__init__()
+        v = models.vgg16(pretrained=True)
+        self.m1 = v.features[:4]
+        self.m2 = v.features[4:9]
+        self.m3 = v.features[9:16]
+        self.m4 = v.features[16:23]
     def forward(self, x):
-		f0 = self.m1(x)
-		f1 = self.m2(f0)
-		f2 = self.m3(f1)
-		f3 = self.m4(f2)
-		return (f0, f1, f2, f3)
+        f0 = self.m1(x)
+        f1 = self.m2(f0)
+        f2 = self.m3(f1)
+        f3 = self.m4(f2)
+        return (f0, f1, f2, f3)
 
 
 class ResBlockGenerator(nn.Module):
@@ -88,10 +88,10 @@ class ResBlockDiscriminator(nn.Module):
 
 
     def forward(self, x, feat=False):
-		if feat:
-			return self.model(x)
-		else:
-			return self.model(x) + self.bypass(x)
+        if feat:
+            return self.model(x)
+        else:
+            return self.model(x) + self.bypass(x)
 
 # # special ResBlock just for the first layer of the discriminator
 class FirstResBlockDiscriminator(nn.Module):
@@ -127,33 +127,33 @@ DISC_SIZE=128
 
 class Generator(nn.Module):
     def __init__(self, z_dim):
-		super(Generator, self).__init__()
-		self.z_dim = z_dim
+        super(Generator, self).__init__()
+        self.z_dim = z_dim
 
-		self.dense = nn.Linear(self.z_dim, 4 * 4 * GEN_SIZE)
-		nn.init.xavier_uniform(self.dense.weight.data, 1.)
+        self.dense = nn.Linear(self.z_dim, 4 * 4 * GEN_SIZE)
+        nn.init.xavier_uniform(self.dense.weight.data, 1.)
 
-		self.model0 = ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2)
-		self.model1 = ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2)
-		self.model2 = ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2)
-		self.model3 = ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2)
-		self.model4 = nn.BatchNorm2d(GEN_SIZE)
-		self.model5 = nn.Conv2d(GEN_SIZE, channels, 3, stride=1, padding=1)
-		nn.init.xavier_uniform(self.model5.weight.data, 1.)
-		self.model = nn.Sequential(self.model0,
-									self.model1,
-									self.model2,
-									self.model3,
-									self.model4,
-									nn.ReLU(),
-									self.model5,
-									nn.Tanh(),
-		)
+        self.model0 = ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2)
+        self.model1 = ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2)
+        self.model2 = ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2)
+        self.model3 = ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2)
+        self.model4 = nn.BatchNorm2d(GEN_SIZE)
+        self.model5 = nn.Conv2d(GEN_SIZE, channels, 3, stride=1, padding=1)
+        nn.init.xavier_uniform(self.model5.weight.data, 1.)
+        self.model = nn.Sequential(self.model0,
+                                    self.model1,
+                                    self.model2,
+                                    self.model3,
+                                    self.model4,
+                                    nn.ReLU(),
+                                    self.model5,
+                                    nn.Tanh(),
+        )
 
     def forward(self, z):
-		f1 = self.dense(z).view(-1, GEN_SIZE, 4, 4)
-		out = self.model(f1)
-		return out
+        f1 = self.dense(z).view(-1, GEN_SIZE, 4, 4)
+        out = self.model(f1)
+        return out
 
 class Discriminator_patch(nn.Module):
     def __init__(self, channels=3):
@@ -303,15 +303,15 @@ class Generator_cogan(nn.Module):
         self.z_dim = z_dim
         self.dense = nn.Linear(self.z_dim, 4 * 4 * GEN_SIZE)
         self.front = nn.Sequential(
-			ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2),
-			ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2))
+            ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2),
+            ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2))
         self.back1 = nn.Sequential(
-			ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2),
-			ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2),
-			nn.BatchNorm2d(GEN_SIZE),
-			nn.ReLU(),
-			nn.Conv2d(GEN_SIZE, channels, 3, stride=1, padding=1),
-			nn.Tanh())
+            ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2),
+            ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2),
+            nn.BatchNorm2d(GEN_SIZE),
+            nn.ReLU(),
+            nn.Conv2d(GEN_SIZE, channels, 3, stride=1, padding=1),
+            nn.Tanh())
         self.back2 = nn.Sequential(
             ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2),
             ResBlockGenerator(GEN_SIZE, GEN_SIZE, stride=2),
@@ -336,8 +336,8 @@ class Discriminator_cogan(nn.Module):
         super(Discriminator_cogan, self).__init__()
         self.channels = channels
         self.front1 = nn.Sequential(
-			FirstResBlockDiscriminator(channels, DISC_SIZE, stride=2),
-        	ResBlockDiscriminator(DISC_SIZE, DISC_SIZE, stride=2))
+            FirstResBlockDiscriminator(channels, DISC_SIZE, stride=2),
+            ResBlockDiscriminator(DISC_SIZE, DISC_SIZE, stride=2))
         self.front2 = nn.Sequential(
             FirstResBlockDiscriminator(channels, DISC_SIZE, stride=2),
             ResBlockDiscriminator(DISC_SIZE, DISC_SIZE, stride=2))
@@ -361,8 +361,8 @@ class Discriminator_cogan(nn.Module):
 class Discriminator(nn.Module):
     def __init__(self, channels=3):
         super(Discriminator, self).__init__()
-	self.channels = channels
-	self.inputBatch = nn.BatchNorm2d(channels)
+        self.channels = channels
+        self.inputBatch = nn.BatchNorm2d(channels)
         self.model0 = FirstResBlockDiscriminator(channels, DISC_SIZE, stride=2)
         self.model1 = ResBlockDiscriminator(DISC_SIZE, DISC_SIZE, stride=2)
         self.model2 = ResBlockDiscriminator(DISC_SIZE, DISC_SIZE, stride=2)
@@ -465,6 +465,7 @@ class Encoder(nn.Module):
         std = torch.exp(0.5*logvar) #*0.1
         eps = torch.randn_like(std)
         return eps.mul(std).add_(mu)
+    
     def forward(self, x):
         bsz = x.size(0)
         f = self.model_bn1(x).view(bsz, -1)

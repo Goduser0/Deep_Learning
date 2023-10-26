@@ -27,8 +27,8 @@ def get_activations(images, model, batch_size=64, dims=2048,
 
     pred_arr = np.empty((n_used_imgs, dims))
     for i in range(n_batches):
-#        if verbose and False:
- #           print('\rPropagating batch %d/%d' % (i + 1, n_batches), end='', flush=True)
+#       if verbose and False:
+#           print('\rPropagating batch %d/%d' % (i + 1, n_batches), end='', flush=True)
         start = i * batch_size
         end = start + batch_size
 
@@ -132,7 +132,7 @@ def fid_score_by_combine_img(folder1, folder2):
 
 def fid_score_by_folder(path):
     if not os.path.exists(path):
-        raise RuntimeError('Invalid path: %s' % p)
+        raise RuntimeError('Invalid path: %s' % path)
     block_idx = InceptionV3.BLOCK_INDEX_BY_DIM[2048]
 
     model = InceptionV3([block_idx])
