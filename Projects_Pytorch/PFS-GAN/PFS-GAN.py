@@ -308,7 +308,7 @@ def train(epoch):
             plt.clf()
 
         if iters % args.display_period == 0:
-            s = strftime("%H:%M:%S", gmtime())+' epoch '+str(epoch)+' count '+str(iters) + ' '
+            s = strftime("%H-%M-%S", gmtime())+' epoch '+str(epoch)+' count '+str(iters) + ' '
             for name in loss_name:
                 if len(loss[name]) != 0:    
                     s += '%s: %.3f ' % (name, loss[name][-1])

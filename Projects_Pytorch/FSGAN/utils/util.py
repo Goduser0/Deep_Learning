@@ -27,7 +27,7 @@ def save_loss(checkpoint_path, epoch, n_epochs, batch, n_batchs, GAN_G_loss, GAN
     """write the D_loss and G_loss item to the loss_log.txt"""
     os.makedirs(checkpoint_path, exist_ok=True)
     with open(os.path.join(checkpoint_path, "loss_log.txt"), "a+") as log:
-        time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        time_str = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
         item = "%s Epoch%d/%d Batch%d/%d GAN_G_loss:%f GAN_Feature_Match_loss:%f MMD_Thriplet_loss:%f G_loss:%f D_loss:%f" % (time_str, epoch, n_epochs, batch, n_batchs, GAN_G_loss, GAN_Feature_Match_loss, MMD_Thriplet_loss, g_loss, d_loss)
         log.write(item + '\n')
 

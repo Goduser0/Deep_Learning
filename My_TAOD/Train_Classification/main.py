@@ -101,7 +101,7 @@ if __name__ == '__main__':
     
     # Others
     parser.add_argument('--log', type=bool, default=True)
-    parser.add_argument('--time', type=str, default=time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime()))
+    parser.add_argument('--time', type=str, default=time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime()))
     # Parser
     config = parser.parse_args()
     

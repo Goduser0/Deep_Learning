@@ -45,7 +45,7 @@ def plt_tsne2d(X, Y, labels=None):
         labels = range(len(scatter.legend_elements()[0]))
     plt.legend(handles=scatter.legend_elements()[0],labels=labels,title="classes")
                 
-    t = time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())
+    t = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
     save_path = "./My_TAOD/TA/results/" + str(t) + ".png"
     plt.savefig(save_path)
     plt.close()

@@ -28,7 +28,7 @@ def traditional_aug():
 
 def generate(z_dim, n, model_path, samples_save_path):
     """加载生成器，随机生成"""
-    local_time = time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())
+    local_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
     
     z = torch.FloatTensor(np.random.normal(0, 1, (n, z_dim)))
     G = FeatureMatchGenerator(3, 128, 128, 64, 1e-2)
