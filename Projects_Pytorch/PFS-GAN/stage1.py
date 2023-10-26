@@ -166,7 +166,7 @@ def train(epoch):
                 plt.clf()
 
             from time import gmtime, strftime
-            s = strftime("%H:%M:%S", gmtime()) +  ' epoch: ' + str(epoch) + ' iters: ' + str(iters)
+            s = strftime("%H-%M-%S", gmtime()) +  ' epoch: ' + str(epoch) + ' iters: ' + str(iters)
             if (iters > 10000 and iters % 10 == 0) or True: 
                 if iters != 0 and fg:
                     s += ' disc: ' + str(round(disc_loss.item(), 4)) + ' gen: ' + str(round(gen_loss.item(), 4))         

@@ -116,7 +116,7 @@ def train(epoch):
             plt.clf()
 
         if iters % args.display_period == 0:	    
-            s = '{} epoch: {} iters: {}'.format(strftime("%H:%M:%S", gmtime()), epoch, iters) 
+            s = '{} epoch: {} iters: {}'.format(strftime("%H-%M-%S", gmtime()), epoch, iters) 
             s += ' disc: {} gen: {}'.format(round(disc_loss.item(), 4), round(gen_loss.item(), 4))
             print(s)
 
