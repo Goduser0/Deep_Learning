@@ -86,7 +86,7 @@ parser.add_argument("--lr_vae", type=float, default=1e-5)
 
 # Others
 parser.add_argument("--log", type=bool, default=True)
-parser.add_argument("--time", type=str, default=time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime()))
+parser.add_argument("--time", type=str, default=time.strftime(f"%Y-%m-%d_%H-%M-%S", time.localtime()))
 
 # config
 config = parser.parse_args()
