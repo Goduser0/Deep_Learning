@@ -53,7 +53,7 @@ parser.add_argument("--dataset_class",
 parser.add_argument("--data_path", 
                     type=str, 
                     default="./My_TAOD/dataset/PCB_200/0.7-shot/train/0.csv")
-parser.add_argument("--catagory",
+parser.add_argument("--category",
                     type=str,
                     default="0")
 parser.add_argument("--num_workers", type=int, default=4)
@@ -94,12 +94,12 @@ config = parser.parse_args()
 # 一致性校验
 assert(config.data_path.split('/')[-4]==config.dataset_class 
        and 
-       config.data_path.split('/')[-1][0]==config.catagory)
+       config.data_path.split('/')[-1][0]==config.category)
 
 # logger
 S_trainer_logger(config)
 
-models_save_path = config.models_dir + '/' + config.dataset_class + ' ' + config.catagory + ' ' + config.time
+models_save_path = config.models_dir + '/' + config.dataset_class + ' ' + config.category + ' ' + config.time
 os.makedirs(models_save_path, exist_ok=False)
 
 ######################################################################################################

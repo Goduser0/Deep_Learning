@@ -3,7 +3,6 @@ My_Datasets/
 My_TAOD/Train_Classification/models/
 My_TAOD/Train_Classification/samples/
 
-My_TAOD/TA/models/
-My_TAOD/TA/samples/
-
 TrainedModels/
+
+My_TAOD/TA/TA_Results

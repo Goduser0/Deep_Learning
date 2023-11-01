@@ -19,22 +19,22 @@ import sys
 sys.path.append("./My_TAOD/dataset")
 from dataset_loader import get_loader, img_1to255, img_255to1
 sys.path.append("./My_TAOD/TA/TA_Models")
-from TA_VAE import VAE
-from TA_G import FeatureMatchGenerator
+from TA_VAE import VariationalAutoEncoder
+from TA_G import FeatureMatchGenerator, PFS_Generator
 
 
 def traditional_aug():
     pass
 
-def generate(z_dim, n, model_path, samples_save_path):
+def generate(z_dim, n, model, model_path, samples_save_path):
     """加载生成器，随机生成"""
     local_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
     
     z = torch.FloatTensor(np.random.normal(0, 1, (n, z_dim)))
-    G = FeatureMatchGenerator(3, 128, 128, 64, 1e-2)
+
     checkpoint = torch.load(model_path)
-    G.load_state_dict(checkpoint["model_state_dict"])
-    imgs = G(z)
+    model.load_state_dict(checkpoint["model_state_dict"])
+    imgs = model(z)
     
     model_path_parts = model_path.split("/")
     add_name = f"{model_path_parts[-2]}_{model_path_parts[-1][:-4]}"
@@ -84,8 +84,8 @@ def img_translater(vae_common_params, vae_unique_params, g_params, trans):
                               img_type='ndarray',
                               drop_last=True,
                               ) # 像素值范围：（-1, 1）[B, C, H, W]
-    VAE_common = VAE(in_channels=3, latent_dim=64, input_size=128)
-    VAE_unique = VAE(in_channels=3, latent_dim=64, input_size=128)
+    VAE_common = VariationalAutoEncoder(in_channels=3, latent_dim=64, input_size=128)
+    VAE_unique = VariationalAutoEncoder(in_channels=3, latent_dim=64, input_size=128)
     G = FeatureMatchGenerator(n_mlp=3, img_size=128, z_dim=128, conv_dim=64, lr_mlp=1e-2)
     
     VAE_common.load_state_dict(torch.load(vae_common_params)["model_state_dict"])
@@ -125,10 +125,15 @@ def img_translater(vae_common_params, vae_unique_params, g_params, trans):
             
             # break        
 
+def test():
+    # img_translater(
+    #     "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_VAE_common.pth",
+    #     "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_VAE_unique.pth",
+    #     "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_g_source.pth",
+    #     trans=T.Compose([T.ToTensor(), T.Resize((128, 128))]),
+    # )
+    G = PFS_Generator(z_dim=128)
+    generate(128, 50, G, "My_TAOD/TA/TA_Results/baseline_from_scratch/models/PCB_200 0 2023-10-31_13-43-35/400_net_g.pth", "My_TAOD/TA/TA_Results/baseline_from_scratch/samples")
+        
 if __name__ == "__main__":
-    img_translater(
-        "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_VAE_common.pth",
-        "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_VAE_unique.pth",
-        "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_g_source.pth",
-        trans=T.Compose([T.ToTensor(), T.Resize((128, 128))]),
-    )
+    test()

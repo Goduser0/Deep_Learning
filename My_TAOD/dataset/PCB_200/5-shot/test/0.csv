@@ -25,6 +25,7 @@
 224,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000223_0_02_01466_11585.bmp
 225,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000074_0_01_04368_13214.bmp
 226,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000336_0_02_01843_09746.bmp
+227,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/图片 1.png-39.png
 228,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/图片 1.png-60.png
 229,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000209_0_02_01429_02889.bmp
 230,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000162_0_00_09410_11396.bmp
@@ -32,7 +33,6 @@
 232,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000087_0_00_09982_15797.bmp
 233,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000091_0_04_05741_18619.bmp
 234,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000475_0_00_07449_14092.bmp
-235,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000264_0_02_01804_03050.bmp
 236,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000299_0_04_06650_13432.bmp
 237,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000076_0_01_14482_14800.bmp
 238,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/图片 1.png-107.png
@@ -75,6 +75,7 @@
 275,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000414_0_04_06844_10475.bmp
 276,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000650_0_00_10556_15092.bmp
 277,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/图片 1.png-6.png
+278,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000155_0_00_11095_12015.bmp
 279,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000199_0_01_14739_12093.bmp
 280,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000178_0_02_01799_04726.bmp
 281,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/图片 1.png-36.png
@@ -94,7 +95,7 @@
 295,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/07013_0_01_09336_06309.bmp
 296,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000477_0_00_10414_15173.bmp
 297,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/02136_0_01_09941_03686.bmp
-298,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000347_0_00_11331_14626.bmp
+299,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000220_0_03_13595_17390.bmp
 300,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000634_0_00_09944_10610.bmp
 301,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000080_0_00_11204_16690.bmp
 302,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000473_0_00_11200_11850.bmp
@@ -119,6 +120,7 @@
 321,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000113_0_01_02926_01815.bmp
 322,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000656_0_00_10643_14538.bmp
 323,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/图片 1.png-77.png
+324,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000011_0_03_11926_11514.bmp
 325,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000077_0_01_14853_03199.bmp
 326,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000126_0_02_02668_04118.bmp
 327,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000115_0_01_15342_04748.bmp
@@ -162,7 +164,6 @@
 365,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000138_0_02_01962_14379.bmp
 366,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000140_0_00_11212_14989.bmp
 367,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/图片 1.png-76.png
-368,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000023_0_03_10956_15406.bmp
 369,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/图片 1.png-40.png
 370,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000180_0_03_11026_04691.bmp
 371,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000069_0_04_09994_14021.bmp
@@ -171,7 +172,6 @@
 374,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/图片 1.png-52.png
 375,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000009_0_00_07010_16190.bmp
 376,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000621_0_00_07448_02002.bmp
-377,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/图片 1.png-87.png
 378,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000594_0_00_07453_11424.bmp
 379,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000939_0_02_02787_13116.bmp
 380,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000268_0_00_07487_09376.bmp

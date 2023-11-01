@@ -135,26 +135,26 @@ class VariationalAutoEncoder(nn.Module):
 # CLASS: PFS_Encoder()
 #######################################################################################################
 class PFS_Encoder(nn.Module):
-    def __init__(self, channels=3, size_num=128):
+    def __init__(self, channels=3, latent_dim=128):
         super(PFS_Encoder, self).__init__()
         self.model_bn1 = torchvision.models.vgg16(pretrained=True).features
         self.model_bn2 = nn.Sequential(
             nn.Linear(512*4*4, 1024),
             nn.ReLU(),
-            nn.Linear(1024, size_num),
+            nn.Linear(1024, latent_dim),
             nn.ReLU(),
         )
         
         self.mu = nn.Sequential(
-            nn.Conv2d(size_num, size_num, 3, 1, padding=1),
+            nn.Conv2d(latent_dim, latent_dim, 3, 1, padding=1),
             nn.ReLU(),
-            nn.Conv2d(size_num, size_num, 3, 1, padding=1),
+            nn.Conv2d(latent_dim, latent_dim, 3, 1, padding=1),
         )
         
         self.logvar = nn.Sequential(
-            nn.Conv2d(size_num, size_num, 3, 1, padding=1),
+            nn.Conv2d(latent_dim, latent_dim, 3, 1, padding=1),
             nn.ReLU(),
-            nn.Conv2d(size_num, size_num, 3, 1, padding=1),
+            nn.Conv2d(latent_dim, latent_dim, 3, 1, padding=1),
         )
 
         nn.init.xavier_uniform(self.model_bn2[0].weight.data, 1.)
@@ -210,7 +210,7 @@ def test_train_vae():
 
 def test():
     X = torch.randn(8, 3, 128, 128)
-    vae = PFS_Encoder()
+    vae = PFS_Encoder(latent_dim=64)
     # summary(vae, X.shape, device="cpu")
     
     Y = vae(X)

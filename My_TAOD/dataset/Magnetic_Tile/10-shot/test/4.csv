@@ -38,7 +38,6 @@
 183,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_37084.jpg
 184,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_321501.jpg
 185,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_245780.jpg
-186,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_277095.jpg
 187,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_183890.jpg
 188,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_157763.jpg
 189,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_37675.jpg
@@ -138,6 +137,7 @@
 283,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_65001.jpg
 284,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_283254.jpg
 285,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_94899.jpg
+286,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_359512.jpg
 287,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_304352.jpg
 288,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_262674.jpg
 289,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_37293.jpg
@@ -151,12 +151,12 @@
 297,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_306654.jpg
 298,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_286232.jpg
 299,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_326586.jpg
-300,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_255641.jpg
 301,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_342889.jpg
 302,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_52659.jpg
 303,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_304688.jpg
 304,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_10202.jpg
 305,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_241403.jpg
+306,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_68359.jpg
 307,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_314979.jpg
 308,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_282899.jpg
 309,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_286277.jpg
@@ -227,7 +227,6 @@
 374,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_284841.jpg
 375,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_264189.jpg
 376,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_157166.jpg
-377,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_180865.jpg
 378,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_7935.jpg
 379,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_257103.jpg
 380,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_144210.jpg
@@ -259,7 +258,6 @@
 406,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_320864.jpg
 407,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_69923.jpg
 408,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_262687.jpg
-409,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_1836.jpg
 410,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_319440.jpg
 411,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_240063.jpg
 412,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_106203.jpg
@@ -337,7 +335,6 @@
 484,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_279145.jpg
 485,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_192155.jpg
 486,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_319456.jpg
-487,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_264283.jpg
 488,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_16532.jpg
 489,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_54925.jpg
 490,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_126840.jpg
@@ -382,6 +379,7 @@
 529,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_129580.jpg
 530,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_269652.jpg
 531,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_16624.jpg
+532,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_933.jpg
 533,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_299741.jpg
 534,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_296668.jpg
 535,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_183171.jpg
@@ -440,6 +438,7 @@
 588,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_183137.jpg
 589,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_37071.jpg
 590,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_37262.jpg
+591,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_257962.jpg
 592,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_359448.jpg
 593,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_39559.jpg
 594,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_144192.jpg
@@ -553,7 +552,6 @@
 702,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_277027.jpg
 703,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_126419.jpg
 704,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_258847.jpg
-705,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_6541.jpg
 706,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_5874.jpg
 707,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_351520.jpg
 708,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_282965.jpg
@@ -595,7 +593,6 @@
 744,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_296655.jpg
 745,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_3981.jpg
 746,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_166278.jpg
-747,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_143255.jpg
 748,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_309443.jpg
 749,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_283465.jpg
 750,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_37273.jpg
@@ -675,11 +672,13 @@
 824,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_297276.jpg
 825,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_344641.jpg
 826,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_174675.jpg
+827,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_8015.jpg
 828,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_338885.jpg
 829,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_116311.jpg
 830,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_128176.jpg
 831,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_320463.jpg
 832,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_320501.jpg
+833,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_301511.jpg
 834,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_342943.jpg
 835,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_319713.jpg
 836,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_251519.jpg
@@ -720,6 +719,8 @@
 871,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_18227.jpg
 872,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_316778.jpg
 873,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_165409.jpg
+874,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_323366.jpg
+875,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_309704.jpg
 876,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_317600.jpg
 877,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_337757.jpg
 878,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_11325.jpg
@@ -729,7 +730,6 @@
 882,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_116949.jpg
 883,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_6571.jpg
 884,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_129608.jpg
-885,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_263875.jpg
 886,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_129632.jpg
 887,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp1_num_166172.jpg
 888,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_306609.jpg
@@ -761,8 +761,8 @@
 914,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_290107.jpg
 915,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_308824.jpg
 916,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_296701.jpg
-917,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_157877.jpg
 918,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp6_num_1965.jpg
+919,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_3846.jpg
 920,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_19728.jpg
 921,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_53025.jpg
 922,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_195685.jpg
@@ -797,6 +797,7 @@
 951,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_157789.jpg
 952,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_349844.jpg
 953,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_241380.jpg
+954,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_280989.jpg
 955,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_304927.jpg
 956,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_2060.jpg
 957,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_889.jpg
@@ -861,7 +862,6 @@
 1016,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_257273.jpg
 1017,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_275393.jpg
 1018,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_320833.jpg
-1019,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp2_num_157736.jpg
 1020,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp5_num_126855.jpg
 1021,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp4_num_315033.jpg
 1022,4,MT_Free,./My_Datasets/Classification/Magnetic-Tile-Defect/MT_Free/Imgs/exp3_num_263864.jpg
