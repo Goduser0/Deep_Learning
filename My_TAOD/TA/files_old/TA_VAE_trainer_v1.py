@@ -7,10 +7,7 @@ import matplotlib.pyplot as plt
 import torch
 import torchvision.transforms as T
 
-import sys
-sys.path.append("./My_TAOD/dataset")
 from dataset_loader import get_loader, img_1to255, img_255to1
-sys.path.append("./My_TAOD/TA/TA_Models")
 from TA_VAE import VAE
 
 #######################################################################################################

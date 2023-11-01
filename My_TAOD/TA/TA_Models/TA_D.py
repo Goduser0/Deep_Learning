@@ -275,17 +275,50 @@ class PFS_Discriminator(nn.Module):
         f5_f = f5.view(-1, self.out_channels)
         out = self.fc(f5_f)
         return out
+    
+########################################################################################################
+# CLASS: CoGAN_Discriminator()
+########################################################################################################
+class CoGAN_Discriminator(nn.Module):
+    def __init__(self, channels=3, hidden_channels=128):
+        super(CoGAN_Discriminator, self).__init__()
+        self.channels = channels
+        self.hidden_channels = hidden_channels
         
+        self.front1 = nn.Sequential(
+            FirstResBlockDiscriminator(channels, self.hidden_channels, stride=2),
+            ResBlockDiscriminator(self.hidden_channels, self.hidden_channels, stride=2))
+        self.front2 = nn.Sequential(
+            FirstResBlockDiscriminator(channels, self.hidden_channels, stride=2),
+            ResBlockDiscriminator(self.hidden_channels, self.hidden_channels, stride=2))
+
+        self.back = nn.Sequential(
+            ResBlockDiscriminator(self.hidden_channels, self.hidden_channels, stride=2),
+            ResBlockDiscriminator(self.hidden_channels, self.hidden_channels, stride=2),
+            ResBlockDiscriminator(self.hidden_channels, self.hidden_channels, stride=2),
+            nn.ReLU(),
+            nn.AvgPool2d(4))
+        self.fc = nn.Linear(self.hidden_channels, 1)
+        nn.init.xavier_uniform(self.fc.weight.data, 1.)
+
+
+    def forward(self, img, domain, feat=False):
+        if domain == 'S':
+            out = self.fc(self.back(self.front1(img)).view(-1, self.hidden_channels))
+        elif domain == 'T':
+            out = self.fc(self.back(self.front2(img)).view(-1, self.hidden_channels))
+        return out
+
 ########################################################################################################
 # Discriminator TEST
 ########################################################################################################
 def test():
-    D = PFS_Discriminator()
+    D = CoGAN_Discriminator()
     X = torch.randn(8, 3, 128, 128) # (B, C, W, H)
-    summary(D, X.shape, device="cpu")
+    # summary(D, X.shape, device="cpu")
     
     print(f"Input X: {X.shape}")
-    Y = D(X)
+    Y = D(X, domain='T')
     print(f"Output Y: {Y.shape}")
     
 if __name__ == "__main__":

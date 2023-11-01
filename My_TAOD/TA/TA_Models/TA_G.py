@@ -159,16 +159,57 @@ class PFS_Generator(nn.Module):
         return out
 
 ########################################################################################################
+# CLASS: CoGAN_Generator()
+########################################################################################################
+class CoGAN_Generator(nn.Module):
+    def __init__(self, z_dim, hidden_channels=128, out_channels=3):
+        super(CoGAN_Generator, self).__init__()
+        self.z_dim = z_dim
+        self.hidden_channels = hidden_channels
+        self.out_channels = out_channels
+        
+        self.dense = nn.Linear(self.z_dim, 4 * 4 * self.hidden_channels)
+        self.front = nn.Sequential(
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2))
+        self.back1 = nn.Sequential(
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            nn.BatchNorm2d(self.hidden_channels),
+            nn.ReLU(),
+            nn.Conv2d(self.hidden_channels, self.out_channels, 3, stride=1, padding=1),
+            nn.Tanh())
+        self.back2 = nn.Sequential(
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            nn.BatchNorm2d(self.hidden_channels),
+            nn.ReLU(),
+            nn.Conv2d(self.hidden_channels, self.out_channels, 3, stride=1, padding=1),
+            nn.Tanh())
+
+        nn.init.xavier_uniform(self.dense.weight.data, 1.)
+        nn.init.xavier_uniform(self.back1[4].weight.data, 1.)
+        nn.init.xavier_uniform(self.back2[4].weight.data, 1.)
+
+    def forward(self, z, domain):
+        f = self.front(self.dense(z).view(-1, self.hidden_channels, 4, 4))
+        if domain == 'S':
+            return self.back1(f)
+        elif domain == 'T':
+            return self.back2(f)
+
+########################################################################################################
 # CLASS: Generater TEST
 ########################################################################################################
 def test():
     # G = FeatureMatchGenerator(n_mlp=2)
-    G = PFS_Generator(128)
+    G = CoGAN_Generator(128)
     z = torch.randn(8, 128) # batchsize z_dim
-    summary(G, z.shape, device="cpu")
+    # summary(G, z.shape, device="cpu")
     
     print(f"Input z:{z.shape}")
-    output = G(z)
+    output = G(z, domain="T")
     print(f"Output Y:{output.shape}")
     
 if __name__ == "__main__":

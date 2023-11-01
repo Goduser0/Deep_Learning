@@ -7,9 +7,6 @@ import os
 import argparse
 import random
 
-import sys
-sys.path.append("./My_TAOD/dataset")
-sys.path.append("./My_TAOD/dataset")
 from dataset_loader import get_loader
 from My_TAOD.TA.TA_Models.TA_G import FeatureMatchGenerator
 from My_TAOD.TA.TA_Models.TA_D import FeatureMatchPatchDiscriminator, Extra

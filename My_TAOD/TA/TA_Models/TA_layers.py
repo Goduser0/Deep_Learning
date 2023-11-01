@@ -294,6 +294,32 @@ class PerceptualLoss(nn.Module):
         for real_img_feature, fake_img_feature in zip(real_img_features, fake_img_features):
             loss.append(self.criterion(real_img_feature, fake_img_feature))
         return sum(loss) / len(loss)
+    
+#######################################################################################################
+# CLASS: PFS_Relation()
+#######################################################################################################
+class PFS_Relation(nn.Module):
+    def __init__(self, channel=3, hidden_channels=128):
+        super(PFS_Relation, self).__init__()
+        
+    def set(self, m):
+        self.model_bn1_A = m.model_bn1[:10]
+        self.model_bn1_B = vgg16(pretrained=True).features[:10].cuda()
+        for i in [0,2,5,7]:
+            self.model_bn1_B[i].weight.data = m.model_bn1[i].weight.clone()
+            self.model_bn1_B[i].bias.data = m.model_bn1[i].bias.clone()
+        self.model_bn_share = m.model_bn1[10:]
+        self.model_bn2 = m.model_bn2
+        self.mu = m.mu
+        
+    def forward(self, x1, x2):
+        f1 = self.model_bn1_A(x1)
+        f2 = self.model_bn1_B(x2)
+#       print self.model_bn(x1).size()
+        f1 = self.mu(self.model_bn2(self.model_bn_share(f1).view(x1.size(0), -1)).view(x1.size(0), -1, 1, 1))
+        f2 = self.mu(self.model_bn2(self.model_bn_share(f2).view(x2.size(0), -1)).view(x2.size(0), -1, 1, 1))
+        return ((f1-f2)**2).view(f1.size(0), -1) 
+        
 
 #######################################################################################################
 # CLASS: TEST

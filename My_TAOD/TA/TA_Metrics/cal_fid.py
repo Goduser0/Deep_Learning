@@ -70,16 +70,16 @@ class ConvNetFeatureExtract(object):
             self.inception = inception
             self.inception_feature = inception_feature
             self.trans = T.Compose([
-                T.Resize(299),
+                T.Resize((299, 299)),
                 T.ToTensor(),
                 T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
             ])
         else:
             raise NotImplementedError
 
-    def extractFeature(self, images_path):
+    def extractFeature(self, images_path, num):
         # build images dataset
-        images = load_img_for_fid(images_path, trans=self.trans)
+        images = load_img_for_fid(images_path, trans=self.trans, batch_size=num)
         print(images.shape)
         print("Extracting Features...")
         with torch.no_grad():
@@ -109,22 +109,22 @@ def calculator_FID(source, target):
     C_w = np.cov(Y_np.transpose())
     C_C_w_sqrt = linalg.sqrtm(C.dot(C_w), True).real
     
-    score = m.dot(m) + m_w.dot(m_w) - 2 * m_w.dot(m) + \
-        np.trace(C + C_w - 2 * C_C_w_sqrt)
+    score = m.dot(m) + m_w.dot(m_w) - 2 * m_w.dot(m) + np.trace(C + C_w - 2 * C_C_w_sqrt)
         
-    return np.sqrt(score)
-    
-def test():   
-    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
-    
-    real_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_Crop/30-shot/train/0.csv"
-    fake_path = "My_TAOD/TA/samples/PCB_200 0 2023-09-04_11:18:31_500_net_g_source_AT_2023-09-12_22:20:01/generate_imgs.csv"
+    return score
 
+def score_fid(real_path, fake_path, num_samples, gpu_id="0"):
+    os.environ["CUDA_VISIBLE_DEVICES"] = gpu_id
     convnet_feature_extract = ConvNetFeatureExtract(model="inception_v3", workers=4)
-    real_feature = convnet_feature_extract.extractFeature(real_path)
-    fake_feature = convnet_feature_extract.extractFeature(fake_path)
-    
+    real_feature = convnet_feature_extract.extractFeature(real_path, num_samples)
+    fake_feature = convnet_feature_extract.extractFeature(fake_path, num_samples)
     result = calculator_FID(real_feature, fake_feature)
+    return result    
+    
+def test():  
+    real_path = "My_TAOD/dataset/DeepPCB_Crop/30-shot/test/0.csv"
+    fake_path = "My_TAOD/dataset/DeepPCB_Crop/30-shot/test/1.csv"
+    result = score_fid(real_path, fake_path, num_samples=100)
     print(f"FID: {result}")
     
 if __name__ == '__main__':

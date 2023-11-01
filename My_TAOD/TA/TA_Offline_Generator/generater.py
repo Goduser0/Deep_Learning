@@ -26,7 +26,7 @@ from TA_G import FeatureMatchGenerator, PFS_Generator
 def traditional_aug():
     pass
 
-def generate(z_dim, n, model, model_path, samples_save_path):
+def generate(z_dim, n, model, model_path, samples_save_path, domain):
     """加载生成器，随机生成"""
     local_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
     
@@ -34,7 +34,10 @@ def generate(z_dim, n, model, model_path, samples_save_path):
 
     checkpoint = torch.load(model_path)
     model.load_state_dict(checkpoint["model_state_dict"])
-    imgs = model(z)
+    if domain:
+        imgs = model(z, domain)
+    else:
+        imgs = model(z)
     
     model_path_parts = model_path.split("/")
     add_name = f"{model_path_parts[-2]}_{model_path_parts[-1][:-4]}"
@@ -65,7 +68,7 @@ def generate(z_dim, n, model, model_path, samples_save_path):
     img_save_df = pd.DataFrame(img_save_list, columns=["Image_Label", "Image_Class", "Image_Path"])
     img_save_df.to_csv(f"{samples_save_path}/{dirname}/generate_imgs.csv")
     print("Generate Done!!!")    
-    
+    return f"{samples_save_path}/{dirname}/generate_imgs.csv"
 
 # generate(128, 
 #          32, 
@@ -133,7 +136,10 @@ def test():
     #     trans=T.Compose([T.ToTensor(), T.Resize((128, 128))]),
     # )
     G = PFS_Generator(z_dim=128)
-    generate(128, 50, G, "My_TAOD/TA/TA_Results/baseline_from_scratch/models/PCB_200 0 2023-10-31_13-43-35/400_net_g.pth", "My_TAOD/TA/TA_Results/baseline_from_scratch/samples")
+    model_path = "My_TAOD/TA/TA_Results/baseline_from_scratch/models/DeepPCB_Crop 0 2023-10-31_14-29-13/500_net_g.pth"
+    img_save_path = "My_TAOD/TA/TA_Results/baseline_from_scratch/samples"
+
+    generate(128, 200, G, model_path, img_save_path)
         
 if __name__ == "__main__":
     test()

@@ -6,8 +6,6 @@ from torch.nn.utils.parametrizations import spectral_norm as SpectralNorm
 import torch.nn.functional as F
 from torchinfo import summary
 
-import sys
-sys.path.append("./My_TAOD/TA/TA_Models")
 from TA_layers import SelfAttention, StdDevNorm
 
 
