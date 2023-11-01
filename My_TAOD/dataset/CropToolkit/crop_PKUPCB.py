@@ -1,7 +1,7 @@
 import os
 import cv2 as cv
 import xml.etree.ElementTree as ET
-
+# PKUPCB
 root_dir = "My_Datasets/Detection/PCB_dataset"
 save_dir = "My_Datasets/Classification/PCB-Crop"
 

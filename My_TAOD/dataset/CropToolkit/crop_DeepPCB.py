@@ -1,6 +1,6 @@
 import os
 import cv2 as cv
-
+# DeepPCB
 root_dir = "My_Datasets/Detection/DeepPCB/PCBData"
 save_dir = "My_Datasets/Classification/DeepPCB-Crop"
 
