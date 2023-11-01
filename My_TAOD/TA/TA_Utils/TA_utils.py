@@ -62,10 +62,10 @@ def load_img_for_mmd(csv_path, trans=None):
         trans (_type_, optional): Defaults to None.
 
     Returns:
-        [images, catagory labels]
+        [images, category labels]
     """
     df = pd.read_csv(csv_path)
-    catagory_lables = df["Image_Label"]
+    category_lables = df["Image_Label"]
     image_path = df["Image_Path"]
     
     images = []
@@ -84,7 +84,7 @@ def load_img_for_mmd(csv_path, trans=None):
     else:
         images = torch.FloatTensor(np.array(images))
 
-    return images, catagory_lables
+    return images, category_lables
 
 
 #######################################################################################################
@@ -94,7 +94,7 @@ def load_img_for_fid(csv_path, trans=None, batch_size=25):
     df = pd.read_csv(csv_path)
     
     nums = len(df)
-    catagory_lables = df["Image_Label"]
+    category_lables = df["Image_Label"]
     image_path = df["Image_Path"]
 
     images = []
@@ -149,12 +149,142 @@ def discriminator_adv_loss(discriminator_type :str, fake_labels, real_labels):
     return d_loss
 
 #######################################################################################################
+#### FUNCTION: baseline_from_scratch_record_data()
+#######################################################################################################
+def baseline_from_scratch_record_data(config, content, flag_plot=True):
+    """Save Data"""
+    assert os.path.exists(config.results_dir)
+    filename = config.dataset_class + ' ' + config.category + ' ' + config.time
+    filepath = config.results_dir + '/' + filename + '.csv'
+    content = pd.DataFrame.from_dict(content, orient="index").T
+    
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.read_csv(filepath)
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+    
+    if not os.path.exists(f"{config.results_dir}/{filename}"):
+        os.makedirs(f"{config.results_dir}/{filename}")
+        
+    if flag_plot:
+        results = pd.read_csv(filepath)
+        
+        epoch = results["epoch"]
+        num_epochs = results["num_epochs"]
+        batch = results["batch"]
+        num_batchs = results["num_batchs"]
+        
+        G_loss = results["G_loss"]
+        D_loss = results["D_loss"]
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_loss], label="G_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/G_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_loss], label="D_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/D_loss.jpg')
+        plt.close()
+        
+#######################################################################################################
+#### FUNCTION: stage1_record_data()
+#######################################################################################################
+def stage1_record_data(config, content, flag_plot=True):
+    """Save Data"""
+    assert os.path.exists(config.results_dir)
+    filename = config.dataset_class + ' ' + config.category + ' ' + config.time
+    filepath = config.results_dir + '/' + filename + '.csv'
+    content = pd.DataFrame.from_dict(content, orient="index").T
+    
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.read_csv(filepath)
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+    
+    if not os.path.exists(f"{config.results_dir}/{filename}"):
+        os.makedirs(f"{config.results_dir}/{filename}")
+        
+    if flag_plot:
+        results = pd.read_csv(filepath)
+        
+        epoch = results["epoch"]
+        num_epochs = results["num_epochs"]
+        batch = results["batch"]
+        num_batchs = results["num_batchs"]
+
+        G_loss = results["G_loss"]
+        D_loss = results["D_loss"]
+        KLD_c = results["KLD_c"]
+        KLD_s = results["KLD_s"]
+        imgrecon = results["imgrecon"]
+        s_recon = results["s_recon"]
+        Perceptual_loss = results["Perceptual_loss"]
+
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_loss], label="G_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/G_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_loss], label="D_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/D_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in KLD_c], label="KLD_c")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/KLD_c.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in KLD_s], label="KLD_s")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/KLD_s.jpg')
+        plt.close()
+
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in imgrecon], label="imgrecon")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/imgrecon.jpg')
+        plt.close()
+
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in s_recon], label="s_recon")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/s_recon.jpg')
+        plt.close()
+    
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in Perceptual_loss], label="Perceptual_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/Perceptual_loss.jpg')
+        plt.close()
+
+#######################################################################################################
 #### FUNCTION: S_trainer_record_data()
 #######################################################################################################
 def S_trainer_record_data(config, content, flag_plot=True):
     """Save Data"""
     assert os.path.exists(config.results_dir)
-    filename = config.dataset_class + ' ' + config.catagory + ' ' + config.time
+    filename = config.dataset_class + ' ' + config.category + ' ' + config.time
     filepath = config.results_dir + '/' + filename + '.csv'
     content = pd.DataFrame.from_dict(content, orient="index").T
     
@@ -216,7 +346,7 @@ def S_trainer_record_data(config, content, flag_plot=True):
 def S2T_trainer_record_data(config, content, flag_plot=True):
     """Save Data"""
     assert os.path.exists(config.results_dir)
-    filename = config.dataset_target + ' ' + config.catagory + ' ' + config.time
+    filename = config.dataset_target + ' ' + config.category + ' ' + config.time
     filepath = config.results_dir + '/' + filename + '.csv'
     content = pd.DataFrame.from_dict(content, orient="index").T
     

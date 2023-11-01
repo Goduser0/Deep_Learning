@@ -80,7 +80,7 @@ def train(epoch):
 
         if iters != 0 and fg: 
             for iiii in range(disc_iters):
-                z = Variable(torch.randn(num, Z_dim*2).cuda()   )
+                z = Variable(torch.randn(num, Z_dim*2).cuda())
                 optim_disc.zero_grad()
                 out_rand = generator(z)
 

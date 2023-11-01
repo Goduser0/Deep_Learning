@@ -1,0 +1,5 @@
+/home/zhouquan/anaconda3/envs/DLstudy/bin/python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/stage1.py --data_path "My_TAOD/dataset/PCB_Crop/160-shot/train/0.csv" --category "0" --gpu_id "1" --dataset_class "PCB_Crop"
+/home/zhouquan/anaconda3/envs/DLstudy/bin/python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/stage1.py --data_path "My_TAOD/dataset/PCB_Crop/160-shot/train/1.csv" --category "1" --gpu_id "1" --dataset_class "PCB_Crop"
+/home/zhouquan/anaconda3/envs/DLstudy/bin/python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/stage1.py --data_path "My_TAOD/dataset/PCB_Crop/160-shot/train/2.csv" --category "2" --gpu_id "1" --dataset_class "PCB_Crop"
+/home/zhouquan/anaconda3/envs/DLstudy/bin/python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/stage1.py --data_path "My_TAOD/dataset/PCB_Crop/160-shot/train/3.csv" --category "3" --gpu_id "1" --dataset_class "PCB_Crop"
+/home/zhouquan/anaconda3/envs/DLstudy/bin/python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/stage1.py --data_path "My_TAOD/dataset/PCB_Crop/160-shot/train/4.csv" --category "4" --gpu_id "1" --dataset_class "PCB_Crop"

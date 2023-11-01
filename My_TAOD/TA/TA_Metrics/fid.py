@@ -114,7 +114,7 @@ def calculator_FID(source, target):
         
     return np.sqrt(score)
     
-if __name__ == '__main__':
+def test():   
     os.environ["CUDA_VISIBLE_DEVICES"] = "1"
     
     real_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/dataset/PCB_Crop/30-shot/train/0.csv"
@@ -126,4 +126,7 @@ if __name__ == '__main__':
     
     result = calculator_FID(real_feature, fake_feature)
     print(f"FID: {result}")
+    
+if __name__ == '__main__':
+    test()
 

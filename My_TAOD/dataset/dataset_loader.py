@@ -250,8 +250,8 @@ def test():
     result = trans(img_255to1(b))
     # print(result, result.shape)
     
-    data_iter_loader = get_loader('PCB_200', 
-                              "./My_TAOD/dataset/PCB_200/0.7-shot/train/0.csv", 
+    data_iter_loader = get_loader('PCB_Crop', 
+                              "./My_TAOD/dataset/PCB_Crop/0.7-shot/train/0.csv", 
                               1,
                               4, 
                               shuffle=False, 
@@ -262,9 +262,14 @@ def test():
     for i, data in enumerate(data_iter_loader):
         raw_img = data[0][0] # [B, C, H, W] -1~1
         category_label = data[1] # [B]
+        print(raw_img.dtype)
+        raw_img = torch.autograd.Variable(raw_img)
+        print(raw_img.dtype)
         raw_img = raw_img.numpy()
+        print(raw_img.dtype)
         raw_img = img_1to255(raw_img)
         raw_img = raw_img.transpose(1, 2, 0)
+        print(raw_img.dtype)
         # print(raw_img, raw_img.shape)
         plt.imshow(raw_img)
         plt.savefig("test_test.jpg")

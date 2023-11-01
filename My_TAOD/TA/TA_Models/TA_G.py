@@ -2,8 +2,13 @@ import numpy as np
 
 import torch
 import torch.nn as nn
+import torch.nn.modules as M
+import torch.nn.functional as F
 from torch.nn.utils.parametrizations import spectral_norm as SpectralNorm
 from torchinfo import summary
+
+import warnings
+warnings.filterwarnings("ignore")
 
 from TA_layers import SelfAttention, PixelNorm, EqualLinear
 
@@ -85,14 +90,86 @@ class FeatureMatchGenerator(nn.Module):
         
         return output
     
-
+########################################################################################################
+# CLASS: ResBlockGenerator()
+########################################################################################################
+class ResBlockGenerator(nn.Module):
+    def __init__(self, in_channels, out_channels, stride=1):
+        super(ResBlockGenerator, self).__init__()
         
+        self.conv1 = nn.Conv2d(in_channels, out_channels, 3, 1, padding=1)
+        self.conv2 = nn.Conv2d(out_channels, out_channels, 3, 1, padding=1)
+        nn.init.xavier_uniform(self.conv1.weight.data, 1.)
+        nn.init.xavier_uniform(self.conv2.weight.data, 1.)
+        
+        self.convs = nn.Sequential(
+            M.InstanceNorm2d(in_channels),
+            nn.ReLU(),
+            nn.Upsample(scale_factor=2),
+            self.conv1,
+            M.InstanceNorm2d(out_channels),
+            nn.ReLU(),
+            self.conv2,
+        )
+        
+        self.skip = nn.Sequential()
+        
+        if stride != 1:
+            self.skip = nn.Upsample(scale_factor=2)
+    
+    def forward(self, x):
+        return self.convs(x) + self.skip(x)
+
+########################################################################################################
+# CLASS: PFS_Generator()
+########################################################################################################
+class PFS_Generator(nn.Module):
+    def __init__(self, z_dim, hidden_channels=128, out_channels=3):
+        super(PFS_Generator, self).__init__()
+        self.z_dim = z_dim
+        self.hidden_channels = hidden_channels
+        self.out_channels = out_channels
+        
+        self.dense = nn.Linear(self.z_dim, 4 * 4 * self.hidden_channels)
+        nn.init.xavier_uniform(self.dense.weight.data, 1.)
+        
+        self.model0 = ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2)
+        self.model1 = ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2)
+        self.model2 = ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2)
+        self.model3 = ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2)
+        self.model4 = ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2)
+        self.model5 = nn.BatchNorm2d(self.hidden_channels)
+        self.model6 = nn.Conv2d(self.hidden_channels, self.out_channels, 3, stride=1, padding=1)
+        nn.init.xavier_uniform(self.model6.weight.data, 1.)
+        self.model = nn.Sequential(
+            self.model0, 
+            self.model1,
+            self.model2, 
+            self.model3,
+            self.model4,
+            self.model5,
+            nn.ReLU(),
+            self.model6,
+            nn.Tanh(),
+        )
+        
+    def forward(self, z):
+        f1 = self.dense(z).view(-1, self.hidden_channels, 4, 4)
+        out = self.model(f1)
+        return out
+
 ########################################################################################################
 # CLASS: Generater TEST
 ########################################################################################################
-if __name__ == "__main__":
+def test():
+    # G = FeatureMatchGenerator(n_mlp=2)
+    G = PFS_Generator(128)
     z = torch.randn(8, 128) # batchsize z_dim
-    FMG = FeatureMatchGenerator(n_mlp=2)
-    output = FMG(z)
-    print(output.shape)
-    summary(FMG, z.shape, device="cpu")
+    summary(G, z.shape, device="cpu")
+    
+    print(f"Input z:{z.shape}")
+    output = G(z)
+    print(f"Output Y:{output.shape}")
+    
+if __name__ == "__main__":
+    test()

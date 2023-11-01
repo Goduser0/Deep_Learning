@@ -7,7 +7,13 @@ import tqdm
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.nn.modules as M
+import torchvision
 import torchvision.transforms as T
+from torchinfo import summary
+
+import warnings
+warnings.filterwarnings("ignore")
 #######################################################################################################
 # CLASS: VariationalAutoEncoder
 #######################################################################################################
@@ -125,10 +131,56 @@ class VariationalAutoEncoder(nn.Module):
     def generate(self, x: torch.Tensor, **kwargs) -> torch.Tensor:
         return self.forward(x)[0]
 
+#######################################################################################################
+# CLASS: PFS_Encoder()
+#######################################################################################################
+class PFS_Encoder(nn.Module):
+    def __init__(self, channels=3, latent_dim=128):
+        super(PFS_Encoder, self).__init__()
+        self.model_bn1 = torchvision.models.vgg16(pretrained=True).features
+        self.model_bn2 = nn.Sequential(
+            nn.Linear(512*4*4, 1024),
+            nn.ReLU(),
+            nn.Linear(1024, latent_dim),
+            nn.ReLU(),
+        )
+        
+        self.mu = nn.Sequential(
+            nn.Conv2d(latent_dim, latent_dim, 3, 1, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(latent_dim, latent_dim, 3, 1, padding=1),
+        )
+        
+        self.logvar = nn.Sequential(
+            nn.Conv2d(latent_dim, latent_dim, 3, 1, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(latent_dim, latent_dim, 3, 1, padding=1),
+        )
+
+        nn.init.xavier_uniform(self.model_bn2[0].weight.data, 1.)
+        nn.init.xavier_uniform(self.model_bn2[2].weight.data, 1.)
+        nn.init.xavier_uniform(self.mu[0].weight.data, 1.)
+        nn.init.xavier_uniform(self.mu[2].weight.data, 1.)
+        nn.init.xavier_uniform(self.logvar[0].weight.data, 1.)
+        nn.init.xavier_uniform(self.logvar[2].weight.data, 1.)
+        
+    def reparameterize(self, mu, logvar):
+        std = torch.exp(0.5*logvar)
+        eps = torch.randn_like(std)
+        return eps.mul(std).add_(mu)
+    
+    def forward(self, x):
+        bsz = x.size(0)
+        f = self.model_bn1(x).view(bsz, -1)
+        f = self.model_bn2(f).view(bsz, -1, 1, 1)
+        mu, logvar = self.mu(f), self.logvar(f)
+        z = self.reparameterize(mu, logvar)
+        return mu.view(bsz, -1), logvar.view(bsz, -1), z.view(bsz, -1)
+
 ########################################################################################################
 ## FUNCTION: test()
 ########################################################################################################
-if __name__ =="__main__":
+def test_train_vae():
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     # dir = "My_Datasets/Classification/PCB-Crop/Mouse_bite/01_mouse_bite_06_1.jpg"
     dir = "My_Datasets/Classification/PCB-200/Open_circuit/000001_0_00_07022_09338.bmp"
@@ -155,3 +207,16 @@ if __name__ =="__main__":
         plt.imshow(Y)
         plt.savefig("test_vae_gen.png")
         plt.close()
+
+def test():
+    X = torch.randn(8, 3, 128, 128)
+    vae = PFS_Encoder(latent_dim=64)
+    # summary(vae, X.shape, device="cpu")
+    
+    Y = vae(X)
+    print(f"Input X:{X.shape}")
+    print(f"Output Y:{Y[0].shape}")
+    
+if __name__ == "__main__":
+    # test_train_vae()
+    test()

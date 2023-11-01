@@ -18,6 +18,7 @@
 507,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/08_missing_hole_08_0.jpg
 508,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/06_missing_hole_02_3.jpg
 509,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_02_2.jpg
+510,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_03_1.jpg
 511,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/04_missing_hole_15_0.jpg
 512,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/06_missing_hole_09_4.jpg
 513,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/05_missing_hole_08_1.jpg
@@ -37,7 +38,6 @@
 527,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_02_0.jpg
 528,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/08_missing_hole_04_2.jpg
 529,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/07_missing_hole_04_4.jpg
-530,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/06_missing_hole_07_1.jpg
 531,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_01_3.jpg
 532,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/06_missing_hole_07_4.jpg
 533,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/08_missing_hole_06_3.jpg
@@ -46,7 +46,6 @@
 536,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/05_missing_hole_10_0.jpg
 537,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_05_1.jpg
 538,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_20_1.jpg
-539,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_18_0.jpg
 540,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/04_missing_hole_14_0.jpg
 541,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/05_missing_hole_06_1.jpg
 542,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/08_missing_hole_08_2.jpg
@@ -135,7 +134,6 @@
 625,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/07_missing_hole_05_1.jpg
 626,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/08_missing_hole_08_4.jpg
 627,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/10_missing_hole_03_2.jpg
-628,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/06_missing_hole_04_0.jpg
 629,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/10_missing_hole_02_2.jpg
 630,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/06_missing_hole_05_0.jpg
 631,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/06_missing_hole_08_0.jpg
@@ -187,7 +185,6 @@
 677,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_08_2.jpg
 678,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_09_2.jpg
 679,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/07_missing_hole_05_2.jpg
-680,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_17_0.jpg
 681,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/04_missing_hole_08_2.jpg
 682,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_08_3.jpg
 683,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/06_missing_hole_04_3.jpg
@@ -256,6 +253,7 @@
 746,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_17_2.jpg
 747,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/08_missing_hole_03_0.jpg
 748,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/11_missing_hole_04_0.jpg
+749,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_11_0.jpg
 750,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/09_missing_hole_03_0.jpg
 751,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_12_1.jpg
 752,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/04_missing_hole_10_1.jpg
@@ -289,11 +287,11 @@
 780,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_14_1.jpg
 781,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/09_missing_hole_08_0.jpg
 782,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_16_1.jpg
+783,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/04_missing_hole_02_1.jpg
 784,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/11_missing_hole_02_3.jpg
 785,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/11_missing_hole_06_3.jpg
 786,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/11_missing_hole_09_0.jpg
 787,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/07_missing_hole_06_0.jpg
-788,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/11_missing_hole_01_0.jpg
 789,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/05_missing_hole_08_3.jpg
 790,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_02_4.jpg
 791,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/05_missing_hole_01_0.jpg
@@ -322,6 +320,7 @@
 814,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/09_missing_hole_09_0.jpg
 815,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_05_0.jpg
 816,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/07_missing_hole_01_1.jpg
+817,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_18_2.jpg
 818,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/07_missing_hole_07_3.jpg
 819,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/11_missing_hole_05_2.jpg
 820,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/08_missing_hole_03_1.jpg
@@ -420,6 +419,7 @@
 913,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/09_missing_hole_09_1.jpg
 914,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_15_1.jpg
 915,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/08_missing_hole_07_4.jpg
+916,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/09_missing_hole_10_3.jpg
 917,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/05_missing_hole_04_3.jpg
 918,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/01_missing_hole_04_2.jpg
 919,5,Missing_hole,./My_Datasets/Classification/PCB-Crop/Missing_hole/12_missing_hole_03_4.jpg

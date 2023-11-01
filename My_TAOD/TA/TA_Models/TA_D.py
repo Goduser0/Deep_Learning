@@ -6,6 +6,9 @@ from torch.nn.utils.parametrizations import spectral_norm as SpectralNorm
 import torch.nn.functional as F
 from torchinfo import summary
 
+import warnings
+warnings.filterwarnings("ignore")
+
 import sys
 sys.path.append("./My_TAOD/TA/TA_Models")
 from TA_layers import SelfAttention, StdDevNorm
@@ -203,11 +206,11 @@ class ResBlockDiscriminator(nn.Module):
             return self.convs(x) + self.skip(x)
 
 ########################################################################################################
-# CLASS: Discriminator_patch()
+# CLASS: PFS_Discriminator_patch()
 ########################################################################################################
-class Discriminator_patch(nn.Module):
+class PFS_Discriminator_patch(nn.Module):
     def __init__(self, in_channels=3, out_channels=128):
-        super(Discriminator_patch, self).__init__()
+        super(PFS_Discriminator_patch, self).__init__()
         self.in_channels = in_channels
         self.out_channels = out_channels
         self.inputBatch = nn.BatchNorm2d(self.in_channels)
@@ -235,17 +238,16 @@ class Discriminator_patch(nn.Module):
         x = self.model4(x)
         x = self.avg(x)
         x = x.view(x.size(0), -1)
-        print(x.shape)
         x2 = self.fc(x)
         
         return x1, x2
 
 ########################################################################################################
-# CLASS: Discriminator()
+# CLASS: PFS_Discriminator()
 ########################################################################################################
-class Discriminator(nn.Module):
+class PFS_Discriminator(nn.Module):
     def __init__(self, in_channels=3, out_channels=128):
-        super(Discriminator, self).__init__()
+        super(PFS_Discriminator, self).__init__()
         self.in_channels = in_channels
         self.out_channels = out_channels
         self.inputBatch = nn.BatchNorm2d(self.in_channels)
@@ -266,24 +268,25 @@ class Discriminator(nn.Module):
         f1 = self.model1(f0)
         f2 = self.model2(f1)
         f3 = self.model3(f2)
+        f4 = self.model4(f3)
         
-        f3_r = self.ReLU(f3)
-        f4 = self.avg(f3_r)
-        f4_f = f4.view(-1, self.out_channels)
-        out = self.fc(f4_f)
+        f4_r = self.ReLU(f4)
+        f5 = self.avg(f4_r)
+        f5_f = f5.view(-1, self.out_channels)
+        out = self.fc(f5_f)
         return out
         
 ########################################################################################################
 # Discriminator TEST
 ########################################################################################################
 def test():
-    D = Discriminator_patch()
+    D = PFS_Discriminator()
     X = torch.randn(8, 3, 128, 128) # (B, C, W, H)
     summary(D, X.shape, device="cpu")
     
     print(f"Input X: {X.shape}")
     Y = D(X)
-    print(f"Output Y: {Y[1].shape}")
+    print(f"Output Y: {Y.shape}")
     
 if __name__ == "__main__":
     test()
