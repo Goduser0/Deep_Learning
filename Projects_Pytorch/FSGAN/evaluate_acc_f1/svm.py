@@ -51,9 +51,9 @@ def train(dir, i):
     #模型的选择
     clf = svm.SVC(gamma=0.001, C=100., probability=True)
     #模型的训练
-    clf.fit(X_train, y_train);
+    clf.fit(X_train, y_train)
     #模型测试
-    Ypred = clf.predict(X_test);
+    Ypred = clf.predict(X_test)
 
     print("pre",Ypred)
     print("test",y_test)

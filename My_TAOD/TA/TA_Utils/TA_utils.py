@@ -194,7 +194,51 @@ def baseline_from_scratch_record_data(config, content, flag_plot=True):
         fig.tight_layout()
         plt.savefig(f'{config.results_dir}/{filename}/D_loss.jpg')
         plt.close()
+
+#######################################################################################################
+#### FUNCTION: baseline_finetuning_record_data()
+#######################################################################################################
+def baseline_finetuning_record_data(config, content, flag_plot=True):
+    """Save Data"""
+    assert os.path.exists(config.results_dir)
+    filename = config.dataset_class + "_from_" + config.G_init_class + ' ' + config.category + ' ' + config.time
+    filepath = config.results_dir + '/' + filename + '.csv'
+    content = pd.DataFrame.from_dict(content, orient="index").T
+    
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.read_csv(filepath)
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+    
+    if not os.path.exists(f"{config.results_dir}/{filename}"):
+        os.makedirs(f"{config.results_dir}/{filename}")
         
+    if flag_plot:
+        results = pd.read_csv(filepath)
+        
+        epoch = results["epoch"]
+        num_epochs = results["num_epochs"]
+        batch = results["batch"]
+        num_batchs = results["num_batchs"]
+        
+        G_loss = results["G_loss"]
+        D_loss = results["D_loss"]
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_loss], label="G_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/G_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_loss], label="D_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/D_loss.jpg')
+        plt.close()
 #######################################################################################################
 #### FUNCTION: stage1_record_data()
 #######################################################################################################

@@ -16,9 +16,9 @@ argmax = lambda x, *args, **kwargs: x.argmax(*args, **kwargs)
 
 
 ##########################################################################################################
-# FUNCTION: classification_evaluator
+# FUNCTION: classification_tester
 ########################################################################################################## 
-def classification_evaluator(config, data_iter):
+def classification_tester(config, data_iter):
     if not config.eval_model_path:
         sys.exit(f"ERROR:\t({__name__}): config.eval_model_path is None")
     eval_model_path = config.eval_model_path

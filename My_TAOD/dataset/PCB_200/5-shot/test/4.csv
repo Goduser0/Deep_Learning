@@ -33,6 +33,7 @@
 631,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000026_0_00_04415_15890.bmp
 632,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001694_0_02_00902_03304.bmp
 633,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000300_0_02_12509_11494.bmp
+634,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001564_0_00_08006_19127.bmp
 635,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000132_0_04_10433_11295.bmp
 636,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000354_0_00_04320_06363.bmp
 637,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000183_0_04_06253_01132.bmp
@@ -41,11 +42,12 @@
 640,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001288_0_01_07433_02208.bmp
 641,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001676_0_03_07424_10197.bmp
 642,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000208_0_02_14812_03344.bmp
+643,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001076_0_01_13474_03054.bmp
+644,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000143_0_03_10589_03327.bmp
 645,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000313_0_04_10697_03320.bmp
 646,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001507_0_02_07742_06523.bmp
 647,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000144_0_01_02311_01990.bmp
 648,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001281_0_03_03184_18261.bmp
-649,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001565_0_00_04638_10790.bmp
 650,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001317_0_01_13336_18924.bmp
 651,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001665_0_03_03003_17474.bmp
 652,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001083_0_02_01651_02552.bmp
@@ -66,7 +68,6 @@
 667,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000219_0_04_11443_02486.bmp
 668,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001554_0_03_02360_04502.bmp
 669,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001319_0_04_11421_11923.bmp
-670,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001493_0_01_13084_09289.bmp
 671,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/06632_0_01_05137_03894.bmp
 672,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001593_0_03_08355_06224.bmp
 673,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000137_0_02_01679_04541.bmp
@@ -94,7 +95,6 @@
 695,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000280_0_02_13027_10577.bmp
 696,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000097_0_01_01291_03064.bmp
 697,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001522_0_03_07356_03104.bmp
-698,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000220_0_04_11797_09499.bmp
 699,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001304_0_02_07481_01138.bmp
 700,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001619_0_04_07790_11833.bmp
 701,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001500_0_02_09104_02252.bmp
@@ -120,7 +120,6 @@
 721,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001521_0_01_14592_02275.bmp
 722,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001388_0_02_07534_07890.bmp
 723,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000118_0_02_09433_01898.bmp
-724,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001626_0_03_02644_13402.bmp
 725,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000076_0_04_11067_07659.bmp
 726,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000178_0_02_08969_03116.bmp
 727,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000302_0_02_10604_19168.bmp
@@ -128,6 +127,7 @@
 729,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001618_0_03_07757_18858.bmp
 730,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/00017_0_01_04935_05792.bmp
 731,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000259_0_00_04720_02291.bmp
+732,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000100_0_03_02951_02342.bmp
 733,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000201_0_00_10321_19153.bmp
 734,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000303_0_01_14458_02055.bmp
 735,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001548_0_00_14489_07388.bmp
@@ -139,6 +139,7 @@
 741,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000208_0_00_09712_15264.bmp
 742,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001058_0_01_04592_19145.bmp
 743,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000139_0_01_02700_02551.bmp
+744,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001712_0_00_10266_01454.bmp
 745,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001594_0_01_14461_01750.bmp
 746,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001070_0_00_04415_08460.bmp
 747,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000365_0_00_04244_15282.bmp
@@ -188,7 +189,6 @@
 791,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000172_0_01_13316_07360.bmp
 792,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000092_0_03_07973_18965.bmp
 793,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001495_0_00_04463_17600.bmp
-794,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001628_0_01_13137_16366.bmp
 795,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000265_0_01_04282_10006.bmp
 796,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001647_0_00_12885_06490.bmp
 797,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000294_0_00_14486_08220.bmp

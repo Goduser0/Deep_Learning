@@ -3,5 +3,8 @@ import torch
 import torch.nn as nn
 from torch.autograd import Variable
 
-for i in range(1):
-    print(i)
+a = 1
+b = [2, 3]
+
+print(isinstance(a, list))
+print(isinstance(b, list))

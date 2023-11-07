@@ -29,13 +29,25 @@ def fid_baseline_from_scratch():
     for i in range(3):
         score_list.append(aug_fid(z_dim, 200, G, model_path, img_save_path, real_path, num_fid_samples))
     print(f"FID:{np.mean(score_list)}")
+def fid_baseline_finetuning():
+    z_dim = 128
+    G = PFS_Generator(z_dim)
+    model_path = "My_TAOD/TA/TA_Results/baseline_finetuning/models/PCB_Crop_from_DeepPCB_Crop 2 2023-11-02_07-05-33/492_net_g.pth"
+    img_save_path = "My_TAOD/TA/TA_Results/baseline_finetuning/samples"
+    real_path = "My_TAOD/dataset/PCB_Crop/30-shot/test/2.csv"
+    num_fid_samples = 100
+    
+    score_list = []
+    for i in range(3):
+        score_list.append(aug_fid(z_dim, 100, G, model_path, img_save_path, real_path, num_fid_samples))
+    print(f"FID:{np.mean(score_list)}")
     
 def fid_cogan():
     z_dim = 128
     G = CoGAN_Generator(z_dim)
-    model_path = "My_TAOD/TA/TA_Results/CoGAN/models/PCB_Crop2DeepPCB_Crop 0 2023-11-02_05-04-25/1000_net_g.pth"
+    model_path = "My_TAOD/TA/TA_Results/CoGAN/models/PCB_Crop2DeepPCB_Crop 4 2023-11-02_07-25-07/1000_net_g.pth"
     img_save_path = "My_TAOD/TA/TA_Results/CoGAN/samples"
-    real_path = "My_TAOD/dataset/DeepPCB_Crop/30-shot/test/0.csv"
+    real_path = "My_TAOD/dataset/DeepPCB_Crop/30-shot/test/4.csv"
     num_fid_samples = 100
     
     score_list = []
@@ -45,4 +57,5 @@ def fid_cogan():
 
 if __name__ == "__main__":
     # fid_baseline_from_scratch()
-    fid_cogan()
+    fid_baseline_finetuning()
+    # fid_cogan()

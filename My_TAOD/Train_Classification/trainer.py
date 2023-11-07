@@ -6,12 +6,13 @@ import pandas as pd
 from PIL import Image
 import matplotlib.pyplot as plt
 from d2l import torch as d2l
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, classification_report
 
 import torch
-from torch import nn, optim
+from torch import nn
 from torch.utils.data import Dataset, DataLoader, random_split
 import torchvision.transforms as T
+from torch.backends import cudnn
 
 
 ###########################################################################################################
@@ -21,25 +22,6 @@ argmax = lambda x, *args, **kwargs: x.argmax(*args, **kwargs)
 astype = lambda x, *args, **kwargs: x.type(*args, **kwargs)
 reduce_sum = lambda x, *args, **kwargs: x.sum(*args, **kwargs)
 size = lambda x, *args, **kwargs: x.numel(*args, **kwargs)
-
-
-class Accumulator(object):
-    """累加器"""
-    def __init__(self, n):
-        # 创建len=n的list
-        self.data = [0.0]*n
-        
-    def add(self, *args):
-        # data累加args
-        self.data = [a + float(b) for a, b in zip(self.data, args)] # type: ignore
-
-    def reset(self):
-        # 重置累加器
-        self.data = [0.0]*len(self.data)
-        
-    def __getitem__(self, idx):
-        return self.data[idx]
-
 
 class Timer(object):
     """计时器"""
@@ -74,22 +56,20 @@ def cal_correct(y_hat, y):
     return float(reduce_sum(astype(cmp, y.dtype)))
 
 
-def evaluate_accuracy(net, data_iter, device=None):
+def evaluate_accuracy(net, data_iter):
     """计算模型在数据集上的准确率"""
     if isinstance(net, nn.Module):
         net.eval()
-        if not device:
-            device = next(iter(net.parameters())).device
     
     metric = Accumulator(2)
     
     with torch.no_grad():
         for X, y in data_iter:
             if isinstance(X, list):
-                X = [x.to(device) for x in X]
+                X = [x.cuda() for x in X]
             else:
-                X = X.to(device)
-            y = y.to(device)
+                X = X.cuda()
+            y = y.cuda()
             metric.add(cal_correct(net(X), y), size(y))
     return metric[0] / metric[1]
 
@@ -127,33 +107,36 @@ def save_results(config, content, plot=False):
         plt.savefig(f'{config.result_dir}/{filename}.jpg')
         plt.close()
 
+def init_weights(m):
+    if type(m) == nn.Linear or type(m) == nn.Conv2d:
+        nn.init.xavier_uniform_(m.weight)
+        
 ###########################################################################################################
 # FUNCTION: classification_trainer()
 # 用于分类网络的训练
 ###########################################################################################################
-def classification_trainer(config, net, train_iter, test_iter, num_epochs, lr, device):
-    def init_weights(m):
-        if type(m) == nn.Linear or type(m) == nn.Conv2d:
-            nn.init.xavier_uniform_(m.weight)
-    net.apply(init_weights)
-    
-    device = torch.device(device)
-    net.to(device)
-    
-    optimizer = optim.Adam(net.parameters(), lr=lr)
-    loss_fuction = nn.CrossEntropyLoss()
-    
-    timer = Timer()
-    for epoch in range(num_epochs):
-        metric = Accumulator(3)
-        net.train()
+def classification_trainer(config, net, train_iter, validation_iter, num_epochs, lr):
+    # For fast training on GPUs
+    if torch.cuda.is_available():
+        cudnn.benchmark = True
         
+    # device
+    os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
+    net.apply(init_weights)
+    net.cuda()
+
+    optimizer = torch.optim.Adam(net.parameters(), lr=lr)
+    loss_fuction = nn.CrossEntropyLoss()
+    timer = Timer()
+    
+    for epoch in range(num_epochs):
+        net.train()
         for i, (X, y) in enumerate(train_iter):
             timer.start()
             optimizer.zero_grad()
-            X, y = X.to(device), y.to(device)
+            X, y = X.cuda(), y.cuda()
             y_hat = net(X)
-            loss = loss_fuction(y_hat, y)
+            loss = loss_fuction(y_hat, y) # batchmean
             loss.backward()
             optimizer.step()
             
@@ -161,31 +144,48 @@ def classification_trainer(config, net, train_iter, test_iter, num_epochs, lr, d
                 metric.add(loss*X.shape[0], cal_correct(y_hat, y), X.shape[0])
             timer.stop()
             
-        train_loss = metric[0] / metric[2]
-        train_acc = metric[1] / metric[2]
-        test_acc = evaluate_accuracy(net, test_iter)
-
         # Show
         print(f'epoch:{epoch+1}')
-        print(f'train loss:{train_loss:.3f}, train acc:{train_acc:.3f}, test acc:{test_acc:.3f}')
-        print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec '
-            f'on ({str(device)})')
-        print(f'--------------------------------------')
-        
-        # Record Data
-        save_results(config, 
-                     {
-                        "epoch": f"{epoch+1}", 
-                        "train loss":f"{train_loss:.5f}", 
-                        "train acc":f"{train_acc:.5f}", 
-                        "test acc":f"{test_acc:0.5f}",
-                        "time":f"{timer.sum()}"
-                     },
-                     plot=True,
-                    )
+        if validation_iter is not None:
+            train_loss = metric[0] / metric[2]
+            train_acc = metric[1] / metric[2]
+            validation_acc = evaluate_accuracy(net, validation_iter)
+            print(f'train loss:{train_loss:.3f}, train acc:{train_acc:.3f}, validation acc:{validation_acc:.3f}')
+            print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec '
+                f'on gpu:{config.gpu_id}')
+            print(f'--------------------------------------')
+            
+            # Record Data
+            save_results(config, 
+                        {
+                            "epoch": f"{epoch+1}", 
+                            "train loss":f"{train_loss:.5f}", 
+                            "train acc":f"{train_acc:.5f}", 
+                            "validation acc":f"{validation_acc:0.5f}",
+                            "time":f"{timer.sum()}"
+                        },
+                        plot=True,
+                        )
+        else:
+            train_loss = metric[0] / metric[2]
+            train_acc = metric[1] / metric[2]
+            print(f'train loss:{train_loss:.3f}, train acc:{train_acc:.3f}')
+            print(f'{metric[2] * num_epochs / timer.sum():.1f} examples/sec '
+                f'on gpu:{config.gpu_id}')
+            print(f'--------------------------------------')
+            
+            # Record Data
+            save_results(config, 
+                        {
+                            "epoch": f"{epoch+1}", 
+                            "train loss":f"{train_loss:.5f}", 
+                            "train acc":f"{train_acc:.5f}", 
+                            "time":f"{timer.sum()}"
+                        },
+                        plot=True,
+                        )
             
     # Save Classification_net
-    assert os.path.exists(config.model_save_dir), f"ERROR:\t({__name__}): No config.model_save_dir"
     filename = config.classification_net + ' ' + config.dataset_class + ' ' + config.time
     filepath = config.model_save_dir + '/Classification ' + filename + '.pt'
     torch.save(net.state_dict(), filepath)

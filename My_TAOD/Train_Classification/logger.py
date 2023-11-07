@@ -1,7 +1,5 @@
 import os
 import re
-import time
-
 
 ##########################################################################################################
 # FUNCTION: classification_logger

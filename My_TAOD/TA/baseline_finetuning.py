@@ -1,4 +1,4 @@
-# 基础的GAN从头训练
+# 用在源域上预训练的GAN
 import os
 import argparse
 import tqdm
@@ -19,8 +19,8 @@ sys.path.append("./My_TAOD/TA/TA_Models")
 from TA_G import PFS_Generator
 from TA_D import PFS_Discriminator_patch, PFS_Discriminator
 sys.path.append("./My_TAOD/TA/TA_Utils")
-from TA_logger import baseline_from_scratch_logger
-from TA_utils import requires_grad, baseline_from_scratch_record_data
+from TA_logger import baseline_finetuning_logger
+from TA_utils import baseline_finetuning_record_data
 
 ########################################################################################################
 #### Config
@@ -29,13 +29,13 @@ parser = argparse.ArgumentParser()
 
 # Saved Directories
 parser.add_argument("--logs_dir", type=str,
-                    default="My_TAOD/TA/TA_Results/baseline_from_scratch/logs")
+                    default="My_TAOD/TA/TA_Results/baseline_finetuning/logs")
 parser.add_argument("--models_dir", type=str,
-                    default="My_TAOD/TA/TA_Results/baseline_from_scratch/models")
+                    default="My_TAOD/TA/TA_Results/baseline_finetuning/models")
 parser.add_argument("--samples_dir", type=str,
-                    default="My_TAOD/TA/TA_Results/baseline_from_scratch/samples")
+                    default="My_TAOD/TA/TA_Results/baseline_finetuning/samples")
 parser.add_argument("--results_dir", type=str,
-                    default="My_TAOD/TA/TA_Results/baseline_from_scratch/results")
+                    default="My_TAOD/TA/TA_Results/baseline_finetuning/results")
 
 # random seed
 parser.add_argument("--random_seed", type=int, default=1)
@@ -43,28 +43,30 @@ parser.add_argument("--random_seed", type=int, default=1)
 # data loader 
 parser.add_argument("--dataset_class",
                     type=str,
-                    default='PCB_200',
+                    default='PCB_Crop',
                     choices=['PCB_Crop', 'PCB_200', 'DeepPCB_Crop'],
-                    )
+                    )#*
 parser.add_argument("--data_path",
                     type=str,
-                    default="My_TAOD/dataset/PCB_200/30-shot/train/0.csv")
+                    default="My_TAOD/dataset/PCB_Crop/30-shot/train/0.csv")#*
 parser.add_argument("--category",
                     type=str,
-                    default="0")
+                    default="0")#*
 parser.add_argument("--num_workers", type=int, default=4)
 parser.add_argument("--batch_size", type=int, default=30)
 
 # G
-parser.add_argument("--lr_g", type=float, default=1e-4)
+parser.add_argument("--lr_g", type=float, default=2e-4)
 parser.add_argument("--z_dim", type=int, default=128)
+parser.add_argument("--G_init_class", type=str, default="DeepPCB_Crop")#*
+parser.add_argument("--G_init_path", type=str, default="My_TAOD/TA/TA_Results/baseline_from_scratch/models/DeepPCB_Crop 0 2023-10-31_14-29-13/1000_net_g.pth")#*
 
 # D
-parser.add_argument("--lr_d", type=float, default=1e-3)
+parser.add_argument("--lr_d", type=float, default=2e-4)
 
 # train
-parser.add_argument("--num_epochs", type=int, default=30000)
-parser.add_argument("--gpu_id", type=str, default="0")
+parser.add_argument("--num_epochs", type=int, default=500)
+parser.add_argument("--gpu_id", type=str, default="1")
 
 parser.add_argument("--img_size", type=int, default=128)
 
@@ -80,9 +82,9 @@ assert(config.data_path.split('/')[-4]==config.dataset_class
        and
        config.data_path.split('/')[-1][0]==config.category)
 # logger
-baseline_from_scratch_logger(config)
+baseline_finetuning_logger(config)
 
-models_save_path = config.models_dir + '/' + config.dataset_class + ' ' + config.category + ' ' + config.time
+models_save_path = config.models_dir + '/' + config.dataset_class + "_from_" + config.G_init_class + ' ' + config.category + ' ' + config.time
 os.makedirs(models_save_path, exist_ok=False)
 
 ######################################################################################################
@@ -115,7 +117,10 @@ data_iter_loader = get_loader(
 )
 
 # model
-G = PFS_Generator(z_dim=128).cuda()
+G = PFS_Generator(z_dim=config.z_dim)
+checkpoint = torch.load(config.G_init_path)
+G.load_state_dict(checkpoint["model_state_dict"])
+G = G.cuda()
 D = PFS_Discriminator_patch().cuda()
 # optimizers
 optim_G = torch.optim.Adam(G.parameters(), lr=config.lr_g, betas=(0.5, 0.9))
@@ -144,7 +149,6 @@ for epoch in tqdm.trange(1, config.num_epochs+1, desc=f"On training"):
             D_loss = (D_img_loss + D_patch_loss) * 0.5
             D_loss_list.append(D_loss.item())
             D_loss.backward()
-            
             optim_D.step()
         
         optim_G.zero_grad()
@@ -163,7 +167,7 @@ for epoch in tqdm.trange(1, config.num_epochs+1, desc=f"On training"):
     )
     
     # Record Data
-    baseline_from_scratch_record_data(config,
+    baseline_finetuning_record_data(config,
                                         {
                                             "epoch": f"{epoch}",
                                             "num_epochs": f"{config.num_epochs}",

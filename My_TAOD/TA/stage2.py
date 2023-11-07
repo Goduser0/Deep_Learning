@@ -85,7 +85,6 @@ parser.add_argument("--z_dim", type=int, default=128)
 parser.add_argument("--lr_g", type=float, default=2e-4)
 parser.add_argument("--G_init_path", type=str, required=True)
 
-
 # D
 parser.add_argument("--lr_d", type=float, default=2e-4)
 parser.add_argument("--D_iters", type=int, default=5)
@@ -173,10 +172,22 @@ test_T_iter_loader = get_loader(
 )
 
 # model
-T_G, S_G = torch.load(config.G_init_path), torch.load(config.G_init_path)
+checkpoint = torch.load(config.G_init_path)
+T_G, S_G = PFS_Generator(z_dim=config.z_dim), PFS_Generator(z_dim=config.z_dim)
+T_G.load_state_dict(checkpoint["model_state_dict"])
+S_G.load_state_dict(checkpoint["model_state_dict"])
+T_G = T_G.cuda()
+S_G = S_G.cuda()
+
 optim_G  = torch.optim.Adam(T_G.parameters(), lr=config.lr_g, betas=(0.5, 0.9))
 
-Encoder_c, Encoder_s = torch.load(config.Encoder_init_path), torch.load(config.Encoder_init_path)
+checkpoint = torch.load(config.Encoder_init_path)
+Encoder_c, Encoder_s = PFS_Encoder(), PFS_Encoder()
+Encoder_c.load_state_dict(checkpoint["model_state_dict"])
+Encoder_s.load_state_dict(checkpoint["model_state_dict"])
+Encoder_c = Encoder_c.cuda()
+Encoder_s = Encoder_s.cuda()
+
 optim_Encoder_s = torch.optim.Adam(Encoder_s.parameters(), lr=config.lr_vae, betas=(0.5, 0.9))
 
 # Discriminator
@@ -230,3 +241,18 @@ iters = 0
 z_fixed = torch.randn(64, 128).cuda()
 zc = torch.randn(64, 64)
 z_same_zs1, z_same_zs2 = torch.cat([torch.randn(1, 64).repeat(64,1), zc], 1).cuda(), torch.cat([torch.randn(1,64).repeat(64,1), zc], 1).cuda()
+
+def train(epoch):
+    global iters
+    for batch_idx, (data, target) in enumerate(train_T_iter_loader):
+        bsz1 = data.size(0)
+        
+        for _, (img_s1, _) in enumerate(S_iter_loader):
+            img_s1 = Variable(img_s1.cuda()) * 2 - 1
+            img_t = Variable(data.cuda())
+            
+            img_t_orig = img_t.clone()*2-1 
+            img_t_lab = preprocessing(img_t.clone())
+            
+            
+            break
