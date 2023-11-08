@@ -1,0 +1,19 @@
+mode:	'train'
+ classification_net:	'Resnet50'
+ dataset_class:	'PCB_200'
+ dataset_train_dir:	'My_TAOD/dataset/PCB_200/0.7-shot/train.csv'
+ dataset_validation_dir:	'My_TAOD/dataset/PCB_200/0.7-shot/validation.csv'
+ train_batch_size:	128
+ validation_batch_size:	128
+ lr:	0.0001
+ epochs:	50
+ test_model_path:	'My_TAOD/Train_Classification/models/PCB_200 Resnet18 20231108_160823/50.pth'
+ dataset_test_dir:	'My_TAOD/dataset/PCB_00/0.7-shot/test.csv'
+ test_batch_size:	256
+ gpu_id:	'0'
+ num_workers:	1
+ log_dir:	'./My_TAOD/Train_Classification/logs'
+ model_dir:	'./My_TAOD/Train_Classification/models'
+ result_dir:	'./My_TAOD/Train_Classification/results'
+ log:	True
+ time:	'20231108_165512'

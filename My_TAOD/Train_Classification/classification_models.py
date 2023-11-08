@@ -1,12 +1,9 @@
 import sys
 import numpy as np
 
-from sklearn import svm
-
 import torch
 from torch import nn
 import torch.nn.functional as F
-import torch.utils.data as data
 import torchvision.transforms as T
 
 

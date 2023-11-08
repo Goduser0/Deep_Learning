@@ -1,0 +1,19 @@
+mode:	'train'
+ classification_net:	'Resnet50'
+ dataset_class:	'DeepPCB_Crop'
+ dataset_train_dir:	'My_TAOD/dataset/DeepPCB_Crop/30-shot/train.csv'
+ dataset_validation_dir:	'My_TAOD/dataset/DeepPCB_Crop/30-shot/validation.csv'
+ train_batch_size:	16
+ validation_batch_size:	16
+ lr:	0.0001
+ epochs:	100
+ test_model_path:	'My_TAOD/Train_Classification/models/PCB_Crop Resnet18 20231108_160347/50.pth'
+ dataset_test_dir:	'My_TAOD/dataset/PCB_Crop/30-shot/test.csv'
+ test_batch_size:	512
+ gpu_id:	'0'
+ num_workers:	1
+ log_dir:	'./My_TAOD/Train_Classification/logs'
+ model_dir:	'./My_TAOD/Train_Classification/models'
+ result_dir:	'./My_TAOD/Train_Classification/results'
+ log:	True
+ time:	'20231108_231254'

@@ -3,65 +3,61 @@ import sys
 import torch
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, classification_report
 
 
 from classification_models import classification_net_select
-from trainer import Timer, Accumulator, cal_correct
-
-
-
-size = lambda x, *args, **kwargs: x.numel(*args, **kwargs)
-argmax = lambda x, *args, **kwargs: x.argmax(*args, **kwargs)
-
+from trainer import Timer
 
 ##########################################################################################################
 # FUNCTION: classification_tester
 ########################################################################################################## 
 def classification_tester(config, data_iter):
-    if not config.eval_model_path:
-        sys.exit(f"ERROR:\t({__name__}): config.eval_model_path is None")
-    eval_model_path = config.eval_model_path
-    model_state_dict = torch.load(eval_model_path)
+    os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
+    test_model_path = config.test_model_path
+    checkpoint = torch.load(test_model_path)
     
-    classification_net = eval_model_path.split("/")[-1].split(" ")[1]
+    classification_net = test_model_path.split("/")[-2].split(" ")[1]
     net = classification_net_select(classification_net)
-    net.to(config.device)
-    net.load_state_dict(model_state_dict)
+    net.cuda()
+    net.load_state_dict(checkpoint["model_state_dict"])
     
     timer = Timer()
-    metric = Accumulator(2)
     net.eval()
-      
+    
     with torch.no_grad():
         y_list = []
         y_hat_list = []
         for i, (X, y) in enumerate(data_iter):
             timer.start()
             if isinstance(X, list):
-                X = [x.to(config.device) for x in X]
+                X = [x.cuda() for x in X]
             else:
-                X = X.to(config.device)
-            y = y.to(config.device)
+                X = X.cuda()
+            y = y.cuda()
             y_hat = net(X)
             timer.stop()
             
-            metric.add(cal_correct(y_hat, y), size(y))
-
             if len(y_hat.shape) > 1 and y_hat.shape[1] > 1:
-                y_hat = argmax(y_hat, axis=1)
+                y_hat = y_hat.argmax(dim=1)
             
-            y_list += list(y.to('cpu').numpy())
-            y_hat_list += list(y_hat.to('cpu').numpy()) 
+            y_list += list(y.cpu().numpy())
+            y_hat_list += list(y_hat.cpu().numpy()) 
 
-        acc_score = accuracy_score(y_list, y_hat_list)
+        Acc_score = accuracy_score(y_list, y_hat_list)
+        F1_score = f1_score(y_list, y_hat_list, average='macro')
         cm = confusion_matrix(y_list, y_hat_list)
         cr = classification_report(y_list, y_hat_list)
-        eval_acc = metric[0] / metric[1]
+        print(len(y_list), timer.sum())
+        infer_speed = len(y_list) / timer.sum()
         # Accuracy
-        print(acc_score)
-        # Classification_report
-        print(cr)  
+        print(f"Accuracy: {Acc_score}")
+        # F1-score
+        print(f"F1-score: {F1_score}")
+        # Inference Speed
+        print(f"Inference Speed: {(infer_speed / 1000.0):.3f} samples/ms")
+        # Classification Report"
+        print(f"Classification Report:\n{cr}")
         # Confusion_matrix
         plt.figure(figsize=(10, 10))
         ax = sns.heatmap(cm, annot=True, fmt="d", cmap="Reds")

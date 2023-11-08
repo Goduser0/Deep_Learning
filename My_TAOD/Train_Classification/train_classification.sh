@@ -1,1 +1,4 @@
-python ./My_TAOD/Train_Classification/main.py --classification_net Resnet18
+# 3个数据集；30-shot
+python My_TAOD/Train_Classification/main.py --dataset_class PCB_200 --dataset_train_dir "My_TAOD/dataset/PCB_200/30-shot/train.csv" --dataset_validation_dir "My_TAOD/dataset/PCB_200/30-shot/validation.csv"
+python My_TAOD/Train_Classification/main.py --dataset_class PCB_Crop --dataset_train_dir "My_TAOD/dataset/PCB_Crop/30-shot/train.csv" --dataset_validation_dir "My_TAOD/dataset/PCB_Crop/30-shot/validation.csv"
+python My_TAOD/Train_Classification/main.py --dataset_class DeepPCB_Crop --dataset_train_dir "My_TAOD/dataset/DeepPCB_Crop/30-shot/train.csv" --dataset_validation_dir "My_TAOD/dataset/DeepPCB_Crop/30-shot/validation.csv"

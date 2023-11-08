@@ -168,7 +168,7 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
                 if self.transforms:
                     image = self.transforms(image)
                 
-                label = self.df.loc[index, "Image_Label"]
+                label = self.df.loc[index, "Image_Label"] # torch.int64
                 return image, label
             
     elif dataset_class.lower() == 'pcb_200':
@@ -192,7 +192,7 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
                 if self.transforms:
                     image = self.transforms(image)
             
-                label = self.df.loc[index, "Image_Label"]
+                label = self.df.loc[index, "Image_Label"] # torch.int64
                 return image, label
     
     elif dataset_class.lower() == 'deeppcb_crop':
@@ -216,7 +216,7 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
                 if self.transforms:
                     image = self.transforms(image)
             
-                label = self.df.loc[index, "Image_Label"]
+                label = self.df.loc[index, "Image_Label"] # torch.int64
                 return image, label
             
     else:
@@ -251,8 +251,8 @@ def test():
     # print(result, result.shape)
     
     data_iter_loader = get_loader('PCB_Crop', 
-                              "./My_TAOD/dataset/PCB_Crop/0.7-shot/train/0.csv", 
-                              1,
+                              "./My_TAOD/dataset/PCB_Crop/0.7-shot/train/2.csv", 
+                              8,
                               4, 
                               shuffle=False, 
                               trans=trans,
@@ -262,6 +262,7 @@ def test():
     for i, data in enumerate(data_iter_loader):
         raw_img = data[0][0] # [B, C, H, W] -1~1
         category_label = data[1] # [B]
+        print(category_label.shape)
         print(raw_img.dtype)
         raw_img = torch.autograd.Variable(raw_img)
         print(raw_img.dtype)
