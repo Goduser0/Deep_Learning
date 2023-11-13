@@ -18,7 +18,7 @@ def classification_tester(config, data_iter):
     checkpoint = torch.load(test_model_path)
     
     classification_net = test_model_path.split("/")[-2].split(" ")[1]
-    net = classification_net_select(classification_net)
+    net = classification_net_select(classification_net, config.pretrained)
     net.cuda()
     net.load_state_dict(checkpoint["model_state_dict"])
     

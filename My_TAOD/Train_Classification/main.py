@@ -28,13 +28,13 @@ def main(config):
     
     if config.mode == "train":
         train_iter_loader = get_loader(config.dataset_class, config.dataset_train_dir, config.train_batch_size, config.num_workers, shuffle=True, trans=trans)
-        net = classification_net_select(config.classification_net)
+        net = classification_net_select(config.classification_net, config.pretrained)
         classification_trainer(config, net, train_iter_loader, None, config.epochs, config.lr)
     
     elif config.mode == "train_with_validation":
         train_iter_loader = get_loader(config.dataset_class, config.dataset_train_dir, config.train_batch_size, config.num_workers, shuffle=True, trans=trans)
         validation_iter_loader = get_loader(config.dataset_class, config.dataset_validation_dir, config.validation_batch_size, config.num_workers, shuffle=False, trans=trans)
-        net = classification_net_select(config.classification_net)
+        net = classification_net_select(config.classification_net, config.pretrained)
         classification_trainer(config, net, train_iter_loader, validation_iter_loader, config.epochs, config.lr)
     
     elif config.mode == "test":
@@ -49,25 +49,26 @@ if __name__ == "__main__":
     # Model Configuration
     classification_net_list = ["Resnet18", "VGG11", "Resnet50"]
     parser.add_argument("--classification_net", type=str, default="Resnet50", choices=classification_net_list)
+    parser.add_argument("--pretrained", type=bool, default=True)
     
     # Training Configuration
     dataset_list = ["NEU_CLS", "elpv", "Magnetic_Tile", "PCB_200", "PCB_Crop", "DeepPCB_Crop"]
-    parser.add_argument("--dataset_class", type=str, default="PCB_Crop", choices=dataset_list, help="Choose datasets")
-    parser.add_argument("--dataset_train_dir", type=str, default=f"My_TAOD/dataset/PCB_Crop/30-shot" + "/train.csv")
-    parser.add_argument("--dataset_validation_dir", type=str, default=f"My_TAOD/dataset/PCB_Crop/30-shot" + "/validation.csv")
+    parser.add_argument("--dataset_class", type=str, default="DeepPCB_Crop", choices=dataset_list, help="Choose datasets")
+    parser.add_argument("--dataset_train_dir", type=str, default=f"My_TAOD/dataset/DeepPCB_Crop/30-shot" + "/train.csv")
+    parser.add_argument("--dataset_validation_dir", type=str, default=f"My_TAOD/dataset/DeepPCB_Crop/30-shot" + "/validation.csv")
     parser.add_argument("--train_batch_size", type=int, default=16, help="Mini-batch size of train")
     parser.add_argument("--validation_batch_size", type=int, default=16, help="Mini-batch size of validation")
     parser.add_argument("--lr", type=float, default=1e-4, help="Learning rate for training")
-    parser.add_argument("--epochs", type=int, default=100, help="Training epochs")
+    parser.add_argument("--epochs", type=int, default=200, help="Training epochs")
     
     # Test Configuration
-    parser.add_argument("--test_model_path", type=str, default="My_TAOD/Train_Classification/models/PCB_Crop Resnet50 20231108_231115/100.pth")
-    parser.add_argument("--dataset_test_dir", type=str, default="My_TAOD/dataset/PCB_Crop/30-shot" + "/test.csv")
+    parser.add_argument("--test_model_path", type=str, default="My_TAOD/Train_Classification/models/DeepPCB_Crop Resnet50 20231113_192651/100.pth")
+    parser.add_argument("--dataset_test_dir", type=str, default="My_TAOD/dataset/DeepPCB_Crop/30-shot" + "/test.csv")
     parser.add_argument("--test_batch_size", type=int, default=512)
     
     # Others Configuration
     parser.add_argument("--gpu_id", type=str, default="0")
-    parser.add_argument("--num_workers", type=int, default=1)
+    parser.add_argument("--num_workers", type=int, default=4)
     
     # Directories
     parser.add_argument("--log_dir", type=str, default="./My_TAOD/Train_Classification/logs")

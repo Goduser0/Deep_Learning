@@ -117,9 +117,9 @@ def classification_record_data(config, content, flag_plot=False):
         
         
 
-def init_weights(m):
-    if type(m) == nn.Linear or type(m) == nn.Conv2d:
-        nn.init.xavier_uniform_(m.weight)
+# def init_weights(m):
+#     if type(m) == nn.Linear or type(m) == nn.Conv2d:
+#         nn.init.xavier_uniform_(m.weight)
         
 ###########################################################################################################
 # FUNCTION: classification_trainer()
@@ -131,8 +131,9 @@ def classification_trainer(config, net, train_iter, validation_iter, num_epochs,
         
     # device
     os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
-    net.apply(init_weights)
+    # net.apply(init_weights)
     net.cuda()
+    net.train()
 
     optimizer = torch.optim.Adam(net.parameters(), lr=lr)
     loss_fuction = nn.CrossEntropyLoss()

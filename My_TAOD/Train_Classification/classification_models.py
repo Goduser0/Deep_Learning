@@ -4,7 +4,11 @@ import numpy as np
 import torch
 from torch import nn
 import torch.nn.functional as F
+import torchvision
 import torchvision.transforms as T
+
+import warnings
+warnings.filterwarnings("ignore")
 
 
 ##########################################################################################################
@@ -245,14 +249,23 @@ RESNET50 = Resnet50(img_channel=3, num_class=5)
 conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
 VGG11 = Vgg11(conv_arch, img_size=256, num_classes=5)
 
+RESNET18_PRETRAINED = torchvision.models.resnet18(pretrained=True)
+RESNET18_PRETRAINED.fc = nn.Linear(RESNET18_PRETRAINED.fc.in_features, 5)
 
-def classification_net_select(name):
-    if name.lower() == 'resnet18':
+RESNET50_PRETRAINED = torchvision.models.resnet50(pretrained=True)
+RESNET50_PRETRAINED.fc = nn.Linear(RESNET50_PRETRAINED.fc.in_features, 5)
+
+def classification_net_select(name, pretrained=False):
+    if (name.lower() == 'resnet18') and (pretrained is False):
         return RESNET18
-    elif name.lower() == 'vgg11':
+    elif (name.lower() == 'vgg11') and (pretrained is False):
         return VGG11
-    elif name.lower() == 'resnet50':
+    elif (name.lower() == 'resnet50') and (pretrained is False):
         return RESNET50
+    elif (name.lower() == "resnet18") and pretrained:
+        return RESNET18_PRETRAINED
+    elif (name.lower() == "resnet50") and pretrained:
+        return RESNET50_PRETRAINED
     else:
         sys.exit(f"ERROR:\t({__name__}):The Net: '{name}' doesn't exist")
         
@@ -262,12 +275,17 @@ def classification_net_select(name):
 ##########################################################################################################  
 def test():
     pass
+    model1 = torchvision.models.resnet18(pretrained=True)
+    model2 = torchvision.models.resnet50(pretrained=True)
+    model2.fc = nn.Linear(model2.fc.in_features, 5)
     x = torch.randn(8, 3, 256, 256)
     print(f"Input x:{x.shape}")
     output1 = RESNET18(x)
     output2 = RESNET50(x)
     output3 = VGG11(x)
-    print(f"Output1 Y:{output1.shape} \nOutput2 Y:{output2.shape} \nOutput3 Y:{output3.shape}")
+    output4 = RESNET18_PRETRAINED(x)
+    output5 = RESNET50_PRETRAINED(x)
+    print(f"RESNET18 Y:{output1.shape} \nRESNET50 Y:{output2.shape} \nVGG11 Y:{output3.shape} \nRESNET18_PRETRAINED Y:{output4.shape} \nRESNET50_PRETRAINED Y:{output5.shape}")
 
 if __name__ == "__main__":
     test()
