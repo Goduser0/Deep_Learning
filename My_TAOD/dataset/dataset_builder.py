@@ -366,19 +366,19 @@ def build_dataset(dataset):
         dataset_origin = PCB_200()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, 1.0]
+        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, 1.0, [0.6, 0.2, 0.2]]
         
     elif dataset == 'PCB_Crop':
         dataset_origin = PCB_Crop()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, 1.0]
+        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, 1.0, [0.6, 0.2, 0.2]]
     
     elif dataset == 'DeepPCB_Crop':
         dataset_origin = DeepPCB_Crop()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, 1.0]
+        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, 1.0, [0.6, 0.2, 0.2]]
         
     else:
         sys.exit(f"ERROR:\t({__name__}):The dataset '{dataset}' doesn't exist")
@@ -397,7 +397,7 @@ def build_dataset(dataset):
             df_train = pd.DataFrame()
             df_validation = pd.DataFrame()
             df_test = pd.DataFrame()
-            for lable in label_list:
+            for label in label_list:
                 # 取出标签为label的所有样本
                 df_class = df.loc[df["Image_Label"] == label]
                 
