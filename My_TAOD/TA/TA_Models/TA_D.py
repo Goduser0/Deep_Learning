@@ -19,6 +19,10 @@ from TA_layers import SelfAttention, StdDevNorm
 ########################################################################################################
 class FeatureMatchDiscriminator(nn.Module):
     def __init__(self, img_size=128, conv_dim=64):
+        """
+        input: image
+        output: [feat_map0, feat_map1, feat_map2, feat_map3, predict_label, feat_mmd]
+        """
         super(FeatureMatchDiscriminator, self).__init__()
         self.img_size = img_size
         
@@ -52,7 +56,7 @@ class FeatureMatchDiscriminator(nn.Module):
         attention2_dim = curr_dim
         
         # stdnorm
-        stdnorm.append(StdDevNorm(curr_dim))
+        # stdnorm.append(StdDevNorm(curr_dim))
         
         # last
         last.append(nn.Conv2d(curr_dim, 1, img_size // 16))
@@ -61,7 +65,7 @@ class FeatureMatchDiscriminator(nn.Module):
         self.layer2 = nn.Sequential(*layer2)
         self.layer3 = nn.Sequential(*layer3)
         self.layer4 = nn.Sequential(*layer4)
-        self.stdnorm = nn.Sequential(*stdnorm)
+        # self.stdnorm = nn.Sequential(*stdnorm)
         self.last = nn.Sequential(*last)
         
         self.attention1 = SelfAttention(attention1_dim)
@@ -103,7 +107,7 @@ class FeatureMatchDiscriminator(nn.Module):
         feature4 = output
         features.append(feature4) # 3: Feature map layer: -> (B, 512, W//16, H//16)
         
-        output = self.stdnorm(output)
+        # output = self.stdnorm(output)
         
         output = self.last(output) # -> (B, 1, 1, 1)
         output = output.reshape(output.shape[0], -1) # -> (B, 1)
@@ -210,6 +214,10 @@ class ResBlockDiscriminator(nn.Module):
 ########################################################################################################
 class PFS_Discriminator_patch(nn.Module):
     def __init__(self, in_channels=3, out_channels=128):
+        """
+        input: image
+        output: [feature_map, predict_label]
+        """
         super(PFS_Discriminator_patch, self).__init__()
         self.in_channels = in_channels
         self.out_channels = out_channels
@@ -236,6 +244,7 @@ class PFS_Discriminator_patch(nn.Module):
         # x2
         x = self.model3(x)
         x = self.model4(x)
+        x = self.ReLU(x)
         x = self.avg(x)
         x = x.view(x.size(0), -1)
         x2 = self.fc(x)
@@ -247,6 +256,10 @@ class PFS_Discriminator_patch(nn.Module):
 ########################################################################################################
 class PFS_Discriminator(nn.Module):
     def __init__(self, in_channels=3, out_channels=128):
+        """
+        input: image
+        output: predict_label
+        """
         super(PFS_Discriminator, self).__init__()
         self.in_channels = in_channels
         self.out_channels = out_channels
@@ -281,6 +294,10 @@ class PFS_Discriminator(nn.Module):
 ########################################################################################################
 class CoGAN_Discriminator(nn.Module):
     def __init__(self, channels=3, hidden_channels=128):
+        """
+        input: image, domain
+        output: predict_label
+        """
         super(CoGAN_Discriminator, self).__init__()
         self.channels = channels
         self.hidden_channels = hidden_channels
@@ -313,13 +330,20 @@ class CoGAN_Discriminator(nn.Module):
 # Discriminator TEST
 ########################################################################################################
 def test():
-    D = CoGAN_Discriminator()
+    # D = PFS_Discriminator()
+    # D = PFS_Discriminator_patch()
+    # D = CoGAN_Discriminator()
+    D = FeatureMatchDiscriminator()
     X = torch.randn(8, 3, 128, 128) # (B, C, W, H)
     # summary(D, X.shape, device="cpu")
     
     print(f"Input X: {X.shape}")
-    Y = D(X, domain='T')
-    print(f"Output Y: {Y.shape}")
+    Y = D(X)
+    if isinstance(Y, list):
+        for i, y in enumerate(Y):
+            print(f"Output {i}: {y.shape}")
+    else:
+        print(f"Output Y: {Y.shape}")
     
 if __name__ == "__main__":
     test()

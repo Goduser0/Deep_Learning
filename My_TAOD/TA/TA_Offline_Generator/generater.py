@@ -23,9 +23,6 @@ from TA_VAE import VariationalAutoEncoder
 from TA_G import FeatureMatchGenerator, PFS_Generator
 
 
-def traditional_aug():
-    pass
-
 def generate(z_dim, n, model, model_path, samples_save_path, domain):
     """加载生成器，随机生成"""
     local_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
@@ -70,11 +67,6 @@ def generate(z_dim, n, model, model_path, samples_save_path, domain):
     print("Generate Done!!!")    
     return f"{samples_save_path}/{dirname}/generate_imgs.csv"
 
-# generate(128, 
-#          32, 
-#          "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/models/source/PCB_200 0 2023-09-04_11:18:31/500_net_g_source.pth",
-#          "./My_TAOD/TA/samples",
-#          )
 
 def img_translater(vae_common_params, vae_unique_params, g_params, trans):
     """加载图像"""
@@ -135,11 +127,12 @@ def test():
     #     "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_g_source.pth",
     #     trans=T.Compose([T.ToTensor(), T.Resize((128, 128))]),
     # )
+    
     G = PFS_Generator(z_dim=128)
-    model_path = "My_TAOD/TA/TA_Results/baseline_from_scratch/models/DeepPCB_Crop 0 2023-10-31_14-29-13/500_net_g.pth"
-    img_save_path = "My_TAOD/TA/TA_Results/baseline_from_scratch/samples"
+    model_path = "My_TAOD/TA/TA_Results/PFS_baseline_from_scratch/models/DeepPCB_Crop 0 2023-10-31_14-29-13/1000_net_g.pth"
+    img_save_path = "My_TAOD/TA/TA_Results/PFS_baseline_from_scratch/samples"
 
-    generate(128, 200, G, model_path, img_save_path)
+    generate(128, 200, G, model_path, img_save_path, domain=None)
         
 if __name__ == "__main__":
     test()

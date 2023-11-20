@@ -96,15 +96,13 @@ def classification_record_data(config, content, flag_plot=False):
         time = results["time"]
         
         fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
-        ax1.plot(epoch, train_acc, color='tab:red')
+        ax1.plot(epoch, train_acc, label="train_acc", color='tab:red')
         if "validation_acc" in results:
-            ax2 = ax1.twinx()
-            ax2.plot(epoch, validation_acc, color='tab:blue')
+            ax1.plot(epoch, validation_acc, label="validation_acc", color='tab:blue')
         ax1.set_xlabel('Epochs', fontsize=10)
-        ax1.set_ylabel('train_acc', color='tab:red', fontsize=10)
+        ax1.set_ylabel('Acc', color='tab:red', fontsize=10)
         ax1.grid(alpha=0.4)
-        if "validation_acc" in results:
-            ax2.set_ylabel('validation_acc', color='tab:blue', fontsize=10)
+        ax1.legend()
         fig.tight_layout()
         plt.savefig(f'{config.result_dir}/{filename}/Acc.jpg')
         plt.close()

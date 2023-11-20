@@ -116,44 +116,9 @@ def load_img_for_fid(csv_path, trans=None, batch_size=25):
 
 
 #######################################################################################################
-#### FUNCTION: generator_adv_loss()
+#### FUNCTION: PFS_baseline_from_scratch_record_data()
 #######################################################################################################
-def generator_adv_loss(generator_type :str, fake_labels, real_labels=None):
-    """ 
-    Provide generator type to return adversarial losses 
-    G_type: ["FeatureMatchGenerator"]
-    """
-    
-    if generator_type.lower() == "featurematchgenerator":
-        fake_loss = torch.nn.BCEWithLogitsLoss()(fake_labels, torch.ones_like(fake_labels))
-        g_loss = fake_loss
-    else:
-        raise KeyError(f"{generator_type} is not exist")
-    
-    return g_loss
-
-
-#######################################################################################################
-#### FUNCTION: discriminator_adv_loss()
-#######################################################################################################
-def discriminator_adv_loss(discriminator_type :str, fake_labels, real_labels):
-    """
-    Provide discriminator type to return adversarial losses
-    D_type: ["FeatureMatchDiscriminator"]
-    """
-    if discriminator_type.lower() == "featurematchdiscriminator":
-        real_loss = torch.nn.BCEWithLogitsLoss()(real_labels, torch.ones_like(real_labels))
-        fake_loss = torch.nn.BCEWithLogitsLoss()(fake_labels, torch.zeros_like(fake_labels))
-        d_loss = (real_loss + fake_loss) / 2.0
-    else:
-        raise KeyError(f"{discriminator_type} is not exist")
-    
-    return d_loss
-
-#######################################################################################################
-#### FUNCTION: baseline_from_scratch_record_data()
-#######################################################################################################
-def baseline_from_scratch_record_data(config, content, flag_plot=True):
+def PFS_baseline_from_scratch_record_data(config, content, flag_plot=True):
     """Save Data"""
     assert os.path.exists(config.results_dir)
     filename = config.dataset_class + ' ' + config.category + ' ' + config.time
@@ -195,10 +160,83 @@ def baseline_from_scratch_record_data(config, content, flag_plot=True):
         plt.savefig(f'{config.results_dir}/{filename}/D_loss.jpg')
         plt.close()
 
+
 #######################################################################################################
-#### FUNCTION: baseline_finetuning_record_data()
+#### FUNCTION: baseline_from_scratch_record_data()
 #######################################################################################################
-def baseline_finetuning_record_data(config, content, flag_plot=True):
+def baseline_from_scratch_record_data(config, content, flag_plot=True):
+    """Save Data"""
+    assert os.path.exists(config.results_dir)
+    filename = config.dataset_class + ' ' + config.category + ' ' + config.time
+    filepath = config.results_dir + '/' + filename + '.csv'
+    content = pd.DataFrame.from_dict(content, orient="index").T
+    
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.read_csv(filepath)
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+    
+    if not os.path.exists(f"{config.results_dir}/{filename}"):
+        os.makedirs(f"{config.results_dir}/{filename}")
+        
+    if flag_plot:
+        results = pd.read_csv(filepath)
+        
+        epoch = results["epoch"]
+        num_epochs = results["num_epochs"]
+        batch = results["batch"]
+        num_batchs = results["num_batchs"]
+        
+        G_adv_loss = results["G_adv_loss"]
+        G_FM_loss = results["G_FM_loss"]
+        G_loss = results["G_loss"]
+        D_real_adv_loss = results["D_real_adv_loss"]
+        D_fake_adv_loss = results["D_fake_adv_loss"]
+        D_loss = results["D_loss"]
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_adv_loss], label="G_adv_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/G_adv_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_FM_loss], label="G_FM_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/G_FM_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_loss], label="G_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/G_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_real_adv_loss], label="D_real_adv_loss", color="tab:red")
+        ax1.plot([y for y in D_fake_adv_loss], label="D_fake_adv_loss", color="tab:blue")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/D_adv_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_loss], label="D_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/D_loss.jpg')
+        plt.close()
+        
+        
+#######################################################################################################
+#### FUNCTION: PFS_baseline_finetuning_record_data()
+#######################################################################################################
+def PFS_baseline_finetuning_record_data(config, content, flag_plot=True):
     """Save Data"""
     assert os.path.exists(config.results_dir)
     filename = config.dataset_class + "_from_" + config.G_init_class + ' ' + config.category + ' ' + config.time

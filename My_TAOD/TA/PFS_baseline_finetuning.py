@@ -20,7 +20,7 @@ from TA_G import PFS_Generator
 from TA_D import PFS_Discriminator_patch, PFS_Discriminator
 sys.path.append("./My_TAOD/TA/TA_Utils")
 from TA_logger import baseline_finetuning_logger
-from TA_utils import baseline_finetuning_record_data
+from TA_utils import PFS_baseline_finetuning_record_data
 
 ########################################################################################################
 #### Config
@@ -29,13 +29,13 @@ parser = argparse.ArgumentParser()
 
 # Saved Directories
 parser.add_argument("--logs_dir", type=str,
-                    default="My_TAOD/TA/TA_Results/baseline_finetuning/logs")
+                    default="My_TAOD/TA/TA_Results/PFS_baseline_finetuning/logs")
 parser.add_argument("--models_dir", type=str,
-                    default="My_TAOD/TA/TA_Results/baseline_finetuning/models")
+                    default="My_TAOD/TA/TA_Results/PFS_baseline_finetuning/models")
 parser.add_argument("--samples_dir", type=str,
-                    default="My_TAOD/TA/TA_Results/baseline_finetuning/samples")
+                    default="My_TAOD/TA/TA_Results/PFS_baseline_finetuning/samples")
 parser.add_argument("--results_dir", type=str,
-                    default="My_TAOD/TA/TA_Results/baseline_finetuning/results")
+                    default="My_TAOD/TA/TA_Results/PFS_baseline_finetuning/results")
 
 # random seed
 parser.add_argument("--random_seed", type=int, default=1)
@@ -167,7 +167,7 @@ for epoch in tqdm.trange(1, config.num_epochs+1, desc=f"On training"):
     )
     
     # Record Data
-    baseline_finetuning_record_data(config,
+    PFS_baseline_finetuning_record_data(config,
                                         {
                                             "epoch": f"{epoch}",
                                             "num_epochs": f"{config.num_epochs}",

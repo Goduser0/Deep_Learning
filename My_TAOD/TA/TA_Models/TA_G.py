@@ -16,7 +16,11 @@ from TA_layers import SelfAttention, PixelNorm, EqualLinear
 # CLASS: FeatureMatchGenerator()
 ########################################################################################################
 class FeatureMatchGenerator(nn.Module):
-    def __init__(self, n_mlp=None, img_size=128, z_dim=128, conv_dim=64, lr_mlp=0.01):
+    def __init__(self, n_mlp=None, img_size=128, z_dim=128, conv_dim=64, lr_mlp=0.001):
+        """
+        input: n_mlp
+        output: image
+        """
         super(FeatureMatchGenerator, self).__init__()
         
         self.img_size = img_size
@@ -125,6 +129,10 @@ class ResBlockGenerator(nn.Module):
 ########################################################################################################
 class PFS_Generator(nn.Module):
     def __init__(self, z_dim, hidden_channels=128, out_channels=3):
+        """
+        input: z_dim
+        output: image
+        """
         super(PFS_Generator, self).__init__()
         self.z_dim = z_dim
         self.hidden_channels = hidden_channels
@@ -163,6 +171,10 @@ class PFS_Generator(nn.Module):
 ########################################################################################################
 class CoGAN_Generator(nn.Module):
     def __init__(self, z_dim, hidden_channels=128, out_channels=3):
+        """
+        input: z_dim
+        output: image
+        """
         super(CoGAN_Generator, self).__init__()
         self.z_dim = z_dim
         self.hidden_channels = hidden_channels
@@ -203,13 +215,14 @@ class CoGAN_Generator(nn.Module):
 # CLASS: Generater TEST
 ########################################################################################################
 def test():
-    # G = FeatureMatchGenerator(n_mlp=2)
-    G = CoGAN_Generator(128)
-    z = torch.randn(8, 128) # batchsize z_dim
+    # G = PFS_Generator(128)
+    G = FeatureMatchGenerator(n_mlp=3)
+    # G = CoGAN_Generator(128)
+    z = torch.randn(16, 128) # batchsize z_dim
     # summary(G, z.shape, device="cpu")
     
     print(f"Input z:{z.shape}")
-    output = G(z, domain="T")
+    output = G(z)
     print(f"Output Y:{output.shape}")
     
 if __name__ == "__main__":
