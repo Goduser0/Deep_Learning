@@ -98,7 +98,7 @@ def train(epoch):
             (gen_loss*0.01).backward()
             loss_list['gen'].append(gen_loss.item()); loss_list['disc'].append(disc_loss.item())
 
-
+        
         # z = Variable(torch.randn(num, Z_dim*2).cuda())
         z1 = Variable(torch.randn(num, Z_dim).cuda())
         # out_rand = generator(z)

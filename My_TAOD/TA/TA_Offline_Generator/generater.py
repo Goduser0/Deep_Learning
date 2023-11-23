@@ -19,7 +19,7 @@ import sys
 sys.path.append("./My_TAOD/dataset")
 from dataset_loader import get_loader, img_1to255, img_255to1
 sys.path.append("./My_TAOD/TA/TA_Models")
-from TA_VAE import VariationalAutoEncoder
+from TA_VAE import Encoder
 from TA_G import FeatureMatchGenerator, PFS_Generator
 
 
@@ -68,10 +68,9 @@ def generate(z_dim, n, model, model_path, samples_save_path, domain):
     return f"{samples_save_path}/{dirname}/generate_imgs.csv"
 
 
-def img_translater(vae_common_params, vae_unique_params, g_params, trans):
-    """加载图像"""
-    data_iter_loader = get_loader('PCB_200', 
-                              "./My_TAOD/dataset/PCB_200/0.7-shot/train/0.csv", 
+def img_translater(G, vae_com_params, vae_uni_params, g_params, results_save_dir, trans):
+    data_iter_loader = get_loader('PCB_Crop', 
+                              "./My_TAOD/dataset/PCB_Crop/0.7-shot/test/0.csv", 
                               1,
                               4, 
                               shuffle=False, 
@@ -79,60 +78,62 @@ def img_translater(vae_common_params, vae_unique_params, g_params, trans):
                               img_type='ndarray',
                               drop_last=True,
                               ) # 像素值范围：（-1, 1）[B, C, H, W]
-    VAE_common = VariationalAutoEncoder(in_channels=3, latent_dim=64, input_size=128)
-    VAE_unique = VariationalAutoEncoder(in_channels=3, latent_dim=64, input_size=128)
-    G = FeatureMatchGenerator(n_mlp=3, img_size=128, z_dim=128, conv_dim=64, lr_mlp=1e-2)
+    VAE_com = Encoder(in_channels=3, latent_dim=64, input_size=128)
+    VAE_uni = Encoder(in_channels=3, latent_dim=64, input_size=128)
     
-    VAE_common.load_state_dict(torch.load(vae_common_params)["model_state_dict"])
-    VAE_unique.load_state_dict(torch.load(vae_unique_params)["model_state_dict"])
+    VAE_com.load_state_dict(torch.load(vae_com_params)["model_state_dict"])
+    VAE_uni.load_state_dict(torch.load(vae_uni_params)["model_state_dict"])
     G.load_state_dict(torch.load(g_params)["model_state_dict"])
     
-    VAE_common.eval()
-    VAE_unique.eval()
+    VAE_com.eval()
+    VAE_uni.eval()
     G.eval()
     
     for i, data in enumerate(data_iter_loader):
         if i <= 10:
-            img = data[0]
+            raw_img = data[0]
             
-            results_common = VAE_common(img)
-            results_unique = VAE_unique(img)
-            [recon_img_common, _, mu_common, log_var_common] = [i for i in results_common]
-            [recon_img_unique, _, mu_unique, log_var_unique] = [i for i in results_unique]    
-            features_common = VAE_common.reparameterize(mu_common, log_var_common)
-            features_unique = VAE_unique.reparameterize(mu_unique, log_var_unique)
-            features = torch.concat([features_common, features_unique], dim=1)
-            # add_z = Variable(torch.FloatTensor(np.random.normal(0, 1, (1, 32))), requires_grad=False) # [1, 32]
-            # features = torch.concat([features, add_z], dim=1)
-            output = G(features)
+            mu_com, log_var_com, feat_com = VAE_com(raw_img)
+            mu_uni, log_var_uni, feat_uni = VAE_uni(raw_img) 
+            feat_recon = torch.concat([feat_com, feat_uni], dim=1)
+            # add_z = Variable(torch.FloatTensor(np.random.normal(0, 1, (1, 64))), requires_grad=False) # [1, 64]
+            # feat_gen = torch.concat([features, add_z], dim=1)
+            recon_img = G(feat_recon)
             
-            raw_img = img[0]
+            fig, axes = plt.subplots(1, 2, figsize=(13, 6), dpi=80)
+            raw_img = raw_img[0]
             raw_img = img_1to255(raw_img.numpy()).transpose(1, 2, 0)
-            plt.imshow(raw_img)
-            plt.savefig(f"test_raw_{i}.jpg")
-            plt.close()
+            axes[0].imshow(raw_img)
+            axes[0].set_title("raw_img")
             
-            gen_img = output[0]
-            gen_img = img_1to255(gen_img.detach().numpy()).transpose(1, 2, 0)
-            plt.imshow(gen_img)
-            plt.savefig(f"test_gen_{i}.jpg")
-            plt.close()
-            
-            # break        
+            recon_img = recon_img[0]
+            recon_img = img_1to255(recon_img.detach().numpy()).transpose(1, 2, 0)
+            axes[1].imshow(recon_img)
+            axes[1].set_title("recon_img")
 
-def test():
-    # img_translater(
-    #     "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_VAE_common.pth",
-    #     "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_VAE_unique.pth",
-    #     "./My_TAOD/TA/models/source/PCB_200 0 2023-09-13_12:02:21/500_net_g_source.pth",
-    #     trans=T.Compose([T.ToTensor(), T.Resize((128, 128))]),
-    # )
+            plt.savefig(f"{results_save_dir}/test_recon_{i}.jpg")
+            plt.close()        
+
+def test():    
+    # G = PFS_Generator(z_dim=128)
+    # G_path = "My_TAOD/TA/TA_Results/PFS_baseline_from_scratch/models/DeepPCB_Crop 0 2023-10-31_14-29-13/1000_net_g.pth"
+    # img_save_path = "My_TAOD/TA/TA_Results/PFS_baseline_from_scratch/samples"
     
-    G = PFS_Generator(z_dim=128)
-    model_path = "My_TAOD/TA/TA_Results/PFS_baseline_from_scratch/models/DeepPCB_Crop 0 2023-10-31_14-29-13/1000_net_g.pth"
-    img_save_path = "My_TAOD/TA/TA_Results/PFS_baseline_from_scratch/samples"
-
-    generate(128, 200, G, model_path, img_save_path, domain=None)
-        
+    G = FeatureMatchGenerator(n_mlp=3)
+    G_path = "My_TAOD/TA/TA_Results/S/models/PCB_Crop 0 2023-11-23_00-26-57/1000_net_g_source.pth"
+    vae_com_path = "My_TAOD/TA/TA_Results/S/models/PCB_Crop 0 2023-11-23_00-26-57/1000_net_VAE_common.pth"
+    vae_uni_path = "My_TAOD/TA/TA_Results/S/models/PCB_Crop 0 2023-11-23_00-26-57/1000_net_VAE_unique.pth"
+    img_save_path = "My_TAOD/TA/TA_Results/S/samples"
+    
+    # generate(128, 200, G, G_path, img_save_path, domain=None)
+    
+    img_translater(
+        G,
+        vae_com_path,
+        vae_uni_path,
+        G_path,
+        img_save_path,
+        trans=T.Compose([T.ToTensor(), T.Resize((128, 128))]),
+    )
 if __name__ == "__main__":
     test()

@@ -247,7 +247,7 @@ RESNET18 = Resnet18(num_class=5)
 RESNET50 = Resnet50(img_channel=3, num_class=5)
 
 conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
-VGG11 = Vgg11(conv_arch, img_size=256, num_classes=5)
+VGG11 = Vgg11(conv_arch, img_size=128, num_classes=5)
 
 RESNET18_PRETRAINED = torchvision.models.resnet18(pretrained=True)
 RESNET18_PRETRAINED.fc = nn.Linear(RESNET18_PRETRAINED.fc.in_features, 5)
@@ -278,7 +278,7 @@ def test():
     model1 = torchvision.models.resnet18(pretrained=True)
     model2 = torchvision.models.resnet50(pretrained=True)
     model2.fc = nn.Linear(model2.fc.in_features, 5)
-    x = torch.randn(8, 3, 256, 256)
+    x = torch.randn(8, 3, 128, 128)
     print(f"Input x:{x.shape}")
     output1 = RESNET18(x)
     output2 = RESNET50(x)

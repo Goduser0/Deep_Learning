@@ -241,21 +241,21 @@ class vgg(nn.Module):
 # CLASS: KLDLoss
 #######################################################################################################
 class KLDLoss(nn.Module):
-    def __init__(self, reduction):
+    def __init__(self):
         super(KLDLoss, self).__init__()
-        self.reduction = reduction
         
-    def forward(self, p, q):
-        p = F.softmax(p, dim=-1)
-        q = F.softmax(q, dim=-1)
-        loss = F.kl_div(q.log(), p, reduction=self.reduction)
+    def forward(self, mu1, logvar1, mu2=None, logvar2=None):
+        if mu2 is None and logvar2 is None:
+            loss = 0.5 * torch.mean(- logvar1 + logvar1.exp() +  mu1.pow(2) - 1)
+        else:
+            loss = 0.5 * torch.mean(logvar2 - logvar1 + (logvar1.exp() + (mu1 - mu2).pow(2)) / (logvar2.exp()) - 1) 
         return loss
 
 #######################################################################################################
 # CLASS: PerceptualLoss
 #######################################################################################################
 class PerceptualLoss(nn.Module):
-    def __init__(self, device, layer_indexs=None, loss=nn.MSELoss()):
+    def __init__(self, layer_indexs=None, loss=nn.MSELoss()):
         """
         return loss is "batchmean"
         Args:
@@ -264,11 +264,9 @@ class PerceptualLoss(nn.Module):
         """
         super(PerceptualLoss, self).__init__()
         self.criterion = loss
-        self.device = device
-        self.layer_indexs = layer_indexs
         
         self.vgg_model = vgg16(pretrained=True).features[:16]
-        self.vgg_model = self.vgg_model.to(self.device)
+        self.vgg_model = self.vgg_model.cuda()
         self.layer_name_mapping = {
             '3': "relu1_2",
             '8': "relu2_2",
@@ -287,8 +285,8 @@ class PerceptualLoss(nn.Module):
     
     def forward(self, real_img, fake_img):
         loss = []
-        real_img = real_img.to(self.device)
-        fake_img = fake_img.to(self.device)
+        real_img = real_img.cuda()
+        fake_img = fake_img.cuda()
         real_img_features = self.output_features(real_img)
         fake_img_features = self.output_features(fake_img)
         for real_img_feature, fake_img_feature in zip(real_img_features, fake_img_features):
@@ -326,33 +324,11 @@ class PFS_Relation(nn.Module):
 #######################################################################################################
 def test():
     warnings.filterwarnings("ignore")
-    PLloss = PerceptualLoss('cuda:0')
-    
-    trans = T.Compose(
-        [
-            T.ToTensor(), 
-            T.Resize((128, 128)), # (0, 255)
-        ]
-    )
-    data_iter_loader = get_loader('PCB_200', 
-                              "./My_TAOD/dataset/PCB_200/0.7-shot/train/0.csv", 
-                              32, 
-                              4, 
-                              shuffle=True, 
-                              trans=trans,
-                              img_type='ndarray',
-                              drop_last=True
-                              ) # 像素值范围：（-1, 1）[B, C, H, W]
-    imgAug = ImgAugmentation()
-    
-    for i, data in enumerate(data_iter_loader):
-        raw_img = data[0] # [B, C, H, W] -1~1
-        print(raw_img.shape)
-        real_imgs_aug = imgAug.imgRealAug(img_1to255(raw_img))
-        real_imgs_aug = img_255to1(real_imgs_aug)
-        loss = PLloss(raw_img, real_imgs_aug)
-        print(loss)
-        break
+    loss = PerceptualLoss()
+    a = torch.randn([8, 3, 128, 128])
+    b = torch.randn([8, 3, 128, 128])
+    print(loss(a, a))
+
     
 if __name__ == "__main__":
     test()

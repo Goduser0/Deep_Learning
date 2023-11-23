@@ -130,6 +130,64 @@ class VariationalAutoEncoder(nn.Module):
     
     def generate(self, x: torch.Tensor, **kwargs) -> torch.Tensor:
         return self.forward(x)[0]
+    
+    
+#######################################################################################################
+# CLASS: Encoder
+#######################################################################################################
+class Encoder(nn.Module):
+    def __init__(self, 
+                 in_channels: int, 
+                 latent_dim: int,
+                 input_size: int = 128,
+                 hidden_dims: list = None,
+                 **kwargs) -> None:
+        """
+        return [mu, log_var, z]
+        """
+        super(Encoder, self).__init__()
+        
+        self.latent_dim = latent_dim
+        
+        if hidden_dims is None:
+            hidden_dims = [32, 64, 128, 256, 512]
+        
+        self.hidden_dims = hidden_dims
+        
+        # Bulid Encoder
+        encoder_layers = []
+        for h_dim in hidden_dims:
+            encoder_layers.append(
+                nn.Sequential(
+                    nn.Conv2d(in_channels, out_channels=h_dim, kernel_size=3, stride=2, padding=1),
+                    nn.BatchNorm2d(h_dim),
+                    nn.LeakyReLU(),
+                )
+            )
+            in_channels = h_dim
+            
+        self.Encoder = nn.Sequential(*encoder_layers)
+        # FC
+        self.last_layer_size = input_size // 2**(len(hidden_dims))
+        self.fc_mu = nn.Linear(hidden_dims[-1] * self.last_layer_size * self.last_layer_size, latent_dim)
+        self.fc_var = nn.Linear(hidden_dims[-1] * self.last_layer_size * self.last_layer_size, latent_dim)
+    
+    def encode(self, input: torch.Tensor) -> list[torch.Tensor]:
+        result = self.Encoder(input)
+        result = torch.flatten(result, start_dim=1)
+        mu = self.fc_mu(result)
+        log_var = self.fc_var(result)
+        return [mu, log_var]
+
+    def reparameterize(self, mu: torch.Tensor, logvar: torch.Tensor) -> torch.Tensor:
+        std = torch.exp(0.5 * logvar)
+        eps = torch.randn_like(std)
+        return eps * std + mu
+    
+    def forward(self, input: torch.Tensor, **kwargs) -> list[torch.Tensor]:
+        mu, log_var = self.encode(input)
+        z = self.reparameterize(mu, log_var)
+        return [mu, log_var, z]
 
 #######################################################################################################
 # CLASS: PFS_Encoder()
@@ -176,12 +234,14 @@ class PFS_Encoder(nn.Module):
         mu, logvar = self.mu(f), self.logvar(f)
         z = self.reparameterize(mu, logvar)
         return mu.view(bsz, -1), logvar.view(bsz, -1), z.view(bsz, -1)
+    
+
 
 ########################################################################################################
 ## FUNCTION: test()
 ########################################################################################################
 def test_train_vae():
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
     # dir = "My_Datasets/Classification/PCB-Crop/Mouse_bite/01_mouse_bite_06_1.jpg"
     dir = "My_Datasets/Classification/PCB-200/Open_circuit/000001_0_00_07022_09338.bmp"
     # dir = "My_Datasets/Classification/PCB-Crop/Spur/01_spur_01_0.jpg"
@@ -210,12 +270,10 @@ def test_train_vae():
 
 def test():
     X = torch.randn(8, 3, 128, 128)
-    vae = PFS_Encoder(latent_dim=64)
-    # summary(vae, X.shape, device="cpu")
-    
+    vae = Encoder(3, latent_dim=64)
     Y = vae(X)
     print(f"Input X:{X.shape}")
-    print(f"Output Y:{Y[0].shape}")
+    print(f"Output Y:{Y[0].shape} {Y[1].shape} {Y[2].shape}")
     
 if __name__ == "__main__":
     # test_train_vae()
