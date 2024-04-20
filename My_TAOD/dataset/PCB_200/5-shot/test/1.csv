@@ -45,6 +45,7 @@
 443,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000106_0_04_08134_14456.bmp
 444,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000242_0_01_03896_14641.bmp
 445,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000035_0_04_03493_07836.bmp
+446,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000214_0_04_07943_15721.bmp
 447,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000013_0_04_07831_07401.bmp
 448,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000022_0_04_11534_06865.bmp
 449,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000024_0_04_11158_13325.bmp
@@ -57,12 +58,12 @@
 456,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000081_0_01_05676_12901.bmp
 457,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000012_0_01_02933_07079.bmp
 458,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000087_0_01_06228_15940.bmp
+459,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000242_0_01_03756_14803.bmp
 460,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/图片 1.png-92.png
 461,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000106_0_04_07841_16943.bmp
 462,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000013_0_04_08151_16564.bmp
 463,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000106_0_04_08015_16613.bmp
 464,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000187_0_04_08083_11320.bmp
-465,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000059_0_04_08019_16468.bmp
 466,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000022_0_04_11807_04986.bmp
 467,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000178_0_02_06855_06825.bmp
 468,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000054_0_02_01970_06783.bmp
@@ -73,6 +74,7 @@
 473,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000225_0_04_06390_17730.bmp
 474,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000035_0_04_03519_07642.bmp
 475,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000012_0_01_02880_07430.bmp
+476,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000022_0_04_11560_06834.bmp
 477,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000020_0_01_05369_11675.bmp
 478,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000217_0_04_06887_05816.bmp
 479,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000054_0_02_01953_06717.bmp
@@ -99,7 +101,6 @@
 500,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000225_0_04_06384_17853.bmp
 501,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000242_0_01_03927_14874.bmp
 502,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000013_0_04_08192_16567.bmp
-503,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/图片 1.png-48.png
 504,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000054_0_02_02022_06673.bmp
 505,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000162_0_04_08449_05186.bmp
 506,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000217_0_04_06878_05614.bmp
@@ -138,7 +139,6 @@
 539,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000022_0_04_08082_12457.bmp
 540,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/图片 1.png-46.png
 541,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000013_0_04_07850_07436.bmp
-542,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000020_0_01_05400_11600.bmp
 543,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000022_0_04_08029_12355.bmp
 544,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000113_0_04_06681_11300 - 副本.bmp
 545,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000022_0_04_11711_04421.bmp
@@ -158,6 +158,7 @@
 559,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000057_0_04_10966_08257.bmp
 560,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000001_0_00_07022_09338.bmp
 561,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000225_0_04_06421_18115.bmp
+562,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/图片 1.png-19.png
 563,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000022_0_04_11517_04953.bmp
 564,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000020_0_01_05445_11541.bmp
 565,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000054_0_02_01939_06791.bmp
@@ -177,7 +178,7 @@
 579,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000022_0_04_11542_06735.bmp
 580,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000035_0_04_03138_08585 - コピー.bmp
 581,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000035_0_04_03440_07924.bmp
-583,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/图片 1.png-28.png
+582,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000013_0_04_07831_07350.bmp
 584,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/00912_0_01_02781_03634.bmp
 585,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/图片 1.png-52.png
 586,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000106_0_04_07889_17015.bmp
@@ -189,7 +190,6 @@
 592,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000178_0_02_06854_06750.bmp
 593,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000020_0_01_05439_11689.bmp
 594,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/图片 1.png-30.png
-595,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/00014_0_01_02676_03035.bmp
 596,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000095_0_02_05140_04935.bmp
 597,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000241_0_00_10547_17796.bmp
 598,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000095_0_02_05150_04976.bmp

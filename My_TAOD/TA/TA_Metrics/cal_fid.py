@@ -31,8 +31,7 @@ class ConvNetFeatureExtract(object):
                                      (0.229, 0.224, 0.225)),
             ])
         elif self.model.find('resnet') >= 0:
-            resnet = getattr(models, model)(pretrained=True)
-            resnet.cuda().eval()
+            resnet = getattr(models, model)(pretrained=True).cuda().eval()
             resnet_feature = nn.Sequential(resnet.conv1, resnet.bn1,
                                            resnet.relu,
                                            resnet.maxpool, resnet.layer1,

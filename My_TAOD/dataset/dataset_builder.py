@@ -11,17 +11,10 @@ import torchvision.transforms as T
 
 
 ###########################################################################################################
-# 处理函数
+# 图像处理函数
 ###########################################################################################################
 def bmp2ndarray(file_path):
-    """将BMP文件转为ndarray"""
-    img = Image.open(file_path).convert('L')
-    img_array = np.array(img)
-    return img_array
-
-
-def png2ndarray(file_path):
-    """将PNG文件转为ndarray"""
+    """将 BMP/PNG 文件转为 ndarray """
     img = Image.open(file_path).convert('L')
     img_array = np.array(img)
     return img_array
@@ -33,9 +26,8 @@ def png2ndarray(file_path):
 class NEU_CLS(data.Dataset):
     """Dataset class for NEU_CLS"""
     
-    def __init__(self, root_dir='./My_Datasets/Classification/NEU-CLS', transform=None):
+    def __init__(self, root_dir='./My_Datasets/Classification/NEU-CLS'):
         self.root_dir = root_dir
-        self.transform = transform
         self.samples = self.load_samples()
         self.label_list = self.samples['Image_Class'].unique().tolist()
     
@@ -53,8 +45,6 @@ class NEU_CLS(data.Dataset):
         # 划痕(Scratches)
         # 斑块(Patches)
         img_label = self.samples.loc[idx, 'Image_Label']
-        if self.transform:
-            img_content = self.transform(img_content)
         return img_content, img_label
 
     def load_samples(self):
@@ -84,9 +74,8 @@ class NEU_CLS(data.Dataset):
 class elpv(data.Dataset):
     """Dataset class for elpv"""
     
-    def __init__(self, root_dir='./My_Datasets/Classification/elpv-dataset-master', transform=None):
+    def __init__(self, root_dir='./My_Datasets/Classification/elpv-dataset-master'):
         self.root_dir = root_dir
-        self.transform = transform
         
         self.label_path = root_dir+'/labels.csv'
         self.informations = pd.read_csv(self.label_path)
@@ -102,8 +91,6 @@ class elpv(data.Dataset):
         prob = self.samples.loc[idx, 'probs']
         type = self.samples.loc[idx, 'types']
         img_label = self.samples.loc[idx, 'Image_Label']
-        if self.transform:
-            img = self.transform(img)
         return img_content, img_label
         
     def load_samples(self):
@@ -129,9 +116,8 @@ class elpv(data.Dataset):
 class Magnetic_Tile(data.Dataset):
     """Dataset class for Magnetic_Tile"""
     
-    def __init__(self, root_dir='./My_Datasets/Classification/Magnetic-Tile-Defect', transform=None):
+    def __init__(self, root_dir='./My_Datasets/Classification/Magnetic-Tile-Defect'):
         self.root_dir = root_dir
-        self.transform = transform
         self.samples = self.load_samples()
         self.label_list = self.samples["Image_Class"].unique().tolist()
         
@@ -143,8 +129,6 @@ class Magnetic_Tile(data.Dataset):
         img_content = bmp2ndarray(img_path)
         img_class = self.samples.loc[idx, 'Image_Class']
         img_label = self.samples.loc[idx, 'Image_Label']
-        if self.transform:
-            img_content = self.transform(img_content)
         return img_content, img_label
     
     def load_samples(self):
@@ -178,9 +162,8 @@ class Magnetic_Tile(data.Dataset):
 class PCB_200(data.Dataset):
     """Dataset class for PCB-200"""
     
-    def __init__(self, root_dir="./My_Datasets/Classification/PCB-200", transform=None):
+    def __init__(self, root_dir="./My_Datasets/Classification/PCB-200"):
         self.root_dir = root_dir
-        self.transform = transform
         self.samples = self.load_samples()
         self.label_list = self.samples["Image_Class"].unique().tolist()
         
@@ -192,8 +175,6 @@ class PCB_200(data.Dataset):
         img_content = bmp2ndarray(img_path)
         img_class = self.samples.loc[idx, 'Image_Class']
         img_label = self.samples.loc[idx, 'Image_Label']
-        if self.transform:
-            img_content = self.transform(img_content)
         return img_content, img_label
         
     def load_samples(self):
@@ -226,9 +207,8 @@ class PCB_200(data.Dataset):
 class PCB_Crop(data.Dataset):
     """Dataset class for PCB-Corp"""
     
-    def __init__(self, root_dir="./My_Datasets/Classification/PCB-Crop", transform=None):
+    def __init__(self, root_dir="./My_Datasets/Classification/PCB-Crop"):
         self.root_dir = root_dir
-        self.transform = transform
         self.samples = self.load_samples()
         self.label_list = self.samples["Image_Class"].unique().tolist()
         
@@ -240,8 +220,6 @@ class PCB_Crop(data.Dataset):
         img_content = bmp2ndarray(img_path)
         img_class = self.samples.loc[idx, 'Image_Class']
         img_label = self.samples.loc[idx, 'Image_Label']
-        if self.transform:
-            img_content = self.transform(img_content)
         return img_content, img_label
         
     def load_samples(self):
@@ -275,9 +253,8 @@ class PCB_Crop(data.Dataset):
 class DeepPCB_Crop(data.Dataset):
     """Dataset class for DeepPCB-Corp"""
     
-    def __init__(self, root_dir="./My_Datasets/Classification/DeepPCB-Crop", transform=None):
+    def __init__(self, root_dir="./My_Datasets/Classification/DeepPCB-Crop"):
         self.root_dir = root_dir
-        self.transform = transform
         self.samples = self.load_samples()
         self.label_list = self.samples["Image_Class"].unique().tolist()
         
@@ -289,8 +266,6 @@ class DeepPCB_Crop(data.Dataset):
         img_content = bmp2ndarray(img_path)
         img_class = self.samples.loc[idx, 'Image_Class']
         img_label = self.samples.loc[idx, 'Image_Label']
-        if self.transform:
-            img_content = self.transform(img_content)
         return img_content, img_label
         
     def load_samples(self):

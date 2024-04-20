@@ -219,7 +219,7 @@ def classification_trainer(config, net, train_iter, validation_iter, num_epochs,
         #-------------------------------------------------------------------
         # Save Classification_net
         #-------------------------------------------------------------------
-        if epoch % (num_epochs // 5) == 0:
+        if epoch % (num_epochs // 10) == 0:
             net_path = model_save_path + f"/{epoch}.pth"
             torch.save({
                 "epoch": epoch,

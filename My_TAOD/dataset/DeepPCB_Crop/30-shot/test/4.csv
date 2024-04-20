@@ -11,9 +11,11 @@
 5422,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600010_3.jpg
 5423,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085110_4.jpg
 5424,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000081_5.jpg
+5425,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000023_8.jpg
 5426,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085103_4.jpg
 5427,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041030_6.jpg
 5428,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100013_2.jpg
+5429,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100004_8.jpg
 5430,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600015_4.jpg
 5431,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000072_4.jpg
 5432,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12000187_3.jpg
@@ -21,14 +23,12 @@
 5434,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000145_3.jpg
 5435,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000059_4.jpg
 5436,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600040_2.jpg
-5437,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000153_1.jpg
 5438,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041173_3.jpg
 5439,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000030_4.jpg
 5440,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000138_5.jpg
 5441,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300123_4.jpg
 5442,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100175_2.jpg
 5443,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000189_3.jpg
-5444,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000050_5.jpg
 5445,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000048_4.jpg
 5446,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600027_3.jpg
 5447,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100195_2.jpg
@@ -62,7 +62,6 @@
 5475,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600008_3.jpg
 5476,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000034_6.jpg
 5477,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041013_7.jpg
-5478,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300236_4.jpg
 5479,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085156_3.jpg
 5480,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085003_7.jpg
 5481,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041017_4.jpg
@@ -88,6 +87,7 @@
 5501,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085006_5.jpg
 5502,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100156_4.jpg
 5503,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100034_4.jpg
+5504,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085254_4.jpg
 5505,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041218_5.jpg
 5506,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041098_3.jpg
 5507,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041168_3.jpg
@@ -101,6 +101,7 @@
 5515,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085145_7.jpg
 5516,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000006_5.jpg
 5517,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000033_2.jpg
+5518,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041215_4.jpg
 5519,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000026_8.jpg
 5520,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041171_5.jpg
 5521,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041100_7.jpg
@@ -115,7 +116,6 @@
 5530,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000092_2.jpg
 5531,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041076_4.jpg
 5532,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085066_5.jpg
-5533,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000072_4.jpg
 5534,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041041_7.jpg
 5535,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000042_1.jpg
 5536,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041052_5.jpg
@@ -130,6 +130,7 @@
 5545,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000042_2.jpg
 5546,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000190_5.jpg
 5547,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085062_5.jpg
+5548,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100184_3.jpg
 5549,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000053_4.jpg
 5550,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100002_4.jpg
 5551,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085317_4.jpg
@@ -175,7 +176,6 @@
 5591,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041026_7.jpg
 5592,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300216_3.jpg
 5593,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000212_4.jpg
-5594,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041032_3.jpg
 5595,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000036_4.jpg
 5596,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041084_4.jpg
 5597,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085018_6.jpg
@@ -198,7 +198,6 @@
 5614,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085286_5.jpg
 5615,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100187_2.jpg
 5616,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085223_8.jpg
-5617,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000029_9.jpg
 5618,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085117_5.jpg
 5619,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041086_4.jpg
 5620,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085053_3.jpg
@@ -215,7 +214,6 @@
 5631,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600024_3.jpg
 5632,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100027_4.jpg
 5633,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041079_5.jpg
-5634,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000079_6.jpg
 5635,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041185_3.jpg
 5636,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041133_4.jpg
 5637,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085096_5.jpg
@@ -242,13 +240,13 @@
 5658,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000056_7.jpg
 5659,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041107_5.jpg
 5660,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085314_3.jpg
-5661,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085107_4.jpg
 5662,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085056_4.jpg
 5663,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041006_4.jpg
 5664,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000017_7.jpg
 5665,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100054_3.jpg
 5666,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000097_4.jpg
 5667,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000057_6.jpg
+5668,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000017_8.jpg
 5669,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100197_3.jpg
 5670,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085309_4.jpg
 5671,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100023_4.jpg
@@ -270,7 +268,6 @@
 5687,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100032_6.jpg
 5688,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100021_6.jpg
 5689,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041217_4.jpg
-5690,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085261_5.jpg
 5691,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100131_5.jpg
 5692,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100129_5.jpg
 5693,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000180_2.jpg
@@ -307,6 +304,7 @@
 5724,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000042_2.jpg
 5725,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000012_6.jpg
 5726,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000057_2.jpg
+5727,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600006_2.jpg
 5728,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000027_5.jpg
 5729,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000110_3.jpg
 5730,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041047_4.jpg
@@ -314,11 +312,11 @@
 5732,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000062_4.jpg
 5733,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085157_2.jpg
 5734,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600005_3.jpg
+5735,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085176_3.jpg
 5736,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000123_6.jpg
 5737,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100001_4.jpg
 5738,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000115_1.jpg
 5739,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100138_5.jpg
-5740,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000191_3.jpg
 5741,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085269_3.jpg
 5742,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000107_3.jpg
 5743,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300131_2.jpg
@@ -429,6 +427,7 @@
 5848,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041031_3.jpg
 5849,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000007_4.jpg
 5850,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000043_3.jpg
+5851,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000215_3.jpg
 5852,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300074_4.jpg
 5853,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085104_6.jpg
 5854,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100082_3.jpg
@@ -473,6 +472,7 @@
 5893,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041199_3.jpg
 5894,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300063_3.jpg
 5895,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000204_4.jpg
+5896,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000054_2.jpg
 5897,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000038_4.jpg
 5898,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085127_3.jpg
 5899,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041021_3.jpg
@@ -483,6 +483,7 @@
 5904,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000185_4.jpg
 5905,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000061_7.jpg
 5906,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100169_3.jpg
+5907,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085137_6.jpg
 5908,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085202_4.jpg
 5909,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100019_8.jpg
 5910,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085303_4.jpg
@@ -501,7 +502,6 @@
 5923,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000073_5.jpg
 5924,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085235_5.jpg
 5925,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041063_4.jpg
-5926,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300130_5.jpg
 5927,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100189_6.jpg
 5928,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000071_2.jpg
 5929,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000025_8.jpg
@@ -539,9 +539,9 @@
 5961,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041059_4.jpg
 5962,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100163_4.jpg
 5963,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100038_4.jpg
+5964,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000188_4.jpg
 5965,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041206_4.jpg
 5966,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300120_5.jpg
-5967,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100009_10.jpg
 5968,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085246_6.jpg
 5969,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000113_2.jpg
 5970,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085057_9.jpg
@@ -606,7 +606,6 @@
 6029,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000076_5.jpg
 6030,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000065_6.jpg
 6031,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085011_4.jpg
-6032,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300239_6.jpg
 6033,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000161_4.jpg
 6034,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000018_5.jpg
 6035,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000083_3.jpg
@@ -622,6 +621,7 @@
 6045,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100040_2.jpg
 6046,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000002_9.jpg
 6047,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085115_3.jpg
+6048,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000009_7.jpg
 6049,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085142_4.jpg
 6050,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041042_5.jpg
 6051,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100031_2.jpg
@@ -723,6 +723,7 @@
 6147,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085165_2.jpg
 6148,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100069_2.jpg
 6149,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000094_2.jpg
+6150,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000036_1.jpg
 6151,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085198_4.jpg
 6152,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041012_4.jpg
 6153,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041014_9.jpg
@@ -740,14 +741,12 @@
 6165,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085300_5.jpg
 6166,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000046_2.jpg
 6167,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100061_2.jpg
-6168,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085090_4.jpg
 6169,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000210_1.jpg
 6170,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041176_4.jpg
 6171,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100030_3.jpg
 6172,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100011_3.jpg
 6173,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041039_5.jpg
 6174,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041012_3.jpg
-6175,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041087_2.jpg
 6176,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085171_4.jpg
 6177,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000018_5.jpg
 6178,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000085_7.jpg
@@ -799,6 +798,7 @@
 6224,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041181_3.jpg
 6225,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041124_4.jpg
 6226,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041146_2.jpg
+6227,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100061_3.jpg
 6228,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000021_2.jpg
 6229,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000000_6.jpg
 6230,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300070_4.jpg
@@ -817,6 +817,7 @@
 6243,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000003_6.jpg
 6244,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600073_3.jpg
 6245,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300218_5.jpg
+6246,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100181_2.jpg
 6247,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000040_4.jpg
 6248,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041072_5.jpg
 6249,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300119_4.jpg
@@ -832,9 +833,9 @@
 6259,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600013_2.jpg
 6260,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000022_9.jpg
 6261,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085217_4.jpg
+6262,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000028_4.jpg
 6263,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000105_5.jpg
 6264,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000010_2.jpg
-6265,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000003_2.jpg
 6266,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085030_3.jpg
 6267,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300220_2.jpg
 6268,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000056_5.jpg
@@ -864,7 +865,6 @@
 6292,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100024_4.jpg
 6293,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041123_4.jpg
 6294,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000042_4.jpg
-6295,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085036_4.jpg
 6296,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085028_6.jpg
 6297,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085000_3.jpg
 6298,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000021_4.jpg
@@ -894,9 +894,10 @@
 6322,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000012_3.jpg
 6323,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000075_5.jpg
 6324,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000028_9.jpg
-6325,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000037_4.jpg
 6326,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000053_4.jpg
 6327,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085136_5.jpg
+6328,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12000136_3.jpg
+6329,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041003_3.jpg
 6330,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600028_3.jpg
 6331,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300135_4.jpg
 6332,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000062_3.jpg
@@ -921,7 +922,6 @@
 6351,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000125_2.jpg
 6352,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085286_4.jpg
 6353,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000096_4.jpg
-6354,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041051_4.jpg
 6355,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100167_4.jpg
 6356,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085242_6.jpg
 6357,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600061_4.jpg
@@ -936,7 +936,6 @@
 6366,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000059_2.jpg
 6367,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000040_4.jpg
 6368,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000207_2.jpg
-6369,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000092_4.jpg
 6370,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000101_2.jpg
 6371,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000061_6.jpg
 6372,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000023_5.jpg
@@ -948,13 +947,11 @@
 6378,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100026_3.jpg
 6379,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100006_4.jpg
 6380,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085277_6.jpg
-6381,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600032_3.jpg
 6382,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000011_3.jpg
 6383,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000015_3.jpg
 6384,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085147_4.jpg
 6385,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000022_8.jpg
 6386,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085247_6.jpg
-6387,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000141_3.jpg
 6388,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300247_3.jpg
 6389,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000196_2.jpg
 6390,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000025_6.jpg
@@ -1052,10 +1049,10 @@
 6482,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100039_2.jpg
 6483,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000087_3.jpg
 6484,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085260_4.jpg
-6485,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100066_5.jpg
 6486,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000117_2.jpg
 6487,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600001_4.jpg
 6488,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100022_2.jpg
+6489,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100016_3.jpg
 6490,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085047_2.jpg
 6491,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100011_7.jpg
 6492,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000001_7.jpg
@@ -1087,6 +1084,7 @@
 6518,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100057_5.jpg
 6519,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000159_3.jpg
 6520,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000187_3.jpg
+6521,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000108_6.jpg
 6522,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085183_5.jpg
 6523,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000039_3.jpg
 6524,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041025_5.jpg
@@ -1136,6 +1134,7 @@
 6568,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000099_5.jpg
 6569,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085099_5.jpg
 6570,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000003_4.jpg
+6571,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100013_6.jpg
 6572,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041144_2.jpg
 6573,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600050_3.jpg
 6574,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300223_3.jpg
@@ -1159,6 +1158,7 @@
 6592,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100166_4.jpg
 6593,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041005_4.jpg
 6594,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000098_6.jpg
+6595,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300076_3.jpg
 6596,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100007_3.jpg
 6597,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12000038_4.jpg
 6598,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000017_4.jpg
@@ -1184,13 +1184,14 @@
 6618,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100027_4.jpg
 6619,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085068_6.jpg
 6620,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085050_3.jpg
-6621,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000088_2.jpg
 6622,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000046_3.jpg
 6623,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000044_4.jpg
+6624,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085178_6.jpg
 6625,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000087_3.jpg
 6626,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000067_6.jpg
 6627,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041153_2.jpg
 6628,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000160_3.jpg
+6629,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000048_2.jpg
 6630,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000129_1.jpg
 6631,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041165_3.jpg
 6632,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300229_3.jpg
@@ -1205,7 +1206,6 @@
 6641,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041081_5.jpg
 6642,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041184_4.jpg
 6643,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000028_7.jpg
-6644,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085034_3.jpg
 6645,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000075_5.jpg
 6646,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600045_3.jpg
 6647,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000004_3.jpg
@@ -1221,7 +1221,6 @@
 6657,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000118_4.jpg
 6658,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100135_3.jpg
 6659,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085232_9.jpg
-6660,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085152_6.jpg
 6661,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085324_3.jpg
 6662,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100124_2.jpg
 6663,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000026_1.jpg
@@ -1242,6 +1241,7 @@
 6678,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085012_0.jpg
 6679,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000020_7.jpg
 6680,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085269_6.jpg
+6681,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000032_5.jpg
 6682,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000073_5.jpg
 6683,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000004_5.jpg
 6684,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000003_4.jpg
@@ -1253,6 +1253,7 @@
 6690,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000100_4.jpg
 6691,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600034_2.jpg
 6692,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085261_4.jpg
+6693,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000029_5.jpg
 6694,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000070_2.jpg
 6695,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000122_3.jpg
 6696,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085039_3.jpg
@@ -1281,7 +1282,6 @@
 6719,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085208_5.jpg
 6720,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600000_2.jpg
 6721,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000085_4.jpg
-6722,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300152_5.jpg
 6723,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041007_5.jpg
 6724,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085226_8.jpg
 6725,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_50600058_3.jpg
@@ -1330,10 +1330,8 @@
 6768,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300224_2.jpg
 6769,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041193_2.jpg
 6770,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100014_4.jpg
-6771,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000081_2.jpg
 6772,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000020_8.jpg
 6773,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000102_3.jpg
-6774,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085088_4.jpg
 6775,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041132_3.jpg
 6776,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_44000055_7.jpg
 6777,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085306_4.jpg
@@ -1361,6 +1359,7 @@
 6799,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041129_6.jpg
 6800,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000073_3.jpg
 6801,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000015_5.jpg
+6802,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000119_4.jpg
 6803,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041043_5.jpg
 6804,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100062_4.jpg
 6805,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000191_1.jpg
@@ -1380,9 +1379,10 @@
 6819,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_90100003_5.jpg
 6820,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_20085026_4.jpg
 6821,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100165_7.jpg
-6822,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300155_5.jpg
 6823,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_00041017_5.jpg
+6824,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000007_4.jpg
 6825,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12100016_5.jpg
+6826,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_77000001_6.jpg
 6827,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_92000112_3.jpg
 6828,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_12300238_6.jpg
 6829,4,Spurious_copper,./My_Datasets/Classification/DeepPCB-Crop/Spurious_copper/Spurious_copper_13000208_6.jpg

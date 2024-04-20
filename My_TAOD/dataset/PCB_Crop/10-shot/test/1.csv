@@ -6,7 +6,6 @@
 987,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_03_3.jpg
 988,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_07_2.jpg
 989,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_06_2.jpg
-990,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_17_1.jpg
 991,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_06_0.jpg
 992,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_08_3.jpg
 993,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_06_3.jpg
@@ -14,7 +13,6 @@
 995,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_02_1.jpg
 996,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_07_2.jpg
 997,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_01_1.jpg
-998,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_07_1.jpg
 999,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_04_2.jpg
 1000,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_01_2.jpg
 1001,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_06_0.jpg
@@ -45,12 +43,12 @@
 1026,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_01_2.jpg
 1027,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_04_1.jpg
 1028,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_05_3.jpg
-1029,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_04_0.jpg
 1030,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_08_1.jpg
 1031,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_08_0.jpg
 1032,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_10_0.jpg
 1033,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_08_3.jpg
 1034,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_07_0.jpg
+1035,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_07_1.jpg
 1036,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_11_0.jpg
 1037,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_09_2.jpg
 1038,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_03_4.jpg
@@ -60,12 +58,14 @@
 1042,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_06_4.jpg
 1043,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_04_2.jpg
 1044,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_06_1.jpg
+1045,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_05_0.jpg
 1046,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_10_4.jpg
 1047,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_06_0.jpg
 1048,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_01_0.jpg
 1049,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_07_3.jpg
 1050,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_03_4.jpg
 1051,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_02_1.jpg
+1052,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_10_2.jpg
 1053,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_05_4.jpg
 1054,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_08_2.jpg
 1055,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_03_0.jpg
@@ -156,6 +156,7 @@
 1140,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_06_0.jpg
 1141,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_07_1.jpg
 1142,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_03_0.jpg
+1143,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_09_1.jpg
 1144,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_06_2.jpg
 1145,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_05_2.jpg
 1146,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_08_2.jpg
@@ -170,6 +171,7 @@
 1155,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_02_0.jpg
 1156,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_17_2.jpg
 1157,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_06_1.jpg
+1158,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_02_1.jpg
 1159,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_03_2.jpg
 1160,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_10_0.jpg
 1161,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_17_0.jpg
@@ -184,6 +186,7 @@
 1170,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_07_0.jpg
 1171,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_08_1.jpg
 1172,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_03_1.jpg
+1173,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_05_0.jpg
 1174,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_01_1.jpg
 1175,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_01_0.jpg
 1176,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_02_0.jpg
@@ -212,7 +215,6 @@
 1199,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_09_3.jpg
 1200,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_01_3.jpg
 1201,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_10_1.jpg
-1202,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_09_2.jpg
 1203,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_07_4.jpg
 1204,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_10_1.jpg
 1205,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_13_2.jpg
@@ -242,7 +244,6 @@
 1229,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_08_0.jpg
 1230,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_03_1.jpg
 1231,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_02_0.jpg
-1232,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_08_4.jpg
 1233,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_02_0.jpg
 1234,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_03_0.jpg
 1235,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_02_2.jpg
@@ -291,7 +292,6 @@
 1278,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_04_4.jpg
 1279,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_03_0.jpg
 1280,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_06_0.jpg
-1281,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_07_4.jpg
 1282,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_08_1.jpg
 1283,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_04_1.jpg
 1284,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_02_4.jpg
@@ -332,6 +332,7 @@
 1319,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_04_0.jpg
 1320,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_20_1.jpg
 1321,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_03_0.jpg
+1322,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_03_1.jpg
 1323,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_04_2.jpg
 1324,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_10_4.jpg
 1325,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_04_1.jpg
@@ -340,6 +341,7 @@
 1328,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_05_4.jpg
 1329,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_02_5.jpg
 1330,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_02_1.jpg
+1331,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_05_0.jpg
 1332,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_20_0.jpg
 1333,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_02_0.jpg
 1334,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_04_4.jpg
@@ -362,6 +364,7 @@
 1351,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_05_1.jpg
 1352,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_13_0.jpg
 1353,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_02_1.jpg
+1354,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_02_1.jpg
 1355,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_10_2.jpg
 1356,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_05_4.jpg
 1357,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_04_2.jpg
@@ -379,6 +382,7 @@
 1369,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_09_1.jpg
 1370,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_07_0.jpg
 1371,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_18_1.jpg
+1372,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_13_2.jpg
 1373,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_02_0.jpg
 1374,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_05_1.jpg
 1375,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_01_1.jpg
@@ -388,7 +392,6 @@
 1379,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_07_1.jpg
 1380,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_09_0.jpg
 1381,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_09_0.jpg
-1382,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_05_3.jpg
 1383,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_09_3.jpg
 1384,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_05_4.jpg
 1385,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_06_0.jpg
@@ -441,14 +444,12 @@
 1432,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_02_2.jpg
 1433,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_13_1.jpg
 1434,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_01_2.jpg
-1435,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_10_2.jpg
 1436,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_08_2.jpg
 1437,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_04_2.jpg
 1438,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_07_3.jpg
 1439,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_07_1.jpg
 1440,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_09_1.jpg
 1441,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_05_1.jpg
-1442,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_04_4.jpg
 1443,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_16_2.jpg
 1444,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_13_0.jpg
 1445,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_04_2.jpg
@@ -461,7 +462,6 @@
 1452,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_09_0.jpg
 1453,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_06_4.jpg
 1454,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_05_0.jpg
-1455,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_07_0.jpg
 1456,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_05_0.jpg
 1457,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_06_0.jpg
 1458,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_04_0.jpg

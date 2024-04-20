@@ -255,16 +255,16 @@ RESNET18_PRETRAINED.fc = nn.Linear(RESNET18_PRETRAINED.fc.in_features, 5)
 RESNET50_PRETRAINED = torchvision.models.resnet50(pretrained=True)
 RESNET50_PRETRAINED.fc = nn.Linear(RESNET50_PRETRAINED.fc.in_features, 5)
 
-def classification_net_select(name, pretrained=False):
-    if (name.lower() == 'resnet18') and (pretrained is False):
-        return RESNET18
-    elif (name.lower() == 'vgg11') and (pretrained is False):
+def classification_net_select(name):
+    if (name.lower() == 'vgg11'):
         return VGG11
-    elif (name.lower() == 'resnet50') and (pretrained is False):
+    elif (name.lower() == 'resnet18'):
+        return RESNET18
+    elif (name.lower() == 'resnet50'):
         return RESNET50
-    elif (name.lower() == "resnet18") and pretrained:
+    elif (name.lower() == "resnet18_pretrained"):
         return RESNET18_PRETRAINED
-    elif (name.lower() == "resnet50") and pretrained:
+    elif (name.lower() == "resnet50_pretrained"):
         return RESNET50_PRETRAINED
     else:
         sys.exit(f"ERROR:\t({__name__}):The Net: '{name}' doesn't exist")

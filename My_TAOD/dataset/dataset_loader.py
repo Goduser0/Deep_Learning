@@ -14,16 +14,10 @@ import torchvision.transforms as T
 
 # png/jpg/bmp -> ndarray
 def bmp2ndarray(file_path):
-    """将BMP文件转为ndarray"""
+    """将bmp/png/jpg文件转为ndarray"""
     img = Image.open(file_path).convert('RGB')
     img_array = np.array(img).astype(np.uint8)
     return img_array
-
-# # png/jpg/bmp -> PIL.Image
-# def bmp2PIL(file_path):
-#     """将BMP文件转为PIL Image"""
-#     img = Image.open(file_path).convert('RGB')
-#     return img
 
 # [0, 255] -> [-1, 1]
 def img_255to1(img):
@@ -238,23 +232,30 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
 ## Test
 #######################################################################################################
 def test():
-    a = cv2.imread("/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/PCB-Crop/Short/01_short_01_0.jpg")
-    b = bmp2ndarray("/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/PCB-Crop/Short/01_short_01_0.jpg")
-    c = np.array([[[255., 255., 255.], [0., 0., 0.]], [[255., 255., 255.], [0., 0., 0.]]])
+    path_1 = "/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/PCB-Crop/Short/01_short_01_0.jpg"
+    path_2 = "/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/PCB-200/Mouse_bite/000001_0_01_04736_11571.bmp"
+    
+    a = cv2.imread(path_1) # H*W*C
+    b = bmp2ndarray(path_2)
+    c = np.array([[[0, 0, 0], [50, 50, 50]], [[100, 100, 100], [150, 150, 150]], [[200, 200, 200], [250, 250, 250]], [[255, 255, 255], [255, 255, 255]]], dtype=np.uint8)
+    
+    print(f"a.shape:{a.shape} | b.shape:{b.shape} | c.shape:{c.shape}")
     
     trans = T.Compose(
     [
         T.ToTensor(), 
         T.Resize((128, 128)),
     ])
-    result = trans(img_255to1(b))
-    # print(result, result.shape)
+    result = trans(img_255to1(c))
+    
+    print(np.max(c), np.min(c), c.shape, c.dtype)
+    print(torch.max(result), torch.min(result), result.shape, result.dtype)
     
     data_iter_loader = get_loader('PCB_Crop', 
                               "./My_TAOD/dataset/PCB_Crop/0.7-shot/train/2.csv", 
                               8,
                               4, 
-                              shuffle=False, 
+                              shuffle=True, 
                               trans=trans,
                               img_type='ndarray',
                               drop_last=True,
