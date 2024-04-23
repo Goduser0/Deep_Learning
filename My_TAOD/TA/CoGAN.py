@@ -70,10 +70,11 @@ parser.add_argument("--category",
 
 
 parser.add_argument("--num_workers", type=int, default=4)
-parser.add_argument("--batch_size", type=int, default=30)
+parser.add_argument("--S_batch_size", type=int, default=64)
+parser.add_argument("--T_batch_size", type=int, default=16)
 
 # train
-parser.add_argument("--num_epochs", type=int, default=1000)
+parser.add_argument("--num_epochs", type=int, default=30000)
 parser.add_argument("--gpu_id", type=str, default="0")
 
 # G
