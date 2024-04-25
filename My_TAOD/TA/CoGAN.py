@@ -52,7 +52,7 @@ parser.add_argument("--dataset_S_class",
                     )
 parser.add_argument("--dataset_S_path",
                     type=str,
-                    default="My_TAOD/dataset/DeepPCB_Crop/160-shot/train/0.csv")
+                    default="My_TAOD/dataset/DeepPCB_Crop/1.0-shot/train/0.csv")
 
 parser.add_argument("--dataset_T_class",
                     type=str,
@@ -70,11 +70,11 @@ parser.add_argument("--category",
 
 
 parser.add_argument("--num_workers", type=int, default=4)
-parser.add_argument("--S_batch_size", type=int, default=64)
-parser.add_argument("--T_batch_size", type=int, default=16)
+parser.add_argument("--S_batch_size", type=int, default=32)
+parser.add_argument("--T_batch_size", type=int, default=10)
 
 # train
-parser.add_argument("--num_epochs", type=int, default=30000)
+parser.add_argument("--num_epochs", type=int, default=2000)
 parser.add_argument("--gpu_id", type=str, default="0")
 
 # G
@@ -131,7 +131,7 @@ trans = T.Compose(
 S_iter_loader = get_loader(
     config.dataset_S_class,
     config.dataset_S_path,
-    config.batch_size,
+    config.S_batch_size,
     config.num_workers,
     shuffle=True,
     trans=trans,
@@ -142,7 +142,7 @@ S_iter_loader = get_loader(
 T_iter_loader = get_loader(
     config.dataset_T_class,
     config.dataset_T_path,
-    config.batch_size,
+    config.T_batch_size,
     config.num_workers,
     shuffle=True,
     trans=trans,
@@ -201,11 +201,12 @@ for epoch in tqdm.trange(1, config.num_epochs + 1, desc="On training"):
         T_G_loss_list.append(T_G_loss.item())
     
     # Show
-    print(
-        "[Epoch %d/%d] [S_D_loss: %.5f] [T_D_loss: %.5f] [S_G_loss: %.5f] [T_G_loss: %.5f]"
-        %
-        (epoch, config.num_epochs, np.mean(S_D_loss_list), np.mean(T_D_loss_list), np.mean(S_G_loss_list), np.mean(T_G_loss_list))
-    )
+    # print(
+    #     "[Epoch %d/%d] [S_D_loss: %.5f] [T_D_loss: %.5f] [S_G_loss: %.5f] [T_G_loss: %.5f]"
+    #     %
+    #     (epoch, config.num_epochs, np.mean(S_D_loss_list), np.mean(T_D_loss_list), np.mean(S_G_loss_list), np.mean(T_G_loss_list))
+    # )
+    
     # Record Data
     cogan_record_data(config,
                       {

@@ -453,7 +453,7 @@ def stage2_record_data(config, content, flag_plot=True):
 def cogan_record_data(config, content, flag_plot=True):
     """Save Data"""
     assert os.path.exists(config.results_dir)
-    filename = config.dataset_S_class + '2' + config.dataset_T_class + ' ' + config.category + ' ' + config.time
+    filename = config.dataset_S_class + '_2_' + config.dataset_T_class + ' ' + config.category + ' ' + config.time
     filepath = config.results_dir + '/' + filename + '.csv'
     content = pd.DataFrame.from_dict(content, orient="index").T
     
@@ -504,6 +504,73 @@ def cogan_record_data(config, content, flag_plot=True):
         ax1.legend()
         fig.tight_layout()
         plt.savefig(f'{config.results_dir}/{filename}/T_G_loss.jpg')
+        plt.close()
+
+#######################################################################################################
+#### FUNCTION: cyclegan_record_data()
+#######################################################################################################
+def cyclegan_record_data(config, content, flag_plot=True):
+    """Save Data"""
+    assert os.path.exists(config.results_dir)
+    filename = config.dataset_S_class + '_2_' + config.dataset_T_class + ' ' + config.category + ' ' + config.time
+    filepath = config.results_dir + '/' + filename + '.csv'
+    content = pd.DataFrame.from_dict(content, orient="index").T
+    
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.read_csv(filepath)
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+    
+    if not os.path.exists(f"{config.results_dir}/{filename}"):
+        os.makedirs(f"{config.results_dir}/{filename}")
+        
+    if flag_plot:
+        results = pd.read_csv(filepath)
+        
+        epoch = results["epoch"]
+        num_epochs = results["num_epochs"]
+        loss_G = results["loss_G"]
+        loss_G_identity = results["loss_G_identity"]
+        loss_G_GAN = results["loss_G_GAN"]
+        loss_G_cycle = results["loss_G_cycle"]
+        loss_D = results["loss_D"]
+
+
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in loss_G], label="loss_G")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/loss_G.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in loss_G_identity], label="loss_G_identity")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/loss_G_identity.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in loss_G_GAN], label="loss_G_GAN")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/loss_G_GAN.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in loss_G_cycle], label="loss_G_cycle")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/loss_G_cycle.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in loss_D], label="loss_D")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{config.results_dir}/{filename}/loss_D.jpg')
         plt.close()
 
 #######################################################################################################

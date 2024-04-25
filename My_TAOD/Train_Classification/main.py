@@ -58,7 +58,7 @@ if __name__ == "__main__":
     parser.add_argument("--train_batch_size", type=int, default=16, help="Mini-batch size of train")
     parser.add_argument("--validation_batch_size", type=int, default=16, help="Mini-batch size of validation")
     parser.add_argument("--lr", type=float, default=1e-4, help="Learning rate for training")
-    parser.add_argument("--epochs", type=int, default=200, help="Training epochs")
+    parser.add_argument("--epochs", type=int, default=100, help="Training epochs")
     parser.add_argument("--img_size", type=int, default=128)
     
     # Test Configuration

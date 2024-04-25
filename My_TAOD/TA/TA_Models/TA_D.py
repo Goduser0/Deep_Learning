@@ -327,13 +327,47 @@ class CoGAN_Discriminator(nn.Module):
         return out
 
 ########################################################################################################
+# CLASS: CycleGAN_Discriminator()
+########################################################################################################
+class CycleGAN_Discriminator(nn.Module):
+    def __init__(self, input_nc):
+        super(CycleGAN_Discriminator, self).__init__()
+
+        # A bunch of convolutions one after another
+        model = [   nn.Conv2d(input_nc, 64, 4, stride=2, padding=1),
+                    nn.LeakyReLU(0.2, inplace=True) ]
+
+        model += [  nn.Conv2d(64, 128, 4, stride=2, padding=1),
+                    nn.InstanceNorm2d(128), 
+                    nn.LeakyReLU(0.2, inplace=True) ]
+
+        model += [  nn.Conv2d(128, 256, 4, stride=2, padding=1),
+                    nn.InstanceNorm2d(256), 
+                    nn.LeakyReLU(0.2, inplace=True) ]
+
+        model += [  nn.Conv2d(256, 512, 4, padding=1),
+                    nn.InstanceNorm2d(512), 
+                    nn.LeakyReLU(0.2, inplace=True) ]
+
+        # FCN classification layer
+        model += [nn.Conv2d(512, 1, 4, padding=1)]
+
+        self.model = nn.Sequential(*model)
+
+    def forward(self, x):
+        x =  self.model(x)
+        # Average pooling and flatten
+        return F.avg_pool2d(x, x.size()[2:]).view(x.size()[0], -1)
+    
+########################################################################################################
 # Discriminator TEST
 ########################################################################################################
 def test():
     # D = PFS_Discriminator()
     # D = PFS_Discriminator_patch()
     # D = CoGAN_Discriminator()
-    D = FeatureMatchDiscriminator()
+    # D = FeatureMatchDiscriminator()
+    D = CycleGAN_Discriminator(3)
     X = torch.randn(8, 3, 128, 128) # (B, C, W, H)
     # summary(D, X.shape, device="cpu")
     
