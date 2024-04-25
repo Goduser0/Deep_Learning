@@ -17,8 +17,6 @@ from My_TAOD.TA.TA_Models.TA_VAE import VAE
 from TA_utils import requires_grad
 from TA_layers import KLDLoss
 
-import sys
-sys.path.append("./My_TAOD/dataset")
 from dataset_loader import get_loader
 
 ########################################################################################################

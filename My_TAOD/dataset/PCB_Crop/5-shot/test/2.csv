@@ -12,7 +12,6 @@
 10,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_01_0.jpg
 11,2,Short,./My_Datasets/Classification/PCB-Crop/Short/07_short_02_1.jpg
 12,2,Short,./My_Datasets/Classification/PCB-Crop/Short/05_short_05_1.jpg
-13,2,Short,./My_Datasets/Classification/PCB-Crop/Short/04_short_08_1.jpg
 14,2,Short,./My_Datasets/Classification/PCB-Crop/Short/07_short_08_0.jpg
 15,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_09_2.jpg
 16,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_05_1.jpg
@@ -30,8 +29,6 @@
 28,2,Short,./My_Datasets/Classification/PCB-Crop/Short/09_short_04_1.jpg
 29,2,Short,./My_Datasets/Classification/PCB-Crop/Short/07_short_08_2.jpg
 30,2,Short,./My_Datasets/Classification/PCB-Crop/Short/04_short_02_0.jpg
-31,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_08_2.jpg
-32,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_04_1.jpg
 33,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_08_1.jpg
 34,2,Short,./My_Datasets/Classification/PCB-Crop/Short/10_short_02_0.jpg
 35,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_04_2.jpg
@@ -53,6 +50,7 @@
 51,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_06_4.jpg
 52,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_10_0.jpg
 53,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_03_0.jpg
+54,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_06_2.jpg
 55,2,Short,./My_Datasets/Classification/PCB-Crop/Short/07_short_05_2.jpg
 56,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_07_0.jpg
 57,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_07_4.jpg
@@ -64,7 +62,6 @@
 63,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_09_0.jpg
 64,2,Short,./My_Datasets/Classification/PCB-Crop/Short/04_short_19_1.jpg
 65,2,Short,./My_Datasets/Classification/PCB-Crop/Short/09_short_04_3.jpg
-66,2,Short,./My_Datasets/Classification/PCB-Crop/Short/07_short_04_0.jpg
 67,2,Short,./My_Datasets/Classification/PCB-Crop/Short/09_short_07_2.jpg
 68,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_06_2.jpg
 69,2,Short,./My_Datasets/Classification/PCB-Crop/Short/06_short_04_4.jpg
@@ -135,6 +132,7 @@
 134,2,Short,./My_Datasets/Classification/PCB-Crop/Short/07_short_03_2.jpg
 135,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_03_2.jpg
 136,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_10_1.jpg
+137,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_10_3.jpg
 138,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_10_1.jpg
 139,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_06_4.jpg
 140,2,Short,./My_Datasets/Classification/PCB-Crop/Short/09_short_04_0.jpg
@@ -156,7 +154,6 @@
 156,2,Short,./My_Datasets/Classification/PCB-Crop/Short/06_short_08_2.jpg
 157,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_10_1.jpg
 158,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_01_3.jpg
-159,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_19_3.jpg
 160,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_07_2.jpg
 161,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_07_2.jpg
 162,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_16_1.jpg
@@ -167,6 +164,7 @@
 167,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_10_4.jpg
 168,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_02_4.jpg
 169,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_05_1.jpg
+170,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_03_0.jpg
 171,2,Short,./My_Datasets/Classification/PCB-Crop/Short/09_short_09_1.jpg
 172,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_06_4.jpg
 173,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_09_4.jpg
@@ -460,6 +458,7 @@
 461,2,Short,./My_Datasets/Classification/PCB-Crop/Short/07_short_03_3.jpg
 462,2,Short,./My_Datasets/Classification/PCB-Crop/Short/04_short_19_0.jpg
 463,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_03_2.jpg
+464,2,Short,./My_Datasets/Classification/PCB-Crop/Short/06_short_09_3.jpg
 465,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_06_0.jpg
 466,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_08_0.jpg
 467,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_07_1.jpg
@@ -476,6 +475,7 @@
 478,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_03_1.jpg
 479,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_09_1.jpg
 480,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_03_4.jpg
+481,2,Short,./My_Datasets/Classification/PCB-Crop/Short/05_short_04_2.jpg
 482,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_20_0.jpg
 483,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_03_3.jpg
 484,2,Short,./My_Datasets/Classification/PCB-Crop/Short/09_short_02_2.jpg

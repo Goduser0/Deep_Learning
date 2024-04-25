@@ -1,9 +1,9 @@
 {
     "python.analysis.typeCheckingMode": "off",
     "python.analysis.extraPaths": [
-        "./My_TAOD/dataset",
+        "./My_TAOD/dataset/",
         "./My_TAOD/TA/TA_Utils",
-        "./My_TAOD/TA/TA_Models",
-        "./Projects_Pytorch/FSGAN"
+        "./My_TAOD/TA/TA_Models/",
+        "./My_TAOD/TA/TA_Offline_Generator/",
     ]
 }

@@ -16,7 +16,11 @@ from TA_layers import SelfAttention, PixelNorm, EqualLinear
 # CLASS: FeatureMatchGenerator()
 ########################################################################################################
 class FeatureMatchGenerator(nn.Module):
-    def __init__(self, n_mlp=None, img_size=128, z_dim=128, conv_dim=64, lr_mlp=0.01):
+    def __init__(self, n_mlp=None, img_size=128, z_dim=128, conv_dim=64, lr_mlp=0.001):
+        """
+        input: n_mlp
+        output: image
+        """
         super(FeatureMatchGenerator, self).__init__()
         
         self.img_size = img_size
@@ -125,6 +129,10 @@ class ResBlockGenerator(nn.Module):
 ########################################################################################################
 class PFS_Generator(nn.Module):
     def __init__(self, z_dim, hidden_channels=128, out_channels=3):
+        """
+        input: z_dim
+        output: image
+        """
         super(PFS_Generator, self).__init__()
         self.z_dim = z_dim
         self.hidden_channels = hidden_channels
@@ -159,13 +167,123 @@ class PFS_Generator(nn.Module):
         return out
 
 ########################################################################################################
+# CLASS: CoGAN_Generator()
+########################################################################################################
+class CoGAN_Generator(nn.Module):
+    def __init__(self, z_dim, hidden_channels=128, out_channels=3):
+        """
+        input: z_dim
+        output: image
+        """
+        super(CoGAN_Generator, self).__init__()
+        self.z_dim = z_dim
+        self.hidden_channels = hidden_channels
+        self.out_channels = out_channels
+        
+        self.dense = nn.Linear(self.z_dim, 4 * 4 * self.hidden_channels)
+        self.front = nn.Sequential(
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2))
+        self.back1 = nn.Sequential(
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            nn.BatchNorm2d(self.hidden_channels),
+            nn.ReLU(),
+            nn.Conv2d(self.hidden_channels, self.out_channels, 3, stride=1, padding=1),
+            nn.Tanh())
+        self.back2 = nn.Sequential(
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            ResBlockGenerator(self.hidden_channels, self.hidden_channels, stride=2),
+            nn.BatchNorm2d(self.hidden_channels),
+            nn.ReLU(),
+            nn.Conv2d(self.hidden_channels, self.out_channels, 3, stride=1, padding=1),
+            nn.Tanh())
+
+        nn.init.xavier_uniform(self.dense.weight.data, 1.)
+        nn.init.xavier_uniform(self.back1[4].weight.data, 1.)
+        nn.init.xavier_uniform(self.back2[4].weight.data, 1.)
+
+    def forward(self, z, domain):
+        f = self.front(self.dense(z).view(-1, self.hidden_channels, 4, 4))
+        if domain == 'S':
+            return self.back1(f)
+        elif domain == 'T':
+            return self.back2(f)
+        
+########################################################################################################
+# CLASS: CycleGAN_Generator()
+########################################################################################################
+class CycleGAN_ResidualBlock(nn.Module):
+    def __init__(self, in_features):
+        super(CycleGAN_ResidualBlock, self).__init__()
+
+        conv_block = [  nn.ReflectionPad2d(1),
+                        nn.Conv2d(in_features, in_features, 3),
+                        nn.InstanceNorm2d(in_features),
+                        nn.ReLU(inplace=True),
+                        nn.ReflectionPad2d(1),
+                        nn.Conv2d(in_features, in_features, 3),
+                        nn.InstanceNorm2d(in_features)  ]
+
+        self.conv_block = nn.Sequential(*conv_block)
+
+    def forward(self, x):
+        return x + self.conv_block(x)
+
+class CycleGAN_Generator(nn.Module):
+    def __init__(self, input_nc, output_nc, n_residual_blocks=9):
+        super(CycleGAN_Generator, self).__init__()
+
+        # Initial convolution block       
+        model = [   nn.ReflectionPad2d(3),
+                    nn.Conv2d(input_nc, 64, 7),
+                    nn.InstanceNorm2d(64),
+                    nn.ReLU(inplace=True) ]
+
+        # Downsampling
+        in_features = 64
+        out_features = in_features*2
+        for _ in range(2):
+            model += [  nn.Conv2d(in_features, out_features, 3, stride=2, padding=1),
+                        nn.InstanceNorm2d(out_features),
+                        nn.ReLU(inplace=True) ]
+            in_features = out_features
+            out_features = in_features*2
+
+        # Residual blocks
+        for _ in range(n_residual_blocks):
+            model += [CycleGAN_ResidualBlock(in_features)]
+
+        # Upsampling
+        out_features = in_features//2
+        for _ in range(2):
+            model += [  nn.ConvTranspose2d(in_features, out_features, 3, stride=2, padding=1, output_padding=1),
+                        nn.InstanceNorm2d(out_features),
+                        nn.ReLU(inplace=True) ]
+            in_features = out_features
+            out_features = in_features//2
+
+        # Output layer
+        model += [  nn.ReflectionPad2d(3),
+                    nn.Conv2d(64, output_nc, 7),
+                    nn.Tanh() ]
+
+        self.model = nn.Sequential(*model)
+
+    def forward(self, x):
+        return self.model(x)
+    
+########################################################################################################
 # CLASS: Generater TEST
 ########################################################################################################
 def test():
-    # G = FeatureMatchGenerator(n_mlp=2)
-    G = PFS_Generator(128)
-    z = torch.randn(8, 128) # batchsize z_dim
-    summary(G, z.shape, device="cpu")
+    # G = PFS_Generator(128)
+    # G = FeatureMatchGenerator(n_mlp=3)
+    # G = CoGAN_Generator(128)
+    G = CycleGAN_Generator(3, 3)
+    z = torch.randn(16, 3, 128, 128) # batchsize z_dim
+    # summary(G, z.shape, device="cpu")
     
     print(f"Input z:{z.shape}")
     output = G(z)
