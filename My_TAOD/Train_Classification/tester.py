@@ -14,7 +14,7 @@ from trainer import Timer
 ########################################################################################################## 
 def classification_tester(config, data_iter):
     # 确定存在文件保存路径
-    test_result_save_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/Train_Classification/results_test"
+    test_result_save_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/Train_Classification/results_test/" + config.dataset_test_dir.split('/')[-2]
     assert os.path.exists(test_result_save_path), f"ERROR:\t({__name__}): No save_dir"
     
     test_model_path = config.test_model_path

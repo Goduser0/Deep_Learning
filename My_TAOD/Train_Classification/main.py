@@ -82,11 +82,23 @@ if __name__ == "__main__":
     config = parser.parse_args()
     
     # 一致性校验
+    if config.mode in ["test"]:
+        model_name = config.test_model_path.split('/')[-2]
+        train_log_path = "./My_TAOD/Train_Classification/logs/" + model_name + '.txt'
+        train_log = {}
+        with open(train_log_path, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    key, value = line.split(':', 1)
+                    train_log[key.strip()] = value.strip()
+        f.close()
+        
     assert (((config.mode in ["train"]) and (config.dataset_train_dir.split('/')[-3] == config.dataset_class))
             or
             ((config.mode in ["train_with_validation"]) and (config.dataset_train_dir.split('/')[-3] == config.dataset_class) and (config.dataset_validation_dir.split('/')[-3] == config.dataset_class))
             or
-            ((config.mode in ["test"]) and (config.dataset_test_dir.split('/')[-3] == config.dataset_class) and (config.test_model_path.split('/')[-2].split(" ")[0] == config.dataset_test_dir.split('/')[-3]))
+            ((config.mode in ["test"]) and (config.dataset_test_dir.split('/')[-3] == config.dataset_class) and (config.test_model_path.split('/')[-2].split(" ")[0] == config.dataset_test_dir.split('/')[-3]) and (train_log["dataset_train_dir"].split('/')[-2] == config.dataset_test_dir.split('/')[-2]))
             )
     
     # Logger

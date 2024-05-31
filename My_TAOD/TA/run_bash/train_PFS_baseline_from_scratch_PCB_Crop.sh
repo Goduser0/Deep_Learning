@@ -1,0 +1,5 @@
+python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/PFS_baseline_from_scratch.py --data_path "My_TAOD/dataset/PCB_Crop/30-shot/train/0.csv" --category "0" --dataset_class "PCB_Crop"
+python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/PFS_baseline_from_scratch.py --data_path "My_TAOD/dataset/PCB_Crop/30-shot/train/1.csv" --category "1" --dataset_class "PCB_Crop"
+python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/PFS_baseline_from_scratch.py --data_path "My_TAOD/dataset/PCB_Crop/30-shot/train/2.csv" --category "2" --dataset_class "PCB_Crop"
+python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/PFS_baseline_from_scratch.py --data_path "My_TAOD/dataset/PCB_Crop/30-shot/train/3.csv" --category "3" --dataset_class "PCB_Crop"
+python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/PFS_baseline_from_scratch.py --data_path "My_TAOD/dataset/PCB_Crop/30-shot/train/4.csv" --category "4" --dataset_class "PCB_Crop"

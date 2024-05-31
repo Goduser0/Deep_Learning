@@ -79,7 +79,7 @@ def load_img_for_mmd(csv_path, trans=None, batch_size=25):
             img = trans(img)
         else:
             img = img.transpose(2, 0, 1)
-        images.append(img)
+        images.append(img.cuda())
     
     if trans:
         images = torch.cat(images, dim=0)

@@ -275,18 +275,56 @@ class CycleGAN_Generator(nn.Module):
         return self.model(x)
     
 ########################################################################################################
+# CLASS: UNIT_Generator()
+########################################################################################################
+class UNIT_Generator(nn.Module):
+    def __init__(self, z_dim):
+        super(UNIT_Generator, self).__init__()
+        self.z_dim = z_dim
+        self.dense = nn.Linear(self.z_dim, 8 * 8 * 128)
+        self.front = nn.Sequential(
+                ResBlockGenerator(128, 128, stride=2),
+                ResBlockGenerator(128, 128, stride=2))
+        self.back1 = nn.Sequential(
+                ResBlockGenerator(128, 128, stride=2),
+                ResBlockGenerator(128, 128, stride=2),
+                nn.BatchNorm2d(128),
+                nn.ReLU(),
+                nn.Conv2d(128, 3, 3, stride=1, padding=1),
+                nn.Tanh())
+        self.back2 = nn.Sequential(
+                ResBlockGenerator(128, 128, stride=2),
+                ResBlockGenerator(128, 128, stride=2),
+                nn.BatchNorm2d(128),
+                nn.ReLU(),
+                nn.Conv2d(128, 3, 3, stride=1, padding=1),
+                nn.Tanh())
+
+        nn.init.xavier_uniform(self.dense.weight.data, 1.)
+        nn.init.xavier_uniform(self.back1[4].weight.data, 1.)
+        nn.init.xavier_uniform(self.back2[4].weight.data, 1.)
+
+    def forward(self, z, domain, feat=False, bp_single=True, t=False):
+        f = self.front(self.dense(z).view(-1, 128, 8, 8))
+        if domain == 'S':
+            return self.back1(f)
+        elif domain == 'T':
+            return self.back2(f)
+
+########################################################################################################
 # CLASS: Generater TEST
 ########################################################################################################
 def test():
     # G = PFS_Generator(128)
     # G = FeatureMatchGenerator(n_mlp=3)
     # G = CoGAN_Generator(128)
-    G = CycleGAN_Generator(3, 3)
-    z = torch.randn(16, 3, 128, 128) # batchsize z_dim
+    # G = CycleGAN_Generator(3, 3)
+    G = UNIT_Generator(128)
+    z = torch.randn(16, 128) # batchsize z_dim
     # summary(G, z.shape, device="cpu")
     
     print(f"Input z:{z.shape}")
-    output = G(z)
+    output = G.forward(z, domain='S')
     print(f"Output Y:{output.shape}")
     
 if __name__ == "__main__":
