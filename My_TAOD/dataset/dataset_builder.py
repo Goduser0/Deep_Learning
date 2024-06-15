@@ -443,7 +443,7 @@ if __name__ == "__main__":
     # build_dataset('NEU_CLS')
     # build_dataset('elpv')
     # build_dataset('Magnetic_Tile')
-    build_dataset('PCB_200')
+    # build_dataset('PCB_200')
     build_dataset('PCB_Crop')
     build_dataset('DeepPCB_Crop')
     pass

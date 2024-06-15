@@ -3,13 +3,13 @@ import warnings
 warnings.filterwarnings("ignore")
 
 import sys
-sys.path.append("My_TAOD/TA/TA_Metrics")
+sys.path.append("/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/TA_Metrics")
 from cal_fid import score_fid
 
-sys.path.append("My_TAOD/TA/TA_Offline_Generator")
+sys.path.append("/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/TA_Offline_Generator")
 from generater import generate, translate
 
-sys.path.append("./My_TAOD/TA/TA_Models")
+sys.path.append("/home/zhouquan/MyDoc/Deep_Learning//My_TAOD/TA/TA_Models")
 from TA_G import PFS_Generator, CoGAN_Generator, CycleGAN_Generator
 
 def aug_fid(z_dim, num_samples, model, model_path, img_save_path, real_path, num_fid_samples, domain=None, gpu_id="0"):

@@ -14,7 +14,7 @@ import torchvision.models as models
 import torchvision.transforms as T
 
 import sys
-sys.path.append("./My_TAOD/TA/TA_Utils")
+sys.path.append("/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/TA_Utils")
 from TA_utils import load_img_for_fid
 
 class ConvNetFeatureExtract(object):

@@ -95,7 +95,7 @@ torch.manual_seed(config.random_seed)
 np.random.seed(config.random_seed)
 
 # device
-os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
+os.environ["CUDA_VISIBLE_DEVICES"] = str(config.gpu_id)
 
 # data_loader
 trans = T.Compose(

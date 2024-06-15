@@ -77,7 +77,7 @@ class VariationalAutoEncoder(nn.Module):
             nn.Tanh(),            
         )
     
-    def encode(self, input: torch.Tensor) -> list[torch.Tensor]:
+    def encode(self, input: torch.Tensor):
         result = self.Encoder(input)
         result = torch.flatten(result, start_dim=1)
         
@@ -98,7 +98,7 @@ class VariationalAutoEncoder(nn.Module):
         eps = torch.randn_like(std)
         return eps * std + mu
     
-    def forward(self, input: torch.Tensor, **kwargs) -> list[torch.Tensor]:
+    def forward(self, input: torch.Tensor, **kwargs):
         """
         Returns:
             list[torch.Tensor]: [decode(z), input, mu, log_var, z]
@@ -172,7 +172,7 @@ class Encoder(nn.Module):
         self.fc_mu = nn.Linear(hidden_dims[-1] * self.last_layer_size * self.last_layer_size, latent_dim)
         self.fc_var = nn.Linear(hidden_dims[-1] * self.last_layer_size * self.last_layer_size, latent_dim)
     
-    def encode(self, input: torch.Tensor) -> list[torch.Tensor]:
+    def encode(self, input: torch.Tensor):
         result = self.Encoder(input)
         result = torch.flatten(result, start_dim=1)
         mu = self.fc_mu(result)
@@ -184,7 +184,7 @@ class Encoder(nn.Module):
         eps = torch.randn_like(std)
         return eps * std + mu
     
-    def forward(self, input: torch.Tensor, **kwargs) -> list[torch.Tensor]:
+    def forward(self, input: torch.Tensor, **kwargs):
         mu, log_var = self.encode(input)
         z = self.reparameterize(mu, log_var)
         return [mu, log_var, z]

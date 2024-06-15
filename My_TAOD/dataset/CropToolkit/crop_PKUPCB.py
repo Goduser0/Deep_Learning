@@ -60,11 +60,12 @@ for label in label_list:
             x_center = (xmin + xmax) // 2
             y_center = (ymin + ymax) // 2
             
-            ymin = y_center-100 if y_center >= 100 else 0
-            ymax = y_center+100 if y_center+100 <= height else height
+            alpha_size = 25
+            ymin = y_center-alpha_size if y_center >= alpha_size else 0
+            ymax = y_center+alpha_size if y_center+alpha_size <= height else height
             
-            xmin = x_center-100 if x_center >= 100 else 0
-            xmax = x_center+100 if x_center+100 <= weight else weight
+            xmin = x_center-alpha_size if x_center >= alpha_size else 0
+            xmax = x_center+alpha_size if x_center+alpha_size <= weight else weight
                 
             
             img_crop = img[ymin:ymax, xmin:xmax, :]

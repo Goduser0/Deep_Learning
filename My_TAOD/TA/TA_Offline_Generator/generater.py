@@ -16,9 +16,9 @@ import matplotlib.pyplot as plt
 import time
 
 import sys
-sys.path.append("./My_TAOD/dataset")
+sys.path.append("/home/zhouquan/MyDoc/Deep_Learning//My_TAOD/dataset")
 from dataset_loader import get_loader, get_loader_ST, img_1to255, img_255to1
-sys.path.append("./My_TAOD/TA/TA_Models")
+sys.path.append("/home/zhouquan/MyDoc/Deep_Learning//My_TAOD/TA/TA_Models")
 from TA_VAE import Encoder
 from TA_G import FeatureMatchGenerator, PFS_Generator
 

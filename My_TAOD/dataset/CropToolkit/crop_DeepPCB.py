@@ -36,10 +36,12 @@ for group in grouplist:
             label_list = ["Open_circuit", "Short", "Mouse_bite", "Spur", "Spurious_copper", "Pin_hole"]
             label = label_list[label_index-1]
             
-            xmin = x_center-50 if x_center >= 50 else 0
-            xmax = x_center+50 if x_center+50 <= weight else weight
-            ymin = y_center-50 if y_center >= 50 else 0
-            ymax = y_center+50 if y_center+50 <= height else height
+            alpha_size = 25
+            
+            xmin = x_center-alpha_size if x_center >= alpha_size else 0
+            xmax = x_center+alpha_size if x_center+alpha_size <= weight else weight
+            ymin = y_center-alpha_size if y_center >= alpha_size else 0
+            ymax = y_center+alpha_size if y_center+alpha_size <= height else height
             
             img_crop = img[ymin:ymax, xmin:xmax, :]
             
