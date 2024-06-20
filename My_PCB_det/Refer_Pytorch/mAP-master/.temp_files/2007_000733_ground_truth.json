@@ -1,0 +1,1 @@
+[{"class_name": "countertop", "bbox": "390 100 623 475", "used": false}, {"class_name": "tap", "bbox": "469 70 529 121", "used": false}, {"class_name": "wastecontainer", "bbox": "325 355 464 476", "used": false}, {"class_name": "sink", "bbox": "415 105 614 146", "used": false}, {"class_name": "bottle", "bbox": "559 41 609 131", "used": false}]
