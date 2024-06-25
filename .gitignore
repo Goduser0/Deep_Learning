@@ -1,5 +1,9 @@
 My_Datasets/
 
+My_PCB_det/Results/
+My_PCB_det/Weights/
+My_PCB_det/logs/
+
 My_TAOD/Train_Classification/models/
 My_TAOD/Train_Classification/samples/
 

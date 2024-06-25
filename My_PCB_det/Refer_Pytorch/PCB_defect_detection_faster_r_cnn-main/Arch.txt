@@ -1,0 +1,75 @@
+PCB_defect_detection_faster_r_cnn-main
+|
+|-Data_preprocess
+|   |
+|   |-data_expansion.py
+|   |
+|   |-order_name.py
+|   |
+|   |-voc_annotation.py
+|
+|-nets
+|   |
+|   |-classifier.py
+|   |
+|   |-FasterRCNN_train.py
+|   |
+|   |-resnet50_ECA_FPN.py
+|   |
+|   |-resnet50_FPN.py
+|   |
+|   |-resnet50.py
+|   |
+|   |-resnet101.py
+|   |
+|   |-rpn.py
+|   |
+|   |-Suggestion_box.py
+|   |
+|   |-vgg16.py
+|
+|-utils
+|   |
+|   |-kmeans_anchors
+|   |   |
+|   |   |-Bikmeans_anchors.py
+|   |   |
+|   |   |-main.py
+|   |   |
+|   |   |-plot_kmeans.py
+|   |   |
+|   |   |-read_voc.py
+|   |   |
+|   |   |-yolo-_kmeans.py
+|   |
+|   |-anchors.py
+|   |
+|   |-callbacks.py
+|   |
+|   |-dataloader.py
+|   |
+|   |-soft_nms.py
+|   |
+|   |-utils_bbox.py
+|   |
+|   |-utils_fit.py
+|   |
+|   |-utils_map.py
+|   |
+|   |-utils.py
+|
+|-data_expansion.py
+|
+|-frcnn_predict.py
+|
+|-get_map.py
+|
+|-order_name.py
+|
+|-predict.py
+|
+|-summary.py
+|
+|-train.py
+|
+|-voc-annotation.py

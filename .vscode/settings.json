@@ -6,6 +6,7 @@
         "./My_TAOD/TA/TA_Models/",
         "./My_TAOD/TA/TA_Offline_Generator/",
         "./My_PCB_det",
-        "./My_PCB_det"
+        "./My_PCB_det",
+        "./My_PCB_det/Utils"
     ]
 }
