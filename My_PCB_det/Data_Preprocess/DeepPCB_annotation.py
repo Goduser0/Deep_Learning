@@ -91,8 +91,8 @@ if __name__ == "__main__":
                 for obj in objects:
                     [left, top, right, bottom, cls_id] = map(int, obj.split(' '))
                     
-                    list_file.write(" " + ",".join([str(a) for a in [left, top, right, bottom]]) + ',' + str(int(cls_id)-1))
-                    nums[int(cls_id)-1] = nums[int(cls_id)-1] + 1
+                    list_file.write(" " + ",".join([str(a) for a in [left, top, right, bottom]]) + ',' + str(int(cls_id)))
+                    nums[int(cls_id)] = nums[int(cls_id)] + 1
                 #
                 list_file.write('\n')
     
@@ -112,7 +112,7 @@ if __name__ == "__main__":
 
         str_nums = [str(int(x)) for x in nums]
         tableData = [
-            classes, str_nums
+            classes, str_nums, ['0', '1', '2', '3', '4']
         ]
         colWidths = [0]*len(tableData)
         len1 = 0

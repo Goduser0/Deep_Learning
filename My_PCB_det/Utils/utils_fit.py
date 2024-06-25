@@ -3,6 +3,8 @@ import os
 import torch
 from tqdm import tqdm
 
+import sys
+sys.path.append("My_PCB_det/Utils")
 from utils import get_lr
 
 

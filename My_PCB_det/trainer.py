@@ -11,8 +11,8 @@ import torch.backends.cudnn as cudnn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 
-from net.FasterRCNN_train import FasterRCNN
-from net.Suggestion_box import FasterRCNNTrainer, FasterRCNNTrainer_fpn, get_lr_scheduler, set_optimizer_lr, weights_init
+from Nets.FasterRCNN_train import FasterRCNN
+from Nets.Suggestion_box import FasterRCNNTrainer, FasterRCNNTrainer_fpn, get_lr_scheduler, set_optimizer_lr, weights_init
 
 from dataloader import FRCNNDataset, frcnn_dataset_collate
 from utils import get_classes, logger

@@ -5,11 +5,8 @@ import operator
 import os
 import shutil
 import sys
-try:
-    from pycocotools.coco import COCO
-    from pycocotools.cocoeval import COCOeval
-except:
-    pass
+from pycocotools.coco import COCO
+from pycocotools.cocoeval import COCOeval
 import cv2
 import matplotlib
 matplotlib.use('Agg')

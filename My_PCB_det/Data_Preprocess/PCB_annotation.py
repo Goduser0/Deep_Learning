@@ -94,11 +94,12 @@ if __name__ == "__main__":
                 for obj in root.iter('object'):
                     cls = obj.find('name').text
                     cls_id = classes.index(cls)
+                    
                     xmlbox = obj.find('bndbox')
                     content = (int(float(xmlbox.find('xmin').text)), int(float(xmlbox.find('ymin').text)), int(float(xmlbox.find('xmax').text)), int(float(xmlbox.find('ymax').text)))
                     list_file.write(" " + ",".join([str(a) for a in content]) + ',' + str(cls_id))
                     
-                    nums[classes.index(cls)] = nums[classes.index(cls)] + 1
+                    nums[cls_id] = nums[cls_id] + 1
                 #
                 list_file.write('\n')
             
@@ -117,7 +118,7 @@ if __name__ == "__main__":
 
         str_nums = [str(int(x)) for x in nums]
         tableData = [
-            classes, str_nums
+            classes, str_nums, ['0', '1', '2', '3', '4']
         ]
         colWidths = [0]*len(tableData)
         len1 = 0

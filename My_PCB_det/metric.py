@@ -8,9 +8,9 @@ import glob
 import shutil
 import json
 import warnings
-from utils import txt2box, compute_ap, draw_text_in_image, log_average_miss_rate, draw_plot_func
-from PIL import Image
+import sys
 
+from Utils.utils import txt2box, compute_ap, draw_text_in_image, log_average_miss_rate, draw_plot_func
 warnings.filterwarnings('ignore')
 
 '''
@@ -29,8 +29,8 @@ warnings.filterwarnings('ignore')
 ## CONFIG
 #####################################################################################################################################
 parser = argparse.ArgumentParser()
-# parser.add_argument('--cwd', type=str, help="current work dictionary", default='My_PCB_det/mAP-master')
-parser.add_argument('--cwd', type=str, help="current work dictionary", default='My_PCB_det/result')
+
+parser.add_argument('--cwd', type=str, help="current work dictionary", default='My_PCB_det/Result/test')
 parser.add_argument('--dataset', type=str)
 parser.add_argument('--animation', help="animation is shown.", type=bool, default=True)
 parser.add_argument('--plot', help="plot is shown", type=bool, default=True)
@@ -86,13 +86,6 @@ for txt_file in ground_truth_files_list:
     already_seen_classes = []
     for line in lines_list:
         class_name, left, top, right, bottom = line
-        if config.dataset in ['tzb']:
-            img = Image.open(os.path.join(IMG_PATH, (file_id + ".bmp"))).convert('RGB')
-            height, weight = np.array(img).shape[:2]
-            left = (line[1] - 0.5*line[3])*weight
-            right = (line[1] + 0.5*line[3])*weight
-            top = (line[2] - 0.5*line[4])*height
-            bottom = (line[2] + 0.5*line[4])*height
         
         bounding_boxes.append({"class_name": class_name, "bbox":[left, top, right, bottom], "used":False})
         if class_name in gt_counter_per_class:
@@ -132,18 +125,12 @@ for class_index, class_name in enumerate(gt_classes):
         # 确保对应ground_turth结果存在
         assert os.path.exists(os.path.join(GT_PATH, (file_id + ".txt")))
         # 确保对应图像结果存在
-        assert (config.dataset not in ['tzb'] or os.path.exists(os.path.join(IMG_PATH, (file_id + ".bmp"))))
+        assert os.path.exists(os.path.join(IMG_PATH, (file_id + ".bmp"))) or os.path.exists(os.path.join(IMG_PATH, (file_id + ".jpg")))
+        
         lines_list = txt2box(txt_file, file_type='dr')
         for line in lines_list:
             # each defect
             temp_class_name, confidence, left, top, right, bottom = line
-            if config.dataset in ['tzb']:
-                img = Image.open(os.path.join(IMG_PATH, (file_id + ".bmp"))).convert('RGB')
-                height, weight = np.array(img).shape[:2]
-                left = (line[2] - 0.5*line[4])*weight
-                right = (line[2] + 0.5*line[4])*weight
-                top = (line[3] - 0.5*line[5])*height
-                bottom = (line[3] + 0.5*line[5])*height
             if temp_class_name == class_name:
                 bounding_boxes.append({"confidence":confidence, "file_id":file_id, "bbox":[left, top, right, bottom]})
     bounding_boxes.sort(key=lambda x:(x['confidence']), reverse=True)
@@ -365,7 +352,7 @@ if config.animation:
         # draw false negatives
         for obj in ground_truth_data:
             if not obj['used']:
-                bbgt = [ int(round(float(x))) for x in obj["bbox"].split() ]
+                bbgt = [int(round(float(x))) for x in obj["bbox"]]
                 cv2.rectangle(img,(bbgt[0],bbgt[1]),(bbgt[2],bbgt[3]),pink,2)
         cv2.imwrite(img_cumulative_path, img)
     

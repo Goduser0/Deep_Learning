@@ -1,11 +1,13 @@
 import torch.nn as nn
+import sys
 
-from net.classifier import Resnet50RoIHead, Resnet101RoIHead, VGG16RoIHead,Resnet50_FPNRoIHead
-from net.vgg16 import decom_vgg16
-from net.resnet50 import resnet50
-from net.resnet101 import resnet101
-from net.resnet50_FPN import resnet50_FPN
-from net.rpn import RegionProposalNetwork, resnet50_fpn_RPNhead
+sys.path.append("My_PCB_det/Nets")
+from classifier import Resnet50RoIHead, Resnet101RoIHead, VGG16RoIHead,Resnet50_FPNRoIHead
+from vgg16 import decom_vgg16
+from resnet50 import resnet50
+from resnet101 import resnet101
+from resnet50_FPN import resnet50_FPN
+from rpn import RegionProposalNetwork, resnet50_fpn_RPNhead
 
 class FasterRCNN(nn.Module):
     def __init__(self,  num_classes,  

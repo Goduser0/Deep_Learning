@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 from PIL import Image, ImageDraw, ImageFont
 
-from net.FasterRCNN_train import FasterRCNN
+from Nets.FasterRCNN_train import FasterRCNN
 from utils import cvtColor, get_classes, get_new_img_size, resize_image, preprocess_input
 from utils_bbox import DecodeBox
 
