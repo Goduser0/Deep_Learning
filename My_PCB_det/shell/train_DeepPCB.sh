@@ -1,1 +1,0 @@
-/home/zhouquan/anaconda3/envs/DLstudy/bin/python /home/zhouquan/MyDoc/Deep_Learning/My_PCB_det/trainer.py --classes_path "My_Datasets/Detection/DeepPCB_VOC/cls_classes.txt" --train_annotation_path "My_Datasets/Detection/DeepPCB_VOC/trainval.txt" --test_annotation_path "My_Datasets/Detection/DeepPCB_VOC/test.txt" --Unfreeze_batch_size 16
