@@ -1,0 +1,14 @@
+mode:	'test'
+ classification_net:	'Resnet50'
+ dataset_class:	'DeepPCB_Crop'
+ dataset_ratio:	'10-shot'
+ train_batch_size:	16
+ validation_batch_size:	16
+ lr:	0.0001
+ epochs:	100
+ img_size:	128
+ test_model_path:	'/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/Train_Classification/results/train/DeepPCB_Crop Resnet50 20241127_211553/models/100.pth'
+ test_batch_size:	512
+ gpu_id:	'0'
+ num_workers:	4
+ time:	'20241129_135106'

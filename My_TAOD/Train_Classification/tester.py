@@ -12,20 +12,13 @@ from trainer import Timer
 ##########################################################################################################
 # FUNCTION: classification_tester
 ########################################################################################################## 
-def classification_tester(config, data_iter):
+def classification_tester(config, save_dir, data_iter):
     # 确定存在文件保存路径
-    test_result_save_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/Train_Classification/results_test"
-    assert os.path.exists(test_result_save_path), f"ERROR:\t({__name__}): No save_dir"
-    
-    test_model_path = config.test_model_path
-    filename = test_model_path.split('/')[-2] + ' ' + test_model_path.split('/')[-1].split('.')[0] + ' epochs'
-    os.makedirs(test_result_save_path + '/' + filename, exist_ok=False)
-    
     os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
     test_model_path = config.test_model_path
     checkpoint = torch.load(test_model_path)
     
-    classification_net = test_model_path.split("/")[-2].split(" ")[1]
+    classification_net = config.classification_net
     net = classification_net_select(classification_net)
     net.cuda()
     net.load_state_dict(checkpoint["model_state_dict"])
@@ -59,7 +52,7 @@ def classification_tester(config, data_iter):
         infer_speed = len(y_list) / timer.sum()
         
         # log
-        with open(test_result_save_path + '/' + filename + "/result.txt", 'w') as f:
+        with open(f"{save_dir}/result.txt", 'w') as f:
             # num_label Total_cost_time
             f.write(f"num_label: {len(y_list)}, Total_cost_time: {timer.sum()} \n")
             # Accuracy
@@ -78,7 +71,7 @@ def classification_tester(config, data_iter):
         plt.title('Confusion Matrix')        
         plt.xlabel('Predicted Label')
         plt.ylabel('Actual Label')
-        plt.savefig(test_result_save_path + '/' + filename + '/cm.png')
+        plt.savefig(f"{save_dir}/cm.png")
         plt.close()
         
         

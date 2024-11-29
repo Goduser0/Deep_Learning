@@ -77,7 +77,7 @@ class VariationalAutoEncoder(nn.Module):
             nn.Tanh(),            
         )
     
-    def encode(self, input: torch.Tensor) -> list[torch.Tensor]:
+    def encode(self, input: torch.Tensor):
         result = self.Encoder(input)
         result = torch.flatten(result, start_dim=1)
         
@@ -98,7 +98,7 @@ class VariationalAutoEncoder(nn.Module):
         eps = torch.randn_like(std)
         return eps * std + mu
     
-    def forward(self, input: torch.Tensor, **kwargs) -> list[torch.Tensor]:
+    def forward(self, input: torch.Tensor, **kwargs):
         """
         Returns:
             list[torch.Tensor]: [decode(z), input, mu, log_var, z]
@@ -172,7 +172,7 @@ class Encoder(nn.Module):
         self.fc_mu = nn.Linear(hidden_dims[-1] * self.last_layer_size * self.last_layer_size, latent_dim)
         self.fc_var = nn.Linear(hidden_dims[-1] * self.last_layer_size * self.last_layer_size, latent_dim)
     
-    def encode(self, input: torch.Tensor) -> list[torch.Tensor]:
+    def encode(self, input: torch.Tensor):
         result = self.Encoder(input)
         result = torch.flatten(result, start_dim=1)
         mu = self.fc_mu(result)
@@ -184,7 +184,7 @@ class Encoder(nn.Module):
         eps = torch.randn_like(std)
         return eps * std + mu
     
-    def forward(self, input: torch.Tensor, **kwargs) -> list[torch.Tensor]:
+    def forward(self, input: torch.Tensor, **kwargs):
         mu, log_var = self.encode(input)
         z = self.reparameterize(mu, log_var)
         return [mu, log_var, z]
@@ -235,7 +235,59 @@ class PFS_Encoder(nn.Module):
         z = self.reparameterize(mu, logvar)
         return mu.view(bsz, -1), logvar.view(bsz, -1), z.view(bsz, -1)
     
+#######################################################################################################
+# CLASS: UNIT_Encoder()
+#######################################################################################################
+    
+class UNIT_Encoder(nn.Module):
+    def __init__(self, channels=3):
+        super(UNIT_Encoder, self).__init__()
+        import torchvision.models as models
 
+        self.frontA = models.vgg16(pretrained=True).features[:10]
+        self.frontB = models.vgg16(pretrained=True).features[:10]
+        self.back1 = models.vgg16(pretrained=True).features[10:]
+        self.back2 = nn.Sequential(
+                        nn.Linear(512*2*2, 1024),
+                        nn.ReLU(),
+                        nn.Linear(1024, 128),
+                        nn.ReLU(),)
+
+        self.mu = nn.Sequential(
+                        nn.Conv2d(128, 128, 3, 1, padding=1),
+                        nn.ReLU(),
+                        nn.Conv2d(128, 128, 3, 1, padding=1),)
+
+        self.logvar = nn.Sequential(
+                        nn.Conv2d(128, 128, 3, 1, padding=1),
+                        nn.ReLU(),
+                        nn.Conv2d(128, 128, 3, 1, padding=1),)        
+        
+        nn.init.xavier_uniform(self.back2[0].weight.data, 1.)
+        nn.init.xavier_uniform(self.back2[2].weight.data, 1.)
+        nn.init.xavier_uniform(self.mu[0].weight.data, 1.)
+        nn.init.xavier_uniform(self.mu[2].weight.data, 1.)
+        nn.init.xavier_uniform(self.logvar[0].weight.data, 1.)
+        nn.init.xavier_uniform(self.logvar[2].weight.data, 1.)
+
+    def reparameterize(self, mu, logvar):
+        std = torch.exp(0.5*logvar)
+        eps = torch.randn_like(std)
+        return eps.mul(std).add_(mu)
+
+    def forward(self, x, domain):
+        bsz = x.size(0)
+
+        if domain == 'S':
+            f = self.frontA(x)
+        elif domain == 'T':
+            f = self.frontB(x)
+
+        f = self.back1(f).view(bsz, -1)
+        f = self.back2(f).view(bsz, -1, 1, 1)
+        mu, logvar = self.mu(f), self.logvar(f)
+        z = self.reparameterize(mu, logvar)
+        return mu.view(bsz, -1), logvar.view(bsz, -1), z.view(bsz, -1)
 
 ########################################################################################################
 ## FUNCTION: test()

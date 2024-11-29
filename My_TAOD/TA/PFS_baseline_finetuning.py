@@ -160,11 +160,11 @@ for epoch in tqdm.trange(1, config.num_epochs+1, desc=f"On training"):
         optim_G.step()
             
     # Show
-    print(
-        "[Epoch %d/%d] [Batch %d/%d] [G_loss: %.5f] [D_loss: %.5f]"
-        %
-        (epoch, config.num_epochs, batch_idx+1, len(data_iter_loader), np.mean(G_loss_list), np.mean(D_loss_list))
-    )
+    # print(
+    #     "[Epoch %d/%d] [Batch %d/%d] [G_loss: %.5f] [D_loss: %.5f]"
+    #     %
+    #     (epoch, config.num_epochs, batch_idx+1, len(data_iter_loader), np.mean(G_loss_list), np.mean(D_loss_list))
+    # )
     
     # Record Data
     PFS_baseline_finetuning_record_data(config,

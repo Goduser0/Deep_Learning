@@ -50,7 +50,7 @@ def img_1to255(img):
 ###########################################################################################################
 # FUNCTION: get_loader
 ###########################################################################################################
-def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, trans=None, img_type='ndarray', drop_last=False):
+def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_type='ndarray', drop_last=False):
     """_summary_
 
     Args:
@@ -67,6 +67,7 @@ def get_loader(dataset_class, dataset_dir, batch_size, num_workers, shuffle, tra
         [images, labels]: images(-1~1, if totensor -> torch.float32
                                        else -> np.float32)
     """
+    dataset_class = dataset_dir.split('/')[-3]
     df = pd.read_csv(dataset_dir)
     
     if dataset_class.lower() == 'neu_cls':
@@ -297,25 +298,14 @@ def get_loader_ST(Src_dataset_dir, Tar_dataset_dir, batch_size, num_workers, shu
 ## Test
 #######################################################################################################
 def test():
-    # test_1
-    # path_1 = "/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/PCB-Crop/Short/01_short_01_0.jpg"
-    # path_2 = "/home/zhouquan/MyDoc/Deep_Learning/My_Datasets/Classification/PCB-200/Mouse_bite/000001_0_01_04736_11571.bmp"
-    # a = cv2.imread(path_1) # H*W*C
-    # b = bmp2ndarray(path_2)
-    # c = np.array([[[0, 0, 0], [50, 50, 50]], [[100, 100, 100], [150, 150, 150]], [[200, 200, 200], [250, 250, 250]], [[255, 255, 255], [255, 255, 255]]], dtype=np.uint8)
-    # print(f"a.shape:{a.shape} | b.shape:{b.shape} | c.shape:{c.shape}")
+    # test1
     # trans = T.Compose(
-    # [
-    #     T.ToTensor(), 
-    #     T.Resize((128, 128)),
-    # ])
-    # result = trans(img_255to1(c))
-    # print(np.max(c), np.min(c), c.shape, c.dtype)
-    # print(torch.max(result), torch.min(result), result.shape, result.dtype)
-    
-    # test2
-    # data_iter_loader = get_loader('PCB_Crop', 
-    #                           "./My_TAOD/dataset/PCB_Crop/0.7-shot/train/2.csv", 
+    #                 [ 
+    #                 T.ToTensor(),
+    #                 ]
+    # )
+    # data_iter_loader = get_loader(
+    #                           "./My_TAOD/dataset/DeepPCB_Crop/0.7-shot/train/0.csv", 
     #                           8,
     #                           4, 
     #                           shuffle=True, 
@@ -341,14 +331,15 @@ def test():
     #     plt.close()
     #     break
 
-    # test3
+    # test2
     trans = T.Compose(
                     [ 
                     T.ToTensor(),
-                    T.Resize(int(128*1.12), Image.BICUBIC), 
-                    T.RandomCrop(128), 
-                    T.RandomHorizontalFlip(),
-                    T.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)) ]
+                    # T.Resize(int(128*1.12), Image.BICUBIC), 
+                    # T.RandomCrop(128), 
+                    # T.RandomHorizontalFlip(),
+                    # T.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)) 
+                    ]
     )
 
     data_iter_loader = get_loader_ST(

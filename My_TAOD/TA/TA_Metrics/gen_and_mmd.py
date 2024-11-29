@@ -17,43 +17,44 @@ def aug_mmd(z_dim, num_samples, model, model_path, img_save_path, real_path, bat
     result = score_mmd(real_path, fake_csv_path, batch_size)
     return result
 
-def mmd_baseline_from_scratch():
+def mmd_baseline_from_scratch(sampling_times=3):
     z_dim = 128
     G = PFS_Generator(z_dim)
-    model_path = "My_TAOD/TA/TA_Results/baseline_from_scratch/models/PCB_Crop 4 2023-10-31_15-48-13/1000_net_g.pth"
-    img_save_path = "My_TAOD/TA/TA_Results/baseline_from_scratch/samples"
+    model_path = "My_TAOD/TA/TA_Results/PFS_baseline_from_scratch/models/PCB_Crop 4 2023-10-31_15-48-13/1000_net_g.pth"
+    img_save_path = "My_TAOD/TA/TA_Results/PFS_baseline_from_scratch/samples"
     real_path = "My_TAOD/dataset/PCB_Crop/30-shot/test/4.csv"
     
     score_list = []
-    for i in range(3):
-        score_list.append(aug_mmd(z_dim, 100, G, model_path, img_save_path, real_path, batch_size=50))
+    for _ in range(sampling_times):
+        score_list.append(aug_mmd(z_dim, 100, G, model_path, img_save_path, real_path, batch_size=16))
     print(f"MMD:{np.mean(score_list)}")
 
-def mmd_baseline_finetuning():
+def mmd_baseline_finetuning(sampling_times=3):
     z_dim = 128
     G = PFS_Generator(z_dim)
-    model_path = "My_TAOD/TA/TA_Results/baseline_finetuning/models/PCB_Crop_from_DeepPCB_Crop 4 2023-11-02_07-19-10/492_net_g.pth"
-    img_save_path = "My_TAOD/TA/TA_Results/baseline_finetuning/samples"
-    real_path = "My_TAOD/dataset/PCB_Crop/30-shot/test/4.csv"
+    model_path = "My_TAOD/TA/TA_Results/PFS_baseline_finetuning/models/PCB_200_from_DeepPCB_Crop 4 2024-04-26_06-34-57/492_net_g.pth"
+    img_save_path = "My_TAOD/TA/TA_Results/PFS_baseline_finetuning/samples"
+    real_path = "My_TAOD/dataset/PCB_200/30-shot/test/4.csv"
     
     score_list = []
-    for i in range(3):
-        score_list.append(aug_mmd(z_dim, 100, G, model_path, img_save_path, real_path, batch_size=50))
+    for _ in range(sampling_times):
+        score_list.append(aug_mmd(z_dim, 100, G, model_path, img_save_path, real_path, batch_size=16))
     print(f"MMD:{np.mean(score_list)}")
     
-def mmd_cogan():
+def mmd_cogan(sampling_times=3):
     z_dim = 128
     G = CoGAN_Generator(z_dim)
-    model_path = "My_TAOD/TA/TA_Results/CoGAN/models/PCB_Crop2DeepPCB_Crop 4 2023-11-02_07-25-07/1000_net_g.pth"
+    model_path = "My_TAOD/TA/TA_Results/CoGAN/models/PCB_2002DeepPCB_Crop 4 2024-04-23_19-40-16/2000_net_g.pth"
     img_save_path = "My_TAOD/TA/TA_Results/CoGAN/samples"
     real_path = "My_TAOD/dataset/DeepPCB_Crop/30-shot/test/4.csv"
     
     score_list = []
-    for i in range(3):
-        score_list.append(aug_mmd(z_dim, 100, G, model_path, img_save_path, real_path, batch_size=50, domain="T"))
+    for _ in range(sampling_times):
+        score_list.append(aug_mmd(z_dim, 100, G, model_path, img_save_path, real_path, batch_size=16, domain="T"))
     print(f"MMD:{np.mean(score_list)}")
     
 if __name__ == "__main__":
     # mmd_baseline_from_scratch()
     # mmd_baseline_finetuning()
     mmd_cogan()
+    

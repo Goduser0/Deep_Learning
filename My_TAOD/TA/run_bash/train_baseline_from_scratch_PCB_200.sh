@@ -1,5 +1,0 @@
-python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/baseline_from_scratch.py --data_path "My_TAOD/dataset/PCB_200/30-shot/train/0.csv" --category "0"
-python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/baseline_from_scratch.py --data_path "My_TAOD/dataset/PCB_200/30-shot/train/1.csv" --category "1"
-python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/baseline_from_scratch.py --data_path "My_TAOD/dataset/PCB_200/30-shot/train/2.csv" --category "2"
-python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/baseline_from_scratch.py --data_path "My_TAOD/dataset/PCB_200/30-shot/train/3.csv" --category "3"
-python /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/baseline_from_scratch.py --data_path "My_TAOD/dataset/PCB_200/30-shot/train/4.csv" --category "4"

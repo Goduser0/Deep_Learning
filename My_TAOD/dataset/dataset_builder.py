@@ -33,7 +33,7 @@ class NEU_CLS(data.Dataset):
     
     def __len__(self):
         return len(self.samples)
-    
+     
     def __getitem__(self, idx):
         img_path = self.samples.loc[idx, 'Image_Path']
         img_content = bmp2ndarray(img_path)
@@ -443,7 +443,7 @@ if __name__ == "__main__":
     # build_dataset('NEU_CLS')
     # build_dataset('elpv')
     # build_dataset('Magnetic_Tile')
-    build_dataset('PCB_200')
-    build_dataset('PCB_Crop')
-    build_dataset('DeepPCB_Crop')
+    # build_dataset('PCB_200')
+    # build_dataset('PCB_Crop')
+    # build_dataset('DeepPCB_Crop')
     pass

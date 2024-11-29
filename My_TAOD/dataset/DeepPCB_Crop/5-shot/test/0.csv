@@ -101,7 +101,6 @@
 1605,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000054_2.jpg
 1606,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000091_5.jpg
 1607,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_92000019_2.jpg
-1608,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000100_2.jpg
 1609,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_90100008_6.jpg
 1610,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041027_7.jpg
 1611,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000046_2.jpg
@@ -188,7 +187,6 @@
 1692,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100142_2.jpg
 1693,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000040_5.jpg
 1694,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000100_4.jpg
-1695,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041153_5.jpg
 1696,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041074_1.jpg
 1697,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041009_2.jpg
 1698,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000080_2.jpg
@@ -503,7 +501,6 @@
 2007,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000002_1.jpg
 2008,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_90100017_7.jpg
 2009,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041043_2.jpg
-2010,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000016_1.jpg
 2011,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_90100073_4.jpg
 2012,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085314_4.jpg
 2013,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_50600010_2.jpg
@@ -569,6 +566,7 @@
 2073,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100135_2.jpg
 2074,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041220_2.jpg
 2075,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000008_2.jpg
+2076,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041125_7.jpg
 2077,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085272_4.jpg
 2078,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085119_2.jpg
 2079,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085265_6.jpg
@@ -1161,6 +1159,7 @@
 2666,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000066_1.jpg
 2667,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085125_9.jpg
 2668,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000007_2.jpg
+2669,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041035_8.jpg
 2670,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041013_5.jpg
 2671,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041187_6.jpg
 2672,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300144_4.jpg
@@ -1282,6 +1281,7 @@
 2788,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000042_1.jpg
 2789,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_50600057_2.jpg
 2790,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085143_3.jpg
+2791,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_92000097_2.jpg
 2792,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300217_3.jpg
 2793,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000056_3.jpg
 2794,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085219_4.jpg
@@ -1503,7 +1503,6 @@
 3010,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000050_5.jpg
 3011,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000087_7.jpg
 3012,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_92000010_3.jpg
-3013,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041052_2.jpg
 3014,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_44000030_2.jpg
 3015,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085077_3.jpg
 3016,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300122_2.jpg
@@ -1641,6 +1640,7 @@
 3148,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085009_2.jpg
 3149,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300140_2.jpg
 3150,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300234_3.jpg
+3151,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000102_2.jpg
 3152,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085164_0.jpg
 3153,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100122_2.jpg
 3154,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041192_2.jpg
@@ -1697,7 +1697,6 @@
 3205,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_00041019_1.jpg
 3206,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000092_5.jpg
 3207,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000056_2.jpg
-3208,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100054_0.jpg
 3209,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_77000075_2.jpg
 3210,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_92000031_5.jpg
 3211,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_50600039_2.jpg
@@ -1747,6 +1746,7 @@
 3255,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000177_1.jpg
 3256,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_13000063_5.jpg
 3257,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_90100037_1.jpg
+3258,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12300246_6.jpg
 3259,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085238_4.jpg
 3260,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_12100164_5.jpg
 3261,0,Mouse_bite,./My_Datasets/Classification/DeepPCB-Crop/Mouse_bite/Mouse_bite_20085244_6.jpg

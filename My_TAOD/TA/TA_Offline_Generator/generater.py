@@ -16,9 +16,9 @@ import matplotlib.pyplot as plt
 import time
 
 import sys
-sys.path.append("./My_TAOD/dataset")
-from dataset_loader import get_loader, img_1to255, img_255to1
-sys.path.append("./My_TAOD/TA/TA_Models")
+sys.path.append("/home/zhouquan/MyDoc/Deep_Learning//My_TAOD/dataset")
+from dataset_loader import get_loader, get_loader_ST, img_1to255, img_255to1
+sys.path.append("/home/zhouquan/MyDoc/Deep_Learning//My_TAOD/TA/TA_Models")
 from TA_VAE import Encoder
 from TA_G import FeatureMatchGenerator, PFS_Generator
 
@@ -67,10 +67,72 @@ def generate(z_dim, n, model, model_path, samples_save_path, domain):
     print("Generate Done!!!")    
     return f"{samples_save_path}/{dirname}/generate_imgs.csv"
 
+def translate(n, Src_class, model_S2T, model_S2T_path, dataset_S_path, samples_save_path, batch_size):
+    """加载图像翻译器, 加载一个domain的图像生成另外一个domain的图像"""
+    local_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
 
+    model_path_parts = model_S2T_path.split("/")
+    add_name = f"{model_path_parts[-2]}_{model_path_parts[-1][:-4]}"
+    dirname = f"{add_name}_AT_{local_time}"
+    
+    img_label = model_path_parts[-2].split(" ")[1]
+    img_classes = ['Mouse_bite', 'Open_circuit', 'Short', 'Spur', 'Spurious_copper', 'Missing_hole']
+    img_class = img_classes[int(img_label)]
+    
+    os.makedirs(f"{samples_save_path}/{dirname}", exist_ok=False)
+    
+    netG_S2T = model_S2T
+    
+    netG_S2T.load_state_dict(torch.load(model_S2T_path)["model_state_dict"])
+    
+    # Inputs & targets memory allocation
+    Tensor = torch.Tensor
+    input_A = Tensor(batch_size, 3, 128, 128)
+
+    # Dataset loader
+    trans = T.Compose([
+        T.ToTensor(),
+        T.Resize((128, 128)),
+        T.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)),
+    ])
+    
+    data_iter_loader = get_loader(Src_class, dataset_S_path, batch_size, num_workers=4, shuffle=True, trans=trans, drop_last=True)
+    
+    
+    img_save_list = []
+    i = 0
+    
+    for i, batch in enumerate(data_iter_loader):
+        print(batch[0].shape)
+        real_Src = Variable(input_A.copy_(batch[0]))
+        # Generate output
+        fake_B = 0.5*(netG_S2T(real_Src).data + 1.0)
+    
+        for img in fake_B:
+            i+=1
+            img = img.detach().numpy()
+            img = ((img + 1) / 2 * 255).astype(np.uint8)
+            img = Image.fromarray(img.transpose(1, 2, 0))
+            
+            filename = f"{i}.jpg"
+            img_path = f"{samples_save_path}/{dirname}/{filename}"
+            img.save(img_path)
+            
+            img_save_item = [img_label, img_class, img_path]
+            img_save_list.append(img_save_item)
+            
+            if len(img_save_list) >= n:
+                # Save to csv    
+                img_save_df = pd.DataFrame(img_save_list, columns=["Image_Label", "Image_Class", "Image_Path"])
+                img_save_df.to_csv(f"{samples_save_path}/{dirname}/generate_imgs.csv")
+                print("Generate Done!!!")    
+                return f"{samples_save_path}/{dirname}/generate_imgs.csv"
+        
+    
+      
 def img_translater(G, vae_com_params, vae_uni_params, g_params, results_save_dir, trans):
     data_iter_loader = get_loader('PCB_Crop', 
-                              "./My_TAOD/dataset/PCB_Crop/0.7-shot/test/0.csv", 
+                              "./My_TAOD/dataset/PCB_Crop/30-shot/test/0.csv", 
                               1,
                               4, 
                               shuffle=False, 

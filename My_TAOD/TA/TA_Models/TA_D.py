@@ -360,6 +360,36 @@ class CycleGAN_Discriminator(nn.Module):
         return F.avg_pool2d(x, x.size()[2:]).view(x.size()[0], -1)
     
 ########################################################################################################
+# CLASS: UNIT_Discriminator()
+########################################################################################################
+class UNIT_Discriminator(nn.Module):
+    def __init__(self, channels=3):
+        super(UNIT_Discriminator, self).__init__()
+        self.channels = channels
+        self.inputBatch = nn.BatchNorm2d(channels)
+        self.model0 = FirstResBlockDiscriminator(channels, 128, stride=2)
+        self.model1 = ResBlockDiscriminator(128, 128, stride=2)
+        self.model2 = ResBlockDiscriminator(128, 128, stride=2)
+        self.model3 = ResBlockDiscriminator(128, 128, stride=2)
+
+        self.model = nn.Sequential(self.model0,
+                                   self.model1,
+                                   self.model2,
+                                   self.model3,
+                                   nn.ReLU(),
+                                   nn.AvgPool2d(8),)
+
+        self.fc = nn.Linear(128, 1)
+        nn.init.xavier_uniform(self.fc.weight.data, 1.)
+        #self.fc = SpectralNorm(self.fc)
+
+    def forward(self, x):
+        f = self.model(x)
+        f = f.view(-1, 128)
+        out = self.fc(f)
+        return out
+    
+########################################################################################################
 # Discriminator TEST
 ########################################################################################################
 def test():
@@ -367,8 +397,9 @@ def test():
     # D = PFS_Discriminator_patch()
     # D = CoGAN_Discriminator()
     # D = FeatureMatchDiscriminator()
-    D = CycleGAN_Discriminator(3)
-    X = torch.randn(8, 3, 128, 128) # (B, C, W, H)
+    # D = CycleGAN_Discriminator(3)
+    D = UNIT_Discriminator()
+    X = torch.randn(30, 3, 128, 128) # (B, C, W, H)
     # summary(D, X.shape, device="cpu")
     
     print(f"Input X: {X.shape}")

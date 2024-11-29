@@ -5,6 +5,7 @@ import torchvision.transforms as T
 import pandas as pd
 import cv2
 import numpy as np
+import os
 
 import sys
 sys.path.append("./My_TAOD/TA/TA_Utils")
@@ -84,27 +85,30 @@ class calculator_MMD(nn.Module):
             
             return loss
         
-def score_mmd(real_path, fake_path, batch_size):
-    MMD = calculator_MMD('rbf')
+def score_mmd(real_path, fake_path, batch_size, gpu_id="1"):
+    os.environ["CUDA_VISIBLE_DEVICES"] = gpu_id
+    MMD = calculator_MMD('rbf').cuda()
     trans = T.Compose(
         [
             T.ToTensor(),
             T.Resize((256, 256)),
         ]
     )
+    
     real_img = load_img_for_mmd(real_path, trans, batch_size)[0]
     fake_img = load_img_for_mmd(fake_path, trans, batch_size)[0]
-    
+
     x = real_img.reshape(real_img.shape[0], -1)
     y = fake_img.reshape(fake_img.shape[0], -1)
     
-    result = MMD(x, y)
-    return result.numpy()
+    result = MMD(x, y).cpu().numpy()
+    
+    return result
     
 def test():
     real_path = "./My_TAOD/dataset/PCB_Crop/30-shot/train/0.csv"
     fake_path = "./My_TAOD/dataset/PCB_Crop/30-shot/train/1.csv"
-    result = score_mmd(real_path, fake_path, 30)
+    result = score_mmd(real_path, fake_path, 16)
     
     print(f"MMD: {result}")
   
