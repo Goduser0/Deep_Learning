@@ -68,7 +68,7 @@ for label in label_list:
             xmax = x_center+alpha_size if x_center+alpha_size <= weight else weight
                 
             
-            img_crop = img[ymin:ymax, xmin:xmax, :]
+            img_crop = img[ymin:ymax, xmin:xmax, :] # 2*alpha_size x 2*alpha_size 50x50
             # print(img_crop.shape)
             cv.imwrite(save_path, img_crop)
             cout += 1

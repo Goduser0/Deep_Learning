@@ -43,7 +43,7 @@ for group in grouplist:
             ymin = y_center-alpha_size if y_center >= alpha_size else 0
             ymax = y_center+alpha_size if y_center+alpha_size <= height else height
             
-            img_crop = img[ymin:ymax, xmin:xmax, :]
+            img_crop = img[ymin:ymax, xmin:xmax, :] # 2*alpha_size x 2*alpha_size 50x50
             
             save_path = os.path.join(save_dir, label)
             img_file_name = f"{label}_{img_ID}_{count}.jpg"

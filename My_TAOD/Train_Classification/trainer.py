@@ -62,11 +62,9 @@ def validation_accuracy(net, validation_iter):
 
 
 
-def classification_record_data(config, content, flag_plot=False):
+def classification_record_data(config, save_dir, content, flag_plot=False):
     """将实验数据存为csv文件"""
-    assert os.path.exists(config.result_dir), f"ERROR:\t({__name__}): No config.result_dir"
-    filename = config.dataset_class + ' ' + config.classification_net + ' ' + config.time
-    filepath = config.result_dir + '/' + filename + '.csv'
+    filepath = save_dir + '/data.csv'
     content = pd.DataFrame.from_dict(content, orient="index").T
     # 写入新数据
     if not os.path.exists(filepath):
@@ -75,9 +73,6 @@ def classification_record_data(config, content, flag_plot=False):
         results = pd.read_csv(filepath)
         results = pd.concat([results, content], axis=0, ignore_index=True)
         results.to_csv(filepath, index=False)
-        
-    if not os.path.exists(f"{config.result_dir}/{filename}"):
-        os.makedirs(f"{config.result_dir}/{filename}")
     
     # 读取文件所有数据后绘图
     if flag_plot:
@@ -104,17 +99,15 @@ def classification_record_data(config, content, flag_plot=False):
         ax1.grid(alpha=0.4)
         ax1.legend()
         fig.tight_layout()
-        plt.savefig(f'{config.result_dir}/{filename}/Acc.jpg')
+        plt.savefig(f'{save_dir}/train_Acc.jpg')
         plt.close()
         
         fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
         ax1.plot(epoch, train_loss, label="train_loss")
         fig.tight_layout()
-        plt.savefig(f'{config.result_dir}/{filename}/train_loss.jpg')
+        plt.savefig(f'{save_dir}/train_Loss.jpg')
         plt.close()
         
-        
-
 # def init_weights(m):
 #     if type(m) == nn.Linear or type(m) == nn.Conv2d:
 #         nn.init.xavier_uniform_(m.weight)
@@ -122,7 +115,7 @@ def classification_record_data(config, content, flag_plot=False):
 ###########################################################################################################
 # FUNCTION: classification_trainer()
 ###########################################################################################################
-def classification_trainer(config, net, train_iter, validation_iter, num_epochs, lr):
+def classification_trainer(config, save_dir, net, train_iter, validation_iter, num_epochs, lr):
     # For fast training on GPUs
     if torch.cuda.is_available():
         cudnn.benchmark = True
@@ -137,7 +130,7 @@ def classification_trainer(config, net, train_iter, validation_iter, num_epochs,
     loss_fuction = nn.CrossEntropyLoss()
     timer = Timer()
     
-    model_save_path = config.model_dir + '/' + config.dataset_class + ' ' + config.classification_net + ' ' + config.time
+    model_save_path = save_dir + '/models'
     os.makedirs(model_save_path, exist_ok=False)
     
     for epoch in tqdm.trange(1, num_epochs+1, desc=f"On training"):
@@ -174,7 +167,7 @@ def classification_trainer(config, net, train_iter, validation_iter, num_epochs,
                 (epoch, num_epochs, batch_idx+1, len(train_iter), train_loss, train_acc, validation_acc, train_speed, config.gpu_id)
             )
             # Record Data
-            classification_record_data(config, 
+            classification_record_data(config, save_dir, 
                         {
                             "epoch": f"{epoch}",
                             "num_epochs": f"{num_epochs}",
@@ -199,7 +192,7 @@ def classification_trainer(config, net, train_iter, validation_iter, num_epochs,
                 (epoch, num_epochs, batch_idx+1, len(train_iter), train_loss, train_acc, train_speed, config.gpu_id)
             )
             # Record Data
-            classification_record_data(config, 
+            classification_record_data(config, save_dir, 
                         {
                             "epoch": f"{epoch}",
                             "num_epochs": f"{num_epochs}",
