@@ -52,7 +52,7 @@ if __name__ == "__main__":
     parser.add_argument("--mode", type=str, choices=["train", "train_with_validation", "test"], required=True)
     
     # Model Configuration
-    classification_net_list = ["Resnet18", "Resnet50", "Resnet18_Pretrained", "Resnet50_Pretrained", "EfficientNet", "EfficientNet_Pretrained"]
+    classification_net_list = ["Resnet18_Pretrained", "Resnet50_Pretrained", "EfficientNet_Pretrained", "VGG11_Pretrained", "MobileNet_Pretrained"]
     parser.add_argument("--classification_net", type=str, choices=classification_net_list, required=True)
     
     # Training Configuration
