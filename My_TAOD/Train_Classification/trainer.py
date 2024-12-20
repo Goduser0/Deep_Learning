@@ -121,9 +121,10 @@ def classification_trainer(config, save_dir, net, train_iter, validation_iter, n
         cudnn.benchmark = True
         
     # device
-    os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
-    # net.apply(init_weights)
-    net.cuda()
+    # os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
+    device = 'cuda:' + config.gpu_id
+    # net.cuda()
+    net.to(device)
     net.train()
 
     optimizer = torch.optim.Adam(net.parameters(), lr=lr)
@@ -141,7 +142,8 @@ def classification_trainer(config, save_dir, net, train_iter, validation_iter, n
         for batch_idx, (X, y) in enumerate(train_iter):
             timer.start()
             optimizer.zero_grad()
-            X, y = X.cuda(), y.cuda()
+            # X, y = X.cuda(), y.cuda()
+            X, y = X.to(device), y.to(device)
             y_hat = net(X)
             loss = loss_fuction(y_hat, y) # batchmean
             loss.backward()

@@ -1,7 +1,7 @@
-import argparse
+import os
+import torch
 
-parser = argparse.ArgumentParser(description="Classification")
-parser.add_argument("--img_size", type=int, default=128)
-config = parser.parse_args()
-
-print(config)
+os.environ['CUDA_VISIBLE_DEVICES'] = '2'
+print(torch.cuda.device_count())
+print(torch.cuda.current_device())
+print(torch.cuda.get_device_name(0))
