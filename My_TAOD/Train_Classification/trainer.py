@@ -125,7 +125,11 @@ def classification_trainer(config, save_dir, net, train_iter, validation_iter, n
     device = 'cuda:' + config.gpu_id
     # net.cuda()
     net.to(device)
+    if config.model_init_path:
+        net.load_state_dict(torch.load(config.model_init_path)["model_state_dict"])
+        
     net.train()
+    
 
     optimizer = torch.optim.Adam(net.parameters(), lr=lr)
     loss_fuction = nn.CrossEntropyLoss()
@@ -134,7 +138,7 @@ def classification_trainer(config, save_dir, net, train_iter, validation_iter, n
     model_save_path = save_dir + '/models'
     os.makedirs(model_save_path, exist_ok=False)
     
-    for epoch in tqdm.trange(1, num_epochs+1, desc=f"On training"):
+    for epoch in tqdm.trange(1, num_epochs+1, desc=f"[Epoch {num_epochs}] [GPU:{config.gpu_id}] On training: "):
         loss_list = []
         y_list = []
         y_hat_list = []
@@ -163,11 +167,11 @@ def classification_trainer(config, save_dir, net, train_iter, validation_iter, n
             train_acc = accuracy_score(y_list, y_hat_list)
             validation_acc = validation_accuracy(net, validation_iter)
             train_speed = len(y_list) * num_epochs / timer.sum()
-            print(
-                "[Epoch %d/%d] [Batch %d/%d] [Train loss: %.3f] [Train acc: %.3f] [Validation acc: %.3f] [%.1f examples/sec] [On GPU:%s]"
-                %
-                (epoch, num_epochs, batch_idx+1, len(train_iter), train_loss, train_acc, validation_acc, train_speed, config.gpu_id)
-            )
+            # print(
+            #     "[Epoch %d/%d] [Batch %d/%d] [Train loss: %.3f] [Train acc: %.3f] [Validation acc: %.3f] [%.1f examples/sec] [On GPU:%s]"
+            #     %
+            #     (epoch, num_epochs, batch_idx+1, len(train_iter), train_loss, train_acc, validation_acc, train_speed, config.gpu_id)
+            # )
             # Record Data
             classification_record_data(config, save_dir, 
                         {
