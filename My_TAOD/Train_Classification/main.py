@@ -101,6 +101,11 @@ if __name__ == "__main__":
             and
             (train_log["dataset_ratio"] == config.dataset_ratio) # 数据集比例一致
             )
+        
+        if train_log["model_init_path"] == "None":
+            pass
+        else:
+            config.model_init_path = train_log["model_init_path"]
     
     # Main
     main(config)
