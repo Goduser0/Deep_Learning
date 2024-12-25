@@ -127,6 +127,7 @@ def classification_trainer(config, save_dir, net, train_iter, validation_iter, n
     net.to(device)
     if config.model_init_path:
         net.load_state_dict(torch.load(config.model_init_path)["model_state_dict"])
+        print(f"Loaded Pretrained Weights from: {config.model_init_path}")
         
     net.train()
     
@@ -192,11 +193,11 @@ def classification_trainer(config, save_dir, net, train_iter, validation_iter, n
             train_loss = sum(loss_list) / len(y_list)
             train_acc = accuracy_score(y_list, y_hat_list)
             train_speed = len(y_list) * num_epochs / timer.sum()
-            print(
-                "[Epoch %d/%d] [Batch %d/%d] [Train loss: %.3f] [Train acc: %.3f] [%.1f examples/sec] [On GPU:%s]"
-                %
-                (epoch, num_epochs, batch_idx+1, len(train_iter), train_loss, train_acc, train_speed, config.gpu_id)
-            )
+            # print(
+            #     "[Epoch %d/%d] [Batch %d/%d] [Train loss: %.3f] [Train acc: %.3f] [%.1f examples/sec] [On GPU:%s]"
+            #     %
+            #     (epoch, num_epochs, batch_idx+1, len(train_iter), train_loss, train_acc, train_speed, config.gpu_id)
+            # )
             # Record Data
             classification_record_data(config, save_dir, 
                         {
