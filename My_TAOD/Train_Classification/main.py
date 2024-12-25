@@ -83,8 +83,7 @@ if __name__ == "__main__":
     # 一致性校验
     # /home/zhouquan/MyDoc/Deep_Learning/My_TAOD/Train_Classification/results/train/DeepPCB_Crop Resnet18 20240612_162617/models/10.pth
     if config.mode in ["test"]:
-        model_name = config.test_model_path.split('/')[-3]
-        train_log_path = "./My_TAOD/Train_Classification/results/train/" + model_name + '/log.txt'
+        train_log_path = '/'.join(config.test_model_path.split('/')[:-2]) + '/log.txt'
         train_log = {}
         with open(train_log_path, 'r') as f:
             for line in f:
