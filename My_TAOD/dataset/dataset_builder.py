@@ -323,37 +323,37 @@ def build_dataset(dataset):
         dataset_origin = NEU_CLS()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [5, 10, 30, 50, 0.7, 1.0]
+        dataset_train_size_list = [5, 10, 30, 50, 0.7]
         
     elif dataset == 'elpv':
         dataset_origin = elpv()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [5, 10, 30, 50, 0.7, 1.0]
+        dataset_train_size_list = [5, 10, 30, 50, 0.7]
     
     elif dataset == 'Magnetic_Tile':
         dataset_origin = Magnetic_Tile()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [5, 10, 30, 50, 0.7, 1.0]
+        dataset_train_size_list = [5, 10, 30, 50, 0.7]
         
     elif dataset == 'PCB_200':
         dataset_origin = PCB_200()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, 1.0, [0.6, 0.2, 0.2]]
+        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, [0.6, 0.2, 0.2]]
         
     elif dataset == 'PCB_Crop':
         dataset_origin = PCB_Crop()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, 1.0, [0.6, 0.2, 0.2]]
+        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, [0.6, 0.2, 0.2]]
     
     elif dataset == 'DeepPCB_Crop':
         dataset_origin = DeepPCB_Crop()
         df = dataset_origin.samples
         label_list = df['Image_Label'].unique().tolist()
-        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, 1.0, [0.6, 0.2, 0.2]]
+        dataset_train_size_list = [5, 10, 30, 50, 160, 0.7, [0.6, 0.2, 0.2]]
         
     else:
         sys.exit(f"ERROR:\t({__name__}):The dataset '{dataset}' doesn't exist")
