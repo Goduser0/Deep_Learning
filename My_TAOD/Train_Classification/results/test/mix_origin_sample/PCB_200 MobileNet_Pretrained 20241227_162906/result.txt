@@ -1,0 +1,17 @@
+num_label: 950, Total_cost_time: 1.2572178840637207 
+Accuracy: 0.7010526315789474 
+F1-score: 0.70139857102202 
+Inference Speed: 0.756 samples/ms 
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.58      0.44      0.50       190
+           1       0.97      0.73      0.83       190
+           2       0.79      0.66      0.72       190
+           3       0.50      0.74      0.60       190
+           4       0.80      0.94      0.86       190
+
+    accuracy                           0.70       950
+   macro avg       0.73      0.70      0.70       950
+weighted avg       0.73      0.70      0.70       950
+ 
