@@ -82,19 +82,19 @@ class ConvNetFeatureExtract(object):
     def extractFeature(self, images_path, num):
         # build images dataset
         images = load_img_for_fid(images_path, trans=self.trans, batch_size=num)
-        print(images.shape)
-        print("Extracting Features...")
+        # print(images.shape)
+        # print("Extracting Features...")
         with torch.no_grad():
             input = images.cuda()
             if self.model == 'vgg' or self.model == 'vgg16':
                 fconv = self.vgg.features(input).view(input.size(0), -1)
-                print(self.model + " feature shape:", fconv.shape)
+                # print(self.model + " feature shape:", fconv.shape)
             elif self.model.find('resnet') >= 0:
                 fconv = self.resnet_feature(input).mean(3).mean(2).squeeze()
-                print(self.model + " feature shape:", fconv.shape)
+                # print(self.model + " feature shape:", fconv.shape)
             elif self.model == 'inception' or self.model == 'inception_v3':
                 fconv = self.inception_feature(input).mean(3).mean(2).squeeze()
-                print(self.model + " feature shape:", fconv.shape)
+                # print(self.model + " feature shape:", fconv.shape)
             else:
                 raise NotImplementedError
             feature_conv = fconv.data.cpu()
@@ -124,9 +124,9 @@ def score_fid(real_path, num_real, fake_path, num_fake, gpu_id="0"):
     return result    
     
 def test():  
-    real_path = "My_TAOD/dataset/DeepPCB_Crop/30-shot/test/0.csv"
-    fake_path = "My_TAOD/dataset/PCB_200/30-shot/test/0.csv"
-    result = score_fid(real_path, 10, fake_path, 100)
+    real_path = "My_TAOD/dataset/DeepPCB_Crop/10-shot/test/0.csv"
+    fake_path = "My_TAOD/dataset/PCB_200/10-shot/test/0.csv"
+    result = score_fid(real_path, 150, fake_path, 150)
     print(f"FID: {result}")
     
 if __name__ == '__main__':

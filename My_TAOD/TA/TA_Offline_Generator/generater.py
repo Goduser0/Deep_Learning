@@ -67,7 +67,7 @@ def generate(z_dim, n, model, model_path, samples_save_path, domain):
     print("Generate Done!!!")    
     return f"{samples_save_path}/{dirname}/generate_imgs.csv"
 
-def translate(n, Src_class, model_S2T, model_S2T_path, dataset_S_path, samples_save_path, batch_size):
+def translate(n, model_S2T, model_S2T_path, dataset_S_path, samples_save_path, batch_size):
     """加载图像翻译器, 加载一个domain的图像生成另外一个domain的图像"""
     local_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
 
@@ -96,14 +96,14 @@ def translate(n, Src_class, model_S2T, model_S2T_path, dataset_S_path, samples_s
         T.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)),
     ])
     
-    data_iter_loader = get_loader(Src_class, dataset_S_path, batch_size, num_workers=4, shuffle=True, trans=trans, drop_last=True)
+    data_iter_loader = get_loader(dataset_S_path, batch_size, num_workers=4, shuffle=True, trans=trans, drop_last=True)
     
     
     img_save_list = []
     i = 0
     
     for i, batch in enumerate(data_iter_loader):
-        print(batch[0].shape)
+        # print(batch[0].shape)
         real_Src = Variable(input_A.copy_(batch[0]))
         # Generate output
         fake_B = 0.5*(netG_S2T(real_Src).data + 1.0)

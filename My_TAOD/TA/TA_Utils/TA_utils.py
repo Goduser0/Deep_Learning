@@ -678,35 +678,70 @@ def S2T_trainer_record_data(config, content, flag_plot=True):
         plt.savefig(f'{config.results_dir}/{filename}/TotalLoss_g_target.jpg')
         plt.close()
         
+
+#######################################################################################################
+#### FUNCTION: DCGAN_record_data()
+#######################################################################################################
+def DCGAN_record_data(save_dir, content, flag_plot=True):
+    """Save Data"""   
+    filepath = f"{save_dir}/results/data.csv"
+    content = pd.DataFrame.from_dict(content, orient="index").T
     
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.read_csv(filepath)
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+        
+    if flag_plot:
+        results = pd.read_csv(filepath)
+            
+        D_real_adv_loss = results["D_real_adv_loss"]
+        D_fake_adv_loss = results["D_fake_adv_loss"]
+        D_loss = results["D_loss"]    
+        G_loss = results["G_loss"]
+             
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_real_adv_loss], label="D_real_adv_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_real_adv_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_fake_adv_loss], label="D_fake_adv_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_fake_adv_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_real_adv_loss], label="D_real_adv_loss", color="tab:red")
+        ax1.plot([y for y in D_fake_adv_loss], label="D_fake_adv_loss", color="tab:blue")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_adv_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_loss], label="D_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_loss], label="G_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/G_loss.jpg')
+        plt.close()
+
+
+
 #######################################################################################################
 # Function Test
 #######################################################################################################
-def test():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--subspace_std", default=0.1)
-    parser.add_argument("--batch_size", default=20)
-    parser.add_argument("--n_sample", default=120)
-    parser.add_argument("--latent_dim", default=10)
-    config = parser.parse_args()
-
-    df = pd.read_csv("./My_TAOD/dataset/PCB_Crop/0.7-shot/train.csv")
-    image_path = df["Image_Path"]
-    image_label = df["Image_Label"]
-    image_path = list(image_path)
-
-    image = []
-    for path in image_path:
-        img = Image.open(path).convert('RGB')
-        img_array = np.asarray(img)
-        trans = T.Compose([T.ToTensor(), T.Resize((224, 224))])
-        img_array = trans(img_array)
-        image.append(img_array)
-    
-    image = torch.stack(image)
-    image = image.view(len(image), -1)
-    image_label = torch.Tensor(image_label)
-    plt_tsne2d(image, image_label)
-    
 if __name__ == "__main__":
-    test()
+    pass

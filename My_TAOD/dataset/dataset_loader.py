@@ -67,7 +67,8 @@ def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_ty
         [images, labels]: images(-1~1, if totensor -> torch.float32
                                        else -> np.float32)
     """
-    dataset_class = dataset_dir.split('/')[-3]
+    start_index = dataset_dir.find("dataset/") + len("dataset/")
+    dataset_class = dataset_dir[start_index:].split('/')[0]
     df = pd.read_csv(dataset_dir)
     
     if dataset_class.lower() == 'neu_cls':

@@ -106,8 +106,8 @@ def score_mmd(real_path, fake_path, batch_size, gpu_id="1"):
     return result
     
 def test():
-    real_path = "./My_TAOD/dataset/PCB_Crop/30-shot/train/0.csv"
-    fake_path = "./My_TAOD/dataset/PCB_Crop/30-shot/train/1.csv"
+    real_path = "./My_TAOD/dataset/PCB_Crop/30-shot/test/0.csv"
+    fake_path = "./My_TAOD/dataset/DeepPCB_Crop/30-shot/test/1.csv"
     result = score_mmd(real_path, fake_path, 16)
     
     print(f"MMD: {result}")
