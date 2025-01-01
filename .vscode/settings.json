@@ -8,5 +8,6 @@
         "./My_PCB_det",
         "./My_PCB_det",
         "./My_PCB_det/Utils"
-    ]
+    ],
+    "python.analysis.autoImportCompletions": false
 }

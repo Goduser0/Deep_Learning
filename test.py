@@ -1,6 +1,5 @@
-import argparse
-parser = argparse.ArgumentParser(description="Classification")
-parser.add_argument("--dataset_ratio", type=str, default="10-shot + PCB_200(150)")
-parser.add_argument("--dataset", type=int, default=1)
-config = parser.parse_args()
-print(config)
+import tqdm
+import torch
+a = torch.randn(16, 3, 16, 16)
+for i in tqdm.tqdm(a):
+    pass

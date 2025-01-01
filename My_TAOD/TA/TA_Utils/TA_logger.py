@@ -1,6 +1,5 @@
 import os
 import re
-import time
 
 ##########################################################################################################
 # FUNCTION: cogan_logger
@@ -153,6 +152,45 @@ def S2T_trainer_logger(config):
 # FUNCTION: DCGAN_logger
 ##########################################################################################################
 def DCGAN_logger(config, save_dir):
+    with open(save_dir + '/log.txt', 'w') as f:
+        content = str(config)
+        content_list = re.search(r"Namespace\((.*)\)", content).group(1)
+        content_list = content_list.split(",")
+        for content_line in content_list:
+            key_value = content_line.split("=")
+            f.write(f"{key_value[0]}:\t{key_value[1]}\n")
+    f.close()
+
+##########################################################################################################
+# FUNCTION: WGAN_GP_logger
+##########################################################################################################
+def WGAN_GP_logger(config, save_dir):
+    with open(save_dir + '/log.txt', 'w') as f:
+        content = str(config)
+        content_list = re.search(r"Namespace\((.*)\)", content).group(1)
+        content_list = content_list.split(",")
+        for content_line in content_list:
+            key_value = content_line.split("=")
+            f.write(f"{key_value[0]}:\t{key_value[1]}\n")
+    f.close()
+    
+##########################################################################################################
+# FUNCTION: SAGAN_logger
+##########################################################################################################
+def SAGAN_logger(config, save_dir):
+    with open(save_dir + '/log.txt', 'w') as f:
+        content = str(config)
+        content_list = re.search(r"Namespace\((.*)\)", content).group(1)
+        content_list = content_list.split(",")
+        for content_line in content_list:
+            key_value = content_line.split("=")
+            f.write(f"{key_value[0]}:\t{key_value[1]}\n")
+    f.close()
+
+##########################################################################################################
+# FUNCTION: ConGAN_logger
+##########################################################################################################
+def ConGAN_logger(config, save_dir):
     with open(save_dir + '/log.txt', 'w') as f:
         content = str(config)
         content_list = re.search(r"Namespace\((.*)\)", content).group(1)

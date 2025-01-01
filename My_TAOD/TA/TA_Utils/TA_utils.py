@@ -739,6 +739,229 @@ def DCGAN_record_data(save_dir, content, flag_plot=True):
         plt.close()
 
 
+#######################################################################################################
+#### FUNCTION: WGAN_GP_record_data()
+#######################################################################################################
+def WGAN_GP_record_data(save_dir, content, flag_plot=True):
+    """Save Data"""   
+    filepath = f"{save_dir}/results/data.csv"
+    content = pd.DataFrame.from_dict(content, orient="index").T
+    
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.read_csv(filepath)
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+        
+    if flag_plot:
+        results = pd.read_csv(filepath)
+            
+        D_real_loss = results["D_real_loss"]
+        D_fake_loss = results["D_fake_loss"]
+        D_gp = results["D_gp"]
+        D_loss = results["D_loss"]    
+        G_loss = results["G_loss"]
+             
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_real_loss], label="D_real_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_real_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_fake_loss], label="D_fake_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_fake_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_gp], label="D_gp")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_gp.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_real_loss], label="D_real_loss", color="tab:red")
+        ax1.plot([y for y in D_fake_loss], label="D_fake_loss", color="tab:blue")
+        ax1.plot([y for y in D_gp], label="D_gp", color="tab:green")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_loss_all.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_loss], label="D_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_loss], label="G_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/G_loss.jpg')
+        plt.close()
+
+
+#######################################################################################################
+#### FUNCTION: SAGAN_record_data()
+#######################################################################################################
+def SAGAN_record_data(save_dir, content, flag_plot=True):
+    """Save Data"""   
+    filepath = f"{save_dir}/results/data.csv"
+    content = pd.DataFrame.from_dict(content, orient="index").T
+    
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.read_csv(filepath)
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+        
+    if flag_plot:
+        results = pd.read_csv(filepath)
+            
+        D_real_adv_loss = results["D_real_adv_loss"]
+        D_fake_adv_loss = results["D_fake_adv_loss"]
+        D_loss = results["D_loss"]    
+        G_loss = results["G_loss"]
+             
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_real_adv_loss], label="D_real_adv_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_real_adv_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_fake_adv_loss], label="D_fake_adv_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_fake_adv_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_real_adv_loss], label="D_real_adv_loss", color="tab:red")
+        ax1.plot([y for y in D_fake_adv_loss], label="D_fake_adv_loss", color="tab:blue")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_loss_all.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_loss], label="D_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_loss], label="G_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/G_loss.jpg')
+        plt.close()
+        
+        
+#######################################################################################################
+#### FUNCTION: ConGAN_record_data()
+#######################################################################################################
+def ConGAN_record_data(save_dir, content, flag_plot=True):
+    """Save Data"""   
+    filepath = f"{save_dir}/results/data.csv"
+    content = pd.DataFrame.from_dict(content, orient="index").T
+    
+    if not os.path.exists(filepath):
+        content.to_csv(filepath, index=False)
+    else:
+        results = pd.read_csv(filepath)
+        results = pd.concat([results, content], axis=0, ignore_index=True)
+        results.to_csv(filepath, index=False)
+        
+    if flag_plot:
+        results = pd.read_csv(filepath)
+        
+        G_fake_adv_loss = results["G_fake_adv_loss"]
+        G_FM_loss = results["G_FM_loss"]
+        G_Triplet_loss = results["G_Triplet_loss"]
+        G_loss = results["G_loss"]
+        
+        D_real_adv_loss = results["D_real_adv_loss"]
+        D_fake_adv_loss = results["D_fake_adv_loss"]
+        D_loss = results["D_loss"]    
+        
+             
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_fake_adv_loss], label="G_fake_adv_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/G_fake_adv_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_FM_loss], label="G_FM_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/G_FM_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_Triplet_loss], label="G_Triplet_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/G_Triplet_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_fake_adv_loss], label="G_fake_adv_loss", color="tab:red")
+        ax1.plot([y for y in G_FM_loss], label="G_FM_loss", color="tab:blue")
+        ax1.plot([y for y in G_Triplet_loss], label="G_Triplet_loss", color="tab:green")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/G_loss_all.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in G_loss], label="G_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/G_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_real_adv_loss], label="D_real_adv_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_real_adv_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_fake_adv_loss], label="D_fake_adv_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_fake_adv_loss.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_real_adv_loss], label="D_real_adv_loss", color="tab:red")
+        ax1.plot([y for y in D_fake_adv_loss], label="D_fake_adv_loss", color="tab:blue")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_loss_all.jpg')
+        plt.close()
+        
+        fig, ax1 = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+        ax1.plot([y for y in D_loss], label="D_loss")
+        ax1.legend()
+        fig.tight_layout()
+        plt.savefig(f'{save_dir}/results/D_loss.jpg')
+        plt.close()
+
 
 #######################################################################################################
 # Function Test

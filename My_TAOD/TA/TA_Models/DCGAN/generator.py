@@ -9,11 +9,12 @@ import pandas as pd
 from PIL import Image
 import matplotlib.pyplot as plt
 import time
+import tqdm
 
 from model import DCGAN_Generator
 
 def DCGAN_SampleGenerator(G_path, batch_size=100):
-    #  G_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/TA_Results/DCGAN/DeepPCB_Crop 0 2024-12-30_16-52-43/models/10_net_g.pth"    
+    #  G_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/TA_Results/DCGAN/DeepPCB_Crop 0 2024-12-30_16-52-43/models/10000_net_g.pth"    
     G = DCGAN_Generator()
     G_time = G_path.split('/')[-3]
     G_epoch = int(G_path.split('/')[-1].split('_')[0])
@@ -33,7 +34,7 @@ def DCGAN_SampleGenerator(G_path, batch_size=100):
     
     img_save_list = []
     i = 0
-    for img in imgs:
+    for img in tqdm.tqdm(imgs):
         i+=1
         img = img.detach().numpy()
         img = ((img + 1) / 2 * 255).astype(np.uint8)
