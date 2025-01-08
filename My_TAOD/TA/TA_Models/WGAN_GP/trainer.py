@@ -125,7 +125,7 @@ for epoch in tqdm.trange(1, config.num_epochs + 1, desc=f"[Epoch:{config.num_epo
         fake_img = G(z)
         fake_img_out = D(fake_img)
         
-        gp = Cal_Gradient_Penalty(D, raw_img, fake_img, device)
+        gp = Cal_Gradient_Penalty(D, raw_img.data, fake_img.data, device)
         D_real_loss = -torch.mean(real_img_out)
         D_fake_loss = torch.mean(fake_img_out)
         lambda_gp = 10.0

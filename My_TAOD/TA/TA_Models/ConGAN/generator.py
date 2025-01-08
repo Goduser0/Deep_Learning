@@ -9,11 +9,12 @@ import pandas as pd
 from PIL import Image
 import matplotlib.pyplot as plt
 import time
+import tqdm
 
 from model import ConGAN_Generator
 
 def ConGAN_SampleGenerator(G_path, batch_size=10000):
-    #  G_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/TA_Results/ConGAN/DeepPCB_Crop 0 2024-12-30_16-52-43/models/10000_net_g.pth"    
+    #  G_path = "My_TAOD/TA/TA_Results/ConGAN/DeepPCB_Crop 0 2025-01-02_10-10-09/models/10000_net_g.pth"    
     G = ConGAN_Generator()
     G_time = G_path.split('/')[-3]
     G_epoch = int(G_path.split('/')[-1].split('_')[0])
@@ -28,12 +29,12 @@ def ConGAN_SampleGenerator(G_path, batch_size=10000):
     img_classes = ['Mouse_bite', 'Open_circuit', 'Short', 'Spur', 'Spurious_copper', 'Missing_hole']
     img_class = img_classes[int(img_label)]
     
-    z = torch.randn(batch_size, 100, 1, 1)
+    z = torch.randn(batch_size, 128)
     imgs = G(z)
     
     img_save_list = []
     i = 0
-    for img in imgs:
+    for img in tqdm.tqdm(imgs):
         i+=1
         img = img.detach().numpy()
         img = ((img + 1) / 2 * 255).astype(np.uint8)
@@ -52,5 +53,6 @@ def ConGAN_SampleGenerator(G_path, batch_size=10000):
     print("Generate Done!!!")
     
 if __name__ == "__main__":
-    G_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/TA_Results/ConGAN/DeepPCB_Crop 0 2024-12-30_16-52-43/models/10000_net_g.pth"
+    G_path = "My_TAOD/TA/TA_Results/ConGAN/DeepPCB_Crop 0 2025-01-02_10-10-09/models/10000_net_g.pth"
     ConGAN_SampleGenerator(G_path)
+    

@@ -3,6 +3,7 @@ import torch.nn as nn
 import numpy as np
 from torch.nn.utils.parametrizations import spectral_norm as SpectralNorm
 from torch import from_numpy
+from torch import autograd
 
 from numpy import array
 import imgaug.augmenters as iaa
@@ -225,23 +226,26 @@ class ConGAN_Discriminator(nn.Module):
         return results
 
 ########################################################################################################
-# CLASS: HyperSphereLoss()
+# FUNCTION: Cal_Gradient_Penalty()
 ########################################################################################################
-class HyperSphereLoss(nn.Module):
-    def project_to_hypersphere(self, p):
-        p_norm = torch.norm(p, dim=1, keepdim=True) ** 2
-        x = 2 * p / (p_norm + 1)
-        y = (p_norm - 1) / (p_norm + 1)
-        return torch.cat([x, y], dim=1)
+def Cal_Gradient_Penalty(discriminator, real_imgs, fake_imgs, device):
+    batch_size = real_imgs.shape[0]
+    eta = torch.FloatTensor(batch_size, 1, 1, 1).uniform_(0, 1).to(device).expand_as(real_imgs)
     
-    def forward(self, input, moment=3):
-        p = self.project_to_hypersphere(input)
-        p_norm = torch.norm(p, dim=1) ** 2
-        sphere_d = torch.acos((2 * p[:, -1]) / (1 + p_norm))
-        loss = 0
-        for i in range(1, moment + 1):
-            loss += torch.mean(torch.pow(sphere_d, i))
-        return loss
+    interpolated = eta*real_imgs + (1-eta)*fake_imgs.requires_grad_(True)
+    prob_interpolated = discriminator(interpolated)[-2]
+    gradients = autograd.grad(
+        outputs=prob_interpolated,
+        inputs=interpolated,
+        grad_outputs=torch.ones(prob_interpolated.shape).to(device),
+        retain_graph=True,
+        create_graph=True,
+        only_inputs=True,
+    )[0]
+    
+    gradients = gradients.reshape(gradients.shape[0], -1)
+    GP = torch.mean(torch.square((gradients.norm(2, dim=1))))
+    return GP
     
 ########################################################################################################
 # CLASS: HYPERSPHERE_TripletLoss()

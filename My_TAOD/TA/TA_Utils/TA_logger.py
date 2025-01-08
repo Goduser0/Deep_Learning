@@ -21,25 +21,6 @@ def cogan_logger(config):
         pass
 
 ##########################################################################################################
-# FUNCTION: cyclegan_logger
-##########################################################################################################
-def cyclegan_logger(config):
-    if config.log:
-        assert os.path.exists(config.logs_dir), f"ERROR:\t({__name__}): No config.log_dir"
-
-        filename = config.dataset_S_class + '2' + config.dataset_T_class + ' ' + config.category + ' ' + config.time
-        with open(config.logs_dir + '/' + filename + '.txt', 'w') as f:
-            content = str(config)
-            content_list = re.split(r"\(|\)", content)
-            content_list = content_list[1].split(",")
-            for content_line in content_list:
-                key_value = content_line.split("=")
-                f.write(f"{key_value[0]}:\t{key_value[1]}\n")
-        f.close()
-    else:
-        pass
-
-##########################################################################################################
 # FUNCTION: stage1_logger
 ##########################################################################################################
 def stage1_logger(config):
@@ -191,6 +172,33 @@ def SAGAN_logger(config, save_dir):
 # FUNCTION: ConGAN_logger
 ##########################################################################################################
 def ConGAN_logger(config, save_dir):
+    with open(save_dir + '/log.txt', 'w') as f:
+        content = str(config)
+        content_list = re.search(r"Namespace\((.*)\)", content).group(1)
+        content_list = content_list.split(",")
+        for content_line in content_list:
+            key_value = content_line.split("=")
+            f.write(f"{key_value[0]}:\t{key_value[1]}\n")
+    f.close()
+
+
+##########################################################################################################
+# FUNCTION: CoGAN_logger
+##########################################################################################################
+def CoGAN_logger(config, save_dir):
+    with open(save_dir + '/log.txt', 'w') as f:
+        content = str(config)
+        content_list = re.search(r"Namespace\((.*)\)", content).group(1)
+        content_list = content_list.split(",")
+        for content_line in content_list:
+            key_value = content_line.split("=")
+            f.write(f"{key_value[0]}:\t{key_value[1]}\n")
+    f.close()
+    
+##########################################################################################################
+# FUNCTION: CycleGAN_logger
+##########################################################################################################
+def CycleGAN_logger(config, save_dir):
     with open(save_dir + '/log.txt', 'w') as f:
         content = str(config)
         content_list = re.search(r"Namespace\((.*)\)", content).group(1)

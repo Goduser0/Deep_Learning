@@ -11,7 +11,7 @@ import torch.backends.cudnn
 import torchvision.transforms as T
 from torch.autograd import Variable
 
-from model import ConGAN_Generator, ConGAN_Discriminator, HyperSphereLoss, ImgAugmentation, HYPERSPHERE_TripletLoss
+from model import ConGAN_Generator, ConGAN_Discriminator, ImgAugmentation, HYPERSPHERE_TripletLoss, Cal_Gradient_Penalty
 
 import sys
 sys.path.append("./My_TAOD/dataset")
@@ -41,7 +41,7 @@ parser.add_argument("--gpu_id", type=str, default="0")
 parser.add_argument("--img_size", type=int, default=64)
 parser.add_argument("--lr_g", type=float, default=1e-4)
 
-parser.add_argument("--lr_d", type=float, default=4e-4)
+parser.add_argument("--lr_d", type=float, default=1e-4)
 # Others
 parser.add_argument("--time", type=str, default=time.strftime(f"%Y-%m-%d_%H-%M-%S", time.localtime()))
 
@@ -129,8 +129,9 @@ for epoch in tqdm.trange(1, config.num_epochs + 1, desc=f"[Epoch:{config.num_epo
         fake_img_aug_out = D(fake_img_aug)
         real_img_aug_out = D(raw_img_aug)
         
-        sphere_loss = HyperSphereLoss()
-        fake_adv_loss = sphere_loss(fake_img_out[-2])
+        # sphere_loss = HyperSphereLoss()
+        # fake_adv_loss = sphere_loss(fake_img_out[-2])
+        fake_adv_loss = -torch.mean(fake_img_out[-2])
         
         criterionFeat = nn.L1Loss()
         FM_loss = torch.FloatTensor(1).fill_(0).to(device)
@@ -164,9 +165,14 @@ for epoch in tqdm.trange(1, config.num_epochs + 1, desc=f"[Epoch:{config.num_epo
         real_img_out = D(raw_img)
         fake_img_out = D(fake_img.detach())
         
-        real_adv_loss = sphere_loss(real_img_out[-2])
-        fake_adv_loss = -sphere_loss(fake_img_out[-2])
-        D_loss = real_adv_loss + fake_adv_loss
+        # real_adv_loss = sphere_loss(real_img_out[-2])
+        # fake_adv_loss = -sphere_loss(fake_img_out[-2])
+        # real_adv_loss = torch.mean(nn.ReLU()(1.0 - real_img_out[-2]))
+        # fake_adv_loss = torch.mean(nn.ReLU()(1.0 + fake_img_out[-2]))
+        real_adv_loss = -torch.mean(real_img_out[-2])
+        fake_adv_loss = torch.mean(fake_img_out[-2])
+        GP = Cal_Gradient_Penalty(D, raw_img.data, fake_img.data, device)
+        D_loss = real_adv_loss + fake_adv_loss + GP*10.0
         
         D_real_adv_loss_list.append(real_adv_loss.item() * num)
         D_fake_adv_loss_list.append(fake_adv_loss.item() * num)

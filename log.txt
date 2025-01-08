@@ -1,2 +1,0 @@
-dataset_ratio:	'10-shot + PCB_200(150)'
- dataset:	1
