@@ -5,7 +5,6 @@ import numpy as np
 import os
 
 import torch
-import torch.nn as nn
 import torch.backends
 import torch.backends.cudnn
 import torchvision.transforms as T

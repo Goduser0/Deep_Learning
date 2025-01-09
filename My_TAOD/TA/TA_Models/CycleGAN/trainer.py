@@ -9,11 +9,10 @@ import torch
 import torch.nn as nn
 import torch.backends
 import torch.backends.cudnn
-import torch.nn.functional as F
 import torchvision.transforms as T
 from torch.autograd import Variable
 
-from model import CycleGAN_Generator, CycleGAN_Discriminator, Weights_Init_Normal
+from model import CycleGAN_Generator, CycleGAN_Discriminator, Weights_Init_Normal, Lambda_Learing_Rate, Replay_Buffer
 
 import sys
 sys.path.append("./My_TAOD/dataset")
@@ -39,19 +38,19 @@ parser.add_argument("--Src_dataset_path",
                     type=str,
                     default="My_TAOD/dataset/PCB_200/200-shot/train/0.csv")
 
-parser.add_argument("--batch_size", type=int, default=200)
+parser.add_argument("--batch_size", type=int, default=128)
 parser.add_argument("--num_workers", type=int, default=4)
 # train
-parser.add_argument("--num_epochs", type=int, default=10000)
+parser.add_argument("--num_epochs", type=int, default=3000)
 parser.add_argument("--gpu_id", type=str, default="0")
+parser.add_argument("--start_epoch", type=int, default=0)
+parser.add_argument("--decay_epoch", type=int, default=1500)
 
-parser.add_argument("--img_size", type=int, default=64)
+parser.add_argument("--img_size", type=int, default=32)
 
 parser.add_argument("--lr_g", type=float, default=2e-4)
-parser.add_argument("--weight_decay_g", type=float, default=5e-4)
 
 parser.add_argument("--lr_d", type=float, default=2e-4)
-parser.add_argument("--weight_decay_d", type=float, default=5e-4)
 # Others
 parser.add_argument("--time", type=str, default=time.strftime(f"%Y-%m-%d_%H-%M-%S", time.localtime()))
 
@@ -122,8 +121,20 @@ D_Src.to(device)
 D_Tar.to(device)
 
 
-optim_G = torch.optim.Adam(G.parameters(), lr=config.lr_g, betas=(0.5, 0.999), weight_decay=config.weight_decay_g)
-optim_D = torch.optim.Adam(D.parameters(), lr=config.lr_d, betas=(0.5, 0.999), weight_decay=config.weight_decay_d)
+optim_G = torch.optim.Adam(itertools.chain(G_Src2Tar.parameters(), G_Tar2Src.parameters()), lr=config.lr_g, betas=(0.5, 0.999))
+optim_D_Src = torch.optim.Adam(D_Src.parameters(), lr=config.lr_d, betas=(0.5, 0.999))
+optim_D_Tar = torch.optim.Adam(D_Tar.parameters(), lr=config.lr_d, betas=(0.5, 0.999))
+
+lr_scheduler_G = torch.optim.lr_scheduler.LambdaLR(optim_G, lr_lambda=Lambda_Learing_Rate(config.num_epochs, config.start_epoch, config.decay_epoch).step)
+lr_scheduler_D_Src = torch.optim.lr_scheduler.LambdaLR(optim_D_Src, lr_lambda=Lambda_Learing_Rate(config.num_epochs, config.start_epoch, config.decay_epoch).step)
+lr_scheduler_D_Tar = torch.optim.lr_scheduler.LambdaLR(optim_D_Tar, lr_lambda=Lambda_Learing_Rate(config.num_epochs, config.start_epoch, config.decay_epoch).step)
+
+
+fake_Src_buffer = Replay_Buffer()
+fake_Tar_buffer = Replay_Buffer()
+
+Tensor = torch.cuda.FloatTensor
+
 
 ######################################################################################################
 #### Train
@@ -131,18 +142,25 @@ optim_D = torch.optim.Adam(D.parameters(), lr=config.lr_d, betas=(0.5, 0.999), w
 # logger
 CycleGAN_logger(config, save_dir)
 # train
-for epoch in tqdm.trange(1, config.num_epochs + 1, desc=f"[Epoch:{config.num_epochs}]On training"):
+for epoch in tqdm.trange(config.start_epoch + 1, config.num_epochs + 1, desc=f"[Epoch:{config.num_epochs}]On training"):
     # loss_list
     batchsize_list = []
 
-    D_real_adv_loss_list = []
-    D_fake_adv_loss_list = []
-    D_mse_loss_list = []
-    D_cls_loss_list = []
-    D_loss_list = []
+    G_adv_loss_Src2Tar_list = []
+    G_adv_loss_Tar2Src_list = []
+    G_cycle_loss_Src2Tar2Src_list = []
+    G_cycle_loss_Tar2Src2Tar_list = []
+    G_identity_loss_Src_list = []
+    G_identity_loss_Tar_list = []
+    G_loss_list = []
     
-    G_fake_adv_loss_list = []
-    G_loss_list = [] 
+    D_Src_real_adv_loss_list = []
+    D_Src_fake_adv_loss_list = []
+    D_Src_loss_list = []
+    
+    D_Tar_real_adv_loss_list = []
+    D_Tar_fake_adv_loss_list = []
+    D_Tar_loss_list = []
     
     for batch_idx, ((raw_img_Src, category_label_Src), (raw_img_Tar, category_label_Tar)) in enumerate(zip(train_loader_Src, train_loader_Tar)):
         
@@ -152,62 +170,94 @@ for epoch in tqdm.trange(1, config.num_epochs + 1, desc=f"[Epoch:{config.num_epo
         raw_img_Src, category_label_Src = Variable(raw_img_Src).to(device), Variable(category_label_Src).to(device).view(num)
         raw_img_Tar, category_label_Tar = Variable(raw_img_Tar).to(device), Variable(category_label_Tar).to(device).view(num)
         
-        # train D
-        z = Variable(torch.randn(num, 128)).to(device)
-        
-        optim_D.zero_grad()
-        
-        real_img_out, real_feat_Src, real_feat_Tar = D(raw_img_Src, raw_img_Tar)
-        D_real_adv_loss = F.cross_entropy(real_img_out, Variable(torch.LongTensor(np.ones(num*2, dtype=np.int64))).to(device))
-        _, real_img_pred = torch.max(real_img_out.data, 1)
-        real_img_acc = (real_img_pred == 1).sum() / (1.0*real_img_pred.size(0))
-              
-        fake_img_Src, fake_img_Tar = G(z)
-        fake_img_out, fake_feat_Src, fake_feat_Tar = D(fake_img_Src, fake_img_Tar)
-        D_fake_adv_loss = F.cross_entropy(fake_img_out, Variable(torch.LongTensor(np.zeros(num*2, dtype=np.int64))).to(device))
-        _, fake_img_pred = torch.max(fake_img_out.data, 1)
-        fake_img_acc = (fake_img_pred == 0).sum() / (1.0*fake_img_pred.size(0))
-        
-        dummy_tensor = Variable(torch.zeros_like(fake_feat_Src).to(device))
-        D_mse_loss = (nn.MSELoss()(fake_feat_Src - fake_feat_Tar, dummy_tensor)) * fake_feat_Src.size(1) * fake_feat_Src.size(2) * fake_feat_Src.size(3)
-        
-        cls_output = D.classify_a(raw_img_Src)
-        D_cls_loss = F.cross_entropy(cls_output, category_label_Src)
-        _, cls_pred = torch.max(cls_output.data, 1)
-        cls_acc = (cls_pred == category_label_Src.data).sum() / (1.0*cls_pred.size(0))
-        
-        D_loss = D_real_adv_loss + D_fake_adv_loss + D_mse_loss*1.0 + D_cls_loss*1.0
-        
-        D_real_adv_loss_list.append(D_real_adv_loss.item() * num)
-        D_fake_adv_loss_list.append(D_fake_adv_loss.item() * num)
-        D_mse_loss_list.append(D_mse_loss.item() * num)
-        D_cls_loss_list.append(D_cls_loss.item() * num)
-        D_loss_list.append(D_loss.item() * num)
-        
-        D_loss.backward()
-        optim_D.step()
+        raw_img_Src = Tensor(num, 3, config.img_size, config.img_size).copy_(raw_img_Src)
+        raw_img_Tar = Tensor(num, 3, config.img_size, config.img_size).copy_(raw_img_Tar)
+        real_labels = Variable(Tensor(num).fill_(1.0), requires_grad=False)
+        fake_labels = Variable(Tensor(num).fill_(0.0), requires_grad=False)
         
         # train G
-        z = Variable(torch.randn(num, 128)).to(device)
-        
         optim_G.zero_grad()
         
-        fake_img_Src, fake_img_Tar = G(z)
-        fake_img_out, fake_feat_Src, fake_feat_Tar = D(fake_img_Src, fake_img_Tar)
+        # adv_loss
+        fake_Tar = G_Src2Tar(raw_img_Src)
+        pred_fake = D_Tar(fake_Tar)
+        G_adv_loss_Src2Tar = nn.MSELoss()(pred_fake, real_labels)
         
-        G_fake_adv_loss = F.cross_entropy(fake_img_out, Variable(torch.LongTensor(np.ones(num*2, dtype=np.int64))).to(device))
+        fake_Src = G_Tar2Src(raw_img_Tar)
+        pred_fake = D_Src(fake_Src)
+        G_adv_loss_Tar2Src = nn.MSELoss()(pred_fake, real_labels)
         
-        G_loss = G_fake_adv_loss
+        # cycle_loss
+        recovered_Src = G_Tar2Src(fake_Tar)
+        G_cycle_loss_Src2Tar2Src = nn.L1Loss()(recovered_Src, raw_img_Src) * 10.0
         
-        G_fake_adv_loss_list.append(G_fake_adv_loss.item() * num)
+        recovered_Tar = G_Src2Tar(fake_Src)
+        G_cycle_loss_Tar2Src2Tar = nn.L1Loss()(recovered_Tar, raw_img_Tar) * 10.0 
+        
+        # identity_loss
+        same_Src = G_Tar2Src(raw_img_Src)
+        G_identity_loss_Src = nn.L1Loss()(same_Src, raw_img_Src) * 5.0
+        
+        same_Tar = G_Src2Tar(raw_img_Tar)
+        G_identity_loss_Tar = nn.L1Loss()(same_Tar, raw_img_Tar) * 5.0
+        
+        G_loss = G_adv_loss_Src2Tar + G_adv_loss_Tar2Src + G_cycle_loss_Src2Tar2Src +  G_cycle_loss_Tar2Src2Tar + G_identity_loss_Src + G_identity_loss_Tar
+        
+        G_adv_loss_Src2Tar_list.append(G_adv_loss_Src2Tar.item() * num)
+        G_adv_loss_Tar2Src_list.append(G_adv_loss_Tar2Src.item() * num)
+        G_cycle_loss_Src2Tar2Src_list.append(G_cycle_loss_Src2Tar2Src.item() * num)
+        G_cycle_loss_Tar2Src2Tar_list.append(G_cycle_loss_Tar2Src2Tar.item() * num)
+        G_identity_loss_Src_list.append(G_identity_loss_Src.item() * num)
+        G_identity_loss_Tar_list.append(G_identity_loss_Tar.item() * num)
         G_loss_list.append(G_loss.item() * num)
         
         G_loss.backward()
         optim_G.step()
         
-
+        # train D_Src
+        optim_D_Src.zero_grad()
+        
+        pred_real = D_Src(raw_img_Src)
+        D_Src_real_adv_loss = nn.MSELoss()(pred_real, real_labels)
+        
+        fake_Src = fake_Src_buffer.push_and_pop(fake_Src)
+        pred_fake = D_Src(fake_Src.detach())
+        D_Src_fake_adv_loss = nn.MSELoss()(pred_fake, fake_labels)
+        
+        D_Src_loss = (D_Src_real_adv_loss + D_Src_fake_adv_loss) * 0.5
+        
+        D_Src_real_adv_loss_list.append(D_Src_real_adv_loss.item() * num)
+        D_Src_fake_adv_loss_list.append(D_Src_fake_adv_loss.item() * num)
+        D_Src_loss_list.append(D_Src_loss.item() * num)
+        
+        D_Src_loss.backward()
+        optim_D_Src.step()
+        
+        # train D_Tar
+        optim_D_Tar.zero_grad()
+        
+        pred_real = D_Tar(raw_img_Tar)
+        D_Tar_real_adv_loss = nn.MSELoss()(pred_real, real_labels)
+        
+        fake_Tar = fake_Tar_buffer.push_and_pop(fake_Tar)
+        pred_fake = D_Tar(fake_Tar.detach())
+        D_Tar_fake_adv_loss = nn.MSELoss()(pred_fake, fake_labels)
+        
+        D_Tar_loss = (D_Tar_real_adv_loss + D_Tar_fake_adv_loss) * 0.5
+        
+        D_Tar_real_adv_loss_list.append(D_Tar_real_adv_loss.item() * num)
+        D_Tar_fake_adv_loss_list.append(D_Tar_fake_adv_loss.item() * num)
+        D_Tar_loss_list.append(D_Tar_loss.item() * num)
+        
+        D_Tar_loss.backward()
+        optim_D_Tar.step()
+        
+    lr_scheduler_G.step()
+    lr_scheduler_D_Src.step()
+    lr_scheduler_D_Tar.step()
+    
     # Record Data
-    CoGAN_record_data(
+    CycleGAN_record_data(
         save_dir,
         {
             "epoch": f"{epoch}",
@@ -215,14 +265,21 @@ for epoch in tqdm.trange(1, config.num_epochs + 1, desc=f"[Epoch:{config.num_epo
             "batch": f"{batch_idx+1}",
             "num_batchs": f"{len(train_loader_Tar)}",
             
-            "D_real_adv_loss": f"{np.sum(D_real_adv_loss_list) / np.sum(batchsize_list)}",
-            "D_fake_adv_loss": f"{np.sum(D_fake_adv_loss_list) / np.sum(batchsize_list)}",
-            "D_mse_loss": f"{np.sum(D_mse_loss_list) / np.sum(batchsize_list)}",
-            "D_cls_loss": f"{np.sum(D_cls_loss_list) / np.sum(batchsize_list)}",
-            "D_loss": f"{np.sum(D_loss_list) / np.sum(batchsize_list)}",
+            "G_adv_loss_Src2Tar": f"{np.sum(G_adv_loss_Src2Tar_list) / np.sum(batchsize_list)}",
+            "G_adv_loss_Tar2Src": f"{np.sum(G_adv_loss_Tar2Src_list) / np.sum(batchsize_list)}",
+            "G_cycle_loss_Src2Tar2Src": f"{np.sum(G_cycle_loss_Src2Tar2Src_list) / np.sum(batchsize_list)}",
+            "G_cycle_loss_Tar2Src2Tar": f"{np.sum(G_cycle_loss_Tar2Src2Tar_list) / np.sum(batchsize_list)}",
+            "G_identity_loss_Src": f"{np.sum(G_identity_loss_Src_list) / np.sum(batchsize_list)}",
+            "G_identity_loss_Tar": f"{np.sum(G_identity_loss_Tar_list) / np.sum(batchsize_list)}",
+            "G_loss": f"{np.sum(G_loss_list) / np.sum(batchsize_list)}",
             
-            "G_fake_adv_loss": f"{np.sum(G_fake_adv_loss_list) / np.sum(batchsize_list)}",
-            "G_loss": f"{np.sum(G_loss_list) / np.sum(batchsize_list)}",   
+            "D_Src_real_adv_loss": f"{np.sum(D_Src_real_adv_loss_list) / np.sum(batchsize_list)}",
+            "D_Src_fake_adv_loss": f"{np.sum(D_Src_fake_adv_loss_list) / np.sum(batchsize_list)}",   
+            "D_Src_loss": f"{np.sum(D_Src_loss_list) / np.sum(batchsize_list)}",  
+            
+            "D_Tar_real_adv_loss": f"{np.sum(D_Tar_real_adv_loss_list) / np.sum(batchsize_list)}",
+            "D_Tar_fake_adv_loss": f"{np.sum(D_Tar_fake_adv_loss_list) / np.sum(batchsize_list)}",   
+            "D_Tar_loss": f"{np.sum(D_Tar_loss_list) / np.sum(batchsize_list)}",  
         },
         flag_plot=True,
     )
@@ -234,18 +291,29 @@ for epoch in tqdm.trange(1, config.num_epochs + 1, desc=f"[Epoch:{config.num_epo
     # Save model G
     #-------------------------------------------------------------------
     if epoch % (config.num_epochs // 10) == 0:
-        net_G_path = f"{save_dir}/models/{epoch}_net_g.pth"
+        net_G_Src2Tar_path = f"{save_dir}/models/{epoch}_net_g_src2tar.pth"
         torch.save({
             "epoch": epoch,
-            "model_state_dict": G.state_dict(),
-        }, net_G_path)
+            "model_state_dict": G_Src2Tar.state_dict(),
+        }, net_G_Src2Tar_path)
+        net_G_Tar2Src_path = f"{save_dir}/models/{epoch}_net_g_tar2src.pth"
+        torch.save({
+            "epoch": epoch,
+            "model_state_dict": G_Tar2Src.state_dict(),
+        }, net_G_Tar2Src_path)
     #-------------------------------------------------------------------
     # Save model D
     #-------------------------------------------------------------------
     if epoch == config.num_epochs:
-        net_D_path = f"{save_dir}/models/{epoch}_net_d.pth"
+        net_D_Src_path = f"{save_dir}/models/{epoch}_net_d_src.pth"
         torch.save({
             "epoch": epoch,
-            "model_state_dict": D.state_dict(),
+            "model_state_dict": D_Src.state_dict(),
             "img_size": config.img_size,
-        }, net_D_path)
+        }, net_D_Src_path)
+        net_D_Tar_path = f"{save_dir}/models/{epoch}_net_d_tar.pth"
+        torch.save({
+            "epoch": epoch,
+            "model_state_dict": D_Tar.state_dict(),
+            "img_size": config.img_size,
+        }, net_D_Tar_path)

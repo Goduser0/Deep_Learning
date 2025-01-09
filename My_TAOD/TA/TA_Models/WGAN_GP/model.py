@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 from torch import autograd
-from torch.autograd import Variable
 
 ########################################################################################################
 # CLASS: WGAN_GP_Generator()

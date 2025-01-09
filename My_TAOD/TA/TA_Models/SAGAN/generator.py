@@ -1,13 +1,9 @@
 import torch
-import torch.nn as nn
-import torchvision.transforms as T
-from torch.autograd import Variable
 
 import os
 import numpy as np
 import pandas as pd
 from PIL import Image
-import matplotlib.pyplot as plt
 import time
 import tqdm
 
@@ -20,6 +16,7 @@ def SAGAN_SampleGenerator(G_path, batch_size=100):
     G_epoch = int(G_path.split('/')[-1].split('_')[0])
     checkpoint = torch.load(G_path)
     G.load_state_dict(checkpoint["model_state_dict"])
+    G.eval()
 
     local_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
     dirname = f"{G_epoch}epoch {local_time}"
@@ -49,8 +46,10 @@ def SAGAN_SampleGenerator(G_path, batch_size=100):
         
     # Save to csv    
     img_save_df = pd.DataFrame(img_save_list, columns=["Image_Label", "Image_Class", "Image_Path"])
-    img_save_df.to_csv(f"My_TAOD/TA/TA_Results/SAGAN/{G_time}/samples/{dirname}/generate_imgs.csv")
+    img_save_csv = f"My_TAOD/TA/TA_Results/SAGAN/{G_time}/samples/{dirname}/generate_imgs.csv"
+    img_save_df.to_csv(img_save_csv)
     print("Generate Done!!!")
+    return img_save_csv
     
 if __name__ == "__main__":
     G_path = "/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/TA_Results/SAGAN/DeepPCB_Crop 0 2025-01-01_12-56-17/models/10000_net_g.pth"

@@ -1,15 +1,8 @@
-import pandas as pd
+import os
 
-df = pd.read_csv("My_TAOD/dataset/DeepPCB_Crop/10-shot/train/0.csv")
-print(df)
-# df.to_csv("origin.csv")
+def get_subfolders(path):
+    return [folder for folder in os.listdir(path) if os.path.isdir(os.path.join(path, folder))]
 
-length = len(df)
-num_expand = 99
-
-df_combined = df
-for _ in range((num_expand // length) - 1):
-    df_combined = pd.concat([df_combined, df], axis=0, ignore_index=False)
-
-df_combined = pd.concat([df_combined, df.head(num_expand%length)], axis=0, ignore_index=False)
-# df_combined.to_csv("result.csv")
+path = 'My_TAOD/TA/TA_Results/CycleGAN'
+subfolders = get_subfolders(path)
+print(subfolders)

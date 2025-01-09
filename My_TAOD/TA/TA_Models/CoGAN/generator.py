@@ -1,13 +1,9 @@
 import torch
-import torch.nn as nn
-import torchvision.transforms as T
-from torch.autograd import Variable
 
 import os
 import numpy as np
 import pandas as pd
 from PIL import Image
-import matplotlib.pyplot as plt
 import time
 import tqdm
 
@@ -20,7 +16,8 @@ def CoGAN_SampleGenerator(G_path, batch_size=10000):
     G_epoch = int(G_path.split('/')[-1].split('_')[0])
     checkpoint = torch.load(G_path)
     G.load_state_dict(checkpoint["model_state_dict"])
-
+    G.eval()
+    
     local_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
     dirname = f"{G_epoch}epoch {local_time}"
     os.makedirs(f"My_TAOD/TA/TA_Results/CoGAN/{G_time}/samples/{dirname}", exist_ok=False)
@@ -49,8 +46,10 @@ def CoGAN_SampleGenerator(G_path, batch_size=10000):
         
     # Save to csv    
     img_save_df = pd.DataFrame(img_save_list, columns=["Image_Label", "Image_Class", "Image_Path"])
-    img_save_df.to_csv(f"My_TAOD/TA/TA_Results/CoGAN/{G_time}/samples/{dirname}/generate_imgs.csv")
+    img_save_csv = "My_TAOD/TA/TA_Results/CoGAN/{G_time}/samples/{dirname}/generate_imgs.csv"
+    img_save_df.to_csv(img_save_csv)
     print("Generate Done!!!")
+    return img_save_csv
     
 if __name__ == "__main__":
     G_path = "My_TAOD/TA/TA_Results/CoGAN/DeepPCB_Crop[10-shot]<-PCB_200[200-shot] 0 2025-01-02_22-50-11/models/10000_net_g.pth" 
