@@ -36,7 +36,7 @@ parser.add_argument("--batch_size", type=int, default=16)
 parser.add_argument("--num_workers", type=int, default=4)
 # train
 parser.add_argument("--num_epochs", type=int, default=10000)
-parser.add_argument("--gpu_id", type=str, default="0")
+parser.add_argument("--gpu_id", type=str, default="1")
 
 parser.add_argument("--img_size", type=int, default=32)
 parser.add_argument("--lr_g", type=float, default=2e-4)

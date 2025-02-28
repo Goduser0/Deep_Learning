@@ -9,13 +9,15 @@ import tqdm
 
 from model import CoGAN_Generator
 
-def CoGAN_SampleGenerator(G_path, batch_size=10000):
+def CoGAN_SampleGenerator(G_path, batch_size=50):
     # G_path = "My_TAOD/TA/TA_Results/CoGAN/DeepPCB_Crop[10-shot]<-PCB_200[200-shot] 0 2025-01-02_22-50-11/models/10000_net_g.pth"    
+    device = "cuda:0"
     G = CoGAN_Generator()
     G_time = G_path.split('/')[-3]
     G_epoch = int(G_path.split('/')[-1].split('_')[0])
     checkpoint = torch.load(G_path)
     G.load_state_dict(checkpoint["model_state_dict"])
+    G.to(device)
     G.eval()
     
     local_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
@@ -26,14 +28,14 @@ def CoGAN_SampleGenerator(G_path, batch_size=10000):
     img_classes = ['Mouse_bite', 'Open_circuit', 'Short', 'Spur', 'Spurious_copper', 'Missing_hole']
     img_class = img_classes[int(img_label)]
     
-    z = torch.randn(batch_size, 128)
+    z = torch.randn(batch_size, 128).to(device)
     Src_img, Tar_img = G(z)
     
     img_save_list = []
     i = 0
     for img in tqdm.tqdm(Tar_img):
         i+=1
-        img = img.detach().numpy()
+        img = img.detach().cpu().numpy()
         img = ((img + 1) / 2 * 255).astype(np.uint8)
         img = Image.fromarray(img.transpose(1, 2, 0))
         
@@ -46,12 +48,13 @@ def CoGAN_SampleGenerator(G_path, batch_size=10000):
         
     # Save to csv    
     img_save_df = pd.DataFrame(img_save_list, columns=["Image_Label", "Image_Class", "Image_Path"])
-    img_save_csv = "My_TAOD/TA/TA_Results/CoGAN/{G_time}/samples/{dirname}/generate_imgs.csv"
+    img_save_csv = f"My_TAOD/TA/TA_Results/CoGAN/{G_time}/samples/{dirname}/generate_imgs.csv"
     img_save_df.to_csv(img_save_csv)
     print("Generate Done!!!")
     return img_save_csv
     
 if __name__ == "__main__":
-    G_path = "My_TAOD/TA/TA_Results/CoGAN/DeepPCB_Crop[10-shot]<-PCB_200[200-shot] 0 2025-01-02_22-50-11/models/10000_net_g.pth" 
-    CoGAN_SampleGenerator(G_path)
-    
+    root_path = 'My_TAOD/TA/TA_Results/CoGAN'
+    G_path_list = [os.path.join(root_path, folder) for folder in os.listdir(root_path) if os.path.isdir(os.path.join(root_path, folder))]
+    for G_path in G_path_list:
+        CoGAN_SampleGenerator(f"{G_path}/models/5000_net_g.pth")

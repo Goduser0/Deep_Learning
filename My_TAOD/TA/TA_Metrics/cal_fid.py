@@ -115,8 +115,7 @@ def calculator_FID(source, target):
         
     return score
 
-def score_fid(real_path, num_real, fake_path, num_fake, gpu_id="0"):
-    os.environ["CUDA_VISIBLE_DEVICES"] = gpu_id
+def score_fid(real_path, num_real, fake_path, num_fake):
     convnet_feature_extract = ConvNetFeatureExtract(model="inception_v3", workers=4)
     real_feature = convnet_feature_extract.extractFeature(real_path, num_real)
     fake_feature = convnet_feature_extract.extractFeature(fake_path, num_fake)
@@ -126,7 +125,7 @@ def score_fid(real_path, num_real, fake_path, num_fake, gpu_id="0"):
 def test():  
     real_path = "My_TAOD/dataset/DeepPCB_Crop/10-shot/test/0.csv"
     fake_path = "My_TAOD/dataset/PCB_200/10-shot/test/0.csv"
-    result = score_fid(real_path, 150, fake_path, 150)
+    result = score_fid(real_path, 100, fake_path, 100)
     print(f"FID: {result}")
     
 if __name__ == '__main__':

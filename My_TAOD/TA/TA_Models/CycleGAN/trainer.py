@@ -170,10 +170,10 @@ for epoch in tqdm.trange(config.start_epoch + 1, config.num_epochs + 1, desc=f"[
         raw_img_Src, category_label_Src = Variable(raw_img_Src).to(device), Variable(category_label_Src).to(device).view(num)
         raw_img_Tar, category_label_Tar = Variable(raw_img_Tar).to(device), Variable(category_label_Tar).to(device).view(num)
         
-        raw_img_Src = Tensor(num, 3, config.img_size, config.img_size).copy_(raw_img_Src)
-        raw_img_Tar = Tensor(num, 3, config.img_size, config.img_size).copy_(raw_img_Tar)
-        real_labels = Variable(Tensor(num).fill_(1.0), requires_grad=False)
-        fake_labels = Variable(Tensor(num).fill_(0.0), requires_grad=False)
+        raw_img_Src = Tensor(num, 3, config.img_size, config.img_size).copy_(raw_img_Src).to(device)
+        raw_img_Tar = Tensor(num, 3, config.img_size, config.img_size).copy_(raw_img_Tar).to(device)
+        real_labels = Variable(Tensor(num).fill_(1.0), requires_grad=False).to(device)
+        fake_labels = Variable(Tensor(num).fill_(0.0), requires_grad=False).to(device)
         
         # train G
         optim_G.zero_grad()

@@ -18,7 +18,7 @@ from TA_layers import SelfAttention, StdDevNorm
 # CLASS: FeatureMatchDiscriminator()
 ########################################################################################################
 class FeatureMatchDiscriminator(nn.Module):
-    def __init__(self, img_size=128, conv_dim=64):
+    def __init__(self, img_size=64, conv_dim=64):
         """
         input: image
         output: [feat_map0, feat_map1, feat_map2, feat_map3, predict_label, feat_mmd]
@@ -288,117 +288,11 @@ class PFS_Discriminator(nn.Module):
         f5_f = f5.view(-1, self.out_channels)
         out = self.fc(f5_f)
         return out
-    
-########################################################################################################
-# CLASS: CoGAN_Discriminator()
-########################################################################################################
-class CoGAN_Discriminator(nn.Module):
-    def __init__(self, channels=3, hidden_channels=128):
-        """
-        input: image, domain
-        output: predict_label
-        """
-        super(CoGAN_Discriminator, self).__init__()
-        self.channels = channels
-        self.hidden_channels = hidden_channels
-        
-        self.front1 = nn.Sequential(
-            FirstResBlockDiscriminator(channels, self.hidden_channels, stride=2),
-            ResBlockDiscriminator(self.hidden_channels, self.hidden_channels, stride=2))
-        self.front2 = nn.Sequential(
-            FirstResBlockDiscriminator(channels, self.hidden_channels, stride=2),
-            ResBlockDiscriminator(self.hidden_channels, self.hidden_channels, stride=2))
-
-        self.back = nn.Sequential(
-            ResBlockDiscriminator(self.hidden_channels, self.hidden_channels, stride=2),
-            ResBlockDiscriminator(self.hidden_channels, self.hidden_channels, stride=2),
-            ResBlockDiscriminator(self.hidden_channels, self.hidden_channels, stride=2),
-            nn.ReLU(),
-            nn.AvgPool2d(4))
-        self.fc = nn.Linear(self.hidden_channels, 1)
-        nn.init.xavier_uniform(self.fc.weight.data, 1.)
-
-
-    def forward(self, img, domain, feat=False):
-        if domain == 'S':
-            out = self.fc(self.back(self.front1(img)).view(-1, self.hidden_channels))
-        elif domain == 'T':
-            out = self.fc(self.back(self.front2(img)).view(-1, self.hidden_channels))
-        return out
-
-########################################################################################################
-# CLASS: CycleGAN_Discriminator()
-########################################################################################################
-class CycleGAN_Discriminator(nn.Module):
-    def __init__(self, input_nc):
-        super(CycleGAN_Discriminator, self).__init__()
-
-        # A bunch of convolutions one after another
-        model = [   nn.Conv2d(input_nc, 64, 4, stride=2, padding=1),
-                    nn.LeakyReLU(0.2, inplace=True) ]
-
-        model += [  nn.Conv2d(64, 128, 4, stride=2, padding=1),
-                    nn.InstanceNorm2d(128), 
-                    nn.LeakyReLU(0.2, inplace=True) ]
-
-        model += [  nn.Conv2d(128, 256, 4, stride=2, padding=1),
-                    nn.InstanceNorm2d(256), 
-                    nn.LeakyReLU(0.2, inplace=True) ]
-
-        model += [  nn.Conv2d(256, 512, 4, padding=1),
-                    nn.InstanceNorm2d(512), 
-                    nn.LeakyReLU(0.2, inplace=True) ]
-
-        # FCN classification layer
-        model += [nn.Conv2d(512, 1, 4, padding=1)]
-
-        self.model = nn.Sequential(*model)
-
-    def forward(self, x):
-        x =  self.model(x)
-        # Average pooling and flatten
-        return F.avg_pool2d(x, x.size()[2:]).view(x.size()[0], -1)
-    
-########################################################################################################
-# CLASS: UNIT_Discriminator()
-########################################################################################################
-class UNIT_Discriminator(nn.Module):
-    def __init__(self, channels=3):
-        super(UNIT_Discriminator, self).__init__()
-        self.channels = channels
-        self.inputBatch = nn.BatchNorm2d(channels)
-        self.model0 = FirstResBlockDiscriminator(channels, 128, stride=2)
-        self.model1 = ResBlockDiscriminator(128, 128, stride=2)
-        self.model2 = ResBlockDiscriminator(128, 128, stride=2)
-        self.model3 = ResBlockDiscriminator(128, 128, stride=2)
-
-        self.model = nn.Sequential(self.model0,
-                                   self.model1,
-                                   self.model2,
-                                   self.model3,
-                                   nn.ReLU(),
-                                   nn.AvgPool2d(8),)
-
-        self.fc = nn.Linear(128, 1)
-        nn.init.xavier_uniform(self.fc.weight.data, 1.)
-        #self.fc = SpectralNorm(self.fc)
-
-    def forward(self, x):
-        f = self.model(x)
-        f = f.view(-1, 128)
-        out = self.fc(f)
-        return out
-    
+       
 ########################################################################################################
 # Discriminator TEST
 ########################################################################################################
 def test():
-    # D = PFS_Discriminator()
-    # D = PFS_Discriminator_patch()
-    # D = CoGAN_Discriminator()
-    # D = FeatureMatchDiscriminator()
-    # D = CycleGAN_Discriminator(3)
-    D = UNIT_Discriminator()
     X = torch.randn(30, 3, 128, 128) # (B, C, W, H)
     # summary(D, X.shape, device="cpu")
     
