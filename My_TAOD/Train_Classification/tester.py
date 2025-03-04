@@ -13,8 +13,6 @@ from trainer import Timer
 # FUNCTION: classification_tester
 ########################################################################################################## 
 def classification_tester(config, save_dir, data_iter):
-    # 确定存在文件保存路径
-    # os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
     device = 'cuda:' + config.gpu_id
     
     test_model_path = config.test_model_path

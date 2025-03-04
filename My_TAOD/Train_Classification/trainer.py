@@ -120,10 +120,7 @@ def classification_trainer(config, save_dir, net, train_iter, validation_iter, n
     if torch.cuda.is_available():
         cudnn.benchmark = True
         
-    # device
-    # os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
     device = 'cuda:' + config.gpu_id
-    # net.cuda()
     net.to(device)
     if config.model_init_path:
         net.load_state_dict(torch.load(config.model_init_path)["model_state_dict"])
@@ -131,7 +128,6 @@ def classification_trainer(config, save_dir, net, train_iter, validation_iter, n
         
     net.train()
     
-
     optimizer = torch.optim.Adam(net.parameters(), lr=lr)
     loss_fuction = nn.CrossEntropyLoss()
     timer = Timer()
@@ -231,13 +227,7 @@ def classification_trainer(config, save_dir, net, train_iter, validation_iter, n
                 "epoch": epoch,
                 "model_state_dict": net.state_dict(),
             }, net_path)
-            
-###########################################################################################################
-# FUNCTION: svm_trainer()
-###########################################################################################################
-def svm_trainer(config, net, train_iter, validation_iter, num_epochs, lr):
-    pass
-    
+               
 ###########################################################################################################
 # Test
 ###########################################################################################################
