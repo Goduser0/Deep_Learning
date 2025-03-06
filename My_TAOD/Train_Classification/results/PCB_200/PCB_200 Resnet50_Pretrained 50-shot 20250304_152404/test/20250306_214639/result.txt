@@ -1,0 +1,17 @@
+num_label: 750, Total_cost_time: 2.6578915119171143 
+Accuracy: 0.8786666666666667 
+F1-score: 0.8777189470693824 
+Inference Speed: 0.282 samples/ms 
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.85      0.70      0.77       150
+           1       0.93      0.92      0.93       150
+           2       0.88      0.91      0.90       150
+           3       0.77      0.91      0.83       150
+           4       0.98      0.95      0.97       150
+
+    accuracy                           0.88       750
+   macro avg       0.88      0.88      0.88       750
+weighted avg       0.88      0.88      0.88       750
+ 
