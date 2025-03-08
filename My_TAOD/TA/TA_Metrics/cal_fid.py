@@ -49,8 +49,7 @@ class ConvNetFeatureExtract(object):
                                      (0.229, 0.224, 0.225)),
             ])
         elif self.model == 'inception' or self.model == 'inception_v3':
-            inception = models.inception_v3(
-                pretrained=True, transform_input=False).cuda().eval()
+            inception = models.inception_v3(pretrained=True, transform_input=False).cuda().eval()
             inception_feature = nn.Sequential(inception.Conv2d_1a_3x3,
                                               inception.Conv2d_2a_3x3,
                                               inception.Conv2d_2b_3x3,

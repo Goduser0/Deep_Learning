@@ -13,8 +13,11 @@ from model import CycleGAN_Generator
 import sys
 sys.path.append("./My_TAOD/dataset")
 from dataset_loader import get_loader
+sys.path.append("/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/TA/TA_Metrics")
+from cal_fid import score_fid
+from cal_mmd import score_mmd
 
-def CycleGAN_SampleGenerator(G_Src2Tar_path, batch_size=200):
+def CycleGAN_SampleGenerator(G_Src2Tar_path, sample_size=200):
     # G_Src2Tar_path = "My_TAOD/TA/TA_Results/CycleGAN/DeepPCB_Crop[10-shot]<-PCB_200[200-shot] 0 2025-01-08_22-17-34/models/3000_net_g_src2tar.pth"
     G_Src2Tar = CycleGAN_Generator(3, 3)
     G_time = G_Src2Tar_path.split('/')[-3]
@@ -41,34 +44,38 @@ def CycleGAN_SampleGenerator(G_Src2Tar_path, batch_size=200):
         T.Resize((32, 32)),
     ])
     
-    loader_Src = get_loader(
-        Src_dataset_path,
-        batch_size, 
-        4,
-        shuffle=True,
-        trans=trans,
-        img_type='ndarray',
-        drop_last=False,
-    )
+    split_list = [100] * (sample_size//(100)) + [i for i in [sample_size%100] if i != 0]
     
-    for _, (Src_img, _) in enumerate(loader_Src):                    
-        fake_Tar_img = G_Src2Tar(Src_img)
-        break
-        
     img_save_list = []
     i = 0
-    for img in tqdm.tqdm(fake_Tar_img):
-        i += 1
-        img = img.detach().numpy()
-        img = ((img + 1) / 2 * 255).astype(np.uint8)
-        img = Image.fromarray(img.transpose(1, 2, 0))
+    for batch_size in split_list:
+        loader_Src = get_loader(
+            Src_dataset_path,
+            batch_size, 
+            4,
+            shuffle=True,
+            trans=trans,
+            img_type='ndarray',
+            drop_last=False,
+        )
+    
+        for _, (Src_img, _) in enumerate(loader_Src):                    
+            fake_Tar_img = G_Src2Tar(Src_img)
+            break
         
-        filename = f"{i}.jpg"
-        img_path = f"My_TAOD/TA/TA_Results/CycleGAN/{G_time}/samples/{dirname}/{filename}"
-        img.save(img_path)
-        
-        img_save_item = [img_label, img_class, img_path]
-        img_save_list.append(img_save_item)
+    
+        for img in tqdm.tqdm(fake_Tar_img):
+            i += 1
+            img = img.detach().numpy()
+            img = ((img + 1) / 2 * 255).astype(np.uint8)
+            img = Image.fromarray(img.transpose(1, 2, 0))
+            
+            filename = f"{i}.jpg"
+            img_path = f"My_TAOD/TA/TA_Results/CycleGAN/{G_time}/samples/{dirname}/{filename}"
+            img.save(img_path)
+            
+            img_save_item = [img_label, img_class, img_path]
+            img_save_list.append(img_save_item)
         
     img_save_df = pd.DataFrame(img_save_list, columns=["Image_Label", "Image_Class", "Image_Path"])
     img_save_csv = f"My_TAOD/TA/TA_Results/CycleGAN/{G_time}/samples/{dirname}/generate_imgs.csv"
@@ -77,5 +84,24 @@ def CycleGAN_SampleGenerator(G_Src2Tar_path, batch_size=200):
     return img_save_csv
 
 if __name__ == "__main__":
-    G_Src2Tar_path = "My_TAOD/TA/TA_Results/CycleGAN/DeepPCB_Crop[10-shot]<-PCB_200[200-shot] 0 2025-01-08_22-17-34/models/1500_net_g_src2tar.pth"
-    CycleGAN_SampleGenerator(G_Src2Tar_path)
+    root_path = 'My_TAOD/TA/TA_Results/CycleGAN'
+    G_path_list = [os.path.join(root_path, folder) for folder in os.listdir(root_path) if os.path.isdir(os.path.join(root_path, folder))]
+
+    mean_times = 5
+    
+    for G_path in G_path_list:
+        fid_list = []
+        mmd_list = []
+        for _ in range(mean_times):
+            fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/3000_net_g_src2tar.pth", 100)
+            # print(fake_path)
+            real_path = f"My_TAOD/dataset/{G_path.split('/')[-1].split('[')[0]}/10-shot/test/{G_path.split('/')[-1].split(' ')[1]}.csv"
+            # print(real_path)
+            fid_list.append(score_fid(real_path, 100, fake_path, 100))
+            mmd_list.append(score_mmd(real_path, fake_path, 50))
+        
+        fid = sum(fid_list) / len(fid_list)
+        mmd = sum(mmd_list) / len(mmd_list)
+        with open(os.path.dirname(os.path.dirname(fake_path)) + '/' + 'score.txt', 'a') as f:
+            f.write(f"fid: {fid}\nmmd: {mmd}\n")
+        

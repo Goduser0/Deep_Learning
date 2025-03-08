@@ -1,8 +1,4 @@
-import os
+sample_size = 2
 
-def get_subfolders(path):
-    return [os.path.join(path, folder) for folder in os.listdir(path) if os.path.isdir(os.path.join(path, folder))]
-
-path = 'My_TAOD/TA/TA_Results/ConGAN'
-subfolders = get_subfolders(path)
-print(subfolders)
+split_list = [50] * (sample_size//(50)) + [i for i in [sample_size%50] if i != 0]
+print(split_list)

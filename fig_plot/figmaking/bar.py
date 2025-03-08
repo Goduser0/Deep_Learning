@@ -24,7 +24,7 @@ plt.bar(
         log=False# y坐标是否取对数
 )
 plt.show()
-
+  
 # 多条形垂直（相当于绘制多次单条形图，错开x位置）
 year_2020=np.arange(1,4)+1
 bar_width=0.4
