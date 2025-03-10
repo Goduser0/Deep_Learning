@@ -119,7 +119,7 @@ class ConGAN_Generator(nn.Module):
 class ConGAN_Discriminator(nn.Module):
     """
     forward:
-        input: [batch_size, 3, 32, 32] 
+        input: [batch_size, 3, 64, 64] 
         output:
         [
             [batch_size, 64, 32, 32],

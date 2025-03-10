@@ -166,18 +166,5 @@ class PFS_Generator(nn.Module):
 ########################################################################################################
 # CLASS: Generater TEST
 ########################################################################################################
-def test():
-    # G = PFS_Generator(128)
-    # G = FeatureMatchGenerator(n_mlp=3)
-    # G = CoGAN_Generator(128)
-    # G = CycleGAN_Generator(3, 3)
-    G = UNIT_Generator(128)
-    z = torch.randn(16, 128) # batchsize z_dim
-    # summary(G, z.shape, device="cpu")
-    
-    print(f"Input z:{z.shape}")
-    output = G.forward(z, domain='S')
-    print(f"Output Y:{output.shape}")
-    
 if __name__ == "__main__":
-    test()
+    pass

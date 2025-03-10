@@ -1,0 +1,16 @@
+classification_net:	'EfficientNet_Pretrained'
+add_train_csv:	['My_TAOD/TA/TA_Results/DCGAN/PCB_200[10-shot].csv']
+train_batch_size:	256
+lr:	0.0001
+epochs:	100
+img_size:	128
+model_init_path:	None
+test_batch_size:	512
+gpu_id:	'0'
+num_workers:	4
+time:	'20250310_062426'
+gan_type:	'DCGAN'
+dataset_class:	'PCB_200'
+dataset_ratio:	'10-shot'
+train_csv:	'My_TAOD/dataset/PCB_200/10-shot/train.csv'
+test_csv:	'My_TAOD/dataset/PCB_200/10-shot/test.csv'

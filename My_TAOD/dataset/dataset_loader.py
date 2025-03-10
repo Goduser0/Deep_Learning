@@ -62,7 +62,7 @@ def expand_dataframe(df, num_expand):
 ###########################################################################################################
 # FUNCTION: get_loader
 ###########################################################################################################
-def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_type='ndarray', drop_last=False, num_expand=0):
+def get_loader(dataset_dir, batch_size, num_workers, shuffle, dataset_class=None, trans=None, img_type='ndarray', drop_last=False, num_expand=0, require_path=False):
     """_summary_
 
     Args:
@@ -79,8 +79,12 @@ def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_ty
         [images, labels]: images(-1~1, if totensor -> torch.float32
                                        else -> np.float32)
     """
-    start_index = dataset_dir.find("dataset/") + len("dataset/")
-    dataset_class = dataset_dir[start_index:].split('/')[0]
+    if dataset_class:
+        pass
+    else:
+        start_index = dataset_dir.find("dataset/") + len("dataset/")
+        dataset_class = dataset_dir[start_index:].split('/')[0]
+    
     df = pd.read_csv(dataset_dir)
     if num_expand != 0:
         df = expand_dataframe(df, num_expand)
@@ -177,8 +181,11 @@ def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_ty
                 
                 if self.transforms:
                     image = self.transforms(image)
-                
+        
                 label = self.df.loc[index, "Image_Label"] # torch.int64
+                
+                if require_path:
+                    return image, label, image_path
                 return image, label
             
     elif dataset_class.lower() == 'pcb_200':
@@ -201,8 +208,10 @@ def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_ty
     
                 if self.transforms:
                     image = self.transforms(image)
-            
+                
                 label = self.df.loc[index, "Image_Label"] # torch.int64
+                if require_path:
+                    return image, label, image_path 
                 return image, label
     
     elif dataset_class.lower() == 'deeppcb_crop':
@@ -225,8 +234,11 @@ def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_ty
     
                 if self.transforms:
                     image = self.transforms(image)
-            
+                
                 label = self.df.loc[index, "Image_Label"] # torch.int64
+                
+                if require_path:
+                    return image, label, image_path      
                 return image, label
             
     else:

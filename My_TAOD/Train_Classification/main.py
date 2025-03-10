@@ -27,6 +27,7 @@ def main(config):
     classification_logger(config, save_dir)
     
     dataset_train_dir = f"My_TAOD/dataset/{config.dataset_class}/{config.dataset_ratio}/train.csv"
+    
     dataset_validation_dir = f"My_TAOD/dataset/{config.dataset_class}/{config.dataset_ratio}/validation.csv"
     
     trans = T.Compose([T.ToTensor(), T.Resize((config.img_size, config.img_size))])

@@ -1,0 +1,17 @@
+num_label: 8362, Total_cost_time: 1.5711839199066162 
+Accuracy: 0.8133221717292514 
+F1-score: 0.8188101120260839 
+Inference Speed: 5.322 samples/ms 
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.82      0.81      0.81      1935
+           1       0.78      0.73      0.75      1912
+           2       0.67      0.82      0.74      1476
+           3       0.88      0.82      0.85      1595
+           4       0.96      0.92      0.94      1444
+
+    accuracy                           0.81      8362
+   macro avg       0.82      0.82      0.82      8362
+weighted avg       0.82      0.81      0.81      8362
+ 

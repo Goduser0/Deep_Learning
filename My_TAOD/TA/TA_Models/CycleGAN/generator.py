@@ -27,7 +27,8 @@ def CycleGAN_SampleGenerator(G_Src2Tar_path, sample_size=200):
     G_Src2Tar.eval()
     
     local_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
-    dirname = f"{G_epoch}epoch_src2tar {local_time}"
+    # dirname = f"{G_epoch}epoch {local_time}"
+    dirname = f"{G_epoch}epoch_{sample_size}"
     os.makedirs(f"My_TAOD/TA/TA_Results/CycleGAN/{G_time}/samples/{dirname}", exist_ok=False)
     
     img_label = G_time.split(" ")[1]
@@ -89,19 +90,30 @@ if __name__ == "__main__":
 
     mean_times = 5
     
+    # for G_path in G_path_list:
+    #     fid_list = []
+    #     mmd_list = []
+    #     for _ in range(mean_times):
+    #         fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/3000_net_g_src2tar.pth", 100)
+    #         # print(fake_path)
+    #         real_path = f"My_TAOD/dataset/{G_path.split('/')[-1].split('[')[0]}/10-shot/test/{G_path.split('/')[-1].split(' ')[1]}.csv"
+    #         # print(real_path)
+    #         fid_list.append(score_fid(real_path, 100, fake_path, 100))
+    #         mmd_list.append(score_mmd(real_path, fake_path, 50))
+        
+    #     fid = sum(fid_list) / len(fid_list)
+    #     mmd = sum(mmd_list) / len(mmd_list)
+    #     with open(os.path.dirname(os.path.dirname(fake_path)) + '/' + 'score.txt', 'a') as f:
+    #         f.write(f"fid: {fid}\nmmd: {mmd}\n")
+
+    # 生成1500张样本
     for G_path in G_path_list:
-        fid_list = []
-        mmd_list = []
-        for _ in range(mean_times):
-            fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/3000_net_g_src2tar.pth", 100)
-            # print(fake_path)
-            real_path = f"My_TAOD/dataset/{G_path.split('/')[-1].split('[')[0]}/10-shot/test/{G_path.split('/')[-1].split(' ')[1]}.csv"
-            # print(real_path)
-            fid_list.append(score_fid(real_path, 100, fake_path, 100))
-            mmd_list.append(score_mmd(real_path, fake_path, 50))
-        
-        fid = sum(fid_list) / len(fid_list)
-        mmd = sum(mmd_list) / len(mmd_list)
-        with open(os.path.dirname(os.path.dirname(fake_path)) + '/' + 'score.txt', 'a') as f:
-            f.write(f"fid: {fid}\nmmd: {mmd}\n")
-        
+        fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/3000_net_g_src2tar.pth", 30)
+        fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/3000_net_g_src2tar.pth", 70)
+        fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/3000_net_g_src2tar.pth", 200)
+        fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/3000_net_g_src2tar.pth", 300)
+        fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/3000_net_g_src2tar.pth", 400)
+        fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/3000_net_g_src2tar.pth", 500)
+        fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/3000_net_g_src2tar.pth", 1000)
+        # fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/10000_net_g.pth", 1500)
+        fake_path = CycleGAN_SampleGenerator(f"{G_path}/models/3000_net_g_src2tar.pth", 2000)

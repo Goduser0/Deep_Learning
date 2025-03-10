@@ -25,7 +25,8 @@ def DCGAN_SampleGenerator(G_path, sample_size=100):
     G.eval()
     
     local_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
-    dirname = f"{G_epoch}epoch {local_time}"
+    # dirname = f"{G_epoch}epoch {local_time}"
+    dirname = f"{G_epoch}epoch_{sample_size}"
     os.makedirs(f"My_TAOD/TA/TA_Results/DCGAN/{G_time}/samples/{dirname}", exist_ok=False)
     
     img_label = G_time.split(" ")[1]
@@ -64,20 +65,24 @@ if __name__ == "__main__":
     root_path = 'My_TAOD/TA/TA_Results/DCGAN'
     G_path_list = [os.path.join(root_path, folder) for folder in os.listdir(root_path) if os.path.isdir(os.path.join(root_path, folder))]
     
-    mean_times = 5
+    # mean_times = 5
     
-    for G_path in G_path_list:
-        fid_list = []
-        mmd_list = []
-        for _ in range(mean_times):
-            fake_path = DCGAN_SampleGenerator(f"{G_path}/models/10000_net_g.pth", 100)
-            # print(fake_path)
-            real_path = f"My_TAOD/dataset/{G_path.split('/')[-1].split(' ')[0]}/10-shot/test/{G_path.split('/')[-1].split(' ')[1]}.csv"
-            # print(real_path)
-            fid_list.append(score_fid(real_path, 100, fake_path, 100))
-            mmd_list.append(score_mmd(real_path, fake_path, 50))
+    # for G_path in G_path_list:
+    #     fid_list = []
+    #     mmd_list = []
+    #     for _ in range(mean_times):
+    #         fake_path = DCGAN_SampleGenerator(f"{G_path}/models/10000_net_g.pth", 100)
+    #         # print(fake_path)
+    #         real_path = f"My_TAOD/dataset/{G_path.split('/')[-1].split(' ')[0]}/10-shot/test/{G_path.split('/')[-1].split(' ')[1]}.csv"
+    #         # print(real_path)
+    #         fid_list.append(score_fid(real_path, 100, fake_path, 100))
+    #         mmd_list.append(score_mmd(real_path, fake_path, 50))
         
-        fid = sum(fid_list) / len(fid_list)
-        mmd = sum(mmd_list) / len(mmd_list)
-        with open(os.path.dirname(os.path.dirname(fake_path)) + '/' + 'score.txt', 'a') as f:
-            f.write(f"fid: {fid}\nmmd: {mmd}\n")
+    #     fid = sum(fid_list) / len(fid_list)
+    #     mmd = sum(mmd_list) / len(mmd_list)
+    #     with open(os.path.dirname(os.path.dirname(fake_path)) + '/' + 'score.txt', 'a') as f:
+    #         f.write(f"fid: {fid}\nmmd: {mmd}\n")
+
+    # 生成1500张样本
+    for G_path in G_path_list:
+        fake_path = DCGAN_SampleGenerator(f"{G_path}/models/10000_net_g.pth", 1500)
