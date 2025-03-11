@@ -28,3 +28,13 @@ if __name__ == '__main__':
     x = torch.randn(8, 3, 256, 256)
     y = model(x)
     print(y.shape)
+    total_params = sum(p.numel() for p in model.parameters())
+    print(f"模型参数总量: {total_params:,}")  # 千位分隔符显示
+    
+    model = torchvision.models.vgg19(pretrained=True)
+    print(model)
+    x = torch.randn(8, 3, 256, 256)
+    y = model(x)
+    print(y.shape)
+    total_params = sum(p.numel() for p in model.parameters())
+    print(f"模型参数总量: {total_params:,}")  # 千位分隔符显示
