@@ -1,0 +1,2 @@
+epoch,num_epochs,batch,num_batchs,train_loss,train_acc,train_speed,time
+1,100,59,59,0.09915,0.97065,158277.1,18.98568558692932
