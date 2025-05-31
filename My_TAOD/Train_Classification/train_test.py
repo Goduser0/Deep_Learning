@@ -20,7 +20,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Classification")
     
     # Model Configuration
-    classification_net_list = ["Resnet18_Pretrained", "Resnet50_Pretrained", "EfficientNet_Pretrained", "VGG11_Pretrained", "MobileNet_Pretrained"]
+    classification_net_list = ["Resnet18_Pretrained", "Resnet50_Pretrained", "EfficientNet_Pretrained", "VGG11_Pretrained", "MobileNet_Pretrained", "VGG11_Pretrained"]
     parser.add_argument("--classification_net", type=str, choices=classification_net_list, required=True) #
     
     # Training Configuration

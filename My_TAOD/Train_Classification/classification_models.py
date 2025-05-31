@@ -54,6 +54,11 @@ def classification_net_select(name):
         VGG11_PRETRAINED = torchvision.models.vgg11(pretrained=True)
         VGG11_PRETRAINED.classifier[-1] = nn.Linear(4096, NUM_ClASSES)
         return VGG11_PRETRAINED
+
+    elif (name.lower() == "vgg19_pretrained"):
+        VGG19_PRETRAINED = torchvision.models.vgg19(pretrained=True)
+        VGG19_PRETRAINED.classifier[-1] = nn.Linear(4096, NUM_ClASSES)
+        return VGG19_PRETRAINED
     
     elif (name.lower() == "mobilenet"):
         MOBILENET = torchvision.models.mobilenet_v2(num_classes=NUM_ClASSES)

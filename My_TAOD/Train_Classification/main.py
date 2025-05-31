@@ -54,14 +54,14 @@ if __name__ == "__main__":
     parser.add_argument("--mode", type=str, choices=["train", "train_with_validation", "test"], required=True)
     
     # Model Configuration
-    classification_net_list = ["Resnet18_Pretrained", "Resnet50_Pretrained", "EfficientNet_Pretrained", "VGG11_Pretrained", "MobileNet_Pretrained"]
+    classification_net_list = ["Resnet18_Pretrained", "Resnet50_Pretrained", "EfficientNet_Pretrained", "VGG11_Pretrained", "MobileNet_Pretrained", "VGG19_Pretrained"]
     parser.add_argument("--classification_net", type=str, choices=classification_net_list)
     
     # Training Configuration
     dataset_class_choices = ["NEU_CLS", "elpv", "Magnetic_Tile", "PCB_200", "PCB_Crop", "DeepPCB_Crop"]
     parser.add_argument("--dataset_class", type=str, choices=dataset_class_choices)
     parser.add_argument("--dataset_ratio", type=str)
-    parser.add_argument("--train_batch_size", type=int, default=32)
+    parser.add_argument("--train_batch_size", type=int, default=256)
     parser.add_argument("--validation_batch_size", type=int, default=16)
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--epochs", type=int, default=100)
