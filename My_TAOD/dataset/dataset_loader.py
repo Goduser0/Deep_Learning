@@ -1,6 +1,7 @@
 import os
 import sys
 import random
+import itertools
 
 import cv2
 import numpy as np
@@ -46,11 +47,22 @@ def img_1to255(img):
         return ((img + 1.) * 127.5).to(torch.uint8)
     else:
         raise TypeError
+    
+def expand_dataframe(df, num_expand):
+    """"
+    将dataframe循环扩展至num_expand行
+    """
+    length = len(df)
+    df_combined = df
+    for _ in range((num_expand // length) - 1):
+        df_combined = pd.concat([df_combined, df], axis=0, ignore_index=True)
+    df_combined = pd.concat([df_combined, df.head(num_expand%length)], axis=0, ignore_index=True)
+    return df_combined
 
 ###########################################################################################################
 # FUNCTION: get_loader
 ###########################################################################################################
-def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_type='ndarray', drop_last=False):
+def get_loader(dataset_dir, batch_size, num_workers, shuffle, dataset_class=None, trans=None, img_type='ndarray', drop_last=False, num_expand=0, require_path=False):
     """_summary_
 
     Args:
@@ -67,8 +79,15 @@ def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_ty
         [images, labels]: images(-1~1, if totensor -> torch.float32
                                        else -> np.float32)
     """
-    dataset_class = dataset_dir.split('/')[-3]
+    if dataset_class:
+        pass
+    else:
+        start_index = dataset_dir.find("dataset/") + len("dataset/")
+        dataset_class = dataset_dir[start_index:].split('/')[0]
+    
     df = pd.read_csv(dataset_dir)
+    if num_expand != 0:
+        df = expand_dataframe(df, num_expand)
     
     if dataset_class.lower() == 'neu_cls':
         class MyDataset(data.Dataset): # type: ignore
@@ -162,8 +181,11 @@ def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_ty
                 
                 if self.transforms:
                     image = self.transforms(image)
-                
+        
                 label = self.df.loc[index, "Image_Label"] # torch.int64
+                
+                if require_path:
+                    return image, label, image_path
                 return image, label
             
     elif dataset_class.lower() == 'pcb_200':
@@ -186,8 +208,10 @@ def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_ty
     
                 if self.transforms:
                     image = self.transforms(image)
-            
+                
                 label = self.df.loc[index, "Image_Label"] # torch.int64
+                if require_path:
+                    return image, label, image_path 
                 return image, label
     
     elif dataset_class.lower() == 'deeppcb_crop':
@@ -210,8 +234,11 @@ def get_loader(dataset_dir, batch_size, num_workers, shuffle, trans=None, img_ty
     
                 if self.transforms:
                     image = self.transforms(image)
-            
+                
                 label = self.df.loc[index, "Image_Label"] # torch.int64
+                
+                if require_path:
+                    return image, label, image_path      
                 return image, label
             
     else:
@@ -298,85 +325,33 @@ def get_loader_ST(Src_dataset_dir, Tar_dataset_dir, batch_size, num_workers, shu
 ## Test
 #######################################################################################################
 def test():
-    # test1
-    # trans = T.Compose(
-    #                 [ 
-    #                 T.ToTensor(),
-    #                 ]
-    # )
-    # data_iter_loader = get_loader(
-    #                           "./My_TAOD/dataset/DeepPCB_Crop/0.7-shot/train/0.csv", 
-    #                           8,
-    #                           4, 
-    #                           shuffle=True, 
-    #                           trans=trans,
-    #                           img_type='ndarray',
-    #                           drop_last=True,
-    #                           ) # 像素值范围：（-1, 1）[B, C, H, W]
-    # for i, data in enumerate(data_iter_loader):
-    #     raw_img = data[0][0] # [B, C, H, W] -1~1
-    #     category_label = data[1] # [B]
-    #     print(category_label.shape)
-    #     print(raw_img.dtype)
-    #     raw_img = torch.autograd.Variable(raw_img)
-    #     print(raw_img.dtype)
-    #     raw_img = raw_img.numpy()
-    #     print(raw_img.dtype)
-    #     raw_img = img_1to255(raw_img)
-    #     raw_img = raw_img.transpose(1, 2, 0)
-    #     print(raw_img.dtype)
-    #     # print(raw_img, raw_img.shape)
-    #     plt.imshow(raw_img)
-    #     plt.savefig("test_test.jpg")
-    #     plt.close()
-    #     break
-
-    # test2
     trans = T.Compose(
                     [ 
                     T.ToTensor(),
-                    # T.Resize(int(128*1.12), Image.BICUBIC), 
-                    # T.RandomCrop(128), 
-                    # T.RandomHorizontalFlip(),
-                    # T.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)) 
                     ]
     )
-
-    data_iter_loader = get_loader_ST(
-        "./My_TAOD/dataset/DeepPCB_Crop/1.0-shot/train/0.csv",
-        "./My_TAOD/dataset/PCB_Crop/30-shot/train/0.csv",
-        8,
-        4,
-        True,
-        trans=trans,
-        unaligned=True,
-        img_type="ndarray",
-        drop_last=False,
-        )
-
-    for i, data in enumerate(data_iter_loader):
-        Src_img = data['Tar'] # [B, C, H, W] -1~1
-        Tar_img = data['Src']     
-        print(Src_img.shape)
-        print(Tar_img.shape)
+    data_loader_Tar = get_loader(
+                              "./My_TAOD/dataset/DeepPCB_Crop/10-shot/train/0.csv", 
+                              batch_size=32,
+                              num_workers=4, 
+                              shuffle=True, 
+                              trans=trans,
+                              img_type='ndarray',
+                              drop_last=False,
+                              num_expand=50,
+                              ) # 像素值范围：（-1, 1）[B, C, H, W]
+    data_loader_Src = get_loader(
+                              "./My_TAOD/dataset/PCB_Crop/50-shot/train/0.csv", 
+                              batch_size=32,
+                              num_workers=4, 
+                              shuffle=True, 
+                              trans=trans,
+                              img_type='ndarray',
+                              drop_last=False,
+                              ) # 像素值范围：（-1, 1）[B, C, H, W]
+       
+    for batch_idx, ((raw_img_Src, category_label_Src), (raw_img_Tar, category_label_Tar)) in enumerate(zip(data_loader_Src, data_loader_Tar)):
+        print(f"{batch_idx}: [{category_label_Src.shape}] [{category_label_Tar.shape}]")
         
-        # Src_img = torch.autograd.Variable(Src_img[0])
-        # Tar_img = torch.autograd.Variable(Tar_img[0])
-        # print(Src_img.dtype)
-        # print(Tar_img.dtype)
-        
-        Src_img = img_1to255(Src_img[0].numpy()).transpose(1, 2, 0)
-        Tar_img = img_1to255(Tar_img[0].numpy()).transpose(1, 2, 0)
-        
-        plt.imshow(Src_img)
-        plt.savefig("test_Src.jpg")
-        plt.close()
-        plt.imshow(Tar_img)
-        plt.savefig("test_Tar.jpg")
-        plt.close()
-        
-        break
-        
-    
 if __name__ == '__main__':
     test()

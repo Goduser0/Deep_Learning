@@ -13,14 +13,16 @@ from trainer import Timer
 # FUNCTION: classification_tester
 ########################################################################################################## 
 def classification_tester(config, save_dir, data_iter):
-    # 确定存在文件保存路径
-    os.environ["CUDA_VISIBLE_DEVICES"] = config.gpu_id
+    device = 'cuda:' + config.gpu_id
+    
     test_model_path = config.test_model_path
     checkpoint = torch.load(test_model_path)
     
     classification_net = config.classification_net
     net = classification_net_select(classification_net)
-    net.cuda()
+    
+    # net.cuda()
+    net.to(device)
     net.load_state_dict(checkpoint["model_state_dict"])
     
     timer = Timer()
@@ -32,10 +34,13 @@ def classification_tester(config, save_dir, data_iter):
         for i, (X, y) in enumerate(data_iter):
             timer.start()
             if isinstance(X, list):
-                X = [x.cuda() for x in X]
+                # X = [x.cuda() for x in X]
+                X = [x.to(device) for x in X]
             else:
-                X = X.cuda()
-            y = y.cuda()
+                # X = X.cuda()
+                X = X.to(device)
+            # y = y.cuda()
+            y = y.to(device)
             y_hat = net(X)
             timer.stop()
             

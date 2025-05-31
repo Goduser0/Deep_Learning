@@ -86,29 +86,29 @@ class calculator_MMD(nn.Module):
             return loss
         
 def score_mmd(real_path, fake_path, batch_size, gpu_id="1"):
-    os.environ["CUDA_VISIBLE_DEVICES"] = gpu_id
-    MMD = calculator_MMD('rbf').cuda()
+    device = f"cuda:{gpu_id}"
+    MMD = calculator_MMD('rbf').to(device)
     trans = T.Compose(
         [
             T.ToTensor(),
-            T.Resize((256, 256)),
+            T.Resize((64, 64)),
         ]
     )
     
     real_img = load_img_for_mmd(real_path, trans, batch_size)[0]
     fake_img = load_img_for_mmd(fake_path, trans, batch_size)[0]
 
-    x = real_img.reshape(real_img.shape[0], -1)
-    y = fake_img.reshape(fake_img.shape[0], -1)
+    x = real_img.reshape(real_img.shape[0], -1).to(device)
+    y = fake_img.reshape(fake_img.shape[0], -1).to(device)
     
     result = MMD(x, y).cpu().numpy()
     
     return result
     
 def test():
-    real_path = "./My_TAOD/dataset/PCB_Crop/30-shot/train/0.csv"
-    fake_path = "./My_TAOD/dataset/PCB_Crop/30-shot/train/1.csv"
-    result = score_mmd(real_path, fake_path, 16)
+    real_path = "./My_TAOD/dataset/PCB_Crop/30-shot/test/0.csv"
+    fake_path = "./My_TAOD/dataset/DeepPCB_Crop/30-shot/test/1.csv"
+    result = score_mmd(real_path, fake_path, 64)
     
     print(f"MMD: {result}")
   

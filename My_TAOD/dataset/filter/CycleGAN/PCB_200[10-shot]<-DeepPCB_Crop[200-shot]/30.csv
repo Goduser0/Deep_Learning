@@ -1,0 +1,201 @@
+,Unnamed: 0,Image_Label,Image_Class,Image_Path
+0,65,2,Short,./My_Datasets/Classification/PCB-200/Short/000047_0_02_15319_11001.bmp
+1,18,2,Short,./My_Datasets/Classification/PCB-200/Short/000169_0_02_15377_16237.bmp
+2,137,2,Short,./My_Datasets/Classification/PCB-200/Short/000035_0_04_03176_10299.bmp
+3,180,2,Short,./My_Datasets/Classification/PCB-200/Short/000048_0_02_13005_13430.bmp
+4,92,2,Short,./My_Datasets/Classification/PCB-200/Short/图片 1.png-36.png
+5,35,2,Short,./My_Datasets/Classification/PCB-200/Short/000049_0_02_01193_10075.bmp
+6,187,2,Short,./My_Datasets/Classification/PCB-200/Short/000006_0_01_14699_05700.bmp
+7,90,2,Short,./My_Datasets/Classification/PCB-200/Short/000051_0_02_12999_13167.bmp
+8,176,2,Short,./My_Datasets/Classification/PCB-200/Short/000047_0_02_14702_15812.bmp
+9,22,2,Short,./My_Datasets/Classification/PCB-200/Short/000035_0_02_14712_15816.bmp
+10,202,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/00896_0_01_04655_03648.bmp
+11,210,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000656_0_00_11172_14067.bmp
+12,340,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000291_0_00_11340_09639.bmp
+13,339,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000330_0_00_07461_10311.bmp
+14,220,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/01213_0_01_09025_09216.bmp
+15,317,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000033_0_01_06402_07164.bmp
+16,316,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000394_0_00_11321_12203.bmp
+17,248,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/05254_0_01_07661_03957.bmp
+18,286,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000197_0_02_01522_10477.bmp
+19,391,0,Mouse_bite,./My_Datasets/Classification/PCB-200/Mouse_bite/000001_0_01_04736_11571.bmp
+20,574,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000206_0_04_10028_05122.bmp
+21,575,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/图片 1.png-74.png
+22,401,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000035_0_04_03616_07507.bmp
+23,416,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/图片 1.png-34.png
+24,431,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000106_0_04_07859_17046.bmp
+25,565,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000054_0_02_01939_06791.bmp
+26,528,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/图片 1.png-71.png
+27,535,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000196_0_04_07906_07133.bmp
+28,419,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000035_0_04_03140_08841 - 副本.bmp
+29,544,1,Open_circuit,./My_Datasets/Classification/PCB-200/Open_circuit/000113_0_04_06681_11300 - 副本.bmp
+30,700,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001619_0_04_07790_11833.bmp
+31,633,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000300_0_02_12509_11494.bmp
+32,659,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001070_0_04_11271_15069.bmp
+33,788,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000085_0_00_05078_17839.bmp
+34,767,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001276_0_00_10089_15130.bmp
+35,782,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000157_0_00_13852_14961.bmp
+36,674,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001694_0_01_13452_08994.bmp
+37,740,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000289_0_00_11764_02393.bmp
+38,626,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/000263_0_03_10349_07580.bmp
+39,663,4,Spurious_copper,./My_Datasets/Classification/PCB-200/Spurious_copper/001059_0_04_09268_03053.bmp
+40,849,3,Spur,./My_Datasets/Classification/PCB-200/Spur/000175_0_00_09590_13749.bmp
+41,963,3,Spur,./My_Datasets/Classification/PCB-200/Spur/04862_0_01_10435_10006.bmp
+42,856,3,Spur,./My_Datasets/Classification/PCB-200/Spur/000087_0_00_08562_12550.bmp
+43,915,3,Spur,./My_Datasets/Classification/PCB-200/Spur/000211_0_00_11409_13641.bmp
+44,948,3,Spur,./My_Datasets/Classification/PCB-200/Spur/000402_0_03_14359_17668.bmp
+45,976,3,Spur,./My_Datasets/Classification/PCB-200/Spur/000241_0_00_12945_10693.bmp
+46,921,3,Spur,./My_Datasets/Classification/PCB-200/Spur/000901_0_04_11327_16767.bmp
+47,851,3,Spur,./My_Datasets/Classification/PCB-200/Spur/000981_0_00_10926_11548.bmp
+48,952,3,Spur,./My_Datasets/Classification/PCB-200/Spur/00321_0_01_04499_11834.bmp
+49,802,3,Spur,./My_Datasets/Classification/PCB-200/Spur/000283_0_03_15028_16589.bmp
+0,0,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/1.jpg
+1,1,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/2.jpg
+2,2,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/3.jpg
+3,3,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/4.jpg
+4,4,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/5.jpg
+5,5,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/6.jpg
+6,6,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/7.jpg
+7,7,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/8.jpg
+8,8,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/9.jpg
+9,9,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/10.jpg
+10,10,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/11.jpg
+11,11,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/12.jpg
+12,12,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/13.jpg
+13,13,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/14.jpg
+14,14,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/15.jpg
+15,15,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/16.jpg
+16,16,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/17.jpg
+17,17,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/18.jpg
+18,18,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/19.jpg
+19,19,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/20.jpg
+20,20,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/21.jpg
+21,21,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/22.jpg
+22,22,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/23.jpg
+23,23,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/24.jpg
+24,24,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/25.jpg
+25,25,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/26.jpg
+26,26,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/27.jpg
+27,27,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/28.jpg
+28,28,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/29.jpg
+29,29,1,Open_circuit,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 1 2025-01-09_12-12-42/samples/3000epoch_30/30.jpg
+30,0,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/1.jpg
+31,1,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/2.jpg
+32,2,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/3.jpg
+33,3,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/4.jpg
+34,4,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/5.jpg
+35,5,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/6.jpg
+36,6,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/7.jpg
+37,7,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/8.jpg
+38,8,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/9.jpg
+39,9,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/10.jpg
+40,10,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/11.jpg
+41,11,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/12.jpg
+42,12,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/13.jpg
+43,13,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/14.jpg
+44,14,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/15.jpg
+45,15,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/16.jpg
+46,16,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/17.jpg
+47,17,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/18.jpg
+48,18,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/19.jpg
+49,19,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/20.jpg
+50,20,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/21.jpg
+51,21,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/22.jpg
+52,22,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/23.jpg
+53,23,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/24.jpg
+54,24,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/25.jpg
+55,25,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/26.jpg
+56,26,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/27.jpg
+57,27,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/28.jpg
+58,28,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/29.jpg
+59,29,2,Short,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 2 2025-01-09_14-32-36/samples/3000epoch_30/30.jpg
+60,0,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/1.jpg
+61,1,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/2.jpg
+62,2,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/3.jpg
+63,3,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/4.jpg
+64,4,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/5.jpg
+65,5,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/6.jpg
+66,6,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/7.jpg
+67,7,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/8.jpg
+68,8,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/9.jpg
+69,9,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/10.jpg
+70,10,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/11.jpg
+71,11,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/12.jpg
+72,12,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/13.jpg
+73,13,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/14.jpg
+74,14,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/15.jpg
+75,15,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/16.jpg
+76,16,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/17.jpg
+77,17,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/18.jpg
+78,18,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/19.jpg
+79,19,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/20.jpg
+80,20,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/21.jpg
+81,21,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/22.jpg
+82,22,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/23.jpg
+83,23,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/24.jpg
+84,24,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/25.jpg
+85,25,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/26.jpg
+86,26,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/27.jpg
+87,27,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/28.jpg
+88,28,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/29.jpg
+89,29,3,Spur,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 3 2025-01-09_16-57-44/samples/3000epoch_30/30.jpg
+90,0,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/1.jpg
+91,1,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/2.jpg
+92,2,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/3.jpg
+93,3,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/4.jpg
+94,4,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/5.jpg
+95,5,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/6.jpg
+96,6,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/7.jpg
+97,7,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/8.jpg
+98,8,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/9.jpg
+99,9,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/10.jpg
+100,10,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/11.jpg
+101,11,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/12.jpg
+102,12,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/13.jpg
+103,13,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/14.jpg
+104,14,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/15.jpg
+105,15,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/16.jpg
+106,16,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/17.jpg
+107,17,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/18.jpg
+108,18,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/19.jpg
+109,19,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/20.jpg
+110,20,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/21.jpg
+111,21,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/22.jpg
+112,22,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/23.jpg
+113,23,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/24.jpg
+114,24,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/25.jpg
+115,25,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/26.jpg
+116,26,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/27.jpg
+117,27,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/28.jpg
+118,28,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/29.jpg
+119,29,0,Mouse_bite,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 0 2025-01-09_09-54-21/samples/3000epoch_30/30.jpg
+120,0,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/1.jpg
+121,1,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/2.jpg
+122,2,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/3.jpg
+123,3,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/4.jpg
+124,4,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/5.jpg
+125,5,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/6.jpg
+126,6,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/7.jpg
+127,7,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/8.jpg
+128,8,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/9.jpg
+129,9,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/10.jpg
+130,10,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/11.jpg
+131,11,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/12.jpg
+132,12,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/13.jpg
+133,13,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/14.jpg
+134,14,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/15.jpg
+135,15,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/16.jpg
+136,16,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/17.jpg
+137,17,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/18.jpg
+138,18,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/19.jpg
+139,19,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/20.jpg
+140,20,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/21.jpg
+141,21,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/22.jpg
+142,22,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/23.jpg
+143,23,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/24.jpg
+144,24,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/25.jpg
+145,25,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/26.jpg
+146,26,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/27.jpg
+147,27,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/28.jpg
+148,28,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/29.jpg
+149,29,4,Spurious_copper,My_TAOD/TA/TA_Results/CycleGAN/PCB_200[10-shot]<-DeepPCB_Crop[200-shot] 4 2025-01-09_19-18-31/samples/3000epoch_30/30.jpg

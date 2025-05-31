@@ -1,0 +1,15 @@
+mode:	'train'
+ classification_net:	'EfficientNet_Pretrained'
+ dataset_class:	'PCB_200'
+ dataset_ratio:	'10-shot'
+ train_batch_size:	16
+ validation_batch_size:	16
+ lr:	0.0001
+ epochs:	100
+ img_size:	128
+ model_init_path:	'/home/zhouquan/MyDoc/Deep_Learning/My_TAOD/Train_Classification/results/train/cls_single_domain/PCB_Crop EfficientNet_Pretrained 20241225_155417/models/100.pth'
+ test_model_path:	None
+ test_batch_size:	512
+ gpu_id:	'0'
+ num_workers:	4
+ time:	'20241225_184102'

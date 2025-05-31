@@ -7,6 +7,9 @@
         "./My_TAOD/TA/TA_Offline_Generator/",
         "./My_PCB_det",
         "./My_PCB_det",
-        "./My_PCB_det/Utils"
-    ]
+        "./My_PCB_det/Utils",
+        "./My_TAOD/TA/TA_Metrics",
+        "./My_Filter"
+    ],
+    "python.analysis.autoImportCompletions": false
 }

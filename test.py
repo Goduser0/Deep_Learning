@@ -1,7 +1,4 @@
-import argparse
+sample_size = 2
 
-parser = argparse.ArgumentParser(description="Classification")
-parser.add_argument("--img_size", type=int, default=128)
-config = parser.parse_args()
-
-print(config)
+a = "abc"
+print(a.split('['))

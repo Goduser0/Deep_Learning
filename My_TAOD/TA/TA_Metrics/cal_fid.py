@@ -49,8 +49,7 @@ class ConvNetFeatureExtract(object):
                                      (0.229, 0.224, 0.225)),
             ])
         elif self.model == 'inception' or self.model == 'inception_v3':
-            inception = models.inception_v3(
-                pretrained=True, transform_input=False).cuda().eval()
+            inception = models.inception_v3(pretrained=True, transform_input=False).cuda().eval()
             inception_feature = nn.Sequential(inception.Conv2d_1a_3x3,
                                               inception.Conv2d_2a_3x3,
                                               inception.Conv2d_2b_3x3,
@@ -82,19 +81,19 @@ class ConvNetFeatureExtract(object):
     def extractFeature(self, images_path, num):
         # build images dataset
         images = load_img_for_fid(images_path, trans=self.trans, batch_size=num)
-        print(images.shape)
-        print("Extracting Features...")
+        # print(images.shape)
+        # print("Extracting Features...")
         with torch.no_grad():
             input = images.cuda()
             if self.model == 'vgg' or self.model == 'vgg16':
                 fconv = self.vgg.features(input).view(input.size(0), -1)
-                print(self.model + " feature shape:", fconv.shape)
+                # print(self.model + " feature shape:", fconv.shape)
             elif self.model.find('resnet') >= 0:
                 fconv = self.resnet_feature(input).mean(3).mean(2).squeeze()
-                print(self.model + " feature shape:", fconv.shape)
+                # print(self.model + " feature shape:", fconv.shape)
             elif self.model == 'inception' or self.model == 'inception_v3':
                 fconv = self.inception_feature(input).mean(3).mean(2).squeeze()
-                print(self.model + " feature shape:", fconv.shape)
+                # print(self.model + " feature shape:", fconv.shape)
             else:
                 raise NotImplementedError
             feature_conv = fconv.data.cpu()
@@ -115,18 +114,17 @@ def calculator_FID(source, target):
         
     return score
 
-def score_fid(real_path, fake_path, num_samples, gpu_id="0"):
-    os.environ["CUDA_VISIBLE_DEVICES"] = gpu_id
+def score_fid(real_path, num_real, fake_path, num_fake):
     convnet_feature_extract = ConvNetFeatureExtract(model="inception_v3", workers=4)
-    real_feature = convnet_feature_extract.extractFeature(real_path, num_samples)
-    fake_feature = convnet_feature_extract.extractFeature(fake_path, num_samples)
+    real_feature = convnet_feature_extract.extractFeature(real_path, num_real)
+    fake_feature = convnet_feature_extract.extractFeature(fake_path, num_fake)
     result = calculator_FID(real_feature, fake_feature)
     return result    
     
 def test():  
-    real_path = "My_TAOD/dataset/DeepPCB_Crop/30-shot/test/0.csv"
-    fake_path = "My_TAOD/dataset/DeepPCB_Crop/30-shot/test/1.csv"
-    result = score_fid(real_path, fake_path, num_samples=100)
+    real_path = "My_TAOD/dataset/DeepPCB_Crop/10-shot/test/0.csv"
+    fake_path = "My_TAOD/dataset/PCB_200/10-shot/test/0.csv"
+    result = score_fid(real_path, 100, fake_path, 100)
     print(f"FID: {result}")
     
 if __name__ == '__main__':

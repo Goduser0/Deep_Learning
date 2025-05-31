@@ -1,0 +1,16 @@
+classification_net:	'VGG11_Pretrained'
+add_train_csv:	['My_TAOD/TA/TA_Results/ConGAN/DeepPCB_Crop[30-shot].csv']
+train_batch_size:	256
+lr:	0.0001
+epochs:	100
+img_size:	128
+model_init_path:	None
+test_batch_size:	512
+gpu_id:	'0'
+num_workers:	4
+time:	'20250310_092437'
+gan_type:	'ConGAN'
+dataset_class:	'DeepPCB_Crop'
+dataset_ratio:	'30-shot'
+train_csv:	'My_TAOD/dataset/DeepPCB_Crop/30-shot/train.csv'
+test_csv:	'My_TAOD/dataset/DeepPCB_Crop/30-shot/test.csv'

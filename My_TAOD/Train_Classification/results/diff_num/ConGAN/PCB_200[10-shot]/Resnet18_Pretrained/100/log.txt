@@ -1,0 +1,17 @@
+classification_net:	'Resnet18_Pretrained'
+add_train_csv:	'["My_TAOD/dataset/diff_num/ConGAN/PCB_200[10-shot]/30.csv","My_TAOD/dataset/diff_num/ConGAN/PCB_200[10-shot]/70.csv"]'
+train_batch_size:	512
+lr:	0.0001
+epochs:	100
+img_size:	128
+model_init_path:	None
+test_batch_size:	512
+gpu_id:	'0'
+num_workers:	4
+time:	'20250310_162530'
+gan_type:	'ConGAN'
+dataset_class:	'PCB_200'
+dataset_ratio:	'10-shot'
+dataset_shot:	100
+train_csv:	'My_TAOD/dataset/PCB_200/10-shot/train.csv'
+test_csv:	'My_TAOD/dataset/PCB_200/10-shot/test.csv'

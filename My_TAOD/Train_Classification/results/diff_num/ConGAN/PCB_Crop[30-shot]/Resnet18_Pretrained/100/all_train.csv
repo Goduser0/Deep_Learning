@@ -1,0 +1,651 @@
+,Unnamed: 0,Image_Label,Image_Class,Image_Path
+0,149,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_12_3.jpg
+1,213,2,Short,./My_Datasets/Classification/PCB-Crop/Short/04_short_14_1.jpg
+2,58,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_08_3.jpg
+3,17,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_03_4.jpg
+4,86,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_02_0.jpg
+5,482,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_20_0.jpg
+6,280,2,Short,./My_Datasets/Classification/PCB-Crop/Short/09_short_05_4.jpg
+7,366,2,Short,./My_Datasets/Classification/PCB-Crop/Short/04_short_20_2.jpg
+8,154,2,Short,./My_Datasets/Classification/PCB-Crop/Short/09_short_02_1.jpg
+9,233,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_20_3.jpg
+10,191,2,Short,./My_Datasets/Classification/PCB-Crop/Short/09_short_05_0.jpg
+11,328,2,Short,./My_Datasets/Classification/PCB-Crop/Short/05_short_05_0.jpg
+12,363,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_06_3.jpg
+13,448,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_08_0.jpg
+14,470,2,Short,./My_Datasets/Classification/PCB-Crop/Short/04_short_07_1.jpg
+15,309,2,Short,./My_Datasets/Classification/PCB-Crop/Short/06_short_04_1.jpg
+16,188,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_08_3.jpg
+17,175,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_03_1.jpg
+18,351,2,Short,./My_Datasets/Classification/PCB-Crop/Short/04_short_13_1.jpg
+19,131,2,Short,./My_Datasets/Classification/PCB-Crop/Short/06_short_08_3.jpg
+20,332,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_05_0.jpg
+21,388,2,Short,./My_Datasets/Classification/PCB-Crop/Short/06_short_07_0.jpg
+22,411,2,Short,./My_Datasets/Classification/PCB-Crop/Short/06_short_10_3.jpg
+23,155,2,Short,./My_Datasets/Classification/PCB-Crop/Short/10_short_03_0.jpg
+24,402,2,Short,./My_Datasets/Classification/PCB-Crop/Short/04_short_17_1.jpg
+25,443,2,Short,./My_Datasets/Classification/PCB-Crop/Short/01_short_02_2.jpg
+26,488,2,Short,./My_Datasets/Classification/PCB-Crop/Short/12_short_06_2.jpg
+27,356,2,Short,./My_Datasets/Classification/PCB-Crop/Short/04_short_03_1.jpg
+28,485,2,Short,./My_Datasets/Classification/PCB-Crop/Short/11_short_05_4.jpg
+29,168,2,Short,./My_Datasets/Classification/PCB-Crop/Short/08_short_02_4.jpg
+30,794,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/08_mouse_bite_06_3.jpg
+31,537,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/10_mouse_bite_02_2.jpg
+32,726,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/12_mouse_bite_04_3.jpg
+33,525,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/12_mouse_bite_07_2.jpg
+34,550,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/07_mouse_bite_02_2.jpg
+35,719,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/10_mouse_bite_04_2.jpg
+36,787,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/08_mouse_bite_01_3.jpg
+37,952,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/09_mouse_bite_10_1.jpg
+38,694,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/12_mouse_bite_06_0.jpg
+39,737,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/01_mouse_bite_06_2.jpg
+40,521,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/05_mouse_bite_07_0.jpg
+41,974,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/05_mouse_bite_07_2.jpg
+42,971,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/06_mouse_bite_05_4.jpg
+43,856,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/08_mouse_bite_02_1.jpg
+44,635,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/06_mouse_bite_10_2.jpg
+45,707,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/11_mouse_bite_04_4.jpg
+46,500,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/04_mouse_bite_09_2.jpg
+47,771,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/06_mouse_bite_01_2.jpg
+48,948,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/01_mouse_bite_18_0.jpg
+49,556,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/07_mouse_bite_07_0.jpg
+50,644,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/11_mouse_bite_04_1.jpg
+51,569,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/11_mouse_bite_09_3.jpg
+52,585,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/11_mouse_bite_04_3.jpg
+53,683,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/06_mouse_bite_10_3.jpg
+54,746,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/08_mouse_bite_07_0.jpg
+55,583,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/11_mouse_bite_02_2.jpg
+56,749,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/11_mouse_bite_03_3.jpg
+57,633,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/12_mouse_bite_01_1.jpg
+58,513,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/07_mouse_bite_08_1.jpg
+59,871,0,Mouse_bite,./My_Datasets/Classification/PCB-Crop/Mouse_bite/06_mouse_bite_06_3.jpg
+60,997,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_01_1.jpg
+61,1214,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_01_2.jpg
+62,1444,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_13_0.jpg
+63,1257,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_19_0.jpg
+64,1055,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_03_0.jpg
+65,1415,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_16_0.jpg
+66,1098,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_17_2.jpg
+67,1267,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_03_1.jpg
+68,985,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_09_2.jpg
+69,1323,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_04_2.jpg
+70,993,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_06_3.jpg
+71,1350,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_06_4.jpg
+72,1194,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_05_3.jpg
+73,1199,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_09_3.jpg
+74,1151,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_06_4.jpg
+75,1425,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_01_2.jpg
+76,1349,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_05_0.jpg
+77,1355,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/08_open_circuit_10_2.jpg
+78,1076,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/05_open_circuit_04_3.jpg
+79,1244,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/09_open_circuit_09_4.jpg
+80,1436,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/12_open_circuit_08_2.jpg
+81,1317,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/10_open_circuit_03_2.jpg
+82,1361,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_03_0.jpg
+83,1102,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/01_open_circuit_03_2.jpg
+84,1163,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/07_open_circuit_03_3.jpg
+85,992,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_08_3.jpg
+86,1391,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_01_1.jpg
+87,1418,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/11_open_circuit_08_2.jpg
+88,1147,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/06_open_circuit_09_0.jpg
+89,1443,1,Open_circuit,./My_Datasets/Classification/PCB-Crop/Open_circuit/04_open_circuit_16_2.jpg
+90,1606,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/08_spurious_copper_06_4.jpg
+91,1537,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/06_spurious_copper_08_4.jpg
+92,1713,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/01_spurious_copper_01_2.jpg
+93,1824,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/12_spurious_copper_10_1.jpg
+94,1882,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/01_spurious_copper_12_2.jpg
+95,1589,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/12_spurious_copper_01_1.jpg
+96,1544,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/08_spurious_copper_09_4.jpg
+97,1844,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/01_spurious_copper_12_0.jpg
+98,1665,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/07_spurious_copper_08_4.jpg
+99,1890,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/04_spurious_copper_12_0.jpg
+100,1834,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/10_spurious_copper_06_0.jpg
+101,1526,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/11_spurious_copper_10_1.jpg
+102,1514,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/08_spurious_copper_02_1.jpg
+103,1951,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/12_spurious_copper_10_0.jpg
+104,1956,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/12_spurious_copper_04_4.jpg
+105,1725,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/07_spurious_copper_06_3.jpg
+106,1488,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/09_spurious_copper_10_1.jpg
+107,1760,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/11_spurious_copper_09_3.jpg
+108,1482,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/04_spurious_copper_07_1.jpg
+109,1815,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/04_spurious_copper_17_2.jpg
+110,1726,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/08_spurious_copper_05_4.jpg
+111,1677,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/07_spurious_copper_03_3.jpg
+112,1679,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/07_spurious_copper_04_1.jpg
+113,1584,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/08_spurious_copper_10_0.jpg
+114,1519,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/06_spurious_copper_07_4.jpg
+115,1747,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/05_spurious_copper_04_3.jpg
+116,1573,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/08_spurious_copper_04_3.jpg
+117,1524,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/05_spurious_copper_03_4.jpg
+118,1780,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/11_spurious_copper_03_2.jpg
+119,1918,4,Spurious_copper,./My_Datasets/Classification/PCB-Crop/Spurious_copper/05_spurious_copper_10_4.jpg
+120,2130,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_10_0.jpg
+121,2058,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_09_2.jpg
+122,2267,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_05_0.jpg
+123,2042,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_15_1.jpg
+124,2310,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_07_4.jpg
+125,1987,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_06_3.jpg
+126,2063,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_06_3.jpg
+127,2131,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_02_0.jpg
+128,2360,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/01_spur_20_0.jpg
+129,2275,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/11_spur_06_3.jpg
+130,2146,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_05_3.jpg
+131,2098,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_01_0.jpg
+132,2029,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_08_3.jpg
+133,2027,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_03_3.jpg
+134,2239,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_03_3.jpg
+135,2052,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_09_0.jpg
+136,2154,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_08_1.jpg
+137,2088,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_06_0.jpg
+138,2137,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_01_4.jpg
+139,2252,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/07_spur_05_0.jpg
+140,2011,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_10_2.jpg
+141,2067,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/04_spur_16_2.jpg
+142,2138,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_10_0.jpg
+143,2319,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/06_spur_08_0.jpg
+144,1996,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_10_0.jpg
+145,2314,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_07_2.jpg
+146,2153,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/08_spur_06_2.jpg
+147,2432,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/05_spur_10_2.jpg
+148,2296,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/12_spur_07_3.jpg
+149,2136,3,Spur,./My_Datasets/Classification/PCB-Crop/Spur/09_spur_06_2.jpg
+0,0,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/1.jpg
+1,1,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/2.jpg
+2,2,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/3.jpg
+3,3,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/4.jpg
+4,4,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/5.jpg
+5,5,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/6.jpg
+6,6,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/7.jpg
+7,7,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/8.jpg
+8,8,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/9.jpg
+9,9,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/10.jpg
+10,10,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/11.jpg
+11,11,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/12.jpg
+12,12,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/13.jpg
+13,13,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/14.jpg
+14,14,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/15.jpg
+15,15,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/16.jpg
+16,16,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/17.jpg
+17,17,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/18.jpg
+18,18,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/19.jpg
+19,19,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/20.jpg
+20,20,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/21.jpg
+21,21,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/22.jpg
+22,22,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/23.jpg
+23,23,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/24.jpg
+24,24,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/25.jpg
+25,25,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/26.jpg
+26,26,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/27.jpg
+27,27,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/28.jpg
+28,28,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/29.jpg
+29,29,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_30/30.jpg
+30,0,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/1.jpg
+31,1,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/2.jpg
+32,2,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/3.jpg
+33,3,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/4.jpg
+34,4,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/5.jpg
+35,5,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/6.jpg
+36,6,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/7.jpg
+37,7,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/8.jpg
+38,8,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/9.jpg
+39,9,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/10.jpg
+40,10,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/11.jpg
+41,11,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/12.jpg
+42,12,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/13.jpg
+43,13,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/14.jpg
+44,14,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/15.jpg
+45,15,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/16.jpg
+46,16,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/17.jpg
+47,17,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/18.jpg
+48,18,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/19.jpg
+49,19,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/20.jpg
+50,20,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/21.jpg
+51,21,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/22.jpg
+52,22,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/23.jpg
+53,23,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/24.jpg
+54,24,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/25.jpg
+55,25,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/26.jpg
+56,26,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/27.jpg
+57,27,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/28.jpg
+58,28,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/29.jpg
+59,29,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_30/30.jpg
+60,0,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/1.jpg
+61,1,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/2.jpg
+62,2,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/3.jpg
+63,3,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/4.jpg
+64,4,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/5.jpg
+65,5,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/6.jpg
+66,6,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/7.jpg
+67,7,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/8.jpg
+68,8,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/9.jpg
+69,9,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/10.jpg
+70,10,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/11.jpg
+71,11,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/12.jpg
+72,12,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/13.jpg
+73,13,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/14.jpg
+74,14,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/15.jpg
+75,15,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/16.jpg
+76,16,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/17.jpg
+77,17,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/18.jpg
+78,18,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/19.jpg
+79,19,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/20.jpg
+80,20,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/21.jpg
+81,21,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/22.jpg
+82,22,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/23.jpg
+83,23,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/24.jpg
+84,24,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/25.jpg
+85,25,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/26.jpg
+86,26,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/27.jpg
+87,27,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/28.jpg
+88,28,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/29.jpg
+89,29,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_30/30.jpg
+90,0,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/1.jpg
+91,1,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/2.jpg
+92,2,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/3.jpg
+93,3,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/4.jpg
+94,4,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/5.jpg
+95,5,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/6.jpg
+96,6,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/7.jpg
+97,7,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/8.jpg
+98,8,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/9.jpg
+99,9,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/10.jpg
+100,10,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/11.jpg
+101,11,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/12.jpg
+102,12,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/13.jpg
+103,13,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/14.jpg
+104,14,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/15.jpg
+105,15,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/16.jpg
+106,16,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/17.jpg
+107,17,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/18.jpg
+108,18,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/19.jpg
+109,19,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/20.jpg
+110,20,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/21.jpg
+111,21,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/22.jpg
+112,22,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/23.jpg
+113,23,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/24.jpg
+114,24,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/25.jpg
+115,25,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/26.jpg
+116,26,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/27.jpg
+117,27,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/28.jpg
+118,28,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/29.jpg
+119,29,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_30/30.jpg
+120,0,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/1.jpg
+121,1,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/2.jpg
+122,2,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/3.jpg
+123,3,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/4.jpg
+124,4,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/5.jpg
+125,5,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/6.jpg
+126,6,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/7.jpg
+127,7,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/8.jpg
+128,8,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/9.jpg
+129,9,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/10.jpg
+130,10,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/11.jpg
+131,11,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/12.jpg
+132,12,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/13.jpg
+133,13,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/14.jpg
+134,14,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/15.jpg
+135,15,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/16.jpg
+136,16,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/17.jpg
+137,17,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/18.jpg
+138,18,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/19.jpg
+139,19,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/20.jpg
+140,20,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/21.jpg
+141,21,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/22.jpg
+142,22,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/23.jpg
+143,23,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/24.jpg
+144,24,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/25.jpg
+145,25,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/26.jpg
+146,26,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/27.jpg
+147,27,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/28.jpg
+148,28,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/29.jpg
+149,29,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_30/30.jpg
+0,0,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/1.jpg
+1,1,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/2.jpg
+2,2,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/3.jpg
+3,3,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/4.jpg
+4,4,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/5.jpg
+5,5,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/6.jpg
+6,6,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/7.jpg
+7,7,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/8.jpg
+8,8,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/9.jpg
+9,9,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/10.jpg
+10,10,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/11.jpg
+11,11,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/12.jpg
+12,12,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/13.jpg
+13,13,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/14.jpg
+14,14,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/15.jpg
+15,15,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/16.jpg
+16,16,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/17.jpg
+17,17,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/18.jpg
+18,18,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/19.jpg
+19,19,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/20.jpg
+20,20,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/21.jpg
+21,21,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/22.jpg
+22,22,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/23.jpg
+23,23,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/24.jpg
+24,24,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/25.jpg
+25,25,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/26.jpg
+26,26,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/27.jpg
+27,27,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/28.jpg
+28,28,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/29.jpg
+29,29,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/30.jpg
+30,30,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/31.jpg
+31,31,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/32.jpg
+32,32,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/33.jpg
+33,33,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/34.jpg
+34,34,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/35.jpg
+35,35,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/36.jpg
+36,36,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/37.jpg
+37,37,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/38.jpg
+38,38,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/39.jpg
+39,39,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/40.jpg
+40,40,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/41.jpg
+41,41,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/42.jpg
+42,42,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/43.jpg
+43,43,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/44.jpg
+44,44,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/45.jpg
+45,45,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/46.jpg
+46,46,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/47.jpg
+47,47,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/48.jpg
+48,48,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/49.jpg
+49,49,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/50.jpg
+50,50,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/51.jpg
+51,51,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/52.jpg
+52,52,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/53.jpg
+53,53,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/54.jpg
+54,54,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/55.jpg
+55,55,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/56.jpg
+56,56,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/57.jpg
+57,57,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/58.jpg
+58,58,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/59.jpg
+59,59,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/60.jpg
+60,60,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/61.jpg
+61,61,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/62.jpg
+62,62,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/63.jpg
+63,63,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/64.jpg
+64,64,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/65.jpg
+65,65,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/66.jpg
+66,66,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/67.jpg
+67,67,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/68.jpg
+68,68,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/69.jpg
+69,69,2,Short,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 2 2025-02-22_02-53-58/samples/10000epoch_70/70.jpg
+70,0,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/1.jpg
+71,1,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/2.jpg
+72,2,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/3.jpg
+73,3,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/4.jpg
+74,4,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/5.jpg
+75,5,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/6.jpg
+76,6,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/7.jpg
+77,7,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/8.jpg
+78,8,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/9.jpg
+79,9,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/10.jpg
+80,10,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/11.jpg
+81,11,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/12.jpg
+82,12,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/13.jpg
+83,13,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/14.jpg
+84,14,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/15.jpg
+85,15,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/16.jpg
+86,16,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/17.jpg
+87,17,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/18.jpg
+88,18,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/19.jpg
+89,19,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/20.jpg
+90,20,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/21.jpg
+91,21,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/22.jpg
+92,22,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/23.jpg
+93,23,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/24.jpg
+94,24,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/25.jpg
+95,25,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/26.jpg
+96,26,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/27.jpg
+97,27,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/28.jpg
+98,28,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/29.jpg
+99,29,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/30.jpg
+100,30,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/31.jpg
+101,31,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/32.jpg
+102,32,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/33.jpg
+103,33,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/34.jpg
+104,34,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/35.jpg
+105,35,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/36.jpg
+106,36,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/37.jpg
+107,37,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/38.jpg
+108,38,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/39.jpg
+109,39,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/40.jpg
+110,40,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/41.jpg
+111,41,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/42.jpg
+112,42,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/43.jpg
+113,43,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/44.jpg
+114,44,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/45.jpg
+115,45,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/46.jpg
+116,46,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/47.jpg
+117,47,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/48.jpg
+118,48,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/49.jpg
+119,49,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/50.jpg
+120,50,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/51.jpg
+121,51,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/52.jpg
+122,52,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/53.jpg
+123,53,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/54.jpg
+124,54,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/55.jpg
+125,55,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/56.jpg
+126,56,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/57.jpg
+127,57,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/58.jpg
+128,58,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/59.jpg
+129,59,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/60.jpg
+130,60,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/61.jpg
+131,61,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/62.jpg
+132,62,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/63.jpg
+133,63,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/64.jpg
+134,64,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/65.jpg
+135,65,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/66.jpg
+136,66,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/67.jpg
+137,67,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/68.jpg
+138,68,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/69.jpg
+139,69,4,Spurious_copper,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 4 2025-02-22_13-08-41/samples/10000epoch_70/70.jpg
+140,0,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/1.jpg
+141,1,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/2.jpg
+142,2,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/3.jpg
+143,3,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/4.jpg
+144,4,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/5.jpg
+145,5,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/6.jpg
+146,6,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/7.jpg
+147,7,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/8.jpg
+148,8,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/9.jpg
+149,9,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/10.jpg
+150,10,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/11.jpg
+151,11,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/12.jpg
+152,12,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/13.jpg
+153,13,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/14.jpg
+154,14,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/15.jpg
+155,15,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/16.jpg
+156,16,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/17.jpg
+157,17,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/18.jpg
+158,18,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/19.jpg
+159,19,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/20.jpg
+160,20,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/21.jpg
+161,21,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/22.jpg
+162,22,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/23.jpg
+163,23,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/24.jpg
+164,24,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/25.jpg
+165,25,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/26.jpg
+166,26,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/27.jpg
+167,27,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/28.jpg
+168,28,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/29.jpg
+169,29,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/30.jpg
+170,30,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/31.jpg
+171,31,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/32.jpg
+172,32,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/33.jpg
+173,33,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/34.jpg
+174,34,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/35.jpg
+175,35,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/36.jpg
+176,36,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/37.jpg
+177,37,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/38.jpg
+178,38,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/39.jpg
+179,39,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/40.jpg
+180,40,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/41.jpg
+181,41,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/42.jpg
+182,42,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/43.jpg
+183,43,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/44.jpg
+184,44,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/45.jpg
+185,45,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/46.jpg
+186,46,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/47.jpg
+187,47,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/48.jpg
+188,48,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/49.jpg
+189,49,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/50.jpg
+190,50,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/51.jpg
+191,51,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/52.jpg
+192,52,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/53.jpg
+193,53,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/54.jpg
+194,54,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/55.jpg
+195,55,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/56.jpg
+196,56,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/57.jpg
+197,57,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/58.jpg
+198,58,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/59.jpg
+199,59,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/60.jpg
+200,60,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/61.jpg
+201,61,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/62.jpg
+202,62,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/63.jpg
+203,63,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/64.jpg
+204,64,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/65.jpg
+205,65,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/66.jpg
+206,66,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/67.jpg
+207,67,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/68.jpg
+208,68,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/69.jpg
+209,69,3,Spur,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 3 2025-02-22_08-36-45/samples/10000epoch_70/70.jpg
+210,0,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/1.jpg
+211,1,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/2.jpg
+212,2,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/3.jpg
+213,3,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/4.jpg
+214,4,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/5.jpg
+215,5,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/6.jpg
+216,6,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/7.jpg
+217,7,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/8.jpg
+218,8,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/9.jpg
+219,9,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/10.jpg
+220,10,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/11.jpg
+221,11,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/12.jpg
+222,12,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/13.jpg
+223,13,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/14.jpg
+224,14,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/15.jpg
+225,15,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/16.jpg
+226,16,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/17.jpg
+227,17,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/18.jpg
+228,18,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/19.jpg
+229,19,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/20.jpg
+230,20,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/21.jpg
+231,21,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/22.jpg
+232,22,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/23.jpg
+233,23,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/24.jpg
+234,24,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/25.jpg
+235,25,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/26.jpg
+236,26,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/27.jpg
+237,27,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/28.jpg
+238,28,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/29.jpg
+239,29,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/30.jpg
+240,30,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/31.jpg
+241,31,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/32.jpg
+242,32,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/33.jpg
+243,33,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/34.jpg
+244,34,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/35.jpg
+245,35,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/36.jpg
+246,36,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/37.jpg
+247,37,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/38.jpg
+248,38,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/39.jpg
+249,39,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/40.jpg
+250,40,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/41.jpg
+251,41,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/42.jpg
+252,42,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/43.jpg
+253,43,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/44.jpg
+254,44,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/45.jpg
+255,45,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/46.jpg
+256,46,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/47.jpg
+257,47,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/48.jpg
+258,48,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/49.jpg
+259,49,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/50.jpg
+260,50,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/51.jpg
+261,51,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/52.jpg
+262,52,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/53.jpg
+263,53,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/54.jpg
+264,54,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/55.jpg
+265,55,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/56.jpg
+266,56,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/57.jpg
+267,57,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/58.jpg
+268,58,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/59.jpg
+269,59,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/60.jpg
+270,60,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/61.jpg
+271,61,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/62.jpg
+272,62,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/63.jpg
+273,63,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/64.jpg
+274,64,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/65.jpg
+275,65,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/66.jpg
+276,66,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/67.jpg
+277,67,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/68.jpg
+278,68,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/69.jpg
+279,69,1,Open_circuit,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 1 2025-02-21_21-06-25/samples/10000epoch_70/70.jpg
+280,0,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/1.jpg
+281,1,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/2.jpg
+282,2,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/3.jpg
+283,3,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/4.jpg
+284,4,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/5.jpg
+285,5,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/6.jpg
+286,6,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/7.jpg
+287,7,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/8.jpg
+288,8,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/9.jpg
+289,9,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/10.jpg
+290,10,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/11.jpg
+291,11,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/12.jpg
+292,12,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/13.jpg
+293,13,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/14.jpg
+294,14,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/15.jpg
+295,15,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/16.jpg
+296,16,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/17.jpg
+297,17,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/18.jpg
+298,18,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/19.jpg
+299,19,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/20.jpg
+300,20,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/21.jpg
+301,21,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/22.jpg
+302,22,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/23.jpg
+303,23,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/24.jpg
+304,24,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/25.jpg
+305,25,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/26.jpg
+306,26,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/27.jpg
+307,27,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/28.jpg
+308,28,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/29.jpg
+309,29,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/30.jpg
+310,30,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/31.jpg
+311,31,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/32.jpg
+312,32,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/33.jpg
+313,33,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/34.jpg
+314,34,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/35.jpg
+315,35,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/36.jpg
+316,36,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/37.jpg
+317,37,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/38.jpg
+318,38,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/39.jpg
+319,39,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/40.jpg
+320,40,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/41.jpg
+321,41,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/42.jpg
+322,42,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/43.jpg
+323,43,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/44.jpg
+324,44,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/45.jpg
+325,45,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/46.jpg
+326,46,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/47.jpg
+327,47,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/48.jpg
+328,48,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/49.jpg
+329,49,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/50.jpg
+330,50,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/51.jpg
+331,51,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/52.jpg
+332,52,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/53.jpg
+333,53,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/54.jpg
+334,54,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/55.jpg
+335,55,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/56.jpg
+336,56,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/57.jpg
+337,57,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/58.jpg
+338,58,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/59.jpg
+339,59,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/60.jpg
+340,60,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/61.jpg
+341,61,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/62.jpg
+342,62,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/63.jpg
+343,63,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/64.jpg
+344,64,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/65.jpg
+345,65,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/66.jpg
+346,66,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/67.jpg
+347,67,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/68.jpg
+348,68,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/69.jpg
+349,69,0,Mouse_bite,My_TAOD/TA/TA_Results/ConGAN/PCB_Crop[30-shot] 0 2025-02-21_15-36-25/samples/10000epoch_70/70.jpg

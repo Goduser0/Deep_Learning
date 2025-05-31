@@ -1,0 +1,17 @@
+classification_net:	'Resnet18_Pretrained'
+add_train_csv:	'["My_TAOD/dataset/diff_num/ConGAN/DeepPCB_Crop[30-shot]/30.csv","My_TAOD/dataset/diff_num/ConGAN/DeepPCB_Crop[30-shot]/70.csv"]'
+train_batch_size:	512
+lr:	0.0001
+epochs:	100
+img_size:	128
+model_init_path:	None
+test_batch_size:	512
+gpu_id:	'0'
+num_workers:	4
+time:	'20250310_134330'
+gan_type:	'ConGAN'
+dataset_class:	'DeepPCB_Crop'
+dataset_ratio:	'30-shot'
+dataset_shot:	100
+train_csv:	'My_TAOD/dataset/DeepPCB_Crop/30-shot/train.csv'
+test_csv:	'My_TAOD/dataset/DeepPCB_Crop/30-shot/test.csv'

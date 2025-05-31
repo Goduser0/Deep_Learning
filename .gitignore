@@ -1,14 +1,9 @@
 My_Datasets/
 
-My_PCB_det/Results/
-My_PCB_det/Weights/
-My_PCB_det/logs/
-
-# My_TAOD/Train_Classification/results/
-
-TrainedModels/
+My_TrainedModels/
 
 My_TAOD/TA/TA_Results/
+My_TAOD/Train_Classification/results/
 
 Projects_Done/My_class_mli/data/
 
